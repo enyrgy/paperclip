@@ -35,7 +35,6 @@ if [ "$(id -g node)" -ne "$PGID" ]; then
     changed=1
 fi
 
-if [ "$changed" = "1" ]; then
     chown -R node:node /paperclip
 fi
 
