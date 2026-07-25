@@ -8,14 +8,15 @@ Deploy: load each as an LC Email template in GHL (sub-account GtXjla7Ld1dordsTWr
 
 ---
 
-## 1. Consumer nurture, first touch  (Sales Outreach)  -- humanize-pro 45/50
+## 1. Consumer nurture, first touch  (Sales Outreach)  -- DEPLOYED (edited by Scott)
 - **Use:** general consumer lead, fresh website entry, top of funnel.
 - **Skill lens:** eugene (match awareness, build desire around the mechanism) + cub.
 - **Compliance:** supplement line is the reader's own suspicion, not a quantified claim (stays clear of the "one in four" precision rule); efficiency + safety KB-exact; no price anchor.
+- **Note:** live version in GHL. Uses merge fields; signature block supplies the "Carpe Diem," sign-off (do not add separately).
 
 **Subject:** Two minutes of the right light
 
-Hey Test,
+{{contact.first_name}},
 
 You came by enyrgy.com. So you already suspect the supplement route is not quite doing it.
 
@@ -25,80 +26,93 @@ What keeps it safe is the app. It reads your skin type, picks your dose, and shu
 
 That is the whole pitch. The unit is here if you want to look: https://shop.enyrgy.com/products/uvb-light-therapy. Reply if you have a question. It lands on my desk, not a queue.
 
-Carpe Diem,
-Scott
+{{custom_values.standard_signature}}
 
 ---
 
-## 2. New customer onboarding, unit shipped  (Onboarding)  -- humanize-pro 45/50
+## 2. New customer onboarding, unit shipped  (Onboarding)  -- DEPLOYED (edited by Scott)
 - **Use:** unit shipped / WF-06 trigger.
 - **Skill lens:** cub + humanize (reduce friction, one clear action).
 - **Compliance:** registration URL + dosing/safety KB-exact.
+- **Note:** live version in GHL. Uses merge fields; the signature block supplies the "Carpe Diem," sign-off (do not add it separately). Registration step moved up front with device-setup instructions (center button + QR scan).
 
 **Subject:** It shipped. Do this one thing first.
 
-Hey Test,
+{{contact.first_name}},
 
 Your Enyrgy Vitamin D Primal Light Platform left here today. It is somewhere between Phoenix and your door.
 
-When it lands, plug it in and open the app before anything else. That is the whole game. The app reads your skin type, sets your dose, and ends the session for you, so you are never the one watching a clock or guessing how long is too long. Register here: https://api.enyrgy.com/
+Register your users here: https://api.enyrgy.com/   When it lands, plug it in, turn it on and open the app, click the center button and scan the QR code.
 
-Then you stand in it for two to four minutes. That is enough to open all three pathways, vitamin D, nitric oxide, and serotonin. Already running red light? Keep it. The two do different jobs, so this slots into your routine instead of taking anything over.
+That is the whole game. The app reads your skin type, sets your dose, and ends the session for you, so you are never the one watching a clock or guessing how long is too long.
+
+Then you stand in it for two to four minutes. That is enough to open all three pathways, vitamin D, nitric oxide, and serotonin.
+
+Already running red light? Keep it. The two do different jobs, so this slots into your routine instead of taking anything over.
 
 One number, since it is a light and everyone asks: twenty five thousand sessions, zero burns, zero adverse events. The app earns that on every single one.
 
-Anything looks off when it arrives, reply straight to me. A real person reads it.
+Anything looks off when it arrives, reply straight to me.
 
-Carpe Diem,
-Scott
+{{custom_values.standard_signature}}
 
 ---
 
-## 3. Referral activation  (Referral & Reviews)  -- humanize-pro 45/50
+## 3. Referral activation  (Referral & Reviews)  -- DEPLOYED (edited by Scott)
 - **Use:** happy customer milestone (activated, 10+ sessions). REFERRAL ONLY.
 - **Skill lens:** cub + humanize.
-- **Compliance:** referral terms KB-exact ($150 off referee / $100 credit referrer). **Review ask deliberately omitted** until the Google Business Profile review link is live in the KB. Add the review ask only after that link ships.
+- **Compliance:** referral terms KB-exact ($150 off referee / $100 credit referrer, framed as credit for future purchases). **Review ask deliberately omitted** until the Google Business Profile review link is live in the KB. Add the review ask only after that link ships.
+- **Note:** live version in GHL. Uses merge fields; signature block supplies the "Carpe Diem," sign-off (do not add separately).
 
 **Subject:** The people you would tell have not heard of us yet
 
-Hey Test,
+{{contact.first_name}},
 
 Ten sessions in. That is the point where it stops being a decision and starts being a habit, somewhere between your coffee and your keys.
 
-So, a favor that pays both of us. The Enyrgy Vitamin D Primal Light Platform got to 600 plus customers in five countries on zero paid ads. The whole engine is people like you saying one sentence to the right person.
+So, a favor that pays both of us. The Enyrgy Vitamin D Primal Light Platform got to 600 plus customers in five countries on zero paid ads.
 
-If it earned its spot, send it on. They get 150 dollars off. You get 100 in credit the day they order. Same link you used: https://shop.enyrgy.com/products/uvb-light-therapy.
+The whole engine is people like you saying one sentence to the right person.
+
+If it earned its spot, send it on. They get 150 dollars off. You get 100 in credit for future purchases. Same link you used: https://shop.enyrgy.com/products/uvb-light-therapy.
 
 No pitch required. "This gets me my vitamin D in four minutes" does most of the work.
 
-Carpe Diem,
-Scott
+{{custom_values.standard_signature}}
 
 ---
 
-## 4. Reactivation, touch 1  (Reactivation)  -- humanize-pro 46/50
+## 4. Reactivation, touch 1  (Reactivation)  -- DEPLOYED (edited by Scott)
 - **Use:** lapsed lead, full sequence with no engagement, 60-day pause elapsed / WF-08 eligible.
 - **Skill lens:** presell-sandwich (present pain + cost of inaction) + humanize.
 - **Compliance:** supplement line kept soft (no "supplements fail one in four"); return-rate + efficiency KB-exact.
+- **Note:** live version in GHL. Uses merge fields; signature block supplies the "Carpe Diem," sign-off (do not add separately).
 
 **Subject:** Still low, or did you sort it out?
 
-Hey Test,
+{{contact.first_name}},
 
-You looked at the Enyrgy Vitamin D Primal Light Platform a while back, then life did what life does. No judgment. It happens to most people who come through.
+You looked at the Enyrgy Vitamin D Primal Light Platform a while back, then life did what life does.
+
+No judgment. It happens to many people who come through.
 
 One straight question, because it is the only one that matters. Did the vitamin D actually get handled? Or is it still on the someday list, next to the supplements you are not fully sure your body is using?
 
-If it is still open, here is why people come back. Two to four minutes. Three pathways your body runs on, vitamin D, nitric oxide, serotonin. The app sets your dose by skin type and ends the session for you. Twenty five thousand sessions, zero adverse events, and under one percent of people send it back. The industry sits at five to ten.
+If it is still open, here is why people come back. Two to four minutes. Three pathways your body runs on, vitamin D, nitric oxide, serotonin.
 
-Solved it elsewhere? Good, genuinely, tell me and I am gone. If not, reply and we pick up where we left off.
+The app sets your dose by skin type and ends the session for you.
 
-Carpe Diem,
-Scott
+Twenty five thousand sessions, zero adverse events, and under one percent of people send it back. The industry sits at five to ten.
+
+Solved it elsewhere?
+
+Good, genuinely, tell me and I am gone. If not, reply and we pick up where we left off.
+
+{{custom_values.standard_signature}}
 
 ---
 
-## 5. Investor PPM delivery cover  (CFO)  — COMPLIANCE-CRITICAL  -- humanize-pro 39/50 (calm register by design)
+## 5. Investor PPM delivery cover  (CFO)  — COMPLIANCE-CRITICAL  -- DEPLOYED (edited by Scott)
 - **Use:** investor who has completed the intro meeting.
 - **Skill lens:** cub + humanize, investor register (credible, calm, no hype, founder-to-investor peer). Deliberately not pushed for edge; investor/securities context wants calm.
 - **SEND PRECONDITIONS (hard):**
@@ -107,12 +121,13 @@ Scott
   3. Accreditation is NOT required for PPM delivery (attorney-confirmed). Do not gate this send on `accredited_verified`.
 - **Do NOT** bundle wire instructions, the subscription agreement, or the term sheet in this email. Sub-agreement + term sheet are separate pre-acceptance sends (no accreditation needed). Wire instructions / accepting an investment require `accredited_verified` = Yes.
 - Every CFO write still holds at the human-approval gate by design. Keep it that way.
-- **Signatory:** shown as Scott (the voice profile on file is Scott's). KB says a human (David or Scott) sends the PPM. If David or Brian sends, adjust the sign-off (they may not use "Carpe Diem").
+- **Signatory:** shown as Scott (the voice profile on file is Scott's). The PPM is human-sent by Scott.
 - The email intentionally **defers full terms to the PPM** rather than restating the offer in-channel. Keep it that way.
+- **Note (Scott edit):** "next documents" now reads "the subscription agreement and the investor accreditation" (term sheet dropped from the sentence). Still KB-consistent: accreditation is required before funds, and "anything touching funds comes later" keeps the money gate intact. Live version uses merge fields; signature block supplies the sign-off.
 
 **Subject:** The PPM from our conversation
 
-Hi Test,
+{{contact.first_name}},
 
 Good to sit down properly the other day. The questions you asked were the right ones, which is usually a good sign.
 
@@ -120,12 +135,11 @@ As promised, the PPM is attached. It puts the company, the technology, and the f
 
 The frame, so you know what you are holding: a private credit note on a three year term, with the option to convert to equity later at a discount to an independent valuation if you would rather. The minimum, the rate, and the timing are all laid out in the document.
 
-Nothing here asks you to decide anything. Reading it moves no money and commits you to nothing. When you have been through it and want to go further, the next documents are the subscription agreement and the term sheet, and anything touching funds comes later still, once both sides have confirmed.
+Nothing here asks you to decide anything. Reading it moves no money and commits you to nothing. When you have been through it and want to go further, the next documents are the subscription agreement and the investor accreditation, and anything touching funds comes later still, once both sides have confirmed.
 
-I am the person on this end of it. Reply with whatever comes up, or grab time on my calendar and we will go through it together.
+I am the point of contact on this end of it. Reply with whatever comes up, or grab time on my calendar and we will go through it together.
 
-Carpe Diem,
-Scott
+{{custom_values.standard_signature}}
 
 ---
 

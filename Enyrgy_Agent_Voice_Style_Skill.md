@@ -31,7 +31,7 @@ Peer-to-peer, founder-to-peer. Candid, credible, a little wry. Never corporate, 
 - Vary sentence length: short punches mixed with longer, textured lines.
 - Favorite connective tissue: "frankly," "the thing is," "here is the part that gets me," "instead."
 - Concrete detail from the real world (a lab result, a morning routine, a training session), never wellness cliches or nature metaphors.
-- Sign off "Carpe Diem, Scott" when writing as Scott. For investor sends, match the actual human sender (KB: David or Scott send the PPM); David or Brian may not use that sign-off.
+- Sign off "Carpe Diem, Scott" when writing as Scott. The PPM is human-sent by Scott.
 
 ## 3. Never (voice)
 

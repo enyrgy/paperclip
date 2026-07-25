@@ -34,7 +34,7 @@ Every agent, in addition to its own block, operates under these rules:
 
 ### Team and OEM
 
-Human founders: Scott Hansbury (CEO and Co-Founder), David Letourneau (President and Co-Founder), Brian Cameron (CFO). Active OEM partner: Lumanova / Luma D Light.
+Human founders: Scott Hansbury (Co-founder & CEO), David Letourneau (President and Co-Founder), Brian Cameron (CFO). Active OEM partner: Lumanova / Luma D Light.
 
 ---
 
@@ -156,7 +156,7 @@ Human founders: Scott Hansbury (CEO and Co-Founder), David Letourneau (President
 >
 > **Trigger:** a daily heartbeat at 8am America/Phoenix.
 >
-> **Own:** find any active-pipeline contact whose `last_agent_touch` is older than 5 days, flag `requires_human_review`, and notify David Letourneau.
+> **Own:** find any active-pipeline contact whose `last_agent_touch` is older than 5 days, flag `requires_human_review`, and notify Scott.
 >
 > **Escalate to COO, then to CEO if a flagged contact stays unresolved.**
 >
@@ -298,7 +298,7 @@ Build this as a hard Paperclip approval gate that the Audit and Compliance agent
 
 **Gate rules:**
 
-- **PPM delivery (allowed after intro meeting):** the SDR or PRD Gatherer may queue and send the PPM once the contact reaches the Intro Meeting stage. No accreditation check blocks this. A human (David or Scott) sends it directly; the agent has it queued and ready.
+- **PPM delivery (allowed after intro meeting):** the SDR or PRD Gatherer may queue and send the PPM once the contact reaches the Intro Meeting stage. No accreditation check blocks this. Scott sends it directly; the agent has it queued and ready.
 - **Commitment gate (hard block):** before any wire instructions or acceptance of investment, the Audit and Compliance agent must confirm `accredited_verified` = Yes. If not verified, block and escalate to human legal. No agent may bypass. The subscription agreement and term sheet are pre-acceptance and are NOT gated by accreditation; the CFO may send them (each send stops for human approval).
 - **Cold-drip financial content (hard block):** for any investor-bound contact where `accredited_verified` is not Yes, block all financial content. Touches 1 through 6 are credibility and traction only (Reg D protection).
 - **Prohibited-words scan (every send):** runs before every email, SMS, and voicemail across all funnels.

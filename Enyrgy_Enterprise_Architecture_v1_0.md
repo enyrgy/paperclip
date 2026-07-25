@@ -8,7 +8,7 @@ Consumer Unit $2,995 · Commercial Unit $8,950 · OEM/White-Label · Investor Ca
 600+ Customers · 25,000+ Treatments · 5 Countries · Zero Adverse Events
 scott@enyrgy.com · 602-321-0322 · enyrgy.com
 
-Author: Scott Hansbury, CEO & Co-Founder, Enyrgy Inc
+Author: Scott Hansbury, Co-founder & CEO, Enyrgy Inc
 Last Updated: June 29, 2026 · Version 1.0
 
 CONFIDENTIAL
@@ -150,7 +150,7 @@ Enyrgy runs on a deliberately small human team augmented by an AI agent layer.
 
 | Name | Role | Owns |
 |------|------|------|
-| Scott Hansbury | CEO & Co-Founder | Strategy, investor relationships, OEM oversight, brand |
+| Scott Hansbury | Co-founder & CEO | Strategy, investor relationships, OEM oversight, brand |
 | David Letourneau | President & Co-Founder | Operational execution, discovery and demo calls (primary) |
 | Brian Cameron | CFO | Finance, investor financial materials |
 | Dennis Lan | Director, Supply Chain | Sourcing, procurement, manufacturing supply chain |
@@ -324,7 +324,7 @@ DNS is managed at the registrar with GoDaddy Domain Connect handling the email-d
 
 ## 6.2 Email Sending Infrastructure
 
-The email layer was rebuilt onto a dedicated sending domain to solve a hard platform constraint: GHL allows only one Gmail connection per sub-account, which had forced the two founders to compete for a single sending identity. The dedicated domain mg.enyrgy.com, authenticated once, can send from any @enyrgy.com address with the per-message From set per workflow. Scott is the default sender; David is set per-workflow on his commercial and investor workflows. The domain is in reputation warmup (Stage 1): consumer opt-ins one at a time are a healthy warmup pattern, and the 600-plus existing-customer list must not be bulk-sent during warmup but ramped gradually.
+The email layer was rebuilt onto a dedicated sending domain to solve a hard platform constraint: GHL allows only one Gmail connection per sub-account, which had forced the two founders to compete for a single sending identity. The dedicated domain mg.enyrgy.com, authenticated once, can send from any @enyrgy.com address with the per-message From set per workflow. Scott is the sender on all workflows. The domain is in reputation warmup (Stage 1): consumer opt-ins one at a time are a healthy warmup pattern, and the 600-plus existing-customer list must not be bulk-sent during warmup but ramped gradually.
 
 ## 6.3 Telephony
 

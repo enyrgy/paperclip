@@ -55,7 +55,7 @@ Paste or attach this file at the start of a new chat along with `Enyrgy_GHL_WIP-
 | Order URL | https://shop.enyrgy.com/products/uvb-light-therapy |
 | Phone | +1 888-316-1695 (Toll-Free, LC Phone) |
 
-**Team:** Scott Hansbury (CEO & Co-Founder), David Letourneau (President & Co-Founder), Brian Cameron (CFO).
+**Team:** Scott Hansbury (Co-founder & CEO), David Letourneau (President & Co-Founder), Brian Cameron (CFO).
 
 ---
 
@@ -234,7 +234,7 @@ Lead Magnet 5 existed as built HTML but was never documented in lead-magnets.md.
 Millie flagged that "1 in 4 cannot absorb oral vitamin D" on the consumer objections sheet had no source. Correct: the underlying research is real (Carlberg, VitDmet and VitDbol trials, ~25% low responders, Nutrients 2023 15(15):3382) but the claim is about RESPONSE, not absorption. Low responders absorb the pill fine; their cells do less with it. Approved wording: "in these trials, about one in four participants were low responders to vitamin D supplementation." Never "one in four Americans" (trials were 71, 35, and 25 participants). The objections sheet needs this correction.
 
 ### about-me.md cleaned
-Corrected stale items: Co-Founder & CEO (not Founder), Phoenix (not Scottsdale), 25,000+ treatments (file contradicted itself), ten direct commercial placements for external use (16 total), Brian described by function not title, Millie and Shanna added, 37 em-dashes removed. Added a Claim Discipline section and a Current Commercial Context section.
+Corrected stale items: Co-founder & CEO (not Founder), Phoenix (not Scottsdale), 25,000+ treatments (file contradicted itself), ten direct commercial placements for external use (16 total), Brian described by function not title, Millie and Shanna added, 37 em-dashes removed. Added a Claim Discipline section and a Current Commercial Context section.
 
 **Known stale (RESOLVED in Session 9):** the `Enyrgy_Session_Handoff.docx` cover previously carried 602-321-0322 and "End of Session 6." The cover now shows the toll-free +1 888-316-1695, the session label matches the body, and the Vitamin D Assessment and Google Business Profile task entries are present.
 

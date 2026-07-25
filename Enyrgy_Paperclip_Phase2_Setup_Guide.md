@@ -2,7 +2,7 @@
 
 **AI Agent Organization for GHL Sales, Marketing, and Revenue Automation**
 
-Version 1.0 · July 13, 2026 · Author: Scott Hansbury, CEO and Co-Founder, Enyrgy Inc
+Version 1.0 · July 13, 2026 · Author: Scott Hansbury, Co-founder & CEO, Enyrgy Inc
 
 **Companion to:** Enyrgy GHL Implementation Guide v3.9 (ground truth) and Enyrgy GHL WIP-3 (tracker). This guide is the operational build plan for Phase 2. It does not change any decision in the Implementation Guide; it executes the agent layer that guide already designed.
 
@@ -194,7 +194,7 @@ Trigger: weekly heartbeat. Function: review drip engagement, find contacts stuck
 Trigger: a fact change (pricing, facility, clinical data, attorney guidance) or a monthly heartbeat. Function: update the KB, revision the change, and update any drip template whose facts changed. Escalates to: COO Agent, and to human legal for any investor or compliance wording.
 
 **9.5 Sentinel** - Stale lead monitoring.
-Trigger: daily 8am heartbeat (America/Phoenix). Function: find any active-pipeline contact with `last_agent_touch` older than 5 days, flag `requires_human_review`, and notify David. Primary on WF-04. Escalates to: COO Agent, then CEO Agent if unresolved.
+Trigger: daily 8am heartbeat (America/Phoenix). Function: find any active-pipeline contact with `last_agent_touch` older than 5 days, flag `requires_human_review`, and notify Scott. Primary on WF-04. Escalates to: COO Agent, then CEO Agent if unresolved.
 
 **9.6 Audit and Compliance** - Content and legal review.
 Trigger: before any investor-bound message is sent, and continuously as a guardian on WF-09. Function: scan every outbound message against the prohibited-words list and the compliance gate. If a contact is investor-bound and `accredited_verified` is not Yes, block all financial content (Reg D protection); allow only credibility and traction content. Primary on WF-09 (Compliance Guardian). Escalates to: COO Agent, then human legal. This agent has veto power over any send. See Section 11.
@@ -240,7 +240,7 @@ This is the most important configuration in Phase 2. Build it as a hard Papercli
 
 Gate rules to configure:
 
-- **PPM delivery (allowed after intro meeting):** the SDR or PRD Gatherer may queue and send the PPM once the contact reaches the Intro Meeting stage. No accreditation check blocks this. Human (David or Scott) sends it directly; the agent has it queued and ready.
+- **PPM delivery (allowed after intro meeting):** the SDR or PRD Gatherer may queue and send the PPM once the contact reaches the Intro Meeting stage. No accreditation check blocks this. Scott sends it directly; the agent has it queued and ready.
 - **Commitment gate (hard block):** before any subscription agreement, term sheet, wire instructions, or acceptance of investment, the Audit and Compliance agent must confirm `accredited_verified` = Yes. If not verified, the action is blocked and escalated to human legal. No agent may bypass.
 - **Cold-drip financial content (hard block):** for any investor-bound contact where `accredited_verified` is not Yes, block all financial content. Touches 1 through 6 are credibility and traction only (Reg D protection).
 - **Prohibited-words scan (every send):** runs before every email, SMS, and voicemail across all funnels.
@@ -301,7 +301,7 @@ General pass criteria for every agent: correct action taken, correct tags and fi
 | Sales Outreach | 5 in an active drip, 2 with `drip_bypass` | Sends only to the 3 without bypass; touches on schedule | Sends to a bypassed contact; wrong timing |
 | SDR | 5 with scores 60 to 90 | Books only the 70+; proposal drafted post-demo | Books a sub-70; skips a 70+ |
 | Onboarding | 5 marked `unit_shipped` | Onboarding sequence runs; handoff to CSM | No handoff; duplicate onboarding |
-| Sentinel | 5 with `last_agent_touch` 3 to 8 days old | Flags only the 5-day-plus; notifies David | Misses a stale lead; false flag |
+| Sentinel | 5 with `last_agent_touch` 3 to 8 days old | Flags only the 5-day-plus; notifies Scott | Misses a stale lead; false flag |
 | Audit and Compliance | 5 investor contacts, 2 `accredited_verified` = Yes | Blocks financial content for the 3 unverified; allows PPM after intro for all; blocks commitment content for unverified | Any financial content to an unverified contact; blocks a permitted PPM |
 | KB Manager | Change one price in the KB | Revisioned; templates updated; agents read new value | Stale value served after change |
 | Quality Control | Seed 2 stuck and 1 mistagged contact | Opens tickets for exactly those 3 | Misses an issue; false ticket |
@@ -369,7 +369,7 @@ These block or gate parts of the build. Track them in WIP-3.
 
 **Forms:** Consumer Inquiry dclY1TB3jA3eitWEQaCo · Accreditation DBQBL51stonmfRcUBsMe · Testimonial OjahkWeVDeozQkfG9dW2
 
-**Team:** Scott Hansbury (CEO and Co-Founder), David Letourneau (President and Co-Founder), Brian Cameron (CFO).
+**Team:** Scott Hansbury (Co-founder & CEO), David Letourneau (President and Co-Founder), Brian Cameron (CFO).
 
 ---
 

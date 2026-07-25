@@ -14,7 +14,7 @@ Product Sales · Investor Capital · OEM/White-Label Partners · Vendor Network
 
 scott@enyrgy.com · 602-321-0322 · enyrgy.com
 
-Author: Scott Hansbury, CEO & Co-Founder, Enyrgy Inc
+Author: Scott Hansbury, Co-founder & CEO, Enyrgy Inc
 
 Last Updated: July 20, 2026 · Version 3.9.3
 
@@ -278,7 +278,7 @@ The dividing line is a rule: agents do anything that benefits from speed, consis
 
 **Stage 2: Drip Nurture (95% Agent, 5% Human Awareness).** The Sales Outreach agent executes the full Consumer Drip or Commercial Drip autonomously. Emails send on schedule from the sending domain so they look personal. The agent sends the Day 3 SMS and branches on the reply, logs opens/clicks/replies, updates lead score via WF-03, and applies status tags as engagement progresses. Human role: awareness only, via a GHL view filtered to lead score 50+. If a clear buying signal appears before the score threshold, manually apply drip_bypass + escalate to human and jump in.
 
-**Stage 3: Qualification and Discovery Call Booking (Agent Initiates, Human Confirms).** At lead score 70+, the SDR agent sends a booking message for the Consumer Discovery Call (David + Scott round-robin, 15 min) or Commercial Discovery (20 min). The Stale Lead Sentinel (WF-04) runs daily at 8am; any active-pipeline contact with last_agent_touch > 5 days gets flagged requires_human_review and notifies David. Human takes over when the call is booked.
+**Stage 3: Qualification and Discovery Call Booking (Agent Initiates, Human Confirms).** At lead score 70+, the SDR agent sends a booking message for the Consumer Discovery Call (David + Scott round-robin, 15 min) or Commercial Discovery (20 min). The Stale Lead Sentinel (WF-04) runs daily at 8am; any active-pipeline contact with last_agent_touch > 5 days gets flagged requires_human_review and notifies Scott. Human takes over when the call is booked.
 
 **Stage 4: Discovery Call (100% Human).** David primary. Capture the key fields (health goal, current solution, Fitzpatrick skin type, finance preference for consumer; business type, locations, decision maker, units for commercial) and run the demo. After the call, mark Has Seen Demo = Yes, that fires WF-05.
 
@@ -292,7 +292,7 @@ The investor funnel has a stricter agent/human split for legal reasons.
 
 **Stage 2: Cold Drip (100% Agent, Compliance-Enforced).** Sales Outreach runs the 8-touch sequence. The Audit and Compliance agent scans every investor-bound message: if accredited_verified is not Yes, zero financial content goes out (Reg D protection). Touches 1-6 are credibility and traction only. Touch 2 and 4 are human tasks (LinkedIn connect, direct call) with agent-provided scripts.
 
-**Stage 3: Intro Meeting (Agent Books, Human Owns).** On reply/booking, SDR moves them to Intro Meeting; David runs the 15-minute call (overview, traction, team). At the end of the call or immediately after, David (or Scott) sends the PPM directly. The agent has it queued and ready. No accreditation required before sending the PPM - this is confirmed compliant per Enyrgy's securities attorney.
+**Stage 3: Intro Meeting (Agent Books, Human Owns).** On reply/booking, SDR moves them to Intro Meeting; David runs the 15-minute call (overview, traction, team). At the end of the call or immediately after, Scott sends the PPM directly. The agent has it queued and ready. No accreditation required before sending the PPM - this is confirmed compliant per Enyrgy's securities attorney.
 
 **Stage 4: PPM Sent and Due Diligence (Human-Led, Agent-Supported).** PRD Gatherer sends a follow-up email gathering questions, timeline, and structure preference into the investor fields. Humans own DD calls (PPM walkthrough, financials, IP, exit). Agents track last-touch and fire Sentinel alerts if 5+ days pass without contact.
 
@@ -491,7 +491,7 @@ Every contact must be categorized into one of five funnels.
   ------------------------------------------------------------------------------------------
   **Name**           **Role**                 **Email**                    **Phone**
   ------------------ ------------------------ ---------------------------- -----------------
-  Scott Hansbury     CEO & Co-Founder         scott@enyrgy.com             602-321-0322
+  Scott Hansbury     Co-founder & CEO         scott@enyrgy.com             602-321-0322
 
   David Letourneau   President & Co-Founder   david@enyrgy.com             602-625-6607
 
@@ -643,7 +643,7 @@ The Consumer Drip now begins with a first-step If/Else "Bypass Check": contacts 
   -----------------------------------------------------------------------------------------------------------------------------
   **Touch**         **Day**           **Type**          **Content**
   ----------------- ----------------- ----------------- -----------------------------------------------------------------------
-  1                 0                 SMS               Instant first response, David from Enyrgy
+  1                 0                 SMS               Instant first response, Scott from Enyrgy
 
   2                 1                 Email             You're doing everything right. So why don't you feel better?
 
@@ -806,12 +806,11 @@ The v3.6 Gmail-SMTP model is retired. GHL allows only one Gmail connection per s
 
   Default sender (Dedicated Header)   Scott Hansbury / scott@enyrgy.com
 
-  David's emails                     Per-workflow From override to david@enyrgy.com
 
   Warmup                              Stage 1, ramp volume gradually; no bulk blasts during warmup
   ----------------------------------------------------------------------------------------------------------------
 
-**Why this solves the constraint:** one authenticated domain can send from ANY \@enyrgy.com address. The per-message From is set per workflow; only the sending domain is authenticated. Both scott@ and david@ send from their own identities, DMARC-aligned, with better deliverability and real delivery stats (Gmail SMTP did not report delivered events).
+**Why this solves the constraint:** one authenticated domain can send from ANY \@enyrgy.com address. The per-message From is set per workflow; only the sending domain is authenticated. scott@ sends from its own identity, DMARC-aligned, with better deliverability and real delivery stats (Gmail SMTP did not report delivered events).
 
 **Operational caution:** the domain is in reputation warmup. Consumer opt-ins one at a time are a healthy warmup pattern. Do NOT bulk-send to the 600+ existing customer list from this domain on day one, ramp gradually.
 
@@ -1114,7 +1113,7 @@ Podcast appearances (proven #1 channel), organic social (Vitamin D deficiency, s
   ------------------------------------------------------------------------------------------
   **Name**           **Role**                 **Email**                    **Phone**
   ------------------ ------------------------ ---------------------------- -----------------
-  Scott Hansbury     CEO & Co-Founder         scott@enyrgy.com             602-321-0322
+  Scott Hansbury     Co-founder & CEO         scott@enyrgy.com             602-321-0322
 
   David Letourneau   President & Co-Founder   david@enyrgy.com             602-625-6607
 
@@ -1230,7 +1229,7 @@ Hosted PDFs (assets.cdn.filesafe.space/GtXjla7Ld1dordsTWrVy/media/): Synthesis G
   Long-Term Nurture   WF-17             7 emails, shared    conversion skills
   ------------------------------------------------------------------------------------
 
-Signature (all consumer nurture): "Carpe diem, / Scott Hansbury / Co-Founder & CEO, Enyrgy / scott@enyrgy.com / 602-321-0322 / enyrgy.com", sent from scott@enyrgy.com to match.
+Signature (all consumer nurture): "Carpe diem, / Scott Hansbury / Enyrgy Inc / Co-founder & CEO / scott@enyrgy.com / 602-321-0322 / enyrgy.com", sent from scott@enyrgy.com to match.
 
 ## Landing-Page Deploy Recipe (proven)
 
