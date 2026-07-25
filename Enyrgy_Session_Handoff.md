@@ -445,4 +445,30 @@ This was confirmed by Enyrgy's securities attorney. CORRECTED Session 13 (July 2
 
 ---
 
+## PRE-LAUNCH DRAFT-AND-HOLD TEST (2026-07-24, in progress)
+
+Five clearly-fake test contacts created in GHL sub-account GtXjla7Ld1dordsTWrVy to verify agents draft normal outreach and that every write holds at the human-approval gate. All identities route to Scott (scott+testN@enyrgy.com) so a mistaken send only reaches Scott. Nothing was approved, declined, or sent; no policy or gate was modified.
+
+**Safety design:** all five carry `drip_bypass` so no GHL-native drip auto-sends (the Paperclip approval gate does NOT hold GHL-native drips). The three sending-workflow trigger tags (`unit_shipped` WF-06, `unit_activated` WF-07, `status_cold` WF-08) were deliberately OMITTED because `drip_bypass` does not gate those non-drip workflows; those persona states are conveyed in the agent task prompt instead. Drafts are driven by explicit task assignment; the gated `send_message` tool holds each at the approval queue.
+
+| Persona | Agent | Contact | Email | GHL contact id | Tags |
+|---------|-------|---------|-------|----------------|------|
+| a Consumer nurture | Sales Outreach | Test One | scott+test1@enyrgy.com | `TluJ7Ip0muEWPKLHm1AS` | test_contact, drip_bypass, type_consumer, status_new, source_website, agent_outreach |
+| b Onboarding | Onboarding | Test Two | scott+test2@enyrgy.com | `DDNLSYtGdTkIWTYDrKAT` | test_contact, drip_bypass, type_consumer, product_consumer_unit, status_won, agent_onboarding |
+| c Review/referral | Referral and Reviews | Test Three | scott+test3@enyrgy.com | `XQY4FrHctRpKx5TCji8L` | test_contact, drip_bypass, type_consumer, product_consumer_unit, sessions_10_complete, status_won, agent_csm |
+| d Reactivation | Reactivation | Test Four | scott+test4@enyrgy.com | `qWitg3dEQuJLHTOpWLJV` | test_contact, drip_bypass, type_consumer, status_reactivation, agent_reactivation |
+| e Investor (holds at gate) | CFO | Test Five | scott+test5@enyrgy.com | `3Sn50wLhDeNdP25oyIbX` | test_contact, drip_bypass, type_investor, status_qualified |
+
+Task prompts (paste-ready, one per agent's Assign Task box): held in scratchpad `agent_task_prompts.md` this session.
+
+**Status (updated):** All 5 agents ran and drafted; all 5 writes are HELD at the human-approval gate (ghlv2 `send-message`, `awaiting_approval`). Nothing sent, no queue item cleared, no policy/gate touched. Consolidated review captured in scratchpad `DRAFT_REVIEW_REPORT.md`.
+
+**Findings:** Copy is compliance-clean and KB-accurate, but off-voice: the live agents carry the KB (facts) and brand rules but NOT the personal voice profile (`StorySelling-OS/style-guide.md`, `about-me.md`) and NOT a skills pass, so drafts break Scott's own style guide (telegraphing, list scaffolding, no signature moves, wrong sign-off). One material compliance flag: the investor PPM draft asserted sharing the PPM without noting it is a placeholder pending securities-attorney approval (KB Section 12).
+
+**Voice fix (Option 2, done):** All 5 funnel emails rewritten in Scott's Mode 2 voice as approved templates the agents SEND (not freehand), humanize-pro reviewed (39-42/50), compliance locked incl. the investor send-preconditions. See `Enyrgy_Agent_Email_Templates_v1.md` (this repo). Architecture note: the consumer nurture lane should run these approved templates, not agent freehand; agent-composed copy is for genuine 1:1s (investor Q&A, replies).
+
+**Remaining:** Option 1 (agent Voice & Style skill for the 1:1 lane, wired from style-guide.md Mode 2 + anti-AI rules + KB Section 14 skill-to-job map); then cleanup (delete the 5 test contacts + their held requests) once Scott approves. Test contact ids and held-request ids recorded in scratchpad.
+
+---
+
 *CONFIDENTIAL - Enyrgy Inc - 5115 N 27th Ave, Bld 66, Phoenix, AZ 85017 - enyrgy.com - Sunlight. Evolved.*
