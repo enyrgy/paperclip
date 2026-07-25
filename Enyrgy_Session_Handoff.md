@@ -467,7 +467,9 @@ Task prompts (paste-ready, one per agent's Assign Task box): held in scratchpad 
 
 **Voice fix (Option 2, done):** All 5 funnel emails rewritten in Scott's Mode 2 voice as approved templates the agents SEND (not freehand), humanize-pro reviewed (39-42/50), compliance locked incl. the investor send-preconditions. See `Enyrgy_Agent_Email_Templates_v1.md` (this repo). Architecture note: the consumer nurture lane should run these approved templates, not agent freehand; agent-composed copy is for genuine 1:1s (investor Q&A, replies).
 
-**Remaining:** Option 1 (agent Voice & Style skill for the 1:1 lane, wired from style-guide.md Mode 2 + anti-AI rules + KB Section 14 skill-to-job map); then cleanup (delete the 5 test contacts + their held requests) once Scott approves. Test contact ids and held-request ids recorded in scratchpad.
+**Voice fix (Option 1, done):** `Enyrgy_Agent_Voice_Style_Skill.md` (this repo) wires Scott's voice (style-guide.md Mode 2) + the anti-AI rules + KB Section 14 skill-to-job map + compliance guardrails into the writing agents, for the 1:1/ad-hoc lane. Encodes the template-lane-vs-1:1-lane rule so agents send approved templates for standard funnel messages and compose only for genuine 1:1s. Includes a condensed instruction-block insert and install steps (load as a company skill and assign to writing agents, or paste the insert into each agent's instruction block; UI install, no API push from this workspace).
+
+**Remaining:** cleanup (delete the 5 test contacts + their held requests) once Scott approves. Test contact ids and held-request ids recorded in scratchpad. Deploy Option 1 + Option 2 into GHL/Paperclip via the UI.
 
 ---
 
