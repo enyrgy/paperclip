@@ -43,14 +43,20 @@ Approved trademarked terms: **BioCalibrated Sunshine** (personalized-dosing and 
 
 ## 4. Clinical and credibility data
 
-- Clinical study result: +111 percent Vitamin D; 100 percent of study participants reached optimal Vitamin D levels; 12-week study.
+- Clinical study result: 12-week study; average Vitamin D increase of 111 percent (participants went from an average of 39.96 ng/mL to 84.20 ng/mL); 100 percent of participants reached optimal Vitamin D levels.
 - Efficiency: 2.4x more efficient than sunlight for Vitamin D synthesis; 2 to 4 minutes equals 2 to 4 hours of mid-day sun (about 60x).
 - Safety: 25,000+ sessions with zero burns and zero adverse events. The device emits over 90 percent UVB and under 10 percent UVA, the opposite of sunlight (about 95 percent UVA). The app calculates each user's personal MED by skin type and shuts off automatically.
 - Return rate under 1 percent, roughly 5 to 10x better than the industry average.
 
 ## 5. Advisory board
 
-Advisory board members: Dr. Bruce Hollis, Dr. Samantha Kimball, Dr. William Grant. Their full approved bios are held by the KB Manager and load here when approved. Do not paraphrase or embellish an advisor's credentials beyond the approved bio. When referencing the board in objection handling, the approved phrasing is "advisory board includes Dr. Bruce Hollis."
+Scientific Advisory Board, approved bios (use as written; do not embellish beyond these):
+
+- **Dr. Bruce Hollis:** over 70,000 citations, widely regarded as the Godfather of Vitamin D Research. He has reviewed and endorsed the Enyrgy platform.
+- **Dr. Samantha Kimball:** designed the MED protocol that powers every session; a leading researcher in UV therapy safety.
+- **Dr. William Grant:** NASA UVB researcher and pioneer in phototherapy science.
+
+Do not paraphrase or embellish an advisor's credentials beyond these approved bios. The short approved phrasing for objection handling remains "advisory board includes Dr. Bruce Hollis." Compliance note: any public claim that an advisor "reviewed and endorsed" the platform must have the advisor's documented consent on file, per FTC endorsement rules.
 
 ## 6. Approved talking points (voiced, use as written)
 
