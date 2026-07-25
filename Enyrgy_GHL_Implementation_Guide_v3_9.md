@@ -302,7 +302,7 @@ The investor funnel has a stricter agent/human split for legal reasons.
 
 ## The HITL Framework
 
-**Agents own:** all lead capture and routing; first-contact outreach (within 5 min); scheduled drip touches; lead scoring and pipeline tracking; task creation for human follow-up; compliance gate enforcement; booking confirmations; post-close onboarding; review/referral requests; reactivation; Sentinel monitoring; monthly partner prospecting.
+**Agents own:** all lead capture and routing; replies to real leads and drip exceptions (GHL sends the scheduled drip touches and the 5-minute first response, not the agents); lead scoring and pipeline tracking; task creation for human follow-up; compliance gate enforcement; booking confirmations; onboarding, review/referral, and reactivation replies and handoffs; Sentinel monitoring; monthly partner prospecting.
 
 **Humans own:** every live call; outreach to warm/personal intros before funnel entry; discovery calls (David primary, Scott backup); investor intro and post-PPM due diligence conversations; commercial demo/ROI walkthrough; proposal negotiation; any contract/legal/financial instrument; any conversation with frustration, confusion, or complex objections; Sentinel-flagged judgment calls; escalated contacts.
 
@@ -320,7 +320,7 @@ The investor funnel has a stricter agent/human split for legal reasons.
 
 # SECTION 3: PAPERCLIP AI AGENT ORG CHART
 
-Lead enters GHL -> Dispatcher identifies funnel type -> correct drip auto-enrolls -> agents send each touch on schedule -> lead score updates after each interaction -> at threshold, SDR books discovery call -> human closes. No engagement after full sequence -> Reactivation re-enrolls after 60-day pause.
+Lead enters GHL -> Dispatcher identifies funnel type -> correct drip auto-enrolls -> GHL sends each scheduled touch, agents handle replies and exceptions -> lead score updates after each interaction -> at threshold, SDR books discovery call -> human closes. No engagement after full sequence -> WF-08 re-enrolls for reactivation after 60-day pause.
 
 ## C-Suite Layer (3 Agents)
 
