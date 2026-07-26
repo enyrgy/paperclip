@@ -280,9 +280,9 @@ The dividing line is a rule: agents do anything that benefits from speed, consis
 
 **Stage 2: Drip Nurture (95% Agent, 5% Human Awareness).** The Sales Outreach agent executes the full Consumer Drip or Commercial Drip autonomously. Emails send on schedule from the sending domain so they look personal. The agent sends the Day 3 SMS and branches on the reply, logs opens/clicks/replies, updates lead score via WF-03, and applies status tags as engagement progresses. Human role: awareness only, via a GHL view filtered to lead score 50+. If a clear buying signal appears before the score threshold, manually apply drip_bypass + escalate to human and jump in.
 
-**Stage 3: Qualification and Discovery Call Booking (Agent Initiates, Human Confirms).** At lead score 70+, the SDR agent sends a booking message for the Consumer Discovery Call (David + Scott round-robin, 15 min) or Commercial Discovery (20 min). The Stale Lead Sentinel (WF-04) runs daily at 8am; any active-pipeline contact with last_agent_touch > 5 days gets flagged requires_human_review and notifies Scott. Human takes over when the call is booked.
+**Stage 3: Qualification and Discovery Call Booking (Agent Initiates, Human Confirms).** At lead score 70+, the SDR agent sends a booking message for the Consumer Discovery Call (Scott, 15 min) or Commercial Discovery (Scott, 20 min). The Stale Lead Sentinel (WF-04) runs daily at 8am; any active-pipeline contact with last_agent_touch > 5 days gets flagged requires_human_review and notifies Scott. Human takes over when the call is booked.
 
-**Stage 4: Discovery Call (100% Human).** David primary. Capture the key fields (health goal, current solution, Fitzpatrick skin type, finance preference for consumer; business type, locations, decision maker, units for commercial) and run the demo. After the call, mark Has Seen Demo = Yes, that fires WF-05.
+**Stage 4: Discovery Call (100% Human).** Scott. Capture the key fields (health goal, current solution, Fitzpatrick skin type, finance preference for consumer; business type, locations, decision maker, units for commercial) and run the demo. After the call, mark Has Seen Demo = Yes, that fires WF-05.
 
 **Stage 5: Post-Demo Follow-Up to Order (Agents Resume).** WF-05 triggers the SDR agent to send the personalized proposal same day. The agent owns the next 12 days (Day 2 SMS, Day 5 objection email, Day 8 first-90-days email, Day 12 human-call flag). If they order before Day 12, WF-06 fires on unit_shipped.
 
@@ -294,7 +294,7 @@ The investor funnel has a stricter agent/human split for legal reasons.
 
 **Stage 2: Cold Drip (100% Agent, Compliance-Enforced).** Sales Outreach runs the 8-touch sequence. The Audit and Compliance agent scans every investor-bound message: if accredited_verified is not Yes, zero financial content goes out (Reg D protection). Touches 1-6 are credibility and traction only. Touch 2 and 4 are human tasks (LinkedIn connect, direct call) with agent-provided scripts.
 
-**Stage 3: Intro Meeting (Agent Books, Human Owns).** On reply/booking, SDR moves them to Intro Meeting; David runs the 15-minute call (overview, traction, team). At the end of the call or immediately after, Scott sends the PPM directly. The agent has it queued and ready. No accreditation required before sending the PPM - this is confirmed compliant per Enyrgy's securities attorney.
+**Stage 3: Intro Meeting (Agent Books, Human Owns).** On reply/booking, SDR moves them to Intro Meeting; Scott runs the 15-minute call (overview, traction, team). At the end of the call or immediately after, Scott sends the PPM directly. The agent has it queued and ready. No accreditation required before sending the PPM - this is confirmed compliant per Enyrgy's securities attorney.
 
 **Stage 4: PPM Sent and Due Diligence (Human-Led, Agent-Supported).** PRD Gatherer sends a follow-up email gathering questions, timeline, and structure preference into the investor fields. Humans own DD calls (PPM walkthrough, financials, IP, exit). Agents track last-touch and fire Sentinel alerts if 5+ days pass without contact.
 
@@ -306,7 +306,7 @@ The investor funnel has a stricter agent/human split for legal reasons.
 
 **Agents own:** all lead capture and routing; replies to real leads and drip exceptions (GHL sends the scheduled drip touches and the 5-minute first response, not the agents); lead scoring and pipeline tracking; task creation for human follow-up; compliance gate enforcement; booking confirmations; onboarding, review/referral, and reactivation replies and handoffs; Sentinel monitoring; monthly partner prospecting.
 
-**Humans own:** every live call; outreach to warm/personal intros before funnel entry; discovery calls (David primary, Scott backup); investor intro and post-PPM due diligence conversations; commercial demo/ROI walkthrough; proposal negotiation; any contract/legal/financial instrument; any conversation with frustration, confusion, or complex objections; Sentinel-flagged judgment calls; escalated contacts.
+**Humans own:** every live call; outreach to warm/personal intros before funnel entry; discovery calls (Scott); investor intro and post-PPM due diligence conversations; commercial demo/ROI walkthrough; proposal negotiation; any contract/legal/financial instrument; any conversation with frustration, confusion, or complex objections; Sentinel-flagged judgment calls; escalated contacts.
 
 **The single most important handoff rule:** when a contact crosses into live human conversation, apply drip_bypass so the agent does not send another automated email while a personal dialogue is active.
 
@@ -475,13 +475,13 @@ Every contact must be categorized into one of five funnels.
   --------------------------------------------------------------------------------------
   **Calendar**               **Type**          **Owner**               **Duration**
   -------------------------- ----------------- ----------------------- -----------------
-  Investor Intro Call        Personal          David                   15 min
+  Investor Intro Call        Personal          Scott                   15 min
 
   Investor Presentation      Collective        Scott + David + Brian   30 min
 
-  Consumer Discovery Call    Round Robin       David + Scott           15 min
+  Consumer Discovery Call    Round Robin       Scott           15 min
 
-  Commercial Discovery       Round Robin       David + Scott           20 min
+  Commercial Discovery       Round Robin       Scott           20 min
 
   Partner Exploratory Call   Personal          Scott                   20 min
 
@@ -517,7 +517,7 @@ Every contact must be categorized into one of five funnels.
 
   Commercial                      David                   Scott
 
-  Investor (Intro)                David                   Scott
+  Investor (Intro)                Scott                   Scott
 
   Investor (Presentation/Close)   Scott                   David
 

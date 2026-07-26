@@ -278,9 +278,9 @@ A fully functional 7-step interactive Vitamin D Deficiency Assessment quiz. Buil
 ### Funnel Ownership
 | Funnel | Primary | Backup |
 |--------|---------|--------|
-| Consumer calls | David | Scott |
-| Commercial calls | David | Scott |
-| Investor Intro | David | Scott |
+| Consumer calls | Scott | - |
+| Commercial calls | Scott | - |
+| Investor Intro | Scott | - |
 | Investor Presentation / Close | Scott | David |
 | Partner / Vendor / Onboarding | Scott | - |
 
@@ -425,7 +425,7 @@ Start each session by reviewing these items:
 - Partner and Vendor treated as separate funnel types (not combined)
 - Finance Preference includes "Rent" as option
 - Investment Structure includes "SAFE" as option
-- Consumer/Commercial calls handled by David (primary) + Scott (backup)
+- Consumer/Commercial calls handled by Scott
 - Partner/Vendor/Investor Presentation handled by Scott
 - Onboarding handled by Scott
 - Toll-free number 888-316-1695 used instead of local Phoenix area code (unavailable)

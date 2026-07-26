@@ -81,7 +81,7 @@ The whole session was a compliance and deployment pass: a full delta audit of ev
 
 **Fix #1 deployed: agent triggers narrowed + Stop-on-Response ON.** Updated the top instruction block on five live agents so GHL owns the scheduled drip and the agents wake only for replies/exceptions (ending the double-send): **Onboarding**, **Sales Outreach**, **Reactivation** (narrowed off the shared trigger tags), **Sentinel** (notify Scott, not David), and **Referral and Reviews** (review ask unblocked with both GBP + Trustpilot links, invite everyone neutrally, ambassador ask paused). IMPORTANT for future edits: each live agent's instruction has a standard **Execution Contract** block that the build pack (`Enyrgy_Paperclip_Agent_Instruction_Blocks.md`) does not contain; only swap the `Role:` through `Facts:` top block and leave the Execution Contract intact. Paired GHL step also done: **Stop on Response = ON** on WF-06, WF-08, and the consumer drip (WF-11 to WF-20).
 
-**David removed from outbound identity (outbound only).** All outbound is Scott (sender, notifications, PPM delivery). David stays in rosters, org, history, and internal escalation (the SDR still hands live conversations to "Scott or David"). Never documented as a removal in client-facing copy.
+**Outbound and booking identity is Scott.** All outbound (sender, notifications, PPM delivery) is Scott, and the booking calendars route to Scott: Consumer, Commercial, and Investor Intro each host with Scott, meeting location set to a phone approach ("Scott will call you at the number you provided"), phone required on the forms. Founder roster, org, history, and internal escalation are unchanged.
 
 **Funnel Ownership Map built.** New doc (`Enyrgy_Funnel_Ownership_Map`, .md + .docx) that ends the GHL-vs-agent confusion per touch: GHL workflow = autopilot (owns the scheduled bulk drip), Paperclip agent = brain (routing, replies, judgment, gated investor sends). Documents `drip_bypass` (manual switch) and Stop-on-Response (automatic switch) as the two clean handoff mechanisms.
 
@@ -436,7 +436,7 @@ This was confirmed by Enyrgy's securities attorney. CORRECTED Session 13 (July 2
 - Testimonial: https://api.leadconnectorhq.com/widget/form/OjahkWeVDeozQkfG9dW2
 
 **Calendars:**
-- Investor Intro (David): https://api.leadconnectorhq.com/widget/booking/JtYjGrq6vF7aBiM3IZiG
+- Investor Intro (Scott): https://api.leadconnectorhq.com/widget/booking/JtYjGrq6vF7aBiM3IZiG
 - Investor Presentation (collective): https://api.leadconnectorhq.com/widget/booking/UpEku45jOQdYpj9qXlM5
 - Consumer Discovery (round-robin): https://api.leadconnectorhq.com/widget/booking/C0hV5CFHUhWOIzs4OedC
 - Commercial Discovery (round-robin): https://api.leadconnectorhq.com/widget/booking/VJ3PDGQsxhiSXhkzUwND
