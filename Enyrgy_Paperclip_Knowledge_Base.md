@@ -164,6 +164,7 @@ The prohibited-words scan runs before every email, SMS, and voicemail across all
 - Arrangement: OEM white-label; Lumanova sells under their brand, Enyrgy manufactures. Exclusivity: Black Unit.
 - GHL tags: `type_partner` + `source_oem_lumanova` + `partnership_status active`.
 - Any OEM matter escalates through the CEO to the human founders.
+- Partner arrangements offered: Enyrgy offers both white-label (a partner sells the platform under their own brand, as Lumanova does) and distribution (a partner distributes to other facilities). Both are real, offered arrangements. Specific terms are handled per deal; confirm with the CEO before quoting figures.
 
 ## 15. Key reference facts (quick lookup)
 
