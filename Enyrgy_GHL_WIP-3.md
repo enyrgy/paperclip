@@ -117,7 +117,7 @@ Last Updated: July 24, 2026 (Session 13)
 | Google Business Profile Setup | IN REVIEW (Session 11) | Local store, Wellness center, video submitted; awaiting Google approval, then grab review link for WF-07 |
 | Import investor contacts | Scott | Complete spreadsheet first |
 | A2P final approval | Complete | Approved and verified by carrier |
-| PPM document in Investor Touch 7 | Scott | Pending securities attorney approval - placeholder in workflow |
+| PPM document in Investor Touch 7 | DONE | Attorney-approved; no longer a placeholder, the approved PPM is used in Touch 7. |
 | Deploy Vitamin D Assessment Lead Magnet | DONE (Session 9) | LIVE at go.enyrgy.com/vitamin-d-assessment; WF-21 capture + WF-22 nurture live |
 | Shopify Abandoned Checkout Recovery | DONE (Session 11) | WF-29 + Railway service (Hobby) + Shopify custom app, all live |
 | Shopify -> GHL Native Integration | DONE (Session 11) | Connected; WF-27 + WF-28 + WF-29 built |
@@ -172,7 +172,7 @@ These placeholders exist in workflows and need real URLs:
 | WF-07 Referral Email | Referral link | Pending Shopify referral app setup |
 | WF-07 Testimonial Email | Testimonial form | https://api.leadconnectorhq.com/widget/form/OjahkWeVDeozQkfG9dW2 |
 | All workflows | Order URL | https://www.enyrgy.com/products/uvb-light-therapy |
-| Investor Touch 7 | PPM download | Pending securities attorney approval |
+| Investor Touch 7 | PPM download | Attorney-approved |
 
 ---
 

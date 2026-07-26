@@ -147,7 +147,7 @@ Never use in client-facing content: treat, cure, diagnose, disease, prescription
 >
 > Accreditation (`accredited_verified` = Yes) IS required only before: wire instructions, or accepting any investment (the points where funds change hands). No exceptions.
 
-The prohibited-words scan runs before every email, SMS, and voicemail across all funnels. All investor materials must be attorney-approved before they load into the KB or GHL. The PPM document itself is a placeholder until the securities attorney approves it.
+The prohibited-words scan runs before every email, SMS, and voicemail across all funnels. All investor materials must be attorney-approved before they load into the KB or GHL. The PPM is attorney-approved and may be sent after the intro meeting.
 
 ## 13. Investor offering details
 

@@ -117,7 +117,7 @@ Good, genuinely, tell me and I am gone. If not, reply and we pick up where we le
 - **Skill lens:** cub + humanize, investor register (credible, calm, no hype, founder-to-investor peer). Deliberately not pushed for edge; investor/securities context wants calm.
 - **SEND PRECONDITIONS (hard):**
   1. Intro meeting is complete.
-  2. **The attached PPM is attorney-approved.** Per KB Section 12 the PPM is a placeholder until Enyrgy's securities attorney approves it. Do NOT send this with a non-approved PPM.
+  2. **The attached PPM is the attorney-approved version.** The PPM is now approved by Enyrgy's securities attorney; confirm you are attaching that approved version, not a draft.
   3. Accreditation is NOT required for PPM delivery (attorney-confirmed). Do not gate this send on `accredited_verified`.
 - **Do NOT** bundle wire instructions, the subscription agreement, or the term sheet in this email. Sub-agreement + term sheet are separate pre-acceptance sends (no accreditation needed). Wire instructions / accepting an investment require `accredited_verified` = Yes.
 - Every CFO write still holds at the human-approval gate by design. Keep it that way.

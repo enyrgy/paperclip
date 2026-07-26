@@ -244,7 +244,7 @@ Gate rules to configure:
 - **Commitment gate (hard block):** before any subscription agreement, term sheet, wire instructions, or acceptance of investment, the Audit and Compliance agent must confirm `accredited_verified` = Yes. If not verified, the action is blocked and escalated to human legal. No agent may bypass.
 - **Cold-drip financial content (hard block):** for any investor-bound contact where `accredited_verified` is not Yes, block all financial content. Touches 1 through 6 are credibility and traction only (Reg D protection).
 - **Prohibited-words scan (every send):** runs before every email, SMS, and voicemail across all funnels.
-- **Securities attorney approval:** all investor materials must be attorney-approved before they are loaded into the KB. The PPM document itself is still pending attorney approval (open item, Section 17); keep it as a placeholder until approved.
+- **Securities attorney approval:** all investor materials must be attorney-approved before they are loaded into the KB. The PPM is now attorney-approved and may be used.
 
 Nitric oxide framing (load into KB, enforce in review): supplements feed the enzymatic route (substrate to eNOS to NO); UVA triggers enzyme-independent photorelease of NO from preformed skin stores. The light pathway is additive. Never say "no supplement produces nitric oxide."
 
@@ -347,7 +347,7 @@ The Implementation Guide recommends six future agents. Add them only after the 1
 
 These block or gate parts of the build. Track them in WIP-3.
 
-- **PPM document** still pending securities attorney approval. Keep the placeholder in Investor Touch 7 until approved. Do not load unapproved investor material into the KB.
+- **PPM document** attorney-approved and used in Investor Touch 7. General rule stands: do not load unapproved investor material into the KB.
 - **Investor Drip Touch 7 in GHL** still needs the `accredited_verified` gate removed from PPM delivery to match the attorney rule (Section 11).
 - **Google Business Profile** setup and review link are required before Referral and Reviews (WF-07) can run its review ask. Verify enyrgy.com in Search Console first.
 - **Vitamin D Assessment lead magnet** needs its GHL webhook inserted and deployment to go.enyrgy.com/vitamin-d-assessment before the Dispatcher can route its leads.

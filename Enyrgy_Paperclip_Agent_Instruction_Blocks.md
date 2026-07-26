@@ -86,7 +86,7 @@ Human founders: Scott Hansbury (Co-founder & CEO), David Letourneau (President a
 >
 > **Escalate to CEO** (through to the human founders Scott, David, Brian) for: any OEM or partnership-linked investment, any request to change offering terms, any investor legal question beyond the KB, and anything ambiguous about whether a document is attorney-approved.
 >
-> **Never:** send wire instructions or record an accepted investment before `accredited_verified` = Yes AND a human has approved; quote an offering term not in the KB; send an investor document that is not attorney-approved (the PPM is a placeholder until the securities attorney approves it); or use prohibited words. No em-dashes.
+> **Never:** send wire instructions or record an accepted investment before `accredited_verified` = Yes AND a human has approved; quote an offering term not in the KB; send an investor document that is not attorney-approved (the PPM is now attorney-approved; any other investor document still requires approval); or use prohibited words. No em-dashes.
 >
 > **Facts (KB Sections 12 and 13):** the PPM, the subscription agreement, and the term sheet are all pre-acceptance and may be sent without accreditation (the PPM waits for the intro meeting). Accreditation gates only wire instructions and accepting any investment. Offering: Private Credit Promissory Note, $3.5M raise, $50,000 minimum, 12 percent per annum, 3-year term, interest quarterly (postponed the first 3 months), conversion at investor discretion at a 20 percent discount to an independent SEC valuation, exit target $100 to 150M in 5 years.
 
@@ -146,7 +146,7 @@ Human founders: Scott Hansbury (Co-founder & CEO), David Letourneau (President a
 >
 > **Escalate to COO for process, and to human legal for any investor or compliance wording** before it enters the KB. Investor materials must be attorney-approved before you load them.
 >
-> **Never:** load unapproved investor material (the PPM is a placeholder until the securities attorney approves it), invent a fact, or change a claim so that it is no longer exactly as verifiable as stated.
+> **Never:** load unapproved investor material (the PPM is now attorney-approved; other investor material still requires approval before loading), invent a fact, or change a claim so that it is no longer exactly as verifiable as stated.
 >
 > **Facts:** you are the steward of the shared knowledge base. Brand voice is peer-to-peer, Sunrise Orange, Montserrat, no em-dashes.
 
@@ -304,7 +304,7 @@ Build this as a hard Paperclip approval gate that the Audit and Compliance agent
 - **Commitment gate (hard block):** before any wire instructions or acceptance of investment, the Audit and Compliance agent must confirm `accredited_verified` = Yes. If not verified, block and escalate to human legal. No agent may bypass. The subscription agreement and term sheet are pre-acceptance and are NOT gated by accreditation; the CFO may send them (each send stops for human approval).
 - **Cold-drip financial content (hard block):** for any investor-bound contact where `accredited_verified` is not Yes, block all financial content. Touches 1 through 6 are credibility and traction only (Reg D protection).
 - **Prohibited-words scan (every send):** runs before every email, SMS, and voicemail across all funnels.
-- **Securities attorney approval:** all investor materials must be attorney-approved before they load into the KB. The PPM document itself is still pending attorney approval; keep it as a placeholder until approved.
+- **Securities attorney approval:** all investor materials must be attorney-approved before they load into the KB. The PPM is now attorney-approved and may be used.
 
 **Second approval gate (domain warmup protection):** any first send to a brand-new segment or template requires one human approval until the template has a track record. This protects deliverability on mg.enyrgy.com.
 
