@@ -17,6 +17,7 @@ Enyrgy is a health-technology company that developed the Enyrgy Vitamin D Primal
 - Red light co-use: 90 percent of customers also use red light therapy.
 - Facility: 5115 N 27th Ave, Bld 66, Phoenix, AZ 85017. Made in USA (relocated from Scottsdale).
 - Founders and team: Scott Hansbury (Co-founder & CEO), David Letourneau (President and Co-Founder), Brian Cameron (CFO).
+- Founder track record (verified, investor-facing): Scott Hansbury, 8 startups, 5 exits, $500M+ in value created. David Letourneau, scaled Alair Homes from 1 to 100+ locations, $750M+ in sales.
 - Active OEM partner: Lumanova (Luma D Light).
 
 ## 2. Product: the Triple-Pathway Advantage
