@@ -46,6 +46,7 @@ Approved trademarked terms: **BioCalibrated Sunshine** (personalized-dosing and 
 
 - Clinical study result: 12-week study; average Vitamin D increase of 111 percent (participants went from an average of 39.96 ng/mL to 84.20 ng/mL); 100 percent of participants reached optimal Vitamin D levels.
 - Clinical study design and limitations (always cite results with this context): small pilot, N = 5 healthy adults, 4 to 6 sessions per week, 12 weeks, no control group. Larger trials are in development. When citing the 111 percent or 100-percent-optimal figures, present them as a small uncontrolled pilot, not as a large or controlled trial.
+- Participant-level results (12-week pilot, about 5 sessions per week, skin types II to IV): P1 (Skin Type II) 38.4 to 86.0; P2 (III) 34.0 to 88.4; P3 (III) 37.0 to 78.0; P4 (IV) 47.0 to 88.7; P5 (III) 43.4 to 79.9 ng/mL. These reconcile to the reported averages (start 39.96, end 84.20). All started insufficient or borderline, all reached optimal, zero dropouts. Present with the same N = 5 pilot caveat as the averages.
 - Efficiency: 2.4x more efficient than sunlight for Vitamin D synthesis; 2 to 4 minutes equals 2 to 4 hours of mid-day sun (about 60x).
 - Safety: 25,000+ sessions with zero burns and zero adverse events. The device emits over 90 percent UVB and under 10 percent UVA, the opposite of sunlight (about 95 percent UVA). The app calculates each user's personal MED by skin type and shuts off automatically.
 - Return rate under 1 percent, roughly 5 to 10x better than the industry average.
