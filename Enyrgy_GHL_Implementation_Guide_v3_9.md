@@ -16,7 +16,9 @@ scott@enyrgy.com · 602-321-0322 · enyrgy.com
 
 Author: Scott Hansbury, Co-founder & CEO, Enyrgy Inc
 
-Last Updated: July 20, 2026 · Version 3.9.3
+Last Updated: July 26, 2026 · Version 3.9.4
+
+**v3.9.4 Changes (Session 14):** Applied the Session 13 accreditation carve-out that was missing here: the subscription agreement and term sheet are PRE-ACCEPTANCE and may be shared before accreditation is confirmed. Accreditation gates ONLY wire instructions and accepting funds. Corrected in Stage 5, the Compliance Gate rules, and the pipeline summary (three locations had wrongly gated the subscription agreement and term sheet behind accreditation). Aligns the Guide with KB Sections 12 and 13.
 
 **v3.9.3 Changes (additive):** Added WF-28 Shopify Order Fulfilled and WF-29 Abandoned Checkout Recovery (fed by a Railway service via Shopify client-credentials), completing the Shopify automation set. v3.9.2 added WF-27, closed the drip bypass-gate gap, removed the Investor Touch 7 accreditation gate, and recorded the Shopify native integration. v3.9.1 added WF-21 to WF-26, the custom fields, and the 617-contact base.
 
@@ -296,7 +298,7 @@ The investor funnel has a stricter agent/human split for legal reasons.
 
 **Stage 4: PPM Sent and Due Diligence (Human-Led, Agent-Supported).** PRD Gatherer sends a follow-up email gathering questions, timeline, and structure preference into the investor fields. Humans own DD calls (PPM walkthrough, financials, IP, exit). Agents track last-touch and fire Sentinel alerts if 5+ days pass without contact.
 
-**Stage 5: Accreditation and Commitment (Human-Led, Agent-Enforced Gate).** When an investor signals intent to invest, the SDR agent sends the accreditation form link. Form completion fires the accredited_verified tag. The Audit and Compliance agent confirms the gate is satisfied before any subscription agreement, term sheet, or wire instructions are shared. ATTORNEY CONFIRMED: accreditation is required before accepting any investment. It is NOT required before sending the PPM.
+**Stage 5: Accreditation and Commitment (Human-Led, Agent-Enforced Gate).** When an investor signals intent to invest, the SDR agent sends the accreditation form link. Form completion fires the accredited_verified tag. The Audit and Compliance agent confirms the gate is satisfied before any wire instructions are shared or any investment is accepted. The subscription agreement and term sheet are pre-acceptance documents and may be shared before accreditation is confirmed. ATTORNEY CONFIRMED: accreditation is required before accepting any investment. It is NOT required before sending the PPM, subscription agreement, or term sheet.
 
 **Stage 6: Close (100% Human).** Subscription agreement, promissory note, KYC/AML, wire, all human. On investment_funded, the contact moves to Active Investor and CSM takes over the ongoing relationship.
 
@@ -402,7 +404,7 @@ Lead enters GHL -> Dispatcher identifies funnel type -> correct drip auto-enroll
 
 -   **PPM delivery:** PPM may be sent to any investor after the intro meeting. Accreditation is NOT required before sharing the PPM. Confirmed compliant per Enyrgy's securities attorney.
 
--   **Commitment gate:** accredited_verified = Yes must be confirmed before any subscription agreement, term sheet, wire instructions, or investment is accepted. No exceptions.
+-   **Commitment gate:** accredited_verified = Yes must be confirmed before any wire instructions or acceptance of investment. The subscription agreement and term sheet are pre-acceptance and are NOT gated by accreditation. No exceptions on the money-moving actions.
 
 -   **Prohibited words scan:** runs before every email/SMS/voicemail across all funnels (see Section 14).
 
@@ -920,7 +922,7 @@ Device anchors premium tier. Revenue from clients upgrading tiers.
 
 # SECTION 17: INVESTOR OFFERING DETAILS
 
-PPM shared after intro meeting. Subscription agreement, term sheet, and wire instructions shared only after accredited_verified = Yes is confirmed.
+PPM shared after intro meeting. The subscription agreement and term sheet are pre-acceptance and may be shared before accreditation. Wire instructions and acceptance of any investment shared only after accredited_verified = Yes is confirmed.
 
   ---------------------------------------------------------------------------------------------------------
   **Item**                            **Detail**
