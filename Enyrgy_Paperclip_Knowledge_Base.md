@@ -45,9 +45,23 @@ Approved trademarked terms: **BioCalibrated Sunshine** (personalized-dosing and 
 ## 4. Clinical and credibility data
 
 - Clinical study result: 12-week study; average Vitamin D increase of 111 percent (participants went from an average of 39.96 ng/mL to 84.20 ng/mL); 100 percent of participants reached optimal Vitamin D levels.
+- Clinical study design and limitations (always cite results with this context): small pilot, N = 5 healthy adults, 4 to 6 sessions per week, 12 weeks, no control group. Larger trials are in development. When citing the 111 percent or 100-percent-optimal figures, present them as a small uncontrolled pilot, not as a large or controlled trial.
 - Efficiency: 2.4x more efficient than sunlight for Vitamin D synthesis; 2 to 4 minutes equals 2 to 4 hours of mid-day sun (about 60x).
 - Safety: 25,000+ sessions with zero burns and zero adverse events. The device emits over 90 percent UVB and under 10 percent UVA, the opposite of sunlight (about 95 percent UVA). The app calculates each user's personal MED by skin type and shuts off automatically.
 - Return rate under 1 percent, roughly 5 to 10x better than the industry average.
+
+### Athlete and bone-health research (supports the Recovery Protocol and the Athlete ICP)
+
+These are findings from the general peer-reviewed literature on UVB and natural vitamin D synthesis, NOT clinical trials of the Enyrgy device. Cite as "research shows," attribute to the study, and do not claim the Enyrgy device itself was tested for these outcomes. Keep it non-medical (Enyrgy is a wellness device): describe how vitamin D supports bone and recovery; never "treat", "heal", "cure", or "fix". Do not overstate ("proves", "definitively superior", "conclusive"); the studies support the mechanism, they are not device trials. Full compilation on file (Research/Bone Health).
+
+Approved figures with sources:
+- Bone: UVB / natural vitamin D synthesis is associated with up to 14 percent higher bone mineral density and 11 percent greater bone mechanical strength versus supplementation or controls (Morita et al., Heliyon 2020: trabecular BMD 61 vs 47 percent in controls; mechanical strength +11 percent, P=0.036).
+- Performance threshold: peak neuromuscular performance is associated with 25(OH)D around 50 ng/mL (Shuler et al., Sports Health 2012).
+- UVB vs pills: narrowband UVB three times per week raised vitamin D more effectively than 1600 IU per day of oral D3 in a randomized trial (Bogh et al., British Journal of Dermatology 2012).
+- Source share and half-life: UVB contributes roughly 80 to 90 percent of circulating 25(OH)D (diet and supplements 10 to 20 percent), with a longer half-life, about 21 to 30 days (Owens et al., Sports Medicine 2018; Holick et al., JBMR 2007).
+- Recovery: adequate vitamin D supports muscle repair and is associated with lower muscle-damage markers (creatine kinase, LDH, C-reactive protein) and less soreness after intense exercise; deficiency (under 30 ng/mL) is associated with impaired strength and slower recovery (Owens 2018; Caballero-Garcia et al., Nutrients 2021; Rojano-Ortega et al., JHND 2023).
+- Fracture healing: natural vitamin D synthesis supports bone callus formation and mineralization at fracture sites (Fischer et al., ECM 2018).
+- Dosing reference used in the research: roughly 10 to 15 minutes of midday sun, three times per week.
 
 ## 5. Advisory board
 
