@@ -38,8 +38,9 @@ The purpose of this doc: end the confusion about GHL workflows vs Paperclip agen
 | Touch | Trigger / timing | Owner | Notes |
 |---|---|---|---|
 | Referral ask ($150 / $100) | unit_activated (WF-07) | **GHL** | Scheduled milestone ask. Use the voice-fixed referral template. |
-| Review ask | unit_activated | **BLOCKED** | Do NOT send until the Google Business Profile review link is live in the KB. Both engines must hold it. |
+| Review ask | unit_activated | **GHL** | Review links live: GBP + Trustpilot (KB Section 3). Invite every customer neutrally, no review-gating (FTC/Google/Trustpilot). |
 | Referral reply / question | inbound | **Agent** (Referral & Reviews) | |
+| Ambassador ask | customer milestone | **PAUSED** | Do not send until the ambassador program is finalized (perks confirmed, FTC disclosure requirement in place, documented in the KB). |
 
 **Stop on Response: ON** on WF-07. A single ask, but a reply should still stop any follow-up and hand to the agent.
 

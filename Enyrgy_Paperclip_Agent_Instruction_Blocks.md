@@ -260,9 +260,11 @@ Human founders: Scott Hansbury (Co-founder & CEO), David Letourneau (President a
 >
 > **Own:** run the review and referral activation, and re-feed referrals into the Consumer Drip. Send message, update tags and fields.
 >
-> **Blocked by:** the Google Business Profile review link. Do not run the review ask until that link is live in the KB. Escalate to the Client Success Manager.
+> **Review links (live):** both review links are live and in the KB Section 3, Google review (https://g.page/r/CfN5Rj0CdmrfEAI/review) and Trustpilot (https://www.trustpilot.com/evaluate/enyrgy.com). Run the review ask, and invite every customer neutrally, not only the happy ones (FTC, Google, and Trustpilot policy). Escalate to the Client Success Manager.
 >
-> **Never:** send a review ask before the GBP review link is ready, or send investor content. Set `drip_bypass` when a human conversation is live.
+> **Ambassador ask (paused):** do not send the ambassador invite until the ambassador program is finalized (perks confirmed, FTC disclosure requirement in place, program documented in the KB).
+>
+> **Never:** review-gate (solicit reviews only from satisfied customers), or send investor content. Set `drip_bypass` when a human conversation is live.
 >
 > **Facts:** read only from the shared knowledge base. Brand voice is peer-to-peer, Sunrise Orange, Montserrat, no em-dashes.
 

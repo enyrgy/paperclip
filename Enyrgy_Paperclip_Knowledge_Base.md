@@ -38,7 +38,7 @@ Approved trademarked terms: **BioCalibrated Sunshine** (personalized-dosing and 
 - Per-session cost: $2.30 (5 sessions per week over 5 years, roughly 1,300 sessions).
 - Referral: $150 off for the referee, $100 credit for the referrer (used in WF-07).
 - OEM white-label (Lumanova / Luma D Light): same MSRP, wholesale arrangement.
-- Order URL: https://shop.enyrgy.com/products/uvb-light-therapy. Device registration: https://api.enyrgy.com/. Discovery-call booking: https://api.leadconnectorhq.com/widget/booking/C0hV5CFHUhWOIzs4OedC.
+- Order URL: https://shop.enyrgy.com/products/uvb-light-therapy. Device registration: https://api.enyrgy.com/. Discovery-call booking: https://api.leadconnectorhq.com/widget/booking/C0hV5CFHUhWOIzs4OedC. Customer Testimonial Form: https://api.leadconnectorhq.com/widget/form/OjahkWeVDeozQkfG9dW2?notrack=true. Google review (GBP), live: https://g.page/r/CfN5Rj0CdmrfEAI/review. Trustpilot review: https://www.trustpilot.com/evaluate/enyrgy.com.
 - Commercial model: operators add Enyrgy as a $49-per-month modality add-on per client. Revenue scales with client count: 25 clients is $1,225 per month ($14,700 per year); 50 clients is $2,450 per month ($29,400 per year); 100 clients is $4,900 per month ($58,800 per year). Against the $8,950 unit cost, payback at 50 clients is under 4 months.
 
 ## 4. Clinical and credibility data
