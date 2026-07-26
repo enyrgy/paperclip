@@ -1,7 +1,7 @@
 # ENYRGY GHL - Session Handoff
 **Load this at the start of the next session. It is the orientation layer. The WIP tracker and Implementation Guide v3.9 are the source of truth.**
 
-Date of this handoff: July 22, 2026 (end of Session 13)
+Date of this handoff: July 26, 2026 (end of Session 14)
 
 ---
 
@@ -58,6 +58,34 @@ Paste or attach this file at the start of a new chat along with `Enyrgy_GHL_WIP-
 **Team:** Scott Hansbury (Co-founder & CEO), David Letourneau (President & Co-Founder), Brian Cameron (CFO).
 
 ---
+
+## WHAT WAS DONE (Session 14, July 25-26, 2026)
+
+The whole session was a compliance and deployment pass: a full delta audit of every live funnel's copy, six KB additions, correction of a stale investor accreditation gate in the live workflow, deployment of the agent-trigger narrowing (Fix #1), and a Railway false-alarm fix. Nothing here changed the org architecture; it hardened what already exists.
+
+**Full compliance delta audit of ALL live funnel copy.** Reviewed every live GHL email and SMS, one touch at a time, across Recovery (WF-14), Synthesis Gap (WF-16), Long-Term Nurture (WF-17), Winter (WF-19/20), VD Assessment (WF-21/22), Testimonial (WF-25/26), Abandoned Checkout (WF-29), the Investor Drip, and the Commercial Drip. Corrected copy was handed back for paste into GHL (Scott confirmed all pasted). Systemic fixes found and applied:
+- **Prohibited words / em-dashes:** removed `fix`, `heal`, `treating`, and every em-dash (the Investor and Commercial drips were full of em-dashes and needed a sweep).
+- **Guarantee vs lab-timeline contradiction:** several emails tied the 30-day money-back window to an 8-to-12-week lab retest ("risk only a lab fee"), which is impossible inside 30 days. Decoupled into two separate beats everywhere: labs are your own long-term proof, the 30-day guarantee is an independent keep-or-return decision ("you do not have to wait for those results to decide").
+- **Light-does-five vs three pathways (unified frame, now in the KB):** sunlight produces FIVE outputs; Enyrgy delivers the THREE Triple-Pathway benefits. Fixed the biologically wrong linear cascade to parallel outputs, and corrected wavelength misattribution (nitric oxide = UVA photorelease, serotonin = daytime light, not downstream of vitamin D).
+- **Study-caveat discipline:** the 100%-optimal and 39.96-to-84.20 figures are always cited with the small N=5 pilot context.
+- **FTC testimonials (WF-25/26):** gift-card incentive reframed so it is not positivity-gated ("whatever your honest take"), consent line added for the reply path, and two operational flags recorded (disclose the material connection when publishing; typicality-screen consumer health testimonials).
+- **Commercial economics (recurring number errors):** deficiency stat `89.9%` corrected to **77 percent of indoor adults** (appeared in 3 touches); treatments `30,000+` to **25,000+**; return rate never "zero"/"0%" to **under 1 percent**; payback always tied to **50 clients** (not "modest volume"); advisor bio reverted to the approved "Godfather of Vitamin D Research" wording (dropped the unverifiable "most cited"); "clinical/scientifically validated" softened to "clinical study"/"science-backed"; and the fabricated "$50,000 to $187,500" revenue range replaced with the KB figures ($14,700 / $29,400 / $58,800 at 25/50/100 clients).
+
+**Six KB additions (committed and synced to the live skill).** Repo now at commit `0062ce4e`; the live `enyrgy-knowledge-base` Company Skill was re-pasted to match.
+- Section 1: founder track record (Scott Hansbury, 8 startups, 5 exits, $500M+ created; David Letourneau, Alair Homes 1 to 100+ locations, $750M+ in sales).
+- Section 2: vitamin D synthesis requires UVB in the 280 to 315 nm band (lamps do not emit it); sunlight photochemistry (five parallel outputs) plus the "light does five, Enyrgy delivers three" rule of thumb.
+- Section 3: payment options (pay in full, finance, or rent monthly; specific rates not yet in the KB, confirm before quoting).
+- Section 4: participant-level pilot results (P1-P5, reconcile exactly to the 39.96 / 84.20 averages); one-session-per-day cap (so "2 to 4 minutes a day" is accurate).
+
+**Investor accreditation gate corrected in the LIVE workflow.** The live GHL "Accreditation Gate - PPM Check" branch still gated the PPM on `accredited_verified = Yes`, contradicting the attorney rule (accreditation is NOT required to share the PPM or terms; it gates only wire/acceptance). Scott removed the branches. The gate email was redrafted to state accreditation is not required to review the offering, and the final touch reverted to credibility-only for un-met investors (no offering terms in a cold broadcast, Reg D general-solicitation protection). Also caught a material term error in the final touch: `$2.5M` corrected to **$3.5M** raise.
+
+**Fix #1 deployed: agent triggers narrowed + Stop-on-Response ON.** Updated the top instruction block on five live agents so GHL owns the scheduled drip and the agents wake only for replies/exceptions (ending the double-send): **Onboarding**, **Sales Outreach**, **Reactivation** (narrowed off the shared trigger tags), **Sentinel** (notify Scott, not David), and **Referral and Reviews** (review ask unblocked with both GBP + Trustpilot links, invite everyone neutrally, ambassador ask paused). IMPORTANT for future edits: each live agent's instruction has a standard **Execution Contract** block that the build pack (`Enyrgy_Paperclip_Agent_Instruction_Blocks.md`) does not contain; only swap the `Role:` through `Facts:` top block and leave the Execution Contract intact. Paired GHL step also done: **Stop on Response = ON** on WF-06, WF-08, and the consumer drip (WF-11 to WF-20).
+
+**David removed from outbound identity (outbound only).** All outbound is Scott (sender, notifications, PPM delivery). David stays in rosters, org, history, and internal escalation (the SDR still hands live conversations to "Scott or David"). Never documented as a removal in client-facing copy.
+
+**Funnel Ownership Map built.** New doc (`Enyrgy_Funnel_Ownership_Map`, .md + .docx) that ends the GHL-vs-agent confusion per touch: GHL workflow = autopilot (owns the scheduled bulk drip), Paperclip agent = brain (routing, replies, judgment, gated investor sends). Documents `drip_bypass` (manual switch) and Stop-on-Response (automatic switch) as the two clean handoff mechanisms.
+
+**Railway false "Deploy failed" emails fixed.** Root cause was NOT the app: an orphaned duplicate service named `paperclip` (no domain, no volume) auto-deploys from the same repo/branch and fails its `/api/health` healthcheck on every push, while the real app `enyrgy-paperclip` deploys fine. Disabled the orphan's GitHub auto-deploy (its Settings > Source); failure emails stopped (confirmed). The orphan is not yet deleted (optional cleanup; delete via its Settings > Danger). Recorded in project memory (`railway-orphan-paperclip-service.md`). Its canvas tile does not render; open it via command palette or direct service URL.
 
 ## WHAT WAS DONE (Session 13, July 22, 2026)
 
@@ -305,7 +333,7 @@ The uploaded v3.8.4 was the correct ground truth (not v3.7 as previously thought
 
 This was confirmed by Enyrgy's securities attorney. CORRECTED Session 13 (July 22): an earlier draft wrongly gated the subscription agreement and term sheet behind accreditation. They are pre-acceptance (the subscription agreement carries the accreditation questionnaire itself, so it must reach the investor before verification can happen). Accreditation gates only the two money-moving actions: wire instructions and accepting funds. The workflow change: remove the accredited_verified gate from Touch 7 PPM delivery AND from subscription-agreement / term-sheet delivery. Keep the gate on wire instructions and acceptance of funds.
 
-**Status: corrected in the Implementation Guide and the GHL workflow (Session 11), and re-corrected in the KB (Section 12 and 13) Session 13 to reflect the pre-acceptance carve-out. In Paperclip, this rule is enforced by the CFO-scoped ask-first gate (a human confirms accreditation at the approval step) plus the KB rule the agents read. Complete.**
+**Status: corrected in the Implementation Guide and the GHL workflow (Session 11), re-corrected in the KB (Section 12 and 13) Session 13, and a residual live-workflow gate was found and removed in Session 14.** Session 14 note: the live Investor Drip still carried a stale "Accreditation Gate - PPM Check" branch that gated the PPM on `accredited_verified = Yes`, contradicting this rule. Scott removed the branches; the gate email and final touch were redrafted (credibility-only for un-met investors). Still OPEN: verify the LIVE Paperclip agent blocks that enforce this rule (Audit and Compliance, CFO, and the Compliance Gate config) match the corrected accreditation logic, since the workflow proved a stale version can persist. In Paperclip, the rule is enforced by the CFO-scoped ask-first gate plus the KB rule the agents read.
 
 ---
 
@@ -315,6 +343,10 @@ This was confirmed by Enyrgy's securities attorney. CORRECTED Session 13 (July 2
 
 | Task | Owner | Notes |
 |------|-------|-------|
+| Verify LIVE investor/compliance agent blocks | Scott / next session | Session 14: the live GHL workflow had a stale accreditation gate. Confirm the LIVE Audit and Compliance, CFO, and Compliance Gate agent instructions match the corrected rule (PPM not gated, subscription/term sheet not gated, accreditation only before funds move, Scott sends the PPM). Swap only the top block, keep the Execution Contract. |
+| Fix #1 agent narrowing + Stop-on-Response | DONE (Session 14) | Onboarding, Sales Outreach, Reactivation narrowed off shared triggers; Sentinel notifies Scott; Referral and Reviews review-ask unblocked (GBP + Trustpilot, no gating), ambassador paused. Stop on Response ON on WF-06, WF-08, and the consumer drip (WF-11 to WF-20). Double-send resolved. |
+| Full compliance delta audit of live copy | DONE (Session 14) | Every live email/SMS across all funnels reviewed and corrected (prohibited words, em-dashes, KB-claim drift, guarantee/timeline decouple, light-does-five/three frame, FTC testimonials, investor Reg D, commercial economics). Scott pasted all corrections into GHL. |
+| Delete orphaned Railway `paperclip` service | Optional (Session 14) | Auto-deploy already disabled (stopped the false "Deploy failed" emails). Deleting the duplicate service is optional final cleanup: its Settings > Danger > Delete, confirm by typing `paperclip`. Do NOT touch `enyrgy-paperclip` (the real app). |
 | Google Business Profile - Enyrgy setup | IN PROGRESS (Session 11) | Set up as Local store (eligible: users take treatments on-site), category Wellness center. Google requires VIDEO verification (Search Console instant was overridden, likely shared GCU address). Scott records the live walkthrough video at the office next. Then grab review link, wire into WF-07. |
 | Toll-free A2P Verification (888-316-1695) | PENDING carrier (Session 11) | Separate from 10DLC. Was Rejected (30496 use-case inconsistency), corrected to marketing-consistent, resubmitted, now "Verification in progress." No SMS from the toll-free until it passes. |
 | Ledgerix Pro LLC GBP transfer | Scott | Transfer to scott@ledgerixpro.com - blocked by Google 7-day hold (should have cleared ~July 5) |
@@ -435,11 +467,12 @@ This was confirmed by Enyrgy's securities attorney. CORRECTED Session 13 (July 2
 | Enyrgy_Paperclip_Phase2_Setup_Guide | v1.0 | .md + .docx | The Phase 2 build plan. Upload to project. |
 | Enyrgy_GHL_Implementation_Guide | v3.9.2 | .md + .docx | Ground truth. Session 11 additive: WF-27, all-five-drips bypass gate closed, Investor Touch 7 change, Shopify connected. Upload to project. |
 | Enyrgy_GHL_WIP-3 | Session 12 | .md + .docx | Session 12 log added (Paperclip deploy, budget cap, GHL token, no-native-connector finding). Upload to project. |
-| Enyrgy_Paperclip_Agent_Instruction_Blocks | Session 13 | .md + .docx | All 16 role blocks (short names, no "Agent" suffix) + compliance gate + workflow map. On device at ~/Projects/enyrgy-paperclip-core. A CFO block was added this session (in chat). Upload to project. |
-| Enyrgy_Paperclip_Knowledge_Base | v2, Session 13 | .md + .docx | Shared agent-read KB, all 15 sections, voice-passed. Corrected accreditation rule (sub-agreement + term sheet pre-acceptance). On device + loaded into Paperclip as the enyrgy-knowledge-base Company Skill. Upload to project. |
+| Enyrgy_Paperclip_Agent_Instruction_Blocks | Session 14 | .md + .docx | All 16 role blocks + CFO + compliance gate + workflow map. Session 14: the narrowed blocks (Onboarding, Sales Outreach, Reactivation, Sentinel, Referral and Reviews) were DEPLOYED to the live agents (top block only; each live agent also has a standard Execution Contract not in this pack). On device at ~/Projects/enyrgy-paperclip-core. Upload to project. |
+| Enyrgy_Funnel_Ownership_Map | Session 14 | .md + .docx | Per-touch GHL-vs-agent ownership (autopilot vs brain), drip_bypass + Stop-on-Response handoff, Fix #1 rationale. On device. Upload to project. |
+| Enyrgy_Paperclip_Knowledge_Base | v2, Session 14 | .md + .docx | Shared agent-read KB, 15 sections, voice-passed. Session 14 additions: founder track record (S1), UVB waveband + sunlight five-outputs/rule-of-thumb (S2), payment options (S3), participant-level pilot data + one-session-a-day (S4). Repo committed (0062ce4e) and re-synced to the live enyrgy-knowledge-base Company Skill. Upload to project. |
 | Enyrgy_ICP_Dartboard | current | .md + .docx | Em-dashes and icons removed; brand .docx built. Upload to project. |
 | Enyrgy_B2B_ICP_Dartboard | current | .md + .docx | Em-dashes and icons removed; brand .docx built. Upload to project. |
-| Enyrgy_Session_Handoff | Session 13 | .md + .docx | This document. Upload to project, replace prior handoff. |
+| Enyrgy_Session_Handoff | Session 14 | .md + .docx | This document. Upload to project, replace prior handoff. |
 
 **Action for Scott:** upload the cleaned `.md` files (VD Assessment Deployment Runbook, VD Assessment Nurture and Segmentation, lead-magnets, Brand Style Guide v2, Phase 2 Setup Guide, v3.9 Implementation Guide, WIP-3, both ICP Dartboards, and this handoff) plus the lead-magnet `.html` into the project to replace the prior versions. Project files are read-only in Claude, so uploads are required for the next session to have current context.
 
