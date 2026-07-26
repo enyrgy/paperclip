@@ -364,7 +364,7 @@ This was confirmed by Enyrgy's securities attorney. CORRECTED Session 13 (July 2
 
 | Task | Owner | Notes |
 |------|-------|-------|
-| Investor Presentation Calendar conflict detection | Scott/David/Brian | Still showing all times available despite 3 calendars connected - parked |
+| Calendar conflict detection | RESOLVED (Session 14) | Root cause: the calendar was connected but "check for conflicts" was OFF, so GHL never read the real schedule (connected does NOT equal conflict-checking). Turned conflict-checking ON at the user level, which fixed availability across all of Scott's host calendars. Gotcha for the collective Investor Presentation calendar: enable conflict-checking for each host. Second gotcha: an all-day event marked "Busy" blocks the entire day (zero slots) - set such events to "Free" if they should not block bookings. |
 | Shopify Referral App | Scott | Install Referral Candy or Smile.io |
 | Trustpilot connect Shopify | Scott | Automate review invitations post-purchase |
 | Commercial form SMS consent | DONE (Session 11) | Consent text + checkbox added to Commercial Inquiry Form. |
