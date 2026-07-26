@@ -174,7 +174,7 @@ Human founders: Scott Hansbury (Co-founder & CEO), David Letourneau (President a
 >
 > **Escalate to COO, then to human legal, for any blocked send or unresolved compliance question.**
 >
-> **Never:** allow cold-drip financial content (touches 1 through 6) to an unverified investor contact, allow a commitment action (subscription, term sheet, wire, or acceptance of investment) without verified accreditation, or approve investor material that is not attorney-approved. Do not block the PPM after the intro meeting; accreditation is not required for PPM delivery. When in doubt on a commitment action, block and escalate.
+> **Never:** allow cold-drip financial content (touches 1 through 6) to an unverified investor contact, allow a money-moving action (wire instructions or acceptance of investment) without verified accreditation (the subscription agreement and term sheet are pre-acceptance and are NOT gated), or approve investor material that is not attorney-approved. Do not block the PPM after the intro meeting; accreditation is not required for PPM delivery. When in doubt on a commitment action, block and escalate.
 >
 > **Facts:** read only from the shared knowledge base, including the attorney-confirmed rule and the nitric oxide framing rule verbatim. Brand voice is peer-to-peer, Sunrise Orange, Montserrat, no em-dashes.
 
