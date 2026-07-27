@@ -584,25 +584,35 @@ function buildHumanizedActionPreview(input: {
       ? "It can permanently change or remove something, so we’re checking with you first."
       : "It can change something, so we’re checking with you first.";
 
+  const approveLine =
+    input.tool.risk === "destructive"
+      ? "**If you approve:** the agent makes this change once, now — it may not be reversible."
+      : "**If you approve:** the agent runs this action once, now.";
+  const declineLine =
+    "**If you decline:** nothing changes — the action is skipped and the agent moves on without it.";
+
+  const fieldLines: string[] = [];
   let parsed: unknown;
   try {
     parsed = JSON.parse(input.argumentsSummary.summary);
   } catch {
-    return trustLine;
+    parsed = null;
   }
-  if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return trustLine;
-
-  const fieldLines: string[] = [];
-  for (const [key, value] of Object.entries(parsed as Record<string, unknown>)) {
-    if (fieldLines.length >= 6) break;
-    if (isIdentifierArgumentKey(key)) continue;
-    const rendered = humanizeArgumentValue(value);
-    if (rendered === null) continue;
-    fieldLines.push(`**${humanizeArgumentKey(key)}:** ${rendered}`);
+  if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) {
+    for (const [key, value] of Object.entries(parsed as Record<string, unknown>)) {
+      if (fieldLines.length >= 6) break;
+      if (isIdentifierArgumentKey(key)) continue;
+      const rendered = humanizeArgumentValue(value);
+      if (rendered === null) continue;
+      fieldLines.push(`**${humanizeArgumentKey(key)}:** ${rendered}`);
+    }
   }
 
-  if (fieldLines.length === 0) return trustLine;
-  return [trustLine, "", ...fieldLines].join("\n");
+  // Structure: what's happening → the specifics → what approve/decline each do.
+  const sections: string[] = [trustLine];
+  if (fieldLines.length > 0) sections.push("", ...fieldLines);
+  sections.push("", approveLine, declineLine);
+  return sections.join("\n");
 }
 
 const BUILTIN_TOOLS: ToolGatewayDescriptor[] = [
