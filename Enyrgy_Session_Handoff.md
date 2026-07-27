@@ -1,7 +1,7 @@
 # ENYRGY GHL - Session Handoff
 **Load this at the start of the next session. It is the orientation layer. The WIP tracker and Implementation Guide v3.9 are the source of truth.**
 
-Date of this handoff: July 26, 2026 (end of Session 14)
+Date of this handoff: July 27, 2026 (end of Session 15)
 
 ---
 
@@ -58,6 +58,24 @@ Paste or attach this file at the start of a new chat along with `Enyrgy_GHL_WIP-
 **Team:** Scott Hansbury (Co-founder & CEO), David Letourneau (President & Co-Founder), Brian Cameron (CFO).
 
 ---
+
+## WHAT WAS DONE (Session 15, July 27, 2026)
+
+The session took Paperclip from "built" toward "running": the live KB skill was repaired and re-synced, the first heartbeats were brought online, and the two things that made the running system unusable day-to-day — an approval-card flood and cards with no context — were both fixed.
+
+**Approval-card flood stopped (Ask-first policy rebalanced).** The "Ask first" gate was firing a review card on ordinary internal CRM housekeeping (tags, tasks, contact updates, stage moves), so Scott was drowning in low-value approvals and letting them auto-decline. Rebalanced the Rules (Apps > Advanced setup > Rules) so internal-organization writes auto-run while prospect-facing and money-adjacent actions stay gated. Added one rule — **"When any agent uses 13 specific actions -> Allow"** (the read/search actions plus Add/Remove Contact Tags, Create Task, Update Contact, Move Opportunity Stage) — and ordered the rule list so the first match resolves correctly: **row 1 = CFO -> Ask first** (the investor/money agent stays fully gated on every write), **row 2 = the 13-action Allow**, then the per-tool Ask-first rules below. Still gated for everyone: **Send Message, Enroll In Workflow, Remove From Workflow** (all change what a prospect receives). The five per-tool Ask-first rules the Allow rule now supersedes (Add Contact Tags, Create Task, Move Opportunity Stage, Remove Contact Tags, Update Contact) are dead-but-harmless; can be toggled off to declutter. Verified live with Test-a-rule: SDR+Add Contact Tags = Allow, any+Send Message = Ask first, CFO+Add Contact Tags = Ask first. Design note: tagging is auto-allowed even though a tag can trigger a GHL drip, because that drip copy is the human-approved static sequence; the real send risk is the agent composing a fresh 1:1 message, which is `Send Message` and stays gated.
+
+**Approval cards now explain themselves (code, deployed).** The review-queue card ("Waiting for your OK") showed only a generic "we're checking with you first" line plus raw field values, with no indication of what Approve vs Decline actually does — so the cards were unactionable. Restructured the humanized preview in `server/src/services/tool-gateway.ts` (`buildHumanizedActionPreview`) into three parts: what's happening, the specifics, and an explicit **If you approve / If you decline** outcome pair (destructive actions warn the change may be irreversible). Server-side change, so it applies to every pending and future card automatically. Committed `04855fad`, pushed to master, deployed on Railway. This is a fork divergence from upstream Paperclip UI copy.
+
+**Live KB skill repaired and re-synced.** The `enyrgy-knowledge-base` Company Skill had accumulated duplicated/malformed frontmatter and a doubled sentence from prior "select-all paste" syncs; the KB Manager auto-repaired it but that reverted the Session-14 edits. Provided the full clean KB body for a careful single-paste (keep frontmatter, replace body only), which Scott confirmed fixed. **Sync lesson:** never select-all-paste the KB into Skill Studio; replace the body only and verify no duplicate footer.
+
+**Duplicate voice skill removed.** Two `enyrgy-agent-voice-style` skills existed — one attached to 8 agents (the real one) and a bundled 0-agent duplicate created from the repo `skills/enyrgy-agent-voice-style/SKILL.md`. Removed the bundled copy (`git rm -r skills/enyrgy-agent-voice-style/`, committed + pushed); kept the root reference doc `Enyrgy_Agent_Voice_Style_Skill.md`.
+
+**PPM placeholder guardrail lifted (attorney-approved).** The PPM is now attorney-approved, so the "placeholder / do not send" guardrail was removed across the KB (Section 12), the agent instruction blocks, and the guides. PPM may be sent after the intro meeting; accreditation still gates only wire instructions and accepting investment (unchanged attorney rule).
+
+**Anthropic billing fixed -> heartbeats unblocked.** Sentinel and other heartbeats were failing with `acpx_session_init_failed` / "Credit balance is too low." Root cause was two separate caps at console.anthropic.com: the prepaid **credit balance** AND the monthly **spend limit** — topping up credits alone does not override the monthly cap. Scott added credits (settings/billing) and raised the monthly limit (settings/limits); Sentinel then ran successfully. Staged go-live is underway (bring heartbeat groups online one at a time; CEO/COO/CRO heartbeats remain OFF — their earlier spend was a one-time escalation/recovery storm during the KB/credit incident, not heartbeat cost).
+
+**Budget model clarified (no company-wide cap exists).** Paperclip has per-agent and per-project budgets (Costs > Budgets) but **no single org-wide budget field**; the effective ceiling is the sum of per-agent caps (~$59/mo). Heartbeats replay large context on every wake so even no-op wakes cost; GHL drip emails are static (~$0 Anthropic); variable cost tracks agent decisions, not message volume.
 
 ## WHAT WAS DONE (Session 14, July 25-26, 2026)
 
