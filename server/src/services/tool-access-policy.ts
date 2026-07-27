@@ -610,13 +610,10 @@ function hasConfig(config: Record<string, unknown> | null | undefined) {
   return Boolean(config && Object.keys(config).length > 0);
 }
 
-function assertSupportedGenericPolicyShape(
+function assertPolicyConfigShape(
   policyType: string,
-  conditions: Record<string, unknown> | null | undefined,
   config: Record<string, unknown> | null | undefined,
 ) {
-  assertGenericPolicyType(policyType);
-  assertSupportedPolicyConditions(conditions);
   if (policyType !== "rate_limit" && hasConfig(config)) {
     throw unprocessable(`Tool policy type '${policyType}' does not support config`);
   }
@@ -628,6 +625,16 @@ function assertSupportedGenericPolicyShape(
       throw unprocessable("Rate-limit policy config requires positive numeric limit and windowSeconds");
     }
   }
+}
+
+function assertSupportedGenericPolicyShape(
+  policyType: string,
+  conditions: Record<string, unknown> | null | undefined,
+  config: Record<string, unknown> | null | undefined,
+) {
+  assertGenericPolicyType(policyType);
+  assertSupportedPolicyConditions(conditions);
+  assertPolicyConfigShape(policyType, config);
 }
 
 async function getGenericPolicyRow(db: Db, companyId: string, policyId: string) {
@@ -805,7 +812,18 @@ export function toolAccessPolicyService(db: Db) {
     const nextPolicyType = input.body.policyType ?? existing.policyType;
     const nextConditions = input.body.conditions !== undefined ? input.body.conditions ?? null : existing.conditions ?? null;
     const nextConfig = input.body.config !== undefined ? input.body.config ?? null : existing.config ?? null;
-    assertSupportedGenericPolicyShape(nextPolicyType, nextConditions, nextConfig);
+    // Validate only what this update actually changes. A metadata-only update
+    // (enable/disable, reorder, rename) must not re-assert config/conditions the
+    // caller isn't touching — some rules were seeded by earlier builds with config
+    // blobs that predate current validation, and re-checking them here would block
+    // toggling those rules on/off. The full shape is still enforced on create.
+    assertGenericPolicyType(nextPolicyType);
+    if (input.body.conditions !== undefined) {
+      assertSupportedPolicyConditions(nextConditions);
+    }
+    if (input.body.config !== undefined || input.body.policyType !== undefined) {
+      assertPolicyConfigShape(nextPolicyType, nextConfig);
+    }
     const now = new Date();
     const [policy] = await db
       .update(toolPolicies)
