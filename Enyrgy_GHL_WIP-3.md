@@ -1,7 +1,7 @@
 # ENYRGY GHL - Work In Progress (WIP) Tracker
 **Review this at the start of every session**
 
-Last Updated: July 24, 2026 (Session 13)
+Last Updated: July 28, 2026 (Session 15). See `Enyrgy_Master_TODO.md` for the consolidated open-items punch list.
 
 ---
 
@@ -17,11 +17,11 @@ Last Updated: July 24, 2026 (Session 13)
 | Vitamin D Assessment Lead Magnet | LIVE - WF-21 capture + WF-22 nurture (Session 9) |
 | Testimonial Collection System | LIVE - form video field, WF-25, WF-26 (Session 10) |
 | Shopify / GHL Integration | LIVE (Session 11): native connector + WF-27 + WF-28 fulfillment + WF-29 abandoned-checkout recovery (Railway service). Remaining: upgrade Railway off trial |
-| Google Business Profile | In progress - video verification pending (Session 11) |
-| Paperclip Agent Org (17 agents) | GO-LIVE READY (Session 13): bridge read-write, KB v2, compliance gate proven live, all agents on GHL tools. Heartbeats off until launch. |
-| Toll-Free A2P Verification (888) | Pending carrier - resubmitted after 30496 rejection (Session 11) |
-| Paperclip Agent Setup | Phase 2 INFRA LIVE (Session 12): deployed on Railway, admin claimed, org + CEO Agent, budget capped, GHL token created. Next: GHL-to-MCP bridge, then KB + 15 agents + compliance gate + test |
-| External Tasks | Multiple Pending |
+| Google Business Profile | Verified and LIVE (Session 15). Remaining: wire the review link into WF-07. |
+| Paperclip Agent Org (17 agents) | GO-LIVE IN PROGRESS (Session 15): heartbeats staged and tuned. ON: Sentinel 24h, Quality Control daily, Dispatcher 8h, Sales Outreach 1h, SDR 2h, KB Manager 30d. Remaining to stage: Reactivation, Referral and Reviews (gated on WF-07), Sales Scout, CSM. Execs + Audit/PRD/Onboarding stay event-driven (timer OFF). |
+| Toll-Free A2P Verification (888) | Still pending/failing at carrier - needs resubmit/triage. Blocks SMS from the toll-free number. |
+| Paperclip Agent Setup | Phase 2 build COMPLETE (Sessions 12-13). Now operating: approval-card UX + ask-first policy + toggle-bug fixed (Session 15). Standing rule: keep Anthropic credit buffered and budgets with headroom - starvation multiplies cost and causes agent confabulation. |
+| External Tasks | Multiple Pending - see Enyrgy_Master_TODO.md |
 
 ---
 
@@ -155,6 +155,8 @@ Last Updated: July 24, 2026 (Session 13)
 |-------|--------|--------|-------|
 | Add Tags in email actions not working | Low | Known GHL bug | Tag dropdowns empty until contacts exist - fix after import |
 | Investor Presentation Calendar conflict detection | Medium | Under investigation | Shows all times available despite 3 calendars connected |
+| Paperclip phantom-completion | High | Open (fork fix needed) | A run that dies on "Credit balance is too low" was auto-flipped to `done` (ENY-24) with no execution, masking the item. Fix: credit/budget-error deaths must go to `blocked`, never `done`. |
+| Agent confabulation under credit starvation | High | Mitigated by discipline | When credit-starved, agents produce specific, plausible, FALSE claims (ENY-20 false alarm: invented tag states, misread a workflow's last-edit date as last-run). Mitigation: keep credit buffered; verify every agent audit/verification against the live GHL account before acting. |
 | David Gmail SMTP not connected | Resolved | LC Email rebuilt | Dedicated sending domain mg.enyrgy.com; Scott is per-workflow sender on all workflows |
 | SMS workflows inactive | Resolved | A2P Approved | All SMS touches now active |
 | From Number field missing in SMS actions | Resolved | A2P Approved | From Number confirmed active and working |

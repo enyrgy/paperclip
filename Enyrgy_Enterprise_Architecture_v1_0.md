@@ -9,9 +9,25 @@ Consumer Unit $2,995 · Commercial Unit $8,950 · OEM/White-Label · Investor Ca
 scott@enyrgy.com · 602-321-0322 · enyrgy.com
 
 Author: Scott Hansbury, Co-founder & CEO, Enyrgy Inc
-Last Updated: June 29, 2026 · Version 1.0
+Last Updated: June 29, 2026 · Version 1.0 (Session 15 addendum appended July 28, 2026)
 
 CONFIDENTIAL
+
+---
+
+## Session 15 Addendum (July 28, 2026) — pending a v1.1 refresh
+
+This document is dated June 29, 2026 and predates several shipped systems; treat the body below as v1.0 and this addendum as the current-state override until a v1.1 refresh folds it in. The consolidated open-items list lives in `Enyrgy_Master_TODO.md`.
+
+**Now live since v1.0 was written:** the Shopify to GHL native integration plus WF-27/28/29 (which substantially build the "missing purchase sync" the body flags as the top gap — reconcile and ratify rather than rebuild); Google Business Profile (verified/live); the full Paperclip agent org (deployed, KB loaded, compliance gate proven, GHL bridge read-write, heartbeats staged and tuned).
+
+**New operational-reliability findings (add to the Security & Compliance and Open Decisions layers at v1.1):**
+
+- **Agent confabulation under resource starvation.** When the Paperclip agent org is credit-starved or budget-hard-stopped, it does not fail quietly. It produces confident, specific, fabricated claims. In the ENY-20 incident a QC audit and a COO "live verification" both reported a systemic data-lifecycle failure that did not exist (invented contact tag states, a workflow's last-edit timestamp misread as its last-run time). Governance control: **every agent audit or "live verification" must be checked against the live GHL account before any action; agent escalations are leads, not facts.**
+- **Phantom task completion (platform correctness bug).** A run that died on "Credit balance is too low" was auto-flipped to `done` with no execution, masking the unresolved item. Required fix: runs that die on a credit/budget error must transition to `blocked`, never `done`.
+- **Cost dynamics of starvation.** Running out of credit is more expensive than maintaining headroom: dying runs are re-woken and replay an ever-growing issue thread, multiplying context-replay cost, and orchestrator agents (CEO/COO/CRO) amplify this. Standing rule: keep Anthropic credit buffered and Paperclip budgets with headroom; monitor the Costs page.
+
+**Still open from the body (unchanged, tracked in the Master TODO):** system-of-record ownership map; Device-App-to-GHL usage-data flow; OEM/Lumanova data-boundary formalization; metric-governance owner; and the Shopify Privacy Policy still showing the old Scottsdale address.
 
 ---
 
