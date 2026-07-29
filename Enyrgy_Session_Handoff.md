@@ -59,6 +59,18 @@ Paste or attach this file at the start of a new chat along with `Enyrgy_GHL_WIP-
 
 ---
 
+## BACKUP PROCEDURE (run after every meaningful build session)
+
+GHL has no one-click "export everything" and no automated backups, so back up manually in three parts. Cadence: **snapshot + contact CSV after every meaningful change session.**
+
+1. **GHL config -> Account Snapshot.** Agency view -> Account Snapshots -> Create Snapshot -> source = the Enyrgy Inc sub-account -> name it dated (e.g., "Enyrgy Backup 2026-07-28"). Captures workflows, funnels, forms, pipelines, custom fields, triggers, campaigns, email/SMS templates, and calendars. To restore, deploy the snapshot to a fresh sub-account. Keep the last few snapshots.
+2. **GHL data -> CSV exports.** Contacts -> Smart Lists/All -> Export -> CSV (current count ~637; the avatar "+N" bubble is cosmetic, the header count is the real total). Opportunities -> List view -> Export. Download when ready (push notification / Bulk Actions page). IMPORTANT: export files expire in 30 days, so download and store them in a secure local or cloud folder. Do NOT leave them only in GHL, and do NOT commit contact PII to the GitHub repo.
+3. **Already backed up (Git).** All agent instruction blocks, the KB, workflow specs, the implementation guide, this handoff, the ROI one-pager, and every session doc live in the GitHub repo (enyrgy/paperclip) with full history. The bridge and abandoned-checkout services are in their own repos.
+
+**Gaps a snapshot does NOT cover** (these are re-established on restore, not copied): phone numbers, A2P/toll-free registration, CNAM, integration tokens, the media library, and conversation history.
+
+---
+
 ## WHAT WAS DONE (Session 15, July 27-28, 2026)
 
 The session took Paperclip from "built" toward "running": the live KB skill was repaired and re-synced, the first heartbeats were brought online and tuned, the two things that made the running system unusable day-to-day (an approval-card flood and cards with no context) were both fixed, a Q2 investor update was drafted, and a QC-raised "systemic" data issue was run to ground and proven a false alarm. That last item surfaced the most important operational lesson of the session: the agent org confabulates when it is credit-starved.
