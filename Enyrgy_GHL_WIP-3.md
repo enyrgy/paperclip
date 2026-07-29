@@ -12,7 +12,7 @@ Last Updated: July 28, 2026 (Session 15). See `Enyrgy_Master_TODO.md` for the co
 | GHL Foundation | Complete |
 | All Drip Campaigns (5) | Published |
 | All Core Workflows (10) | Published |
-| SMS / A2P | Fully Approved & Verified - All 5 Items |
+| SMS / A2P | Toll-free SMS APPROVED (888-316-1695, July 28) + Voice Integrity + SHAKEN/STIR. NO 10DLC/local number exists on the account. |
 | Contact Import | Complete - 617 existing customers imported (Session 10) |
 | Vitamin D Assessment Lead Magnet | LIVE - WF-21 capture + WF-22 nurture (Session 9) |
 | Testimonial Collection System | LIVE - form video field, WF-25, WF-26 (Session 10) |
@@ -76,14 +76,15 @@ Last Updated: July 28, 2026 (Session 15). See `Enyrgy_Master_TODO.md` for the co
 |------|--------|-------|
 | Phone Number +1 888-316-1695 | Active & Verified | Toll-free |
 | Toll-Free SMS Verification | Approved & Verified | Confirmed working |
-| A2P 10DLC Registration | Approved & Verified | Forms fixed, resubmitted, carrier approved |
 | Voice Integrity | Passed & Verified | Confirmed working |
 | SHAKEN/STIR Voice | Approved & Verified | Confirmed working |
+
+> **CORRECTION (July 28, 2026):** there is NO 10DLC / local number on this account and one was never approved. Earlier entries that listed an "A2P 10DLC Registration" as approved were wrong. SMS runs solely on the toll-free **888-316-1695** via its Toll-Free Verification (approved July 28, 2026). There is no longer any local number associated with the account.
 
 **A2P History:**
 - Error 30909 (CTA verification) - fixed consent text and checkbox placement
 - Error 30896 (Opt-in error) - updated Privacy Policy, fixed broken form links, added no-sharing statement, resubmitted
-- All 5 items approved, verified, and confirmed working: Phone Number, Toll-Free SMS, A2P 10DLC, Voice Integrity, SHAKEN/STIR
+- 4 items approved, verified, and confirmed working: Phone Number (toll-free), Toll-Free SMS, Voice Integrity, SHAKEN/STIR. NO 10DLC/local number exists (corrected July 28).
 
 **A2P Resubmission Fields (save these - GHL resets on every session):**
 - Opt-In Form URL: https://go.enyrgy.com/sms-opt-in
@@ -158,8 +159,8 @@ Last Updated: July 28, 2026 (Session 15). See `Enyrgy_Master_TODO.md` for the co
 | Paperclip phantom-completion | High | Open (fork fix needed) | A run that dies on "Credit balance is too low" was auto-flipped to `done` (ENY-24) with no execution, masking the item. Fix: credit/budget-error deaths must go to `blocked`, never `done`. |
 | Agent confabulation under credit starvation | High | Mitigated by discipline | When credit-starved, agents produce specific, plausible, FALSE claims (ENY-20 false alarm: invented tag states, misread a workflow's last-edit date as last-run). Mitigation: keep credit buffered; verify every agent audit/verification against the live GHL account before acting. |
 | David Gmail SMTP not connected | Resolved | LC Email rebuilt | Dedicated sending domain mg.enyrgy.com; Scott is per-workflow sender on all workflows |
-| SMS workflows inactive | Resolved | A2P Approved | All SMS touches now active |
-| From Number field missing in SMS actions | Resolved | A2P Approved | From Number confirmed active and working |
+| SMS workflows inactive | Resolved | Toll-Free A2P approved Jul 28 | All SMS touches now active |
+| From Number field missing in SMS actions | Resolved | Toll-Free A2P approved Jul 28 | From Number confirmed active and working |
 | SHAKEN/STIR not configured | Resolved | Approved & Verified | Confirmed working - prevents spam tagging on outbound calls |
 
 ---
@@ -292,7 +293,7 @@ A fully functional 7-step interactive Vitamin D Deficiency Assessment quiz. Buil
 
 Start each session by reviewing these items:
 
-1. **SMS / A2P** - All 5 items approved and verified (Phone, Toll-Free, A2P 10DLC, Voice Integrity, SHAKEN/STIR)
+1. **SMS / A2P** - Toll-free SMS approved and verified (888-316-1695, July 28), plus Voice Integrity and SHAKEN/STIR. NO 10DLC/local number exists on the account.
 2. **Toll-Free Status** - Approved & Verified
 3. **Import Status** - Existing customer base (617) imported Session 10. Investor spreadsheet still in progress.
 4. **David SMTP / Sender** - Complete - LC Email (mg.enyrgy.com); Scott is per-workflow sender
@@ -331,7 +332,7 @@ Start each session by reviewing these items:
 - Built WF-27 Shopify New Customer Tagging: trigger Shopify order placed, applies drip_bypass + source_shopify + status_customer, Re-Entry ON. Shields new buyers from lead nurture.
 - Added the first-step drip_bypass gate (Bypass Check: NOT drip_bypass to run, else END) to the Commercial, Partner, and Investor Warm drips, which lacked it. All five drips now honor drip_bypass.
 - Removed the accreditation gate on Investor Drip Touch 7: PPM now sends to all interested investors post-intro-meeting (added PPM email to the Not-Yet-Accredited branch; nudge retained). Accreditation still required before commitment/wire (pipeline, untouched). OPEN: confirm PPM email copy is accreditation-neutral.
-- Toll-free A2P: clarified 10DLC (approved) vs Toll-Free Verification (separate). The 888 TFV was Rejected (30496, use-case/summary inconsistency), corrected to a marketing-consistent description with go.enyrgy.com/sms-opt-in as opt-in proof, resubmitted; now Verification in progress. No SMS from the toll-free until it passes.
+- Toll-free A2P: the 888 Toll-Free Verification was Rejected (30496, use-case/summary inconsistency), corrected to a marketing-consistent description with go.enyrgy.com/sms-opt-in as opt-in proof, resubmitted, and APPROVED July 28, 2026. SMS now sends from the toll-free. (Correction: an earlier note here referenced a "10DLC (approved)" number; that was wrong. There is no 10DLC/local number on the account.)
 - Google Business Profile: set up as Local store (eligible via on-site treatments for registered users), category Wellness center. Google required video verification (Search Console instant overridden, likely shared GCU address); Scott records the walkthrough video next.
 - Abandoned Checkout Recovery built LIVE end to end. Shopify custom app "Enyrgy Abandoned Checkout Sync" (Dev Dashboard, client-credentials auth, read_checkouts + read_orders, legacy install flow OFF, installed). Railway service (Enyrgy account, trial) deployed from GitHub repo enyrgy/enyrgy-abandoned-checkout, self-scheduling every 20 min, validated live (scanned=0 clean). WF-29 Abandoned Checkout Recovery published: inbound webhook -> create contact -> tags (abandoned_checkout, drip_bypass, source_shopify) -> Email 1 -> wait 1d -> Purchased Check (status_customer -> END) -> Email 2 -> wait 2d -> Email 3, Re-Entry On, Stop on Response On, reassurance copy (no discount). WF-27 updated to also apply status_customer.
 
