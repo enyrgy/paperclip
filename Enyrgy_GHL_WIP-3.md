@@ -135,7 +135,7 @@ Last Updated: July 28, 2026 (Session 15). See `Enyrgy_Master_TODO.md` for the co
 | Trustpilot connect Shopify | Scott | Automate review invitations post-purchase |
 | Commercial form SMS consent | DONE (Session 11) | Consent text + checkbox added to Commercial Inquiry Form |
 | Partner form SMS consent | DONE (Session 11) | Consent text + checkbox added to Partner Application Form |
-| Testimonial form link on enyrgy.com | Scott | Add link to testimonial form in post-purchase follow up |
+| Testimonial form link on enyrgy.com | Complete (Jul 28) | Link added to the website |
 
 ### LOW Priority / Future
 

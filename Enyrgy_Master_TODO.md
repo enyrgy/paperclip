@@ -31,7 +31,7 @@ The build is essentially done. What remains is finishing the go-live staging, a 
 - [x] **Wire the GBP review link into WF-07** — DONE. Google review link is live in the WF-07 Day-14 SMS (https://g.page/r/CfN5Rj0CdmrfEAI/review), Trustpilot offered as secondary, STOP opt-out present, copy compliance-clean.
 - [ ] **Referral program (DEFERRED — decided July 28)** — NOT implementing a third-party Shopify referral app (ReferralCandy/Smile.io). The next version of Enyrgy will ship a built-in loyalty/referral program instead. WF-07's referral link stays an intentional placeholder until then. The Referral and Reviews agent's review/testimonial functions are ready now; its referral function waits for the built-in program (see section 6).
 - [ ] **Trustpilot** — permanent review URL + post-purchase automation.
-- [ ] **Testimonial-form link on enyrgy.com** — add to post-purchase follow-up.
+- [x] **Testimonial-form link on enyrgy.com** — DONE (July 28). Link added to the website.
 - [ ] **CNAM caller-ID registration** — "Enyrgy" on outbound caller ID. Low priority.
 
 ## 4. Investor readiness
