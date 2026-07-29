@@ -10,7 +10,7 @@ The build is essentially done. What remains is finishing the go-live staging, a 
 ## 1. Finish the Paperclip go-live (active)
 
 - [ ] Stage on the remaining heartbeats, one group at a time, watching cost for a day between each. **Set the interval in the same step you enable** (they default to `300s` = every 5 minutes, which is a cost trap):
-  - [ ] Reactivation, `21600` (6h) — ready now, lowest risk.
+  - [x] Reactivation, `21600` (6h) — ENABLED (July 28).
   - [ ] Referral and Reviews, `21600` (6h) — GATED: enable only after WF-07 review link + referral app are done (see section 3).
   - [ ] Sales Scout, `43200` (12h) — when volume justifies it.
   - [ ] Client Success Manager, `43200` (12h) — when volume justifies it.
