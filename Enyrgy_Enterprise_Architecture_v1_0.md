@@ -2,32 +2,39 @@
 ## Sunlight. Evolved.
 ### Enterprise Architecture
 **The System of Record for How Enyrgy Runs, Connects, and Scales**
-Version 1.0
+Version 1.1
 
 Consumer Unit $2,995 · Commercial Unit $8,950 · OEM/White-Label · Investor Capital
 600+ Customers · 25,000+ Treatments · 5 Countries · Zero Adverse Events
 scott@enyrgy.com · 602-321-0322 · enyrgy.com
 
 Author: Scott Hansbury, Co-founder & CEO, Enyrgy Inc
-Last Updated: June 29, 2026 · Version 1.0 (Session 15 addendum appended July 28, 2026)
+Last Updated: July 28, 2026 · Version 1.1 (v1.0 body baseline dated June 29, 2026; the v1.1 Current-State Update section below is the authoritative override where the body is stale)
 
 CONFIDENTIAL
 
 ---
 
-## Session 15 Addendum (July 28, 2026) — pending a v1.1 refresh
+## v1.1 Current-State Update (July 28, 2026)
 
-This document is dated June 29, 2026 and predates several shipped systems; treat the body below as v1.0 and this addendum as the current-state override until a v1.1 refresh folds it in. The consolidated open-items list lives in `Enyrgy_Master_TODO.md`.
+The layered body below is the June 29, 2026 v1.0 baseline. Several systems have shipped since, so **this section is authoritative wherever it conflicts with the body**; a future pass can fold these line-by-line into each layer. The consolidated open-items list lives in `Enyrgy_Master_TODO.md`.
 
-**Now live since v1.0 was written:** the Shopify to GHL native integration plus WF-27/28/29 (which substantially build the "missing purchase sync" the body flags as the top gap — reconcile and ratify rather than rebuild); Google Business Profile (verified/live); the full Paperclip agent org (deployed, KB loaded, compliance gate proven, GHL bridge read-write, heartbeats staged and tuned).
+**Now live since v1.0 was written:**
+- Shopify to GHL native integration plus WF-27/28/29 (which substantially build the "missing purchase sync" the body flags as the top gap — reconcile and ratify rather than rebuild). WF-28 now gates the `unit_shipped` tag to the Home System product, so accessory-only reorders no longer trigger device onboarding.
+- Google Business Profile verified/live; its review link is wired into the WF-07 review SMS (with Trustpilot); testimonial-form link live in the WF-07 email and on enyrgy.com.
+- The full Paperclip agent org (deployed, KB loaded, compliance gate proven, GHL bridge read-write, heartbeats staged and tuned to an early-stage lineup; several agents held until volume ramps).
+- Messaging: toll-free 888-316-1695 approved for SMS (the account has NO 10DLC/local number, contrary to an earlier doc claim); CNAM caller-ID Approved as "Enyrgy Inc"; sending domain mg.enyrgy.com.
+- Content assets: commercial ROI one-pager (`Enyrgy_Commercial_ROI.pdf` + HTML in repo); inbound voicemail greeting recorded.
 
-**New operational-reliability findings (add to the Security & Compliance and Open Decisions layers at v1.1):**
+**New operational-reliability findings (fold into the Security & Compliance and Open Decisions layers on the next body pass):**
 
 - **Agent confabulation under resource starvation.** When the Paperclip agent org is credit-starved or budget-hard-stopped, it does not fail quietly. It produces confident, specific, fabricated claims. In the ENY-20 incident a QC audit and a COO "live verification" both reported a systemic data-lifecycle failure that did not exist (invented contact tag states, a workflow's last-edit timestamp misread as its last-run time). Governance control: **every agent audit or "live verification" must be checked against the live GHL account before any action; agent escalations are leads, not facts.**
-- **Phantom task completion (platform correctness bug).** A run that died on "Credit balance is too low" was auto-flipped to `done` with no execution, masking the unresolved item. Required fix: runs that die on a credit/budget error must transition to `blocked`, never `done`.
+- **Phantom task completion — claim investigated and debunked (July 28).** A COO comment claimed a credit-failed run was auto-flipped to `done`. A review of the recovery state machine (`server/src/services/recovery/service.ts`) found credit/budget failures classify as non-retryable and route to `blocked`; the only `done` transition is a legitimate watchdog-evaluation fold that requires a succeeded source run. There is no code path that marks a work issue done on a credit failure. The claim was another confabulation from the credit-starvation window, not a real defect. No code change made.
 - **Cost dynamics of starvation.** Running out of credit is more expensive than maintaining headroom: dying runs are re-woken and replay an ever-growing issue thread, multiplying context-replay cost, and orchestrator agents (CEO/COO/CRO) amplify this. Standing rule: keep Anthropic credit buffered and Paperclip budgets with headroom; monitor the Costs page.
 
-**Still open from the body (unchanged, tracked in the Master TODO):** system-of-record ownership map; Device-App-to-GHL usage-data flow; OEM/Lumanova data-boundary formalization; and metric-governance owner. (The Shopify policy address exception noted in the body is RESOLVED as of July 28, 2026 — all store policies now show the Phoenix facility address, 5115 N 27th Ave, Bld 66, Phoenix, AZ 85017.)
+**Still open from the body (unchanged, tracked in the Master TODO):** system-of-record ownership map; Device-App-to-GHL usage-data flow; OEM/Lumanova data-boundary formalization; and metric-governance owner.
+
+**Resolved / new since v1.0 (July 28, 2026):** the Shopify policy address exception in the body is RESOLVED — all store policies, and the GHL agency profile, now show the Phoenix facility address (5115 N 27th Ave, Bld 66, Phoenix, AZ 85017). GHL agency Business Category corrected from Medical to Health & Wellness (matches the wellness positioning). One open infra item, tracked in the Master TODO: Enyrgy agency system emails send with the sender name "Ledgerix Pro LLC" (Scott's separate GHL agency); both agencies are internally correct, so it is a HighLevel platform cross-agency sender-identity issue awaiting a support ticket.
 
 ---
 

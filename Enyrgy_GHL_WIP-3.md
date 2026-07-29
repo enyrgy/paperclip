@@ -144,7 +144,7 @@ Last Updated: July 28, 2026 (Session 15). See `Enyrgy_Master_TODO.md` for the co
 | CNAM Voice registration | Complete | Approved in LC Phone, Friendly Name "Enyrgy Inc" |
 | GHL agency mailing address | Complete (Jul 28) | Corrected to Phoenix at the agency level (was Scottsdale in the CAN-SPAM footer) |
 | GHL agency Business Category | Complete (Jul 28) | Fixed Medical -> Health & Wellness (Self Service Health Station); matches wellness positioning. No A2P impact (separate TCR filing) |
-| GHL agency email sender name | HighLevel support (drafted) | HIGH, employee-facing. Enyrgy agency (rel 0-167-470) emails send with sender name "Ledgerix Pro LLC" (Scott's separate agency, rel 0-783-665). Both agencies internally correct -> platform cross-agency bug. Support ticket drafted in Master TODO. |
+| GHL agency email sender name | Sent to HighLevel (Jul 28) | HIGH, employee-facing. Enyrgy agency (rel 0-167-470) emails send with sender name "Ledgerix Pro LLC" (Scott's separate agency, rel 0-783-665). Both agencies internally correct -> platform cross-agency bug. Support ticket SENT; awaiting HighLevel resolution. |
 | Paperclip agent setup | IN PROGRESS (Session 12) | 16-agent org (22 with all six Phase 2 additions). Railway (Hobby) ready. Following Enyrgy_Paperclip_Phase2_Setup_Guide |
 | Reporting dashboards | Scott | Build KPI views in GHL reporting |
 | 600+ existing customer import | DONE (Session 10) | 617 imported, tagged drip_bypass + legacy_customer (24 seg_facility); NOT type_consumer (kept out of drips) |
@@ -159,7 +159,7 @@ Last Updated: July 28, 2026 (Session 15). See `Enyrgy_Master_TODO.md` for the co
 |-------|--------|--------|-------|
 | Add Tags in email actions not working | Low | Known GHL bug | Tag dropdowns empty until contacts exist - fix after import |
 | Investor Presentation Calendar conflict detection | Medium | Resolved (Jul 28) | Conflict detection verified working |
-| Paperclip phantom-completion | High | Open (fork fix needed) | A run that dies on "Credit balance is too low" was auto-flipped to `done` (ENY-24) with no execution, masking the item. Fix: credit/budget-error deaths must go to `blocked`, never `done`. |
+| Paperclip phantom-completion | n/a | NOT A BUG (Jul 28) | Investigated the recovery code: credit/budget failures route to `blocked`, never `done`; the only `done` is a legitimate watchdog fold requiring a succeeded run. The "ENY-24 flipped to done" claim was another COO confabulation, not a code defect. No fix needed. |
 | Accessory reorders triggered device onboarding | Medium | RESOLVED (Jul 28) | WF-28 applied `unit_shipped` on ANY fulfilled Shopify order, so an accessory-only reorder (wall mount) re-fired WF-06 onboarding days after delivery. Fix: gated WF-28's Order-Fulfilled trigger to Home-System orders only. WF-06 triggers on the `unit_shipped` tag, so the single filter fully controls it. |
 | Agent confabulation under credit starvation | High | Mitigated by discipline | When credit-starved, agents produce specific, plausible, FALSE claims (ENY-20 false alarm: invented tag states, misread a workflow's last-edit date as last-run). Mitigation: keep credit buffered; verify every agent audit/verification against the live GHL account before acting. |
 | David Gmail SMTP not connected | Resolved | LC Email rebuilt | Dedicated sending domain mg.enyrgy.com; Scott is per-workflow sender on all workflows |

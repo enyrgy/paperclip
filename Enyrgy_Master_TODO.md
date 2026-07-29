@@ -19,7 +19,7 @@ The build is essentially done. What remains is finishing the go-live staging, a 
 
 ## 2. Platform / fork fixes
 
-- [ ] **Fix the phantom-completion bug.** A run that dies on "Credit balance is too low" was auto-flipped to `done` (ENY-24) with no execution, masking an unresolved item. Fork fix: runs that die on a credit/budget error must go to `blocked`, never `done`. HIGH — this is a correctness bug in the platform.
+- [x] **Phantom-completion "bug" — INVESTIGATED, NOT A REAL BUG (July 28).** Read the recovery state machine (`server/src/services/recovery/service.ts`). Credit/budget failures classify as `non_retryable` and route to `blocked`; the only `done` transition is the watchdog-evaluation false-positive fold (which requires a succeeded source run), and "Credit balance is too low" isn't even specially handled (falls through to the generic blocked path). There is NO code path that marks a work issue `done` on a credit failure. The "ENY-24 flipped to done" claim was another COO confabulation from the credit-starvation window (same unreliable source as the ENY-20 false alarm). No code change made; inventing a fix for a non-existent bug is exactly the anti-pattern the confabulation lesson warns against.
 - [x] Approval-card context UX: cards now show issue → what approving does → what declining does (deployed).
 - [x] Ask-first policy rebalanced: internal CRM writes auto-run; sends/enroll/CFO stay gated.
 - [x] Tool-policy toggle bug fixed: metadata-only rule updates no longer re-validate untouched config (deployed).
@@ -33,7 +33,7 @@ The build is essentially done. What remains is finishing the go-live staging, a 
 - [ ] **Trustpilot** — permanent review URL + post-purchase automation.
 - [x] **Testimonial-form link on enyrgy.com** — DONE (July 28). Link added to the website.
 - [x] **CNAM caller-ID registration** — DONE. Already Approved in LC Phone with Friendly Name "Enyrgy Inc"; outbound calls display the business name.
-- [ ] **GHL agency email sender name = "Ledgerix Pro LLC" (HIGH, employee-facing) -> HighLevel support ticket** — DONE July 28: Enyrgy agency mailing address corrected to Phoenix; Business Category fixed Medical -> Health & Wellness (no A2P impact, separate TCR filing). FULLY DIAGNOSED: Scott runs TWO SEPARATE GHL agencies under one login, each with its own Relationship Number and each internally correct: Enyrgy Inc (0-167-470, all fields Enyrgy) and Ledgerix Pro LLC (0-783-665, all fields Ledgerix). The Enyrgy agency's system emails render bodies correctly ({{agency.name}} = Enyrgy Inc) but stamp the SENDER display name as "Ledgerix Pro LLC" (the other agency). Not editable in either agency's settings -> it is a HighLevel PLATFORM cross-agency sender-identity issue for a multi-agency admin. FIX: send the drafted HighLevel support ticket (asks them to make Enyrgy agency 0-167-470 use "Enyrgy Inc" as the system-email sender). Optional self-check first: My Profile for a default/primary-agency setting.
+- [ ] **GHL agency email sender name = "Ledgerix Pro LLC" (HIGH, employee-facing) -> HighLevel support ticket** — DONE July 28: Enyrgy agency mailing address corrected to Phoenix; Business Category fixed Medical -> Health & Wellness (no A2P impact, separate TCR filing). FULLY DIAGNOSED: Scott runs TWO SEPARATE GHL agencies under one login, each with its own Relationship Number and each internally correct: Enyrgy Inc (0-167-470, all fields Enyrgy) and Ledgerix Pro LLC (0-783-665, all fields Ledgerix). The Enyrgy agency's system emails render bodies correctly ({{agency.name}} = Enyrgy Inc) but stamp the SENDER display name as "Ledgerix Pro LLC" (the other agency). Not editable in either agency's settings -> it is a HighLevel PLATFORM cross-agency sender-identity issue for a multi-agency admin. FIX: HighLevel support ticket SENT July 28, 2026 (asks them to make Enyrgy agency 0-167-470 use "Enyrgy Inc" as the system-email sender). AWAITING HighLevel resolution. Optional self-check meanwhile: My Profile for a default/primary-agency setting.
 
 ## 4. Investor readiness
 
@@ -64,7 +64,7 @@ The build is essentially done. What remains is finishing the go-live staging, a 
 
 ## 7. Documentation hygiene
 
-- [ ] **Refresh the EA to v1.1** — dated June 29, stale on Shopify, GBP, facility, and the whole Paperclip layer.
+- [x] **Refresh the EA to v1.1 (July 28)** — bumped to Version 1.1 with an authoritative "v1.1 Current-State Update" section that overrides the stale June-29 body (Shopify integration + WF-27/28/29, GBP live + WF-07 wiring, full Paperclip org + tuned heartbeats, toll-free SMS/CNAM/no-10DLC, content assets, addresses/business-category fixes, the reliability findings incl. the debunked phantom-completion, and the open agency-email item). A future pass can fold these line-by-line into each layer.
 - [ ] **IG loose ends** — WF-23/WF-24 numbering gap (confirm not unbuilt), Winter/Tired-Test URLs missing from the Key URLs table, blank team contact fields (Dennis Lan, Dario Pompeii, Millie Carrillo, Thea Cartier).
 - [ ] **WIP** — correct the "24-agent" count to "16-agent core (22 with additions)."
 
