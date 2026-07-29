@@ -33,7 +33,7 @@ The build is essentially done. What remains is finishing the go-live staging, a 
 - [ ] **Trustpilot** — permanent review URL + post-purchase automation.
 - [x] **Testimonial-form link on enyrgy.com** — DONE (July 28). Link added to the website.
 - [x] **CNAM caller-ID registration** — DONE. Already Approved in LC Phone with Friendly Name "Enyrgy Inc"; outbound calls display the business name.
-- [ ] **GHL agency profile address + sender name** — agency-level system emails (sent from the Ledgerix Pro LLC agency, which owns the Enyrgy Inc sub-account) still show the OLD Scottsdale address (7641 E Gray Rd, STE G, Scottsdale, AZ 85260). Fix in Agency Settings > Business Profile: update the mailing address to the Phoenix facility (5115 N 27th Ave, Bld 66, Phoenix, AZ 85017), and optionally rebrand the agency sender name from "Ledgerix Pro LLC" to Enyrgy. NOTE: distinct system from the Shopify policy address (already fixed).
+- [ ] **GHL agency email sender name (cosmetic, optional)** — the agency mailing address was CORRECTED to Phoenix at the agency level on July 28 (done; that was the CAN-SPAM footer). The agency itself is Enyrgy Inc (Enyrgy-branded). Remaining: agency system emails still send from the name "Ledgerix Pro LLC" (a lingering legal/company-name or SMTP from-name field from before the agency was branded Enyrgy). Optional cosmetic fix: Agency Settings > Company (confirm Company/Legal Name = Enyrgy Inc) and/or Email Services/SMTP from-name.
 
 ## 4. Investor readiness
 
