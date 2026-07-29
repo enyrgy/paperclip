@@ -11,7 +11,7 @@ The build is essentially done. What remains is finishing the go-live staging, a 
 
 - [ ] Stage on the remaining heartbeats, one group at a time, watching cost for a day between each. **Set the interval in the same step you enable** (they default to `300s` = every 5 minutes, which is a cost trap):
   - [x] Reactivation, `21600` (6h) — ENABLED (July 28).
-  - [ ] Referral and Reviews, `21600` (6h) — GATED: enable only after WF-07 review link + referral app are done (see section 3).
+  - [ ] Referral and Reviews — HELD for now (volume-gated). Instruction block is trimmed (review + testimonial live; referral paused with the deferred loyalty program). At current volume WF-07 sends the review/testimonial asks GHL-native, so the agent adds little. Enable when new-customer volume is steady; daily (`86400`) is plenty, not 6h.
   - [ ] Sales Scout, `43200` (12h) — when volume justifies it.
   - [ ] Client Success Manager, `43200` (12h) — when volume justifies it.
 - [ ] Keep CEO, COO, CRO, CFO, Audit and Compliance, PRD Gatherer, and Onboarding **event-driven (timer heartbeat OFF)**. They wake on escalation/comment, not a timer.

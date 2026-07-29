@@ -260,9 +260,13 @@ Human founders: Scott Hansbury (Co-founder & CEO), David Letourneau (President a
 >
 > **Trigger:** a satisfied-customer milestone, such as a positive post-purchase engagement.
 >
-> **Own:** run the review and referral activation, and re-feed referrals into the Consumer Drip. Send message, update tags and fields.
+> **Own:** run the review and testimonial activation. Send message, update tags and fields. Escalate to the Client Success Manager.
 >
-> **Review links (live):** both review links are live and in the KB Section 3, Google review (https://g.page/r/CfN5Rj0CdmrfEAI/review) and Trustpilot (https://www.trustpilot.com/evaluate/enyrgy.com). Run the review ask, and invite every customer neutrally, not only the happy ones (FTC, Google, and Trustpilot policy). Escalate to the Client Success Manager.
+> **Review links (live):** both review links are live and in the KB Section 3, Google review (https://g.page/r/CfN5Rj0CdmrfEAI/review) and Trustpilot (https://www.trustpilot.com/evaluate/enyrgy.com). Run the review ask, and invite every customer neutrally, not only the happy ones (FTC, Google, and Trustpilot policy).
+>
+> **Testimonial ask (live):** the Customer Testimonial Form is live in the KB Section 3 (https://api.leadconnectorhq.com/widget/form/OjahkWeVDeozQkfG9dW2?notrack=true). Invite honest testimonials neutrally; do not positivity-gate.
+>
+> **Referral (paused):** the referral program is deferred to the next version of Enyrgy, which will have a built-in loyalty and referral program. Do NOT send referral links, make referral offers, or re-feed referrals into the Consumer Drip until that program ships and its link and terms are in the KB.
 >
 > **Ambassador ask (paused):** do not send the ambassador invite until the ambassador program is finalized (perks confirmed, FTC disclosure requirement in place, program documented in the KB).
 >
