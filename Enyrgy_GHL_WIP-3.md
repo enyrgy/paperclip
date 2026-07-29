@@ -130,7 +130,7 @@ Last Updated: July 28, 2026 (Session 15). See `Enyrgy_Master_TODO.md` for the co
 | David Gmail SMTP / per-workflow sender | Complete | Rebuilt as LC Email (mg.enyrgy.com); Scott is per-workflow sender on all workflows |
 | Facility address updated in live systems | Complete | 5115 N 27th Ave, Bld 66, Phoenix, AZ 85017 reflected everywhere |
 | Winter Protocol workflow + landing page | Complete | WF-19 + WF-20 live; go.enyrgy.com/winter-protocol live |
-| Investor Presentation Calendar Fix | Scott/David/Brian | Currently showing all times available - need to verify conflict detection |
+| Investor Presentation Calendar Fix | Complete (Jul 28) | Conflict detection verified/fixed |
 | Shopify Referral App | DEFERRED (Jul 28) | Not installing a third-party app; referral/loyalty will be built into the next Enyrgy version |
 | Trustpilot connect Shopify | Scott | Automate review invitations post-purchase |
 | Commercial form SMS consent | DONE (Session 11) | Consent text + checkbox added to Commercial Inquiry Form |
@@ -155,7 +155,7 @@ Last Updated: July 28, 2026 (Session 15). See `Enyrgy_Master_TODO.md` for the co
 | Issue | Impact | Status | Notes |
 |-------|--------|--------|-------|
 | Add Tags in email actions not working | Low | Known GHL bug | Tag dropdowns empty until contacts exist - fix after import |
-| Investor Presentation Calendar conflict detection | Medium | Under investigation | Shows all times available despite 3 calendars connected |
+| Investor Presentation Calendar conflict detection | Medium | Resolved (Jul 28) | Conflict detection verified working |
 | Paperclip phantom-completion | High | Open (fork fix needed) | A run that dies on "Credit balance is too low" was auto-flipped to `done` (ENY-24) with no execution, masking the item. Fix: credit/budget-error deaths must go to `blocked`, never `done`. |
 | Accessory reorders triggered device onboarding | Medium | RESOLVED (Jul 28) | WF-28 applied `unit_shipped` on ANY fulfilled Shopify order, so an accessory-only reorder (wall mount) re-fired WF-06 onboarding days after delivery. Fix: gated WF-28's Order-Fulfilled trigger to Home-System orders only. WF-06 triggers on the `unit_shipped` tag, so the single filter fully controls it. |
 | Agent confabulation under credit starvation | High | Mitigated by discipline | When credit-starved, agents produce specific, plausible, FALSE claims (ENY-20 false alarm: invented tag states, misread a workflow's last-edit date as last-run). Mitigation: keep credit buffered; verify every agent audit/verification against the live GHL account before acting. |
