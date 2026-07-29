@@ -38,7 +38,7 @@ The build is essentially done. What remains is finishing the go-live staging, a 
 
 - [ ] **Complete the investor contact spreadsheet** (100+ contacts), then import.
 - [x] **Investor Presentation calendar** — conflict detection verified/fixed (July 28).
-- [ ] **Content assets** — voicemail recordings and the commercial ROI PDF (PPM itself is attorney-approved).
+- [ ] **Content assets (PARTIAL)** — Commercial ROI PDF DRAFTED (July 28, `Enyrgy_Commercial_ROI.pdf`, standalone; one placeholder = commercial booking link). Investor voicemail SCRIPT drafted; Scott still to record the audio and upload the recording to GHL. (PPM itself is attorney-approved.)
 - [ ] **Q2 2026 investor update** — SENT TO BRIAN for review (July 28). Awaiting Brian + securities-attorney sign-off before sending; send only to existing/already-introduced investors. Standalone `Enyrgy_Investor_Update_Q2_2026.docx`. (Cash-position and amount-committed lines intentionally omitted; go-to-market + compounding-usage detail incorporated from the Brandon email.)
 
 ## 5. Strategic architecture decisions (mostly ratify, not build)
