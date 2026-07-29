@@ -28,7 +28,7 @@ The build is essentially done. What remains is finishing the go-live staging, a 
 ## 3. External verifications & WF-07 completion
 
 - [x] **Toll-free A2P (888) verification** — VALIDATED and approved for SMS (July 28, 2026). SMS can now send from the toll-free number 888-316-1695. Follow-up: activate any SMS touches that were paused waiting on this.
-- [ ] **Wire the GBP review link into WF-07** — GBP is verified/live; drop the review link in to replace the placeholder.
+- [x] **Wire the GBP review link into WF-07** — DONE. Google review link is live in the WF-07 Day-14 SMS (https://g.page/r/CfN5Rj0CdmrfEAI/review), Trustpilot offered as secondary, STOP opt-out present, copy compliance-clean.
 - [ ] **Install the Shopify referral app** (ReferralCandy or Smile.io) so WF-07's referral link is real. Gates the Referral and Reviews agent.
 - [ ] **Trustpilot** — permanent review URL + post-purchase automation.
 - [ ] **Testimonial-form link on enyrgy.com** — add to post-purchase follow-up.

@@ -17,7 +17,7 @@ Last Updated: July 28, 2026 (Session 15). See `Enyrgy_Master_TODO.md` for the co
 | Vitamin D Assessment Lead Magnet | LIVE - WF-21 capture + WF-22 nurture (Session 9) |
 | Testimonial Collection System | LIVE - form video field, WF-25, WF-26 (Session 10) |
 | Shopify / GHL Integration | LIVE (Session 11): native connector + WF-27 + WF-28 fulfillment + WF-29 abandoned-checkout recovery (Railway service). Remaining: upgrade Railway off trial |
-| Google Business Profile | Verified and LIVE (Session 15). Remaining: wire the review link into WF-07. |
+| Google Business Profile | Verified and LIVE (Session 15). Review link wired into WF-07 Day-14 SMS (Google + Trustpilot). |
 | Paperclip Agent Org (17 agents) | GO-LIVE IN PROGRESS (Session 15): heartbeats staged and tuned. ON: Sentinel 24h, Quality Control daily, Dispatcher 8h, Sales Outreach 1h, SDR 2h, KB Manager 30d. Remaining to stage: Reactivation, Referral and Reviews (gated on WF-07), Sales Scout, CSM. Execs + Audit/PRD/Onboarding stay event-driven (timer OFF). |
 | Toll-Free A2P Verification (888) | APPROVED (July 28, 2026) - validated for SMS. SMS can now send from 888-316-1695. |
 | Paperclip Agent Setup | Phase 2 build COMPLETE (Sessions 12-13). Now operating: approval-card UX + ask-first policy + toggle-bug fixed (Session 15). Standing rule: keep Anthropic credit buffered and budgets with headroom - starvation multiplies cost and causes agent confabulation. |
@@ -171,7 +171,7 @@ These placeholders exist in workflows and need real URLs:
 
 | Location | Placeholder | Real URL |
 |----------|-------------|---------|
-| WF-07 Review SMS | Trustpilot URL | https://www.trustpilot.com/evaluate/enyrgy.com (temporary) |
+| WF-07 Review SMS | RESOLVED | Google review link live in the Day-14 SMS: https://g.page/r/CfN5Rj0CdmrfEAI/review (Trustpilot offered as secondary) |
 | WF-07 Referral Email | Referral link | Pending Shopify referral app setup |
 | WF-07 Testimonial Email | Testimonial form | https://api.leadconnectorhq.com/widget/form/OjahkWeVDeozQkfG9dW2 |
 | All workflows | Order URL | https://www.enyrgy.com/products/uvb-light-therapy |
