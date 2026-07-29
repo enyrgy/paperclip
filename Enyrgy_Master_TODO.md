@@ -48,7 +48,7 @@ The build is essentially done. What remains is finishing the go-live staging, a 
 - [ ] **Device App to GHL usage-data flow** — deferred "Phase 2-plus"; decide whether/how usage data flows, with privacy treatment.
 - [ ] **OEM / Lumanova data boundary** — formalize an auditable path as the partner program grows.
 - [ ] **Metric governance owner** — figures reconciled; assign a single owner.
-- [ ] **Facility address exception** — Shopify Privacy Policy still shows the old Scottsdale address / wrong subdomain. Quick fix.
+- [x] **Facility address exception** — RESOLVED (July 28). All Shopify policies (Privacy, Terms, Refund) updated to 5115 N 27th Ave, Bld 66, Phoenix, AZ 85017.
 - [ ] **Status-lifecycle representation** (minor) — the account tracks lifecycle two ways: `status_` tags on router/drip contacts, and opportunity stage + `magnet_lead`/`nurture_longterm` on magnet leads. Candidate tidy: make the pipeline stage the single source of truth. NOTE: the QC "systemic lifecycle" escalation (ENY-20) that surfaced this was verified a FALSE POSITIVE against the live account; this remains only a low-priority design tidy, not a live bug.
 
 ## 6. Future / optional

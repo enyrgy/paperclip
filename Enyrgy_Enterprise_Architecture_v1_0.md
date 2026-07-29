@@ -27,7 +27,7 @@ This document is dated June 29, 2026 and predates several shipped systems; treat
 - **Phantom task completion (platform correctness bug).** A run that died on "Credit balance is too low" was auto-flipped to `done` with no execution, masking the unresolved item. Required fix: runs that die on a credit/budget error must transition to `blocked`, never `done`.
 - **Cost dynamics of starvation.** Running out of credit is more expensive than maintaining headroom: dying runs are re-woken and replay an ever-growing issue thread, multiplying context-replay cost, and orchestrator agents (CEO/COO/CRO) amplify this. Standing rule: keep Anthropic credit buffered and Paperclip budgets with headroom; monitor the Costs page.
 
-**Still open from the body (unchanged, tracked in the Master TODO):** system-of-record ownership map; Device-App-to-GHL usage-data flow; OEM/Lumanova data-boundary formalization; metric-governance owner; and the Shopify Privacy Policy still showing the old Scottsdale address.
+**Still open from the body (unchanged, tracked in the Master TODO):** system-of-record ownership map; Device-App-to-GHL usage-data flow; OEM/Lumanova data-boundary formalization; and metric-governance owner. (The Shopify policy address exception noted in the body is RESOLVED as of July 28, 2026 — all store policies now show the Phoenix facility address, 5115 N 27th Ave, Bld 66, Phoenix, AZ 85017.)
 
 ---
 
