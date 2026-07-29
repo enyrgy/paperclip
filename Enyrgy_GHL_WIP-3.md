@@ -143,7 +143,8 @@ Last Updated: July 28, 2026 (Session 15). See `Enyrgy_Master_TODO.md` for the co
 |------|-------|-------|
 | CNAM Voice registration | Complete | Approved in LC Phone, Friendly Name "Enyrgy Inc" |
 | GHL agency mailing address | Complete (Jul 28) | Corrected to Phoenix at the agency level (was Scottsdale in the CAN-SPAM footer) |
-| GHL agency email sender name | Scott (optional) | Agency emails still send from "Ledgerix Pro LLC"; update Company/Legal Name or SMTP from-name to Enyrgy Inc. Cosmetic. |
+| GHL agency Business Category | Complete (Jul 28) | Fixed Medical -> Health & Wellness (Self Service Health Station); matches wellness positioning. No A2P impact (separate TCR filing) |
+| GHL agency email sender name | HighLevel support (drafted) | HIGH, employee-facing. Enyrgy agency (rel 0-167-470) emails send with sender name "Ledgerix Pro LLC" (Scott's separate agency, rel 0-783-665). Both agencies internally correct -> platform cross-agency bug. Support ticket drafted in Master TODO. |
 | Paperclip agent setup | IN PROGRESS (Session 12) | 16-agent org (22 with all six Phase 2 additions). Railway (Hobby) ready. Following Enyrgy_Paperclip_Phase2_Setup_Guide |
 | Reporting dashboards | Scott | Build KPI views in GHL reporting |
 | 600+ existing customer import | DONE (Session 10) | 617 imported, tagged drip_bypass + legacy_customer (24 seg_facility); NOT type_consumer (kept out of drips) |

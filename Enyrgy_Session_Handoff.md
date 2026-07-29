@@ -1,7 +1,7 @@
 # ENYRGY GHL - Session Handoff
 **Load this at the start of the next session. It is the orientation layer. The WIP tracker and Implementation Guide v3.9 are the source of truth.**
 
-Date of this handoff: July 27, 2026 (end of Session 15)
+Date of this handoff: July 28, 2026 (end of Session 15)
 
 ---
 
@@ -90,6 +90,17 @@ The session took Paperclip from "built" toward "running": the live KB skill was 
 **Fixed: accessory reorders were triggering device onboarding.** A customer who reordered a wall mount (a Shopify accessory) received the WF-06 New Customer Onboarding "your unit is on its way, register before it arrives" sequence, days after the device had already been delivered and after Scott had spoken with them. Root cause: WF-28 Shopify Order Fulfilled applied the `unit_shipped` tag on ANY fulfilled order, and WF-06 triggers on that tag. Fix: added a product filter to WF-28's Order-Fulfilled trigger so it applies `unit_shipped` only when the fulfilled order contains the Home System device (the sole product sold through Shopify; the Commercial unit is sold off-Shopify, so no additional product needed in the filter). WF-06's trigger is the `unit_shipped` tag (a Contact-tag trigger that fires when the tag is added; it does not add the tag), so the single WF-28 filter fully controls onboarding. The mistimed SMS to the affected customer had failed to send (toll-free SMS was not yet live), so only a harmless "register your device" email reached them.
 
 **Decision: referral program deferred to the next Enyrgy version.** Scott decided not to implement a third-party Shopify referral app (ReferralCandy/Smile.io) now; the next version of Enyrgy will have a built-in loyalty/referral program. So WF-07's referral link stays an intentional placeholder until then, and the Referral and Reviews agent's referral function waits for that program (its review and testimonial functions are ready now). Intended terms when it ships: $150 off referee / $100 store credit referrer.
+
+**July 28 wrap (marketing-ops cleanup + go-live tuning).**
+- **Heartbeat lineup settled for early stage.** ON: Sentinel 24h, Quality Control daily, Dispatcher 8h, Sales Outreach 1h, SDR 2h, Reactivation 6h, KB Manager 30d. HELD until volume ramps (daily is plenty when enabled): Referral and Reviews (block trimmed, referral function paused), Sales Scout, CSM. Event-driven / timer OFF: CEO/COO/CRO/CFO, Audit and Compliance, PRD Gatherer, Onboarding.
+- **WF-07 fully wired.** Day-14 review SMS carries the Google (g.page/r/CfN5Rj0CdmrfEAI/review) + Trustpilot links; the testimonial-form link is live in the WF-07 email and on the enyrgy.com website.
+- **Toll-free 888 approved for SMS.** IMPORTANT: the account has NO 10DLC / local number and never did (an earlier "A2P 10DLC approved" claim was wrong; corrected across all docs). SMS runs solely on 888-316-1695.
+- **CNAM caller-ID** confirmed Approved in LC Phone with Friendly Name "Enyrgy Inc".
+- **Content assets complete.** Commercial ROI one-pager (`Enyrgy_Commercial_ROI.pdf` + editable `.html` in repo; one placeholder = commercial booking link). Inbound 888 voicemail greeting recorded in Scott's voice. Outbound investor-drip voicemail script drafted (optional, record only if that touch is activated).
+- **WF-28 fix.** Accessory-only Shopify reorders (e.g., wall mount) were triggering WF-06 device onboarding because WF-28 applied `unit_shipped` on any fulfilled order. Gated WF-28's trigger to the Home System product (the only device sold via Shopify; commercial is off-Shopify). WF-06 triggers on the `unit_shipped` tag, so the single filter fully controls it.
+- **GHL agency corrections.** Agency mailing address corrected to Phoenix; Business Category fixed Medical -> Health & Wellness (Self Service Health Station niche; no A2P impact, separate TCR filing).
+- **OPEN, employee-facing:** Enyrgy agency system emails send with the sender display name "Ledgerix Pro LLC" (Scott's SEPARATE GHL agency, Relationship 0-783-665, vs the Enyrgy agency's 0-167-470). Both agencies were verified internally correct (each Company Name matches its own brand; Enyrgy templates use {{agency.name}} = Enyrgy Inc so email bodies are right). Therefore it is a HighLevel PLATFORM cross-agency sender-identity issue, not an editable field in either agency. A support ticket is drafted in `Enyrgy_Master_TODO.md`; that is the fix path.
+- Also resolved July 28: investor-presentation calendar conflict; Q2 investor update sent to Brian for review; GBP verified/live.
 
 ## WHAT WAS DONE (Session 14, July 25-26, 2026)
 
