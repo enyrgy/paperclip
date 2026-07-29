@@ -173,7 +173,7 @@ These placeholders exist in workflows and need real URLs:
 |----------|-------------|---------|
 | WF-07 Review SMS | RESOLVED | Google review link live in the Day-14 SMS: https://g.page/r/CfN5Rj0CdmrfEAI/review (Trustpilot offered as secondary) |
 | WF-07 Referral Email | Referral link | Pending Shopify referral app setup |
-| WF-07 Testimonial Email | Testimonial form | https://api.leadconnectorhq.com/widget/form/OjahkWeVDeozQkfG9dW2 |
+| WF-07 Testimonial Email | RESOLVED | Testimonial form link now live in the email: https://api.leadconnectorhq.com/widget/form/OjahkWeVDeozQkfG9dW2?notrack=true |
 | All workflows | Order URL | https://www.enyrgy.com/products/uvb-light-therapy |
 | Investor Touch 7 | PPM download | Attorney-approved |
 
