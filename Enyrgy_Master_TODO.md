@@ -32,7 +32,8 @@ The build is essentially done. What remains is finishing the go-live staging, a 
 - [ ] **Referral program (DEFERRED — decided July 28)** — NOT implementing a third-party Shopify referral app (ReferralCandy/Smile.io). The next version of Enyrgy will ship a built-in loyalty/referral program instead. WF-07's referral link stays an intentional placeholder until then. The Referral and Reviews agent's review/testimonial functions are ready now; its referral function waits for the built-in program (see section 6).
 - [ ] **Trustpilot** — permanent review URL + post-purchase automation.
 - [x] **Testimonial-form link on enyrgy.com** — DONE (July 28). Link added to the website.
-- [ ] **CNAM caller-ID registration** — "Enyrgy" on outbound caller ID. Low priority.
+- [x] **CNAM caller-ID registration** — DONE. Already Approved in LC Phone with Friendly Name "Enyrgy Inc"; outbound calls display the business name.
+- [ ] **GHL agency profile address + sender name** — agency-level system emails (sent from the Ledgerix Pro LLC agency, which owns the Enyrgy Inc sub-account) still show the OLD Scottsdale address (7641 E Gray Rd, STE G, Scottsdale, AZ 85260). Fix in Agency Settings > Business Profile: update the mailing address to the Phoenix facility (5115 N 27th Ave, Bld 66, Phoenix, AZ 85017), and optionally rebrand the agency sender name from "Ledgerix Pro LLC" to Enyrgy. NOTE: distinct system from the Shopify policy address (already fixed).
 
 ## 4. Investor readiness
 

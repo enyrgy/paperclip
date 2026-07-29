@@ -141,7 +141,8 @@ Last Updated: July 28, 2026 (Session 15). See `Enyrgy_Master_TODO.md` for the co
 
 | Task | Owner | Notes |
 |------|-------|-------|
-| CNAM Voice registration | Scott | Displays "Enyrgy" on outbound caller ID |
+| CNAM Voice registration | Complete | Approved in LC Phone, Friendly Name "Enyrgy Inc" |
+| GHL agency profile address | Scott | Agency (Ledgerix Pro LLC) system emails show old Scottsdale address; update in Agency Settings > Business Profile to Phoenix. Distinct from Shopify policy address. |
 | Paperclip agent setup | IN PROGRESS (Session 12) | 16-agent org (22 with all six Phase 2 additions). Railway (Hobby) ready. Following Enyrgy_Paperclip_Phase2_Setup_Guide |
 | Reporting dashboards | Scott | Build KPI views in GHL reporting |
 | 600+ existing customer import | DONE (Session 10) | 617 imported, tagged drip_bypass + legacy_customer (24 seg_facility); NOT type_consumer (kept out of drips) |
