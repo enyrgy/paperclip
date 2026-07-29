@@ -18,7 +18,7 @@ Last Updated: July 28, 2026 (Session 15). See `Enyrgy_Master_TODO.md` for the co
 | Testimonial Collection System | LIVE - form video field, WF-25, WF-26 (Session 10) |
 | Shopify / GHL Integration | LIVE (Session 11): native connector + WF-27 + WF-28 fulfillment + WF-29 abandoned-checkout recovery (Railway service). Remaining: upgrade Railway off trial |
 | Google Business Profile | Verified and LIVE (Session 15). Review link wired into WF-07 Day-14 SMS (Google + Trustpilot). |
-| Paperclip Agent Org (17 agents) | GO-LIVE IN PROGRESS (Session 15): heartbeats staged and tuned. ON: Sentinel 24h, Quality Control daily, Dispatcher 8h, Sales Outreach 1h, SDR 2h, KB Manager 30d. Remaining to stage: Reactivation, Referral and Reviews (gated on WF-07), Sales Scout, CSM. Execs + Audit/PRD/Onboarding stay event-driven (timer OFF). |
+| Paperclip Agent Org (17 agents) | GO-LIVE IN PROGRESS (Session 15): heartbeats staged and tuned. ON: Sentinel 24h, Quality Control daily, Dispatcher 8h, Sales Outreach 1h, SDR 2h, KB Manager 30d. Remaining to stage: Reactivation, Referral and Reviews (review/testimonial ready; referral function deferred with the built-in loyalty program), Sales Scout, CSM. Execs + Audit/PRD/Onboarding stay event-driven (timer OFF). |
 | Toll-Free A2P Verification (888) | APPROVED (July 28, 2026) - validated for SMS. SMS can now send from 888-316-1695. |
 | Paperclip Agent Setup | Phase 2 build COMPLETE (Sessions 12-13). Now operating: approval-card UX + ask-first policy + toggle-bug fixed (Session 15). Standing rule: keep Anthropic credit buffered and budgets with headroom - starvation multiplies cost and causes agent confabulation. |
 | External Tasks | Multiple Pending - see Enyrgy_Master_TODO.md |
@@ -131,7 +131,7 @@ Last Updated: July 28, 2026 (Session 15). See `Enyrgy_Master_TODO.md` for the co
 | Facility address updated in live systems | Complete | 5115 N 27th Ave, Bld 66, Phoenix, AZ 85017 reflected everywhere |
 | Winter Protocol workflow + landing page | Complete | WF-19 + WF-20 live; go.enyrgy.com/winter-protocol live |
 | Investor Presentation Calendar Fix | Scott/David/Brian | Currently showing all times available - need to verify conflict detection |
-| Shopify Referral App | Scott | Install Referral Candy or Smile.io for automated referral links |
+| Shopify Referral App | DEFERRED (Jul 28) | Not installing a third-party app; referral/loyalty will be built into the next Enyrgy version |
 | Trustpilot connect Shopify | Scott | Automate review invitations post-purchase |
 | Commercial form SMS consent | DONE (Session 11) | Consent text + checkbox added to Commercial Inquiry Form |
 | Partner form SMS consent | DONE (Session 11) | Consent text + checkbox added to Partner Application Form |
@@ -173,7 +173,7 @@ These placeholders exist in workflows and need real URLs:
 | Location | Placeholder | Real URL |
 |----------|-------------|---------|
 | WF-07 Review SMS | RESOLVED | Google review link live in the Day-14 SMS: https://g.page/r/CfN5Rj0CdmrfEAI/review (Trustpilot offered as secondary) |
-| WF-07 Referral Email | Referral link | Pending Shopify referral app setup |
+| WF-07 Referral Email | DEFERRED (Jul 28) | Referral link intentionally held. No third-party referral app; the next Enyrgy version ships a built-in loyalty/referral program that will supply it. |
 | WF-07 Testimonial Email | RESOLVED | Testimonial form link now live in the email: https://api.leadconnectorhq.com/widget/form/OjahkWeVDeozQkfG9dW2?notrack=true |
 | All workflows | Order URL | https://www.enyrgy.com/products/uvb-light-therapy |
 | Investor Touch 7 | PPM download | Attorney-approved |

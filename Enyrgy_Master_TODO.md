@@ -29,7 +29,7 @@ The build is essentially done. What remains is finishing the go-live staging, a 
 
 - [x] **Toll-free A2P (888) verification** — VALIDATED and approved for SMS (July 28, 2026). SMS can now send from the toll-free number 888-316-1695. Follow-up: activate any SMS touches that were paused waiting on this.
 - [x] **Wire the GBP review link into WF-07** — DONE. Google review link is live in the WF-07 Day-14 SMS (https://g.page/r/CfN5Rj0CdmrfEAI/review), Trustpilot offered as secondary, STOP opt-out present, copy compliance-clean.
-- [ ] **Install the Shopify referral app** (ReferralCandy or Smile.io) so WF-07's referral link is real. Gates the Referral and Reviews agent.
+- [ ] **Referral program (DEFERRED — decided July 28)** — NOT implementing a third-party Shopify referral app (ReferralCandy/Smile.io). The next version of Enyrgy will ship a built-in loyalty/referral program instead. WF-07's referral link stays an intentional placeholder until then. The Referral and Reviews agent's review/testimonial functions are ready now; its referral function waits for the built-in program (see section 6).
 - [ ] **Trustpilot** — permanent review URL + post-purchase automation.
 - [ ] **Testimonial-form link on enyrgy.com** — add to post-purchase follow-up.
 - [ ] **CNAM caller-ID registration** — "Enyrgy" on outbound caller ID. Low priority.
@@ -53,6 +53,7 @@ The build is essentially done. What remains is finishing the go-live staging, a 
 
 ## 6. Future / optional
 
+- [ ] **Built-in loyalty/referral program** — planned for the next version of Enyrgy, replacing the need for a third-party Shopify referral app. This will supply the referral link/mechanic that WF-07 and the Referral and Reviews agent are waiting on ($150 off referee / $100 store credit referrer are the intended terms).
 - [ ] **Reporting dashboards** (GHL KPI views) and the **Reporting Agent** (Phase-2 addition).
 - [ ] **The other five Phase-2 agents** — Proposal Writer, OEM Pipeline, Podcast Attribution, Clinical Concierge, Billing. Add only after the core is stable.
 - [ ] **Paid acquisition** (Meta/Google) — after domain warmup finishes.
