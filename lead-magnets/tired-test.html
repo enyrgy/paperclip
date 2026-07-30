@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Tired Test | Enyrgy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1A1A1A;
+    --accent:#E64C38;
+    --accent-dark:#C13D2B;
+    --bg:#F7F4EE;
+    --card:#FFFFFF;
+    --ink:#1A1A1A;
+    --muted:#6B6B66;
+    --line:#E2DBC9;
+    --good:#2E7D52;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Montserrat',-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.55;
+    min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;
+  }
+  /* Break out of any narrow parent container GHL wraps this in */
+  html, body { width:100% !important; max-width:100% !important; }
+  .wrap{width:100%;max-width:620px;}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:36px 34px;box-shadow:0 10px 40px rgba(27,42,74,.06);
+  }
+  .brand{
+    font-size:13px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--accent);font-weight:700;margin-bottom:6px;
+  }
+  .tagline{font-size:12px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:22px;}
+  h1{font-size:27px;line-height:1.25;color:var(--navy);margin-bottom:12px;font-weight:800;}
+  h2{font-size:21px;line-height:1.3;color:var(--navy);margin-bottom:14px;font-weight:700;}
+  .lede{font-size:16px;color:var(--ink);margin-bottom:8px;}
+  .sub{font-size:15px;color:var(--muted);margin-bottom:24px;}
+  .progress{height:6px;background:var(--line);border-radius:999px;overflow:hidden;margin-bottom:26px;}
+  .progress > span{display:block;height:100%;background:var(--accent);width:0;transition:width .35s ease;}
+  .step{display:none;}
+  .step.active{display:block;animation:fade .3s ease;}
+  @keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
+  .qnum{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:8px;}
+  .qtext{font-size:20px;color:var(--navy);font-weight:700;margin-bottom:18px;line-height:1.3;}
+  .opt{
+    display:flex;align-items:center;gap:12px;width:100%;text-align:left;
+    border:1.5px solid var(--line);background:#fff;border-radius:12px;
+    padding:15px 16px;margin-bottom:11px;cursor:pointer;font-size:15.5px;color:var(--ink);
+    transition:border-color .15s,background .15s,transform .05s;
+  }
+  .opt:hover{border-color:var(--accent);}
+  .opt:active{transform:scale(.995);}
+  .opt.sel{border-color:var(--accent);background:#FBEDE9;}
+  .opt .box{
+    width:20px;height:20px;border-radius:6px;border:2px solid var(--line);flex:0 0 auto;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .opt.sel .box{border-color:var(--accent);background:var(--accent);}
+  .opt.sel .box:after{content:"";width:6px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg) translateY(-1px);}
+  .multi-hint{font-size:13px;color:var(--muted);margin-bottom:14px;}
+  .nav{display:flex;justify-content:space-between;align-items:center;margin-top:24px;gap:12px;}
+  .btn{
+    border:none;border-radius:10px;padding:13px 26px;font-size:15px;font-weight:700;
+    cursor:pointer;transition:background .15s,opacity .15s;
+  }
+  .btn-primary{background:var(--accent);color:#fff;}
+  .btn-primary:hover{background:var(--accent-dark);}
+  .btn-primary:disabled{opacity:.4;cursor:not-allowed;}
+  .btn-ghost{background:#fff;color:var(--navy);border:1.5px solid var(--line);padding:13px 22px;}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
+  .field{margin-bottom:14px;}
+  .field label{display:block;font-size:13px;font-weight:600;color:var(--navy);margin-bottom:6px;}
+  .field input{
+    width:100%;border:1.5px solid var(--line);border-radius:10px;padding:13px 14px;font-size:15px;
+    color:var(--ink);background:#fff;
+  }
+  .field input:focus{outline:none;border-color:var(--accent);}
+  .consent{display:flex;gap:10px;align-items:flex-start;margin:14px 0;font-size:12.5px;color:var(--muted);line-height:1.5;}
+  .consent input{margin-top:3px;flex:0 0 auto;width:16px;height:16px;accent-color:var(--accent);}
+  .consent a{color:var(--accent);text-decoration:underline;}
+  .result-badge{
+    display:inline-block;background:#FBEDE9;color:var(--accent-dark);
+    font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    padding:6px 12px;border-radius:999px;margin-bottom:16px;
+  }
+  .result p{margin-bottom:14px;font-size:15.5px;}
+  .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px;}
+  .cta-row a{flex:1;min-width:180px;text-align:center;text-decoration:none;}
+  .err{color:#B23B3B;font-size:13px;margin-top:6px;display:none;}
+  .spin{display:inline-block;width:16px;height:16px;border:2px solid rgba(255,255,255,.5);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;vertical-align:-3px;margin-right:8px;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+  .legal{font-size:11px;color:var(--muted);margin-top:22px;text-align:center;line-height:1.5;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="card">
+
+    <div class="brand">Enyrgy</div>
+    <div class="tagline">Sunlight. Evolved.</div>
+
+    <!-- INTRO -->
+    <div class="step active" id="step-intro">
+      <h1>You sleep eight hours and still wake up tired.</h1>
+      <p class="lede">You have tried the magnesium, the melatonin, the earlier bedtime. You did the right things. You are still tired.</p>
+      <p class="sub">Four questions. About ninety seconds. At the end you will know whether your fatigue is the kind the usual fixes can touch, or the kind they will never reach because the cause sits somewhere nobody thinks to look.</p>
+      <div class="nav" style="justify-content:flex-end;">
+        <button class="btn btn-primary" onclick="go(1)">Take The Tired Test &rarr;</button>
+      </div>
+    </div>
+
+    <!-- PROGRESS + QUESTIONS -->
+    <div id="quiz-body" style="display:none;">
+      <div class="progress"><span id="bar"></span></div>
+
+      <!-- Q1 -->
+      <div class="step" id="step-1">
+        <div class="qnum">Question 1 of 4</div>
+        <div class="qtext">When you wake up after a full night's sleep, how do you feel?</div>
+        <div data-q="q1" data-multi="false"></div>
+        <div class="nav">
+          <button class="btn btn-ghost" onclick="go('intro')">&larr; Back</button>
+          <button class="btn btn-primary" id="next-1" disabled onclick="go(2)">Continue &rarr;</button>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="step" id="step-2">
+        <div class="qnum">Question 2 of 4</div>
+        <div class="qtext">When did the tiredness start, or get noticeably worse?</div>
+        <div data-q="q2" data-multi="false"></div>
+        <div class="nav">
+          <button class="btn btn-ghost" onclick="go(1)">&larr; Back</button>
+          <button class="btn btn-primary" id="next-2" disabled onclick="go(3)">Continue &rarr;</button>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="step" id="step-3">
+        <div class="qnum">Question 3 of 4</div>
+        <div class="qtext">What have you already tried?</div>
+        <div class="multi-hint">Select all that apply.</div>
+        <div data-q="q3" data-multi="true"></div>
+        <div class="nav">
+          <button class="btn btn-ghost" onclick="go(2)">&larr; Back</button>
+          <button class="btn btn-primary" id="next-3" disabled onclick="go(4)">Continue &rarr;</button>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="step" id="step-4">
+        <div class="qnum">Question 4 of 4</div>
+        <div class="qtext">How much real midday sun does your skin get in a normal week?</div>
+        <div data-q="q4" data-multi="false"></div>
+        <div class="nav">
+          <button class="btn btn-ghost" onclick="go(3)">&larr; Back</button>
+          <button class="btn btn-primary" id="next-4" disabled onclick="go('capture')">Continue &rarr;</button>
+        </div>
+      </div>
+
+      <!-- CAPTURE -->
+      <div class="step" id="step-capture">
+        <h2>Where should we send your result?</h2>
+        <p class="sub">Your read, plus the first short email that explains what your answers point to. It is the part most people have never had spelled out.</p>
+        <div class="field">
+          <label>First name</label>
+          <input type="text" id="firstName" placeholder="First name">
+        </div>
+        <div class="field">
+          <label>Last name</label>
+          <input type="text" id="lastName" placeholder="Last name">
+        </div>
+        <div class="field">
+          <label>Email</label>
+          <input type="email" id="email" placeholder="you@email.com">
+          <div class="err" id="email-err">Please enter a valid email.</div>
+        </div>
+        <div class="field">
+          <label>Phone (optional)</label>
+          <input type="tel" id="phone" placeholder="(555) 000-0000">
+        </div>
+
+        <label class="consent">
+          <input type="checkbox" id="smsConsent">
+          <span>By checking this box, I consent to receive non-marketing and marketing text messages from Enyrgy Inc about my results, products, and updates at the phone number provided. Message frequency varies. Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help. Enyrgy does not share your phone number or SMS consent with third parties for marketing. View our <a href="https://shop.enyrgy.com/policies/privacy-policy" target="_blank">Privacy Policy</a> and <a href="https://shop.enyrgy.com/policies/terms-of-service" target="_blank">Terms of Service</a>.</span>
+        </label>
+
+        <div class="err" id="form-err">Please add your name and a valid email.</div>
+
+        <div class="nav">
+          <button class="btn btn-ghost" onclick="go(4)">&larr; Back</button>
+          <button class="btn btn-primary" id="submitBtn" onclick="submitQuiz()">See my result &rarr;</button>
+        </div>
+      </div>
+
+      <!-- RESULT -->
+      <div class="step" id="step-result">
+        <div class="result-badge" id="result-badge">Your Tired Test result</div>
+        <div class="result" id="result-copy"></div>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://enyrgy.com/the-platform" target="_blank">Learn about the platform</a>
+        </div>
+        <p class="legal">Check your inbox for the first email. It explains the mechanism in plain language.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   THE TIRED TEST - Enyrgy lead magnet
+   WEBHOOK_URL is the inbound webhook URL from the WF-12
+   webhook trigger in GHL. Verify it matches your live trigger.
+   ============================================================ */
+const WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/GtXjla7Ld1dordsTWrVy/webhook-trigger/6c3a7c6c-f1fa-4c85-a03a-a1c42fdfb13d";
+
+/* --- FlexOffers affiliate click capture ---------------------------
+   Reads refid from the landing URL and persists it, so it survives
+   refreshes and is still there when the visitor submits. ---------- */
+const FLEXOFFERS_KEY = "enyrgy_flexoffers_refid";
+(function(){
+  try{
+    const fromUrl = new URLSearchParams(window.location.search).get("refid");
+    if(fromUrl) localStorage.setItem(FLEXOFFERS_KEY, fromUrl);
+  }catch(e){}
+})();
+function getRefid(){
+  let fromUrl = "";
+  try{ fromUrl = new URLSearchParams(window.location.search).get("refid") || ""; }catch(e){}
+  if(fromUrl) return fromUrl;
+  try{ return localStorage.getItem(FLEXOFFERS_KEY) || ""; }catch(e){ return ""; }
+}
+
+const QUESTIONS = {
+  q1:{multi:false,options:[
+    {v:"rested_most_days",t:"Rested most days"},
+    {v:"foggy_then_fine",t:"Foggy for an hour, then fine"},
+    {v:"tired_regardless",t:"Tired no matter how long I slept"},
+    {v:"never_rested",t:"I cannot remember the last time I woke up rested"}
+  ]},
+  q2:{multi:false,options:[
+    {v:"gradual",t:"It has been gradual, hard to pin down"},
+    {v:"after_change",t:"After a move, a job change, or a winter"},
+    {v:"indoor_shift",t:"When I started spending most of my days indoors"},
+    {v:"seasonal",t:"It is worse in fall and winter, better in summer"}
+  ]},
+  q3:{multi:true,options:[
+    {v:"sleep_schedule",t:"Better sleep schedule"},
+    {v:"sleep_supps",t:"Magnesium, melatonin, or other sleep supplements"},
+    {v:"vitamin_d",t:"Vitamin D supplements"},
+    {v:"lifestyle",t:"Cutting caffeine, more exercise, diet changes"},
+    {v:"bloodwork",t:"Bloodwork with my doctor"}
+  ]},
+  q4:{multi:false,options:[
+    {v:"often_outside",t:"A fair amount, I am outside often"},
+    {v:"weekends",t:"Some, on weekends mostly"},
+    {v:"mostly_indoor",t:"Very little, I am indoors most of the day"},
+    {v:"almost_none",t:"Almost none"}
+  ]}
+};
+
+const answers = {q1:null,q2:null,q3:[],q4:null};
+
+// Render option buttons
+Object.keys(QUESTIONS).forEach(qid=>{
+  const host=document.querySelector(`[data-q="${qid}"]`);
+  const multi=QUESTIONS[qid].multi;
+  QUESTIONS[qid].options.forEach(o=>{
+    const b=document.createElement("button");
+    b.className="opt";
+    b.innerHTML=`<span class="box"></span><span>${o.t}</span>`;
+    b.onclick=()=>{
+      if(multi){
+        b.classList.toggle("sel");
+        const idx=answers[qid].indexOf(o.v);
+        if(idx>-1)answers[qid].splice(idx,1); else answers[qid].push(o.v);
+        toggleNext(qid, answers[qid].length>0);
+      }else{
+        host.querySelectorAll(".opt").forEach(x=>x.classList.remove("sel"));
+        b.classList.add("sel");
+        answers[qid]=o.v;
+        toggleNext(qid,true);
+      }
+    };
+    host.appendChild(b);
+  });
+});
+
+function toggleNext(qid,on){
+  const n=qid.replace("q","");
+  const btn=document.getElementById("next-"+n);
+  if(btn)btn.disabled=!on;
+}
+
+const ORDER=["intro",1,2,3,4,"capture","result"];
+function go(to){
+  document.querySelectorAll(".step").forEach(s=>s.classList.remove("active"));
+  const map={intro:"step-intro",capture:"step-capture",result:"step-result"};
+  const id=map[to]||("step-"+to);
+  document.getElementById(id).classList.add("active");
+  document.getElementById("quiz-body").style.display = (to==="intro")?"none":"block";
+  // progress
+  const qIndex={1:1,2:2,3:3,4:4,capture:4,result:4}[to]||0;
+  document.getElementById("bar").style.width=(qIndex/4*100)+"%";
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function validEmail(e){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);}
+
+async function submitQuiz(){
+  const firstName=document.getElementById("firstName").value.trim();
+  const lastName=document.getElementById("lastName").value.trim();
+  const email=document.getElementById("email").value.trim();
+  const phone=document.getElementById("phone").value.trim();
+  const smsConsent=document.getElementById("smsConsent").checked;
+
+  document.getElementById("form-err").style.display="none";
+  if(!firstName||!validEmail(email)){
+    document.getElementById("form-err").style.display="block";
+    return;
+  }
+
+  // Seasonal signal: Q2 seasonal OR Q4 low-sun is a strong seasonal bridge
+  const seasonal = (answers.q2==="seasonal");
+  const lowSun = (answers.q4==="mostly_indoor"||answers.q4==="almost_none");
+
+  // Build tag list
+  const tags=["type_consumer","source_lead_magnet","magnet_tired_test","status_new"];
+  if(smsConsent && phone) tags.push("sms_consent_given");
+  if(seasonal) tags.push("tired_test_seasonal");
+  if(lowSun) tags.push("low_sun_exposure");
+  if(getRefid()) tags.push("source_flexoffers");
+
+  const payload={
+    firstName, lastName, email, phone,
+    source:"tired_test_lead_magnet",
+    magnet:"tired_test",
+    q1_wake_feeling:answers.q1,
+    q2_onset:answers.q2,
+    q3_already_tried:answers.q3.join(","),
+    q4_sun_exposure:answers.q4,
+    seasonal_signal:seasonal?"yes":"no",
+    sms_consent_given:(smsConsent && phone)?"yes":"no",
+    flexoffers_refid: getRefid(),
+    tags
+  };
+
+  const btn=document.getElementById("submitBtn");
+  btn.disabled=true;
+  btn.innerHTML='<span class="spin"></span>Sending...';
+
+  try{
+    if(WEBHOOK_URL && WEBHOOK_URL!=="YOUR_GHL_WEBHOOK_URL_HERE"){
+      await fetch(WEBHOOK_URL,{
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify(payload)
+      });
+    }
+  }catch(e){
+    // Even if webhook fails, show the result so the user is not stuck.
+    console.error("Webhook error:",e);
+  }
+
+  showResult(seasonal);
+}
+
+function showResult(seasonal){
+  const copy=document.getElementById("result-copy");
+  let html=`
+    <p>Here is what your answers point to.</p>
+    <p>You have already tried the things that are supposed to work. The earlier bedtime. The magnesium and the melatonin. Maybe the bloodwork that came back fine. Every one of them was a reasonable move. None of them gave you your mornings back.</p>
+    <p>When the usual fixes do not land, it usually means they were aimed at the wrong thing. The problem is not the one everyone treats first.</p>
+    <p>One input almost nobody checks is light. Not screen light or room light. The specific wavelengths your skin uses to run a set of processes that drive energy, sleep, and mood. When your skin stops getting them, which is what happens to most people who live and work indoors, those processes slow down. A supplement raises one number on a lab. It does not switch the processes back on.</p>
+    <p>And the tiredness is not free. It is the first hour of every day you do not get back, the workouts you skip, the patience you run out of with the people who did nothing wrong. Another winter of the same is not a small thing to keep paying for.</p>
+    <p>I just sent you the first email. It walks through the mechanism in plain language, no biology degree required. Read that one first. Everything after it makes sense once you have.</p>`;
+  if(seasonal){
+    html+=`<p><strong>Your answers lean seasonal, and that is a strong signal.</strong> It points to a specific cause, not a vague one, and the emails cover exactly what winter does to your body and why summer used to fix it on its own.</p>`;
+  }
+  copy.innerHTML=html;
+  go("result");
+}
+</script>
+</body>
+</html>
