@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vitamin D Deficiency Assessment | Enyrgy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --orange:#E64C38; --charcoal:#1A1A1A; --offwhite:#F7F4EE;
+    --beige:#ECE4CF; --line:#E2DBC9; --muted:#6B6B66; --white:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Montserrat',system-ui,Arial,sans-serif;
+    color:var(--charcoal); background:var(--offwhite);
+    line-height:1.5; -webkit-font-smoothing:antialiased;
+    padding:24px 16px; display:flex; justify-content:center;
+  }
+  .wrap{width:100%; max-width:640px}
+  .brand{text-align:center; margin-bottom:18px}
+  .brand .mark{font-weight:800; letter-spacing:.06em; font-size:30px; color:var(--orange)}
+  .brand .tag{font-style:italic; font-weight:600; color:var(--muted); font-size:14px; margin-top:2px}
+  .card{
+    background:var(--white); border:1px solid var(--line);
+    border-radius:16px; padding:28px 26px 24px; box-shadow:0 8px 30px rgba(26,26,26,.06);
+  }
+  .progress{height:8px; background:var(--beige); border-radius:99px; overflow:hidden; margin-bottom:22px}
+  .progress .fill{height:100%; width:0; background:var(--orange); border-radius:99px; transition:width .35s ease}
+  .step-count{font-size:12px; font-weight:600; color:var(--muted); letter-spacing:.08em; text-transform:uppercase; margin-bottom:8px}
+  h1.q{font-size:22px; font-weight:700; margin-bottom:6px}
+  p.sub{color:var(--muted); font-size:14px; margin-bottom:20px}
+  .options{display:flex; flex-direction:column; gap:10px}
+  .opt{
+    border:1.5px solid var(--line); border-radius:12px; padding:14px 16px;
+    cursor:pointer; font-size:15px; font-weight:500; display:flex; align-items:center; gap:12px;
+    transition:border-color .15s, background .15s; background:var(--white);
+  }
+  .opt:hover{border-color:var(--orange); background:var(--offwhite)}
+  .opt.selected{border-color:var(--orange); background:rgba(230,76,56,.06)}
+  .opt .tick{
+    width:20px; height:20px; border-radius:6px; border:1.5px solid var(--line);
+    flex:0 0 auto; display:flex; align-items:center; justify-content:center; font-size:13px; color:var(--white)
+  }
+  .opt.selected .tick{background:var(--orange); border-color:var(--orange)}
+  .opt small{display:block; color:var(--muted); font-weight:400; font-size:12.5px; margin-top:2px}
+  .field{margin-bottom:14px}
+  .field label{display:block; font-size:13px; font-weight:600; margin-bottom:6px}
+  .field input{
+    width:100%; border:1.5px solid var(--line); border-radius:10px; padding:12px 14px;
+    font-family:inherit; font-size:15px; color:var(--charcoal); background:var(--white);
+  }
+  .field input:focus{outline:none; border-color:var(--orange)}
+  .row{display:flex; gap:12px}
+  .row .field{flex:1}
+  .consent{display:flex; gap:10px; align-items:flex-start; margin:8px 0 4px; padding:12px 14px; background:var(--offwhite); border-radius:10px; border:1px solid var(--line)}
+  .consent input{margin-top:3px; width:18px; height:18px; accent-color:var(--orange); flex:0 0 auto}
+  .consent label{font-size:11.5px; color:var(--muted); line-height:1.45}
+  .nav{display:flex; justify-content:space-between; align-items:center; margin-top:24px; gap:12px}
+  .btn{
+    font-family:inherit; font-weight:700; font-size:15px; border:none; border-radius:99px;
+    padding:13px 30px; cursor:pointer; transition:transform .1s, opacity .15s;
+  }
+  .btn:active{transform:translateY(1px)}
+  .btn-primary{background:var(--orange); color:var(--white)}
+  .btn-primary:disabled{opacity:.4; cursor:not-allowed}
+  .btn-ghost{background:transparent; color:var(--muted); padding:13px 8px; font-weight:600}
+  .err{color:var(--orange); font-size:12.5px; font-weight:600; margin-top:8px; min-height:16px}
+  .hidden{display:none}
+  /* Results */
+  .badge{display:inline-block; padding:7px 16px; border-radius:99px; font-weight:700; font-size:13px; letter-spacing:.04em; text-transform:uppercase; margin-bottom:14px}
+  .badge.high{background:rgba(230,76,56,.12); color:var(--orange)}
+  .badge.moderate{background:var(--beige); color:#9a6b1f}
+  .badge.lower{background:#e7efe4; color:#3d7a46}
+  .meter{height:14px; background:var(--beige); border-radius:99px; overflow:hidden; margin:10px 0 6px}
+  .meter .bar{height:100%; width:0; background:var(--orange); border-radius:99px; transition:width .9s ease}
+  .meter-label{display:flex; justify-content:space-between; font-size:12px; color:var(--muted); font-weight:600}
+  .panel{background:var(--offwhite); border:1px solid var(--line); border-radius:12px; padding:16px 18px; margin-top:16px}
+  .panel h3{font-size:15px; margin-bottom:6px; color:var(--charcoal); border-bottom:2px solid var(--orange); display:inline-block; padding-bottom:2px}
+  .panel p{font-size:14px; color:var(--charcoal)}
+  .panel p + p{margin-top:8px}
+  .cta{display:block; text-align:center; text-decoration:none; margin-top:18px}
+  .foot{text-align:center; color:var(--muted); font-size:11.5px; margin-top:20px; line-height:1.5}
+  .foot a{color:var(--muted)}
+  .legal{font-size:10.5px; color:var(--muted); line-height:1.5; margin-top:14px; padding-top:12px; border-top:1px solid var(--line); text-align:left}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">
+    <div class="mark">ENYRGY</div>
+    <div class="tag">Sunlight. Evolved.</div>
+  </div>
+
+  <div class="card">
+    <div class="progress"><div class="fill" id="fill"></div></div>
+    <div id="screen"></div>
+    <div class="nav" id="nav">
+      <button class="btn-ghost" id="backBtn" onclick="back()">Back</button>
+      <button class="btn btn-primary" id="nextBtn" onclick="next()">Continue</button>
+    </div>
+    <div class="err" id="err"></div>
+  </div>
+
+  <div class="foot">
+    Enyrgy Inc &middot; 5115 N 27th Ave, Bld 66, Phoenix, AZ 85017 &middot; Made in USA<br>
+    Questions? Call <a href="tel:+18883161695">+1 888-316-1695</a> &middot; enyrgy.com
+    <div class="legal">
+      Not suitable for individuals under 18 years of age. Enyrgy is not a medical device. Enyrgy does not diagnose, treat, cure, or prevent any disease. These statements have not been evaluated by the FDA. Do not use if you have photosensitivity disorders, a personal or family history of melanoma or skin cancer, are taking photosensitizing medications, or are pregnant or breastfeeding. Consult your physician before use if you have any medical condition or take any medications. Annual dermatological skin examinations are recommended for all users.
+    </div>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   Enyrgy Vitamin D Deficiency Assessment - lead magnet
+   Deploy: go.enyrgy.com/vitamin-d-assessment
+   STEP 1 before going live: paste your GHL inbound webhook URL below.
+   ============================================================ */
+var WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/GtXjla7Ld1dordsTWrVy/webhook-trigger/d2692dc6-1e9f-466c-8525-58c466c426bd";
+
+/* --- FlexOffers affiliate click capture ---------------------------
+   Reads refid from the landing URL and persists it, so it survives
+   refreshes and is still there when the visitor submits. ---------- */
+var FLEXOFFERS_KEY = "enyrgy_flexoffers_refid";
+(function(){
+  try{
+    var fromUrl = new URLSearchParams(window.location.search).get("refid");
+    if(fromUrl) localStorage.setItem(FLEXOFFERS_KEY, fromUrl);
+  }catch(e){}
+})();
+function getRefid(){
+  var fromUrl = "";
+  try{ fromUrl = new URLSearchParams(window.location.search).get("refid") || ""; }catch(e){}
+  if(fromUrl) return fromUrl;
+  try{ return localStorage.getItem(FLEXOFFERS_KEY) || ""; }catch(e){ return ""; }
+}
+
+/* ---- quiz definition ---- */
+var STEPS = [
+  {
+    key:"health_goal", type:"single", title:"What is your main health goal?",
+    sub:"Pick the one that matters most to you right now.",
+    options:[
+      {value:"energy", label:"More daily energy"},
+      {value:"sleep", label:"Better sleep"},
+      {value:"mood", label:"Steadier mood"},
+      {value:"immunity", label:"Stronger immunity"},
+      {value:"athletic_recovery", label:"Faster athletic recovery"},
+      {value:"longevity", label:"Long-term healthspan"},
+      {value:"general_wellness", label:"General wellness"}
+    ]
+  },
+  {
+    key:"vd_tested", type:"single", title:"Have you had your vitamin D tested?",
+    sub:"Your last known result helps us gauge your starting point.",
+    options:[
+      {value:"optimal", label:"Yes, it was optimal", note:"60 ng/mL or higher"},
+      {value:"low", label:"Yes, it was low or borderline", note:"30 to 59 ng/mL"},
+      {value:"deficient", label:"Yes, I was told I was deficient", note:"Below 30 ng/mL"},
+      {value:"never", label:"It has been over 6 months since last tested, or never tested"}
+    ]
+  },
+  {
+    key:"current_solution", type:"multi", title:"What are you doing now to get your Vitamin D?",
+    sub:"Select everything you currently rely on.",
+    options:[
+      {value:"d3_supplements", label:"D3 supplements"},
+      {value:"morning_sun", label:"Spend at least 30 min in morning outdoors"},
+      {value:"midday_sun", label:"Spend at least 1 or more hours outdoors under mid-day sun"},
+      {value:"organic_diet", label:"Eat organic meats, fish and vegetables"},
+      {value:"other", label:"Other"},
+      {value:"nothing", label:"Nothing yet"}
+    ]
+  },
+  {
+    key:"outdoor_time", type:"single", title:"How much direct sun do you get on a typical day?",
+    sub:"Skin exposed to daylight, not through a window.",
+    options:[
+      {value:"under_15", label:"Less than 15 minutes"},
+      {value:"15_30", label:"15 to 30 minutes"},
+      {value:"30_60", label:"30 to 60 minutes"},
+      {value:"over_60", label:"More than 60 minutes"}
+    ]
+  },
+  {
+    key:"skin_type", type:"single", title:"Which best describes your skin?",
+    sub:"Skin tone changes how much vitamin D you make from light.",
+    options:[
+      {value:"Type I - Very fair, always burns", label:"Very fair, always burns, never tans"},
+      {value:"Type II - Fair, usually burns", label:"Fair, usually burns, tans minimally"},
+      {value:"Type III - Medium, sometimes burns", label:"Medium, sometimes burns, tans gradually"},
+      {value:"Type IV - Olive, rarely burns", label:"Olive, rarely burns, tans easily"},
+      {value:"Type V - Brown, very rarely burns", label:"Brown, very rarely burns"},
+      {value:"Type VI - Deeply pigmented, never burns", label:"Deeply pigmented, never burns"}
+    ]
+  },
+  {
+    key:"finance_preference", type:"single", title:"If you moved forward, what would fit you best?",
+    sub:"No commitment. This just personalizes your next step.",
+    options:[
+      {value:"Cash", label:"Purchase outright"},
+      {value:"Financing", label:"Monthly financing"},
+      {value:"Rent", label:"Rent to start"},
+      {value:"Not Sure", label:"Not sure yet"}
+    ]
+  },
+  { key:"contact", type:"contact", title:"Where should we send your results?",
+    sub:"Your personalized assessment lands in your inbox." }
+];
+
+var state = { i:0, answers:{}, multi:{current_solution:[]}, sms:false };
+
+/* ---- scoring ---- */
+function riskScore(a){
+  var s = 0;
+  // tested status
+  if(a.vd_tested === "deficient") s += 40;
+  else if(a.vd_tested === "low") s += 30;
+  else if(a.vd_tested === "never") s += 20;
+  else if(a.vd_tested === "optimal") s += 0;
+  // outdoor time
+  if(a.outdoor_time === "under_15") s += 30;
+  else if(a.outdoor_time === "15_30") s += 20;
+  else if(a.outdoor_time === "30_60") s += 10;
+  else if(a.outdoor_time === "over_60") s += 0;
+  // skin type (darker skin makes less vitamin D from the same light)
+  var skin = a.skin_type || "";
+  if(skin.indexOf("Type I ")===0) s += 5;
+  else if(skin.indexOf("Type II ")===0) s += 8;
+  else if(skin.indexOf("Type III")===0) s += 12;
+  else if(skin.indexOf("Type IV")===0) s += 20;
+  else if(skin.indexOf("Type V ")===0) s += 28;
+  else if(skin.indexOf("Type VI")===0) s += 35;
+  if(s > 100) s = 100;
+  return s;
+}
+function riskBand(score){
+  if(score >= 60) return "high";
+  if(score >= 35) return "moderate";
+  return "lower";
+}
+
+/* ---- field + tag mapping for GHL ---- */
+function buildPayload(){
+  var a = state.answers;
+  var score = riskScore(a);
+  var band = riskBand(score);
+
+  var vdSelf = "Unknown";
+  if(a.vd_tested === "optimal") vdSelf = "No";
+  else if(a.vd_tested === "low" || a.vd_tested === "deficient") vdSelf = "Yes";
+  else if(a.vd_tested === "never") vdSelf = "Unknown";
+
+  var tags = ["type_consumer","source_lead_magnet","status_new"];
+  if(a.health_goal) tags.push("goal_" + a.health_goal);
+  if(state.sms) tags.push("sms_consent_given");
+  if(band === "high") tags.push("high_deficiency_risk");
+  else if(band === "moderate") tags.push("moderate_deficiency_risk");
+  if(getRefid()) tags.push("source_flexoffers");
+
+  return {
+    firstName: a.firstName || "",
+    lastName: a.lastName || "",
+    email: a.email || "",
+    phone: a.phone || "",
+    health_goal: a.health_goal || "",
+    vitamin_d_deficient_self_reported: vdSelf,
+    current_solution: (state.multi.current_solution || []).join(", "),
+    skin_type_fitzpatrick: a.skin_type || "",
+    finance_preference: a.finance_preference || "",
+    deficiency_risk_score: score,
+    deficiency_risk_band: band,
+    sms_consent: state.sms ? "Yes" : "No",
+    source: "vitamin_d_assessment",
+    flexoffers_refid: getRefid(),
+    tags: tags
+  };
+}
+
+/* ---- rendering ---- */
+var screenEl = document.getElementById("screen");
+var fillEl = document.getElementById("fill");
+var errEl = document.getElementById("err");
+var backBtn = document.getElementById("backBtn");
+var nextBtn = document.getElementById("nextBtn");
+var navEl = document.getElementById("nav");
+
+function render(){
+  errEl.textContent = "";
+  var step = STEPS[state.i];
+  fillEl.style.width = ((state.i)/(STEPS.length)*100) + "%";
+  backBtn.style.visibility = state.i === 0 ? "hidden" : "visible";
+  nextBtn.textContent = state.i === STEPS.length - 1 ? "See my results" : "Continue";
+
+  var html = '<div class="step-count">Step ' + (state.i+1) + ' of ' + STEPS.length + '</div>';
+  html += '<h1 class="q">' + step.title + '</h1>';
+  if(step.sub) html += '<p class="sub">' + step.sub + '</p>';
+
+  if(step.type === "single" || step.type === "multi"){
+    html += '<div class="options">';
+    step.options.forEach(function(o){
+      var sel = step.type === "multi"
+        ? (state.multi[step.key] || []).indexOf(o.value) > -1
+        : state.answers[step.key] === o.value;
+      html += '<div class="opt' + (sel ? ' selected' : '') + '" data-v="' + o.value + '">'
+            + '<span class="tick"></span>'
+            + '<span>' + o.label + (o.note ? '<small>' + o.note + '</small>' : '') + '</span></div>';
+    });
+    html += '</div>';
+  } else if(step.type === "contact"){
+    var a = state.answers;
+    html += '<div class="row">'
+          + '<div class="field"><label>First name</label><input id="firstName" value="' + (a.firstName||'') + '" placeholder="First"></div>'
+          + '<div class="field"><label>Last name</label><input id="lastName" value="' + (a.lastName||'') + '" placeholder="Last"></div>'
+          + '</div>'
+          + '<div class="field"><label>Email</label><input id="email" type="email" value="' + (a.email||'') + '" placeholder="you@email.com"></div>'
+          + '<div class="field"><label>Mobile phone (optional)</label><input id="phone" type="tel" value="' + (a.phone||'') + '" placeholder="(555) 555-5555"></div>'
+          + '<div class="consent"><input type="checkbox" id="sms" ' + (state.sms?'checked':'') + '>'
+          + '<label for="sms">I agree to receive account and marketing text messages from Enyrgy at the number provided. Consent is not a condition of purchase. Message frequency varies. Message and data rates may apply. Reply STOP to opt out, HELP for help. We do not sell or share your information. See our Privacy Policy and Terms of Service at shop.enyrgy.com.</label>'
+          + '</div>';
+  }
+  screenEl.innerHTML = html;
+
+  if(step.type === "single" || step.type === "multi"){
+    Array.prototype.forEach.call(screenEl.querySelectorAll(".opt"), function(el){
+      el.addEventListener("click", function(){ choose(step, el.getAttribute("data-v")); });
+    });
+  }
+}
+
+function choose(step, value){
+  if(step.type === "single"){
+    state.answers[step.key] = value;
+    render();
+    setTimeout(next, 180); // auto-advance on single select
+  } else {
+    var arr = state.multi[step.key] || [];
+    var idx = arr.indexOf(value);
+    if(idx > -1) arr.splice(idx,1); else arr.push(value);
+    state.multi[step.key] = arr;
+    render();
+  }
+}
+
+function validate(step){
+  if(step.type === "single") return !!state.answers[step.key];
+  if(step.type === "multi") return (state.multi[step.key]||[]).length > 0;
+  if(step.type === "contact"){
+    captureContact();
+    var a = state.answers;
+    if(!a.firstName){ return "Please enter your first name."; }
+    if(!a.email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(a.email)){ return "Please enter a valid email."; }
+    if(a.phone && a.phone.replace(/\D/g,"").length < 10){ return "That phone number looks off. Fix it or leave it blank."; }
+    return true;
+  }
+  return true;
+}
+
+function captureContact(){
+  ["firstName","lastName","email","phone"].forEach(function(id){
+    var el = document.getElementById(id); if(el) state.answers[id] = el.value.trim();
+  });
+  var sms = document.getElementById("sms"); state.sms = sms ? sms.checked : false;
+}
+
+function next(){
+  var step = STEPS[state.i];
+  var ok = validate(step);
+  if(ok !== true){
+    if(typeof ok === "string") errEl.textContent = ok;
+    else errEl.textContent = step.type === "multi" ? "Select at least one option." : "Please choose an option.";
+    return;
+  }
+  if(state.i === STEPS.length - 1){ submit(); return; }
+  state.i++; render();
+}
+function back(){ if(state.i>0){ state.i--; render(); } }
+
+/* ---- submit to GHL + show results ---- */
+function submit(){
+  captureContact();
+  var payload = buildPayload();
+  nextBtn.disabled = true;
+  nextBtn.textContent = 'Sending';
+
+  var done = function(){ showResults(payload); };
+  try{
+    // Send as form data (application/x-www-form-urlencoded). This is a "simple"
+    // request, so the browser never blocks it, and GHL parses the fields natively.
+    var form = new URLSearchParams();
+    Object.keys(payload).forEach(function(k){
+      var v = payload[k];
+      if(Array.isArray(v)) v = v.join(",");
+      form.append(k, (v === null || v === undefined) ? "" : v);
+    });
+    fetch(WEBHOOK_URL, { method:"POST", body:form }).then(done).catch(done);
+  }catch(e){ done(); }
+  // never block the user on the network
+  setTimeout(function(){ if(nextBtn.disabled) done(); }, 4000);
+}
+
+function showResults(p){
+  fillEl.style.width = "100%";
+  navEl.style.display = "none";
+  errEl.textContent = "";
+  var band = p.deficiency_risk_band, score = p.deficiency_risk_score;
+  var badgeText = band === "high" ? "Higher risk" : (band === "moderate" ? "Moderate risk" : "Lower risk");
+
+  var cta = ctaFor(p.finance_preference);
+
+  var html = ''
+    + '<div class="step-count">Your assessment</div>'
+    + '<span class="badge ' + band + '">' + badgeText + ' of low vitamin D</span>'
+    + '<h1 class="q">' + (p.firstName || "Hey") + ', here is what your answers are really telling you.</h1>'
+    + '<div class="meter"><div class="bar" id="bar"></div></div>'
+    + '<div class="meter-label"><span>Lower</span><span>Score ' + score + ' of 100</span><span>Higher</span></div>'
+    + '<div class="panel"><h3>What your answers point to</h3>'
+    + '<p>' + narrative(band) + '</p></div>'
+    + '<div class="panel"><h3>Why a pill was never going to fix this</h3>'
+    + '<p>Your body was built to make vitamin D the way it was built to breathe. Through light on skin, not a capsule in your gut. That is the whole idea behind the Enyrgy Vitamin D Primal Light Platform. The right light opens three doors at once: vitamin D, nitric oxide, and serotonin. No pill opens all three.</p>'
+    + '<p>Here is the part almost nobody knows. A supplement can feed one road to nitric oxide, the slow enzyme road. Light opens a second road a pill cannot reach. It releases the nitric oxide your skin has already stored and locked away. That road is pure upside, and your supplement was never built to touch it.</p></div>'
+    + '<div class="panel"><h3>Your next step</h3><p>' + cta.text + '</p></div>'
+    + '<a class="cta btn btn-primary" href="' + cta.href + '">' + cta.button + '</a>'
+    + '<div class="foot">Results emailed to ' + (p.email || "you") + '. A member of our team may reach out to help you plan your first weeks.</div>';
+  screenEl.innerHTML = html;
+  setTimeout(function(){ var b=document.getElementById("bar"); if(b) b.style.width = score + "%"; }, 60);
+}
+
+function narrative(band){
+  if(band === "high")
+    return "Here is the part that stings. You are doing the work. You take your D3. You get outside when you can. And your body is still running low. This comes down to delivery. A capsule drops vitamin D into your gut and hopes. It never touches the pathway your body was actually built to use. So you keep showing up, keep pushing, and keep feeling a half step behind the energy you know is in you. Every month you sit here, your levels coast on empty, right through the season your body needs them most.";
+  if(band === "moderate")
+    return "You are closer than most people. You have good habits. But there are gaps hiding in your week. The cloudy stretch. The days stuck at a desk. The months the sun sits too low to do much. Those gaps are quiet. They show up as a slow drag, a little less spark than you used to have, and it is easy to blame age or stress. Usually the answer is simpler: your body is not getting light in the dose it needs.";
+  return "Good news first. You are doing a lot right, and it shows. From here it comes down to staying consistent. Levels that look fine in July quietly slide by February, and most people never catch it. Keep the pathway open all year, so the sharp, steady version of you sticks around when the light disappears.";
+}
+
+function ctaFor(pref){
+  var PLATFORM = "https://enyrgy.com/the-platform";
+  var CALL = "https://api.leadconnectorhq.com/widget/booking/C0hV5CFHUhWOIzs4OedC";
+  var SHOP = "https://shop.enyrgy.com/products/uvb-light-therapy";
+  if(pref === "Cash")
+    return {
+      text:"You told us you are ready to own it, so here is the fast path. See the platform, the sessions, and how to reserve yours.",
+      button:"See the platform and reserve yours",
+      href:SHOP
+    };
+  if(pref === "Financing")
+    return {
+      text:"You said monthly works best. Start by seeing exactly how the platform works and what a plan looks like. No rush, no pressure.",
+      button:"See how the platform works",
+      href:PLATFORM
+    };
+  if(pref === "Rent")
+    return {
+      text:"Renting is a smart way to feel it before you commit. See how the platform works first, then decide at your own pace.",
+      button:"See how the platform works",
+      href:PLATFORM
+    };
+  return {
+    text:"Not sure yet? That is the honest answer for most people here, and it is the right one. Grab a quick call and get your questions answered. No pressure, no pitch.",
+    button:"Book a quick call",
+    href:CALL
+  };
+}
+
+render();
+</script>
+</body>
+</html>
