@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Synthesis Gap | Enyrgy</title>
+<style>
+  :root{
+    --ink:#1A1A1A;          /* Deep Charcoal text */
+    --paper:#F7F4EE;        /* Warm Off-White */
+    --line:#E2DBC9;
+    --muted:#6B6B66;
+    --orange:#E64C38;       /* Sunrise Orange - sole accent */
+    --beige:#ECE4CF;        /* Calm Beige panels */
+    --good:#2E7D52;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    display:flex;flex-direction:column;align-items:center;width:100%;
+    font-family:"Montserrat","Montserrat",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{width:100%;max-width:760px;margin-left:auto;margin-right:auto;padding:0 24px;}
+  .sans{font-family:"Montserrat",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;}
+
+  /* Header */
+  header{padding:30px 0 10px;}
+  .brand{display:flex;align-items:baseline;gap:12px;}
+  .brand .name{font-family:"Montserrat",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:.18em;text-transform:uppercase;font-size:15px;color:var(--ink);}
+  .brand .tag{font-family:"Montserrat",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);}
+
+  /* Hero */
+  .hero{padding:46px 0 30px;border-bottom:1px solid var(--line);}
+  .eyebrow{font-family:"Montserrat",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);font-weight:700;margin-bottom:18px;}
+  h1{font-size:46px;line-height:1.08;font-weight:700;letter-spacing:-.01em;margin-bottom:14px;}
+  h1 .frac{color:var(--muted);font-style:italic;}
+  .dek{font-size:20px;color:var(--muted);max-width:600px;}
+
+  /* The cascade signature */
+  .cascade{margin:36px 0 8px;}
+  .cascade-label{font-family:"Montserrat",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;}
+  .chain{display:flex;flex-wrap:wrap;align-items:center;gap:9px;}
+  .node{
+    font-family:"Montserrat",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:13px;font-weight:600;
+    padding:7px 13px;border-radius:999px;border:1.5px solid var(--line);background:#fff;white-space:nowrap;
+  }
+  .node.have{color:var(--ink);}
+  .node.gap{
+    color:#fff;border-color:transparent;
+    background:var(--orange);
+    position:relative;
+  }
+  .arrow{color:var(--line);font-size:14px;}
+  .caption{font-size:15px;color:var(--muted);margin-top:14px;font-style:italic;}
+  .caption b{color:var(--orange);font-style:normal;font-weight:600;}
+
+  /* Body copy */
+  section.copy{padding:38px 0;border-bottom:1px solid var(--line);}
+  section.copy p{font-size:19px;margin-bottom:18px;}
+  section.copy p:last-child{margin-bottom:0;}
+  .lede{font-size:22px;line-height:1.5;}
+  em.key{font-style:normal;background:linear-gradient(transparent 62%, rgba(230,76,56,.18) 62%);}
+
+  /* Opt-in card */
+  .optin{padding:42px 0 56px;}
+  .card{
+    background:#fff;border:1px solid var(--line);border-radius:18px;
+    padding:34px 30px;box-shadow:0 18px 50px rgba(230,76,56,.06);
+  }
+  .card h2{font-size:26px;line-height:1.2;margin-bottom:8px;}
+  .card .sub{font-family:"Montserrat",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:15px;color:var(--muted);margin-bottom:22px;}
+  .field{margin-bottom:13px;}
+  .field input{
+    width:100%;font-family:"Montserrat",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:16px;
+    padding:14px 15px;border:1.5px solid var(--line);border-radius:11px;background:var(--paper);color:var(--ink);
+  }
+  .field input:focus{outline:none;border-color:var(--orange);background:#fff;}
+  .row2{display:flex;gap:12px;}
+  .row2 .field{flex:1;}
+  button.cta{
+    width:100%;font-family:"Montserrat",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:700;font-size:17px;
+    color:#fff;border:none;border-radius:11px;padding:16px;cursor:pointer;margin-top:6px;
+    background:var(--orange);transition:filter .15s,transform .05s;
+  }
+  button.cta:hover{filter:brightness(1.08);}
+  button.cta:active{transform:scale(.995);}
+  button.cta:disabled{opacity:.5;cursor:not-allowed;}
+  .reassure{font-family:"Montserrat",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:12.5px;color:var(--muted);text-align:center;margin-top:14px;line-height:1.5;}
+  .err{font-family:"Montserrat",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#B23B3B;font-size:13px;margin-top:8px;display:none;}
+  .spin{display:inline-block;width:15px;height:15px;border:2px solid rgba(255,255,255,.5);border-top-color:#fff;border-radius:50%;animation:sp .7s linear infinite;vertical-align:-2px;margin-right:8px;}
+  @keyframes sp{to{transform:rotate(360deg);}}
+
+  /* Success state */
+  .done{display:none;text-align:center;padding:8px 0;}
+  .done .check{width:54px;height:54px;border-radius:50%;background:var(--orange);margin:0 auto 16px;display:flex;align-items:center;justify-content:center;}
+  .done .check:after{content:"";width:14px;height:24px;border:solid #fff;border-width:0 3px 3px 0;transform:rotate(45deg) translateY(-2px);}
+  .done h2{font-size:25px;margin-bottom:8px;}
+  .done p{font-family:"Montserrat",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:15px;color:var(--muted);}
+
+  /* What's inside */
+  .inside{padding:34px 0 10px;}
+  .inside h3{font-family:"Montserrat",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;}
+  .pages{display:grid;gap:2px;}
+  .pg{display:flex;gap:16px;padding:15px 0;border-top:1px solid var(--line);}
+  .pg .n{font-family:"Montserrat",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:13px;font-weight:700;color:var(--orange);min-width:34px;}
+  .pg .t{font-size:17px;}
+  .pg .t b{font-weight:600;}
+
+  footer{padding:40px 0 50px;border-top:1px solid var(--line);margin-top:20px;}
+  footer p{font-family:"Montserrat",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:12px;color:var(--muted);line-height:1.6;}
+  footer a{color:var(--muted);}
+
+  @media (max-width:600px){
+    h1{font-size:33px;}
+    .dek{font-size:18px;}
+    .lede{font-size:19px;}
+    section.copy p{font-size:17px;}
+    .row2{flex-direction:column;gap:0;}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="brand">
+      <span class="name">Enyrgy</span>
+      <span class="tag">Sunlight. Evolved.</span>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="eyebrow">Free Guide &middot; Four Pages</div>
+    <h1>The Synthesis Gap</h1>
+    <p class="dek">Why your vitamin D supplement is only doing <span class="frac">half</span> the job, and what your body actually needs to complete the pathway.</p>
+
+    <div class="cascade">
+      <div class="cascade-label">What sunlight triggers in your skin</div>
+      <div class="chain">
+        <span class="node have">Vitamin D3</span>
+        <span class="arrow">&rarr;</span>
+        <span class="node have">Vitamin D sulfate</span>
+        <span class="arrow">&rarr;</span>
+        <span class="node have">Photoproducts</span>
+        <span class="arrow">&rarr;</span>
+        <span class="node gap">Nitric oxide</span>
+        <span class="arrow">&rarr;</span>
+        <span class="node gap">Serotonin</span>
+      </div>
+      <p class="caption">A capsule delivers the first step. <b>The highlighted pathways are the gap.</b></p>
+    </div>
+  </div>
+
+  <section class="copy">
+    <p class="lede">Supplements raise a number. Sunlight runs a process.</p>
+    <p>If you're still testing deficient despite taking D3, that sentence is the reason. A capsule lifts your serum level. It does not start the <em class="key">complete cascade</em> your skin runs when real light reaches it: the vitamin D sulfate, the photoproducts, the nitric oxide, the serotonin.</p>
+    <p>The Synthesis Gap is a free guide that explains what your body is actually creating when you get real sunlight, what you're missing when you swallow a capsule, and what it takes to close the gap.</p>
+    <p style="font-size:17px;color:var(--muted);">Four pages. No upsell. Just the mechanism explained straight.</p>
+  </section>
+
+  <div class="optin" id="optin">
+    <div class="card">
+      <div id="form-view">
+        <h2>Still testing deficient despite taking D3?</h2>
+        <p class="sub">There's a reason, and it's not your dosing. Get the guide.</p>
+        <div class="row2">
+          <div class="field"><input type="text" id="firstName" placeholder="First name" autocomplete="given-name"></div>
+          <div class="field"><input type="text" id="lastName" placeholder="Last name" autocomplete="family-name"></div>
+        </div>
+        <div class="field"><input type="email" id="email" placeholder="you@email.com" autocomplete="email"></div>
+        <button class="cta" id="submitBtn" onclick="submitOptin()">Download The Synthesis Gap</button>
+        <div class="err" id="err">Please enter your first name and a valid email.</div>
+        <p class="reassure">We'll email you the guide right away. No spam, unsubscribe anytime.</p>
+      </div>
+      <div class="done" id="done-view">
+        <div class="check"></div>
+        <h2>Check your inbox.</h2>
+        <p>The Synthesis Gap is on its way to your email. If it's not there in a couple of minutes, check your spam folder.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="inside">
+    <h3>What's in the four pages</h3>
+    <div class="pages">
+      <div class="pg"><span class="n">01</span><span class="t"><b>The number that tells you something is wrong.</b> Why so many people testing deficient are the same people taking supplements.</span></div>
+      <div class="pg"><span class="n">02</span><span class="t"><b>What your body actually does with sunlight.</b> The full synthesis cascade, one step at a time.</span></div>
+      <div class="pg"><span class="n">03</span><span class="t"><b>What a supplement actually delivers.</b> An honest accounting of what the capsule does and what it leaves out.</span></div>
+      <div class="pg"><span class="n">04</span><span class="t"><b>The gap, and what closes it.</b> Where UVB-based synthesis fits, in plain terms.</span></div>
+    </div>
+  </div>
+
+  <footer>
+    <p>
+      Enyrgy Inc &middot; Phoenix, AZ &middot; <a href="https://enyrgy.com">enyrgy.com</a><br>
+      By requesting the guide you agree to receive related emails from Enyrgy. You can unsubscribe at any time.
+      View our <a href="https://shop.enyrgy.com/policies/privacy-policy" target="_blank">Privacy Policy</a> and <a href="https://shop.enyrgy.com/policies/terms-of-service" target="_blank">Terms of Service</a>.
+    </p>
+  </footer>
+
+</div>
+
+<script>
+/* ============================================================
+   THE SYNTHESIS GAP — Enyrgy landing page
+   Replace YOUR_GHL_WEBHOOK_URL_HERE with the inbound webhook
+   URL generated by the Synthesis Gap webhook workflow in GHL.
+   ============================================================ */
+const WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/GtXjla7Ld1dordsTWrVy/webhook-trigger/fd32493c-6ec1-4e55-9edb-75399aa53a34";
+
+/* --- FlexOffers affiliate click capture ---------------------------
+   Reads refid from the landing URL and persists it, so it survives
+   refreshes and is still there when the visitor submits. ---------- */
+const FLEXOFFERS_KEY = "enyrgy_flexoffers_refid";
+(function(){
+  try{
+    const fromUrl = new URLSearchParams(window.location.search).get("refid");
+    if(fromUrl) localStorage.setItem(FLEXOFFERS_KEY, fromUrl);
+  }catch(e){}
+})();
+function getRefid(){
+  let fromUrl = "";
+  try{ fromUrl = new URLSearchParams(window.location.search).get("refid") || ""; }catch(e){}
+  if(fromUrl) return fromUrl;
+  try{ return localStorage.getItem(FLEXOFFERS_KEY) || ""; }catch(e){ return ""; }
+}
+
+function validEmail(e){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);}
+
+async function submitOptin(){
+  const firstName=document.getElementById("firstName").value.trim();
+  const lastName=document.getElementById("lastName").value.trim();
+  const email=document.getElementById("email").value.trim();
+  const err=document.getElementById("err");
+  err.style.display="none";
+
+  if(!firstName||!validEmail(email)){
+    err.style.display="block";
+    return;
+  }
+
+  const tags=["type_consumer","source_lead_magnet","magnet_synthesis_gap","status_new","icp_stack_optimizer","magnet_lead","drip_bypass"];
+  if(getRefid()) tags.push("source_flexoffers");
+
+  const payload={
+    firstName, lastName, email,
+    source:"synthesis_gap_landing",
+    magnet:"synthesis_gap",
+    flexoffers_refid: getRefid(),
+    tags
+  };
+
+  const btn=document.getElementById("submitBtn");
+  btn.disabled=true;
+  btn.innerHTML='<span class="spin"></span>Sending...';
+
+  try{
+    if(WEBHOOK_URL && WEBHOOK_URL!=="YOUR_GHL_WEBHOOK_URL_HERE"){
+      await fetch(WEBHOOK_URL,{
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify(payload)
+      });
+    }
+  }catch(e){
+    console.error("Webhook error:",e);
+  }
+
+  document.getElementById("form-view").style.display="none";
+  document.getElementById("done-view").style.display="block";
+  document.getElementById("done-view").scrollIntoView({behavior:"smooth",block:"center"});
+}
+
+// Enter key submits from any field
+document.querySelectorAll("#firstName,#lastName,#email").forEach(el=>{
+  el.addEventListener("keydown",e=>{ if(e.key==="Enter") submitOptin(); });
+});
+</script>
+</body>
+</html>
