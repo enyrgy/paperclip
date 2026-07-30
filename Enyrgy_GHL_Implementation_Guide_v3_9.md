@@ -787,6 +787,8 @@ Existing customer base imported: 617 contacts, tagged `drip_bypass` and `legacy_
 
 -   WF-19 (Winter Protocol): https://services.leadconnectorhq.com/hooks/GtXjla7Ld1dordsTWrVy/webhook-trigger/ad11ef02-14c8-4dbc-b1dd-bb5c9f3203bd
 
+-   WF-21 (Vitamin D Assessment): https://services.leadconnectorhq.com/hooks/GtXjla7Ld1dordsTWrVy/webhook-trigger/d2692dc6-1e9f-466c-8525-58c466c426bd
+
 **Implementation note:** capture workflows apply drip_bypass in the same Add-Tags action as type_consumer so the tags land together. Because GHL trigger filters do not offer a "does not have tag" condition, the bypass gate is a first-step If/Else inside the Consumer Drip, WF-02, and WF-04. Full detail in Section 24.
 
 ## Lead Scoring Model
