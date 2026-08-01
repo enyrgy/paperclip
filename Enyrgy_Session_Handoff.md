@@ -50,6 +50,7 @@ Paste or attach this file at the start of a new chat along with `Enyrgy_GHL_WIP-
 | Total raise | $3.5M at 12%/3yr, $50K minimum |
 | Treatments completed | 25,000+ |
 | Customers | 600+ (617 imported into GHL, Session 10, tagged drip_bypass + legacy_customer; 24 facility contacts also carry seg_facility) |
+| Current investors | 57 in GHL (Session 16, tagged seg_investor_current + drip_bypass + source_investor_import; NEVER type_investor, that triggers the cold 8-touch drip). Smart list "Investors — Current". $10,373,000 funded. 10 are also legacy_customer. |
 | Red light co-use | 90% of customers |
 | Active OEM partner | Lumanova / Luma D Light (Black Unit exclusivity) |
 | Order URL | https://shop.enyrgy.com/products/uvb-light-therapy |
@@ -68,6 +69,57 @@ GHL has no one-click "export everything" and no automated backups, so back up ma
 3. **Already backed up (Git).** All agent instruction blocks, the KB, workflow specs, the implementation guide, this handoff, the ROI one-pager, and every session doc live in the GitHub repo (enyrgy/paperclip) with full history. The bridge and abandoned-checkout services are in their own repos.
 
 **Gaps a snapshot does NOT cover** (these are re-established on restore, not copied): phone numbers, A2P/toll-free registration, CNAM, integration tokens, the media library, and conversation history.
+
+---
+
+## WHAT WAS DONE (Session 16, July 31, 2026)
+
+### Current investors imported (57) and the Q2 2026 update SENT
+
+**The list.** 57 current investors imported into GHL. Total funded across the list: **$10,373,000**. Seven rows carry blank amounts by design (co-investors on a spouse's or entity's tranche: Zurawski, Brooke Coughlan, Gordon Ross, Jennifer Scharf, Monroe Gang, Paul Will, Wendy Weathers).
+
+**Tags imported:** `seg_investor_current`, `drip_bypass`, `source_investor_import`. **Deliberately NOT `type_investor`** - that tag is the trigger for the Investor Drip, Cold 8-touch/30-day sequence, and these are people who have already funded. Two independent protections: no trigger tag, plus `drip_bypass`.
+
+**NEW IMPORT RISK, not in the older docs.** The Session 10 audit concluded WF-01 New Lead Router was the *only* Contact Created trigger. That is now false: **WF-31 FlexOffers First Touch** (built Session 15) also triggers on Contact Created. Both were unpublished for the import and re-published after. Any future import must check for Contact Created triggers fresh rather than trusting the Session 10 finding.
+
+**GHL's newer 4-step import wizard** (Start / Upload / Map / Verify) replaces the old flow. Notes:
+- Mapping requirements state **"Update contacts: Either of Contact ID / Phone / Email."** Phone is a valid match key and there is **no email-only override**. Two spouse pairs shared a phone (Brian/Jennifer Scharf, Mark/Wendy Weathers). Rather than gamble on match precedence, the phone was blanked on one of each pair so every phone in the file was unique and no phone-based merge was possible. Add those numbers back by hand if wanted.
+- The Verify step holds the three dangerous preferences: **Add to workflow**, **Add tags**, **Create a Smartlist**. All three left OFF. The auto-Smartlist only captures contacts *created* by the import, so it silently excludes updated ones and must not be used as a mailing list.
+- A consent attestation checkbox gates the Start import button.
+
+**Result: 46 created + 10 updated = 56, but the file had 57.** One row, **Scott Chaverri**, failed silently with no error anywhere in the wizard. Added by hand.
+- **LESSON: the smart-list count is the only reliable verification of an import.** The wizard's own counts did not surface the failure, and the Bulk Actions "show imported" count (46) measures creates only, which looks like a discrepancy but is not one.
+
+**The 10 updated contacts** are dual-role investor/legacy-customers from the Session 10 617-import. All retained `legacy_customer`; three retained `request_testimonial`. Nothing was clobbered. Note: re-applying `drip_bypass` to them was a **no-op** - Session 10 already applied it to all 617, and no legacy customer carries a `type_` tag, so no drip was ever enrollable on them.
+
+**Data cleaning required before the file was importable** (all real, all silent if missed):
+- A duplicate row (same investor twice, second with a trailing space in the email) that would have **overwritten** the first rather than summing
+- `25K` in a numeric amount field
+- Two `Acrredited Individual` spelling variants, which would have created a permanent second dropdown option
+- Trailing whitespace in a first name and an email; a whitespace-only cell
+- `Source_referral` vs `source_referral` casing split
+- A **UTF-8 BOM** on byte 0, which makes the first header `﻿First Name` and breaks its auto-map. Excel adds this when saving as "CSV UTF-8"; plain "CSV (Comma delimited)" does not.
+- A `✦` character inside a header name, same auto-map failure
+- A column headed `Accredited Verified` whose values were actually Investor Type values
+
+**Smart list `Investors — Current`** built on a single filter: `Tag` / `Is` / `seg_investor_current`. Dynamic, so any future investor tagged that way joins automatically. Do not filter on the other two tags; they are protective and provenance markers, not membership criteria.
+
+**Email template `Investor Quarterly Update — MASTER`** built in the **plain text editor**, chosen over the Design editor for two reasons: an investor update should read as a personal email rather than a marketing blast, and simple text is the best-performing format from a Stage 1 sending domain. Never send the MASTER; duplicate it each quarter.
+
+**Q2 2026 investor update SENT July 31, 2026**, meeting the standing commitment to send by the end of the month following quarter close.
+- **48 via GHL bulk email in batch mode** (12 per batch, 15-minute interval). Track clicks and UTM tracking left OFF deliberately: link rewriting is a negative deliverability signal from an unproven domain, and the email contains no hyperlinks to track.
+- **9 AOL/Yahoo recipients sent individually from `scott@enyrgy.com`**, one email each, no BCC. Rationale: those mailboxes weight sender reputation hardest, and Google Workspace authenticating as `enyrgy.com` is far stronger than a weeks-old `mg.enyrgy.com`. No-BCC is both a deliverability and a confidentiality rule - a CC slip would disclose the investor list to everyone on it.
+- Copy corrections applied before send: "added to **principle**" -> **principal** (in the note's own terms), `K1's` -> `K-1s`, "in regards to" -> "regarding", `$100 to 150M` -> `$100M to $150M`, and two sentences broken mid-line. The N=5 pilot caveat on the +111% / 100%-optimal figures was **deliberately omitted at Scott's direction**.
+
+**OPEN DELIVERABILITY QUESTION.** The test send to `scott@ledgerixpro.com` never arrived and was not in spam; the Gmail test delivered clean. **20 of the 57 investors are on corporate domains** (erac.com, colliers.com, ehi.com, srpnet.com, axonha.com, atlanticpartnerscorp.com and others). Corporate filters are frequently harsher on a Stage 1 domain than consumer mailboxes. Check Statistics for opens by domain and follow up personally with any corporate recipient showing no open.
+
+### Quarterly runbook (from Q3 onward)
+
+1. Duplicate `Investor Quarterly Update — MASTER`, swap the numbers, keep the `{{contact.first_name}}` greeting
+2. Subject `Enyrgy Q<N> <YEAR> Investor Update`; fill the **pre-header** (it does not carry over from the test dialog and is blank by default)
+3. From name **Scott Hansbury**, not the raw email address - GHL auto-fills the address and it reads as automated mail
+4. Select all 57 in `Investors — Current`, send once. No batching and no separate AOL/Yahoo handling once the domain is warm
+5. Roughly ten minutes
 
 ---
 
