@@ -1,7 +1,15 @@
-# Outcode to GHL Integration Spec
+# Device Integration Build Plan (INTERNAL)
 
-**Status:** DRAFT, August 1, 2026. Part A is shareable with Outcode. Part B is internal.
+**Status:** DRAFT, August 1, 2026.
 **Purpose:** pipe device-app user registrations and completed sessions into GHL so new users get onboarding, inactive users get a nudge, and vitamin D progress is tracked per contact.
+
+> **INTERNAL ONLY. Do not send this file to Outcode.**
+>
+> It contains GHL workflow numbers, the WF-01 routing problem, internal build history, and commercial notes. The vendor-facing document is **`Enyrgy_Device_App_Webhook_Spec_v1`** (.md and .pdf), which is written for Outcode and carries no internal references.
+>
+> Part A below duplicates the vendor spec and is kept here so the whole integration reads in one place. If the payload changes, **update both files**.
+>
+> Webhook URLs are deliberately NOT recorded in this repo. They function as credentials and live in the GHL workflows themselves (WF-32, WF-32T, WF-33, WF-33T) and in the email sent to Outcode.
 
 ---
 
