@@ -111,6 +111,14 @@ The build is essentially done. What remains is finishing the go-live staging, a 
 - [ ] **Form embeds** — Commercial Inquiry + Partner Application forms onto go.enyrgy.com (developer).
 - [ ] **Upgrade the abandoned-checkout Railway service off trial** (may already be on Hobby; confirm).
 
+## 6b. Content backup gap (identified July 31)
+
+- [ ] **Export the drip email copy into the repo.** All the campaign email copy for WF-11 through WF-29 (consumer drip, the five magnet nurtures, Winter, Recovery, Synthesis Gap, Vitamin D Assessment, testimonial, abandoned cart, investor drip) exists **only inside GHL**. It is not version-controlled, not searchable, and not reliably recoverable: Account Snapshots capture workflow structure but not email bodies in a diffable form. Only two content sets are currently backed up: the five agent templates in `Enyrgy_Agent_Email_Templates_v1.md` and the five landing pages in `lead-magnets/`.
+  - **Why it matters:** an entire session was spent compliance-auditing this copy (prohibited words, em-dashes, the guarantee-vs-lab-timeline decoupling, the light-does-five framing, FTC testimonial rules). That work lives in one place with no backup. A bad edit or an accidental workflow deletion loses it.
+  - **Trigger that surfaced it:** could not answer "which workflow has the email with subject 'One trigger, three outputs'?" because there is nothing to search.
+  - **Suggested shape:** one markdown file per workflow under a `campaigns/` directory, each email with its subject, body, and the WF number plus touch order. Roughly a session of work.
+  - **Secondary benefit:** makes the copy greppable, so subject lines and claims can be located and audited without clicking through GHL.
+
 ## 7. Documentation hygiene
 
 - [x] **Refresh the EA to v1.1 (July 28)** — bumped to Version 1.1 with an authoritative "v1.1 Current-State Update" section that overrides the stale June-29 body (Shopify integration + WF-27/28/29, GBP live + WF-07 wiring, full Paperclip org + tuned heartbeats, toll-free SMS/CNAM/no-10DLC, content assets, addresses/business-category fixes, the reliability findings incl. the debunked phantom-completion, and the open agency-email item). A future pass can fold these line-by-line into each layer.
