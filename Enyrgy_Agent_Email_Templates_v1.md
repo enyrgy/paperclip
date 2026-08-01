@@ -112,7 +112,7 @@ Good, genuinely, tell me and I am gone. If not, reply and we pick up where we le
 
 ---
 
-## 5. Investor PPM delivery cover  (CFO)  — COMPLIANCE-CRITICAL  -- DEPLOYED (edited by Scott)
+## 5. Investor PPM delivery cover  (CFO): COMPLIANCE-CRITICAL  -- DEPLOYED (edited by Scott)
 - **Use:** investor who has completed the intro meeting.
 - **Skill lens:** cub + humanize, investor register (credible, calm, no hype, founder-to-investor peer). Deliberately not pushed for edge; investor/securities context wants calm.
 - **SEND PRECONDITIONS (hard):**

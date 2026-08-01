@@ -1,12 +1,12 @@
 # Enyrgy Q2 2026 Investor Update - AS SENT
 
 **Sent:** July 31, 2026
-**Recipients:** 57 current investors (smart list `Investors — Current`)
+**Recipients:** 57 current investors (smart list `Investors - Current`)
 **Delivery:** 48 via GHL bulk email, batch mode 12 per batch / 15 min. 9 AOL/Yahoo sent individually from scott@enyrgy.com.
 **Subject:** Enyrgy Q2 2026 Investor Update
 **Pre-header:** Q2 financials, four new channel partnerships, and where the round stands.
 **From:** Scott Hansbury / scott@enyrgy.com
-**GHL template:** `Investor Quarterly Update — MASTER`
+**GHL template:** `Investor Quarterly Update - MASTER`
 
 This is the exact text investors received. It differs from the earlier draft: `principle` corrected to **principal** in the note terms, `K1's` to `K-1s`, "in regards to" to "regarding", `$100 to 150M` to `$100M to $150M`, and two sentences repaired that had broken mid-line. The N=5 pilot caveat on the +111% / 100%-optimal figures was deliberately omitted at Scott's direction.
 
