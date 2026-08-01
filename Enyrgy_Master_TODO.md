@@ -97,6 +97,19 @@ The build is essentially done. What remains is finishing the go-live staging, a 
   - **Zero unsubscribes**, so all 57 remain eligible for Q3. No one to move to a manual fallback list.
 - [ ] **Q3 2026 investor update** — due by end of October 2026. Runbook is in the Session 16 handoff notes: duplicate MASTER, swap numbers, fill the pre-header (blank by default, does not carry from the test dialog), confirm From name reads **Scott Hansbury** not the raw address, select all 57, send once.
 
+## 4b. Truemed HSA/FSA eligibility (started August 1, 2026)
+
+Signing up with Truemed so the Enyrgy system is HSA/FSA eligible. Truemed issues a Letter of Medical Necessity through their own practitioner network; Enyrgy makes no medical claims and that boundary must hold.
+
+- [x] **Task 1, product catalog** — Shopify product export submitted Aug 1. Business description (700 char limit) submitted, 647 chars, compliance-checked, states explicitly that Enyrgy is a wellness device making no medical claims.
+- [ ] **Task 2, connect bank account** (Stripe Express) — Scott only.
+- [ ] **WAITING ON TRUEMED: per-SKU eligibility determination, in writing.** The Shopify export includes accessories; a wall mount is unlikely to qualify the way the device does. The badge can only appear where eligibility is substantiated.
+- [ ] **Badge and copy placement** — the real compliance work. Truemed supplies copy blocks written for supplement brands comfortable with language Enyrgy prohibits. Every block goes through the prohibited-words check before it lands on a product page, in checkout, or in an email. Enyrgy may say "HSA/FSA eligible through Truemed"; it may NOT drift into condition-and-treatment language to justify the HSA angle.
+- [ ] **KB Section 3 payment options** — currently "paid in full, financed, or rented monthly". HSA/FSA joins that list once live, **and the live `enyrgy-knowledge-base` skill must be re-synced** or Sales Outreach keeps telling prospects there are three ways to pay.
+- [ ] **Commercial-side question** — can a facility member use HSA/FSA against a membership that includes Enyrgy? That is the facility's transaction, not Enyrgy's, but it is directly relevant to the Beyond Wellness conversation. Worth answering before Gino comes back.
+
+**Note:** the commercial unit is sold off-Shopify so it is absent from the catalog upload. That is correct, not a gap. HSA/FSA is a personal medical expense; a facility buying a unit is a business purchase.
+
 ## 5. Strategic architecture decisions (mostly ratify, not build)
 
 - [ ] **Shopify to GHL purchase sync** — the EA flags this as the top gap, but it predates the Session 11 native integration + WF-27/28/29, which largely built it. Reconcile the EA and ratify rather than rebuild.
