@@ -124,6 +124,8 @@ The build is essentially done. What remains is finishing the go-live staging, a 
 
 ## 7. Documentation hygiene
 
+- [x] **Sync the live `enyrgy-knowledge-base` Company Skill to the repo KB** — DONE (Aug 1, 2026), skill now matches commit `95f41a40`. Six targeted find/replace edits, verified after save. **Standing method:** run `git log <last-synced-commit>..HEAD -- Enyrgy_Paperclip_Knowledge_Base.md`, apply only those hunks in Skill Studio, never select-all-paste, then reopen and confirm the body saved and the frontmatter appears exactly once. **Record the synced commit hash in the handoff documents table every time**, otherwise the next session cannot tell what the live skill actually contains.
+
 - [x] **Refresh the EA to v1.1 (July 28)** — bumped to Version 1.1 with an authoritative "v1.1 Current-State Update" section that overrides the stale June-29 body (Shopify integration + WF-27/28/29, GBP live + WF-07 wiring, full Paperclip org + tuned heartbeats, toll-free SMS/CNAM/no-10DLC, content assets, addresses/business-category fixes, the reliability findings incl. the debunked phantom-completion, and the open agency-email item). A future pass can fold these line-by-line into each layer.
 - [ ] **IG loose ends** — WF-23/WF-24 numbering gap (confirm not unbuilt), Winter/Tired-Test URLs missing from the Key URLs table, blank team contact fields (Dennis Lan, Dario Pompeii, Millie Carrillo, Thea Cartier).
 - [ ] **WIP** — correct the "24-agent" count to "16-agent core (22 with additions)."

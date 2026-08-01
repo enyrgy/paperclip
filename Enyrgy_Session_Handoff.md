@@ -113,6 +113,18 @@ GHL has no one-click "export everything" and no automated backups, so back up ma
 
 **OPEN DELIVERABILITY QUESTION.** The test send to `scott@ledgerixpro.com` never arrived and was not in spam; the Gmail test delivered clean. **20 of the 57 investors are on corporate domains** (erac.com, colliers.com, ehi.com, srpnet.com, axonha.com, atlanticpartnerscorp.com and others). Corporate filters are frequently harsher on a Stage 1 domain than consumer mailboxes. Check Statistics for opens by domain and follow up personally with any corporate recipient showing no open.
 
+### Live KB skill re-synced (Aug 1, 2026)
+
+The `enyrgy-knowledge-base` Company Skill now matches repo commit `95f41a40`. Six targeted edits, done as individual find/replace operations rather than a select-all paste (the Session 14 method that corrupted the skill). All six confirmed present after save.
+
+Two of them were more than cosmetic and had been actively misleading agents:
+- **S12** told every agent the PPM was an unapproved placeholder. It has been attorney-approved since July 28, so agents may have been declining to send a cleared document for several days.
+- **S3** had agents quoting a flat $49/month into premium markets that support $125. The range is now $49 to $125 with the rule that it is **set by location and local clientele**, plus named reference markets (Orange County = $125).
+
+New in S3 and worth knowing it exists: **credit-based membership guidance.** Where a facility sells prepaid service credits, Enyrgy must NOT be priced per session against those credits (at 4 to 5 sessions a week it would consume a whole membership and crowd out the operator's higher-margin services). Price it as a flat monthly add-on outside credits, or fold it into a top tier as the upgrade trigger. This came out of the Beyond Wellness call prep and now lives in the KB rather than only in that call sheet.
+
+**Sync method for future KB changes:** `git log <last-synced-commit>..HEAD -- Enyrgy_Paperclip_Knowledge_Base.md` to see what actually changed, then apply only those hunks as find/replace in Skill Studio. Never select-all-paste. Always reopen after saving and confirm the body has content and the frontmatter appears exactly once.
+
 ### Quarterly runbook (from Q3 onward)
 
 1. Duplicate `Investor Quarterly Update — MASTER`, swap the numbers, keep the `{{contact.first_name}}` greeting
@@ -594,7 +606,7 @@ This was confirmed by Enyrgy's securities attorney. CORRECTED Session 13 (July 2
 | Enyrgy_GHL_WIP-3 | Session 12 | .md + .docx | Session 12 log added (Paperclip deploy, budget cap, GHL token, no-native-connector finding). Upload to project. |
 | Enyrgy_Paperclip_Agent_Instruction_Blocks | Session 14 | .md + .docx | All 16 role blocks + CFO + compliance gate + workflow map. Session 14: the narrowed blocks (Onboarding, Sales Outreach, Reactivation, Sentinel, Referral and Reviews) were DEPLOYED to the live agents (top block only; each live agent also has a standard Execution Contract not in this pack). On device at ~/Projects/enyrgy-paperclip-core. Upload to project. |
 | Enyrgy_Funnel_Ownership_Map | Session 14 | .md + .docx | Per-touch GHL-vs-agent ownership (autopilot vs brain), drip_bypass + Stop-on-Response handoff, Fix #1 rationale. On device. Upload to project. |
-| Enyrgy_Paperclip_Knowledge_Base | v2, Session 14 | .md + .docx | Shared agent-read KB, 15 sections, voice-passed. Session 14 additions: founder track record (S1), UVB waveband + sunlight five-outputs/rule-of-thumb (S2), payment options (S3), participant-level pilot data + one-session-a-day (S4). Repo committed (0062ce4e) and re-synced to the live enyrgy-knowledge-base Company Skill. Upload to project. |
+| Enyrgy_Paperclip_Knowledge_Base | v2, Session 16 | .md + .docx | Shared agent-read KB, 15 sections, voice-passed. **Live `enyrgy-knowledge-base` Company Skill re-synced Aug 1, 2026 and confirmed at repo commit `95f41a40`.** Six targeted edits applied (NOT a select-all paste): founder track record (S1), commercial pricing $49-$125 range + membership/credit-model guidance (S3), objection line $49-$125 (S11), PPM placeholder guardrail lifted (S12), distribution alongside white-label (S14), quick-lookup table row (S15). Earlier Session 14 additions (UVB waveband, sunlight five-outputs, payment options, participant-level pilot data, one-session-a-day) synced at `0062ce4e`. Upload to project. |
 | Enyrgy_ICP_Dartboard | current | .md + .docx | Em-dashes and icons removed; brand .docx built. Upload to project. |
 | Enyrgy_B2B_ICP_Dartboard | current | .md + .docx | Em-dashes and icons removed; brand .docx built. Upload to project. |
 | Enyrgy_Session_Handoff | Session 14 | .md + .docx | This document. Upload to project, replace prior handoff. |
