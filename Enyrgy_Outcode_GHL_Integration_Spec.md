@@ -110,19 +110,28 @@ Trigger: Inbound Webhook (Endpoint 2)
 2. **Remove from** WF-34
 3. **Add to** WF-34
 
-## WF-34 Inactivity Nudge
+## WF-34 Inactivity Nudge (INTERIM, retire when the app ships)
 
 Trigger: added by WF-33 only.
 
 1. Wait 3 days
 2. Send nudge
 
-**Why it is built this way.** GHL's condition builder handles relative date math poorly, which is what broke the first two attempts at WF-31. Do not build a nudge that asks "is Last Treatment Date more than 3 days ago." Instead let the timer be the test: every session wipes the pending timer and starts a fresh one, so if three days pass with nothing resetting it, the user has genuinely gone quiet. No date comparison anywhere, and it self-corrects when a session arrives late.
+**Build it deliberately dumb.** No escalation, no cooldown, no branching. The next version of the device app handles all nudge messaging natively, so this workflow is a stopgap and any cleverness added here is thrown away. One wait, one message.
+
+**Why the timer, not a date condition.** GHL's condition builder handles relative date math poorly, which is what broke the first two attempts at WF-31. Do not build a nudge that asks "is Last Treatment Date more than 3 days ago." Let the timer be the test: every session wipes the pending timer and starts a fresh one, so if three days pass with nothing resetting it, the user has genuinely gone quiet. No date comparison anywhere, and it self-corrects when a session arrives late.
+
+### RETIREMENT TRIGGER
+
+**When the next app version ships with native nudge messaging, unpublish WF-34 and remove the Remove/Add actions from WF-33.** Otherwise users receive two reminders for the same lapse, one push and one from GHL.
+
+Nothing will error when this happens. The only symptom is users being nudged twice and learning to ignore both. This is the same class of failure as the Session 14 double-send, where GHL drips and Paperclip agents were both messaging the same contacts, resolved by narrowing agent triggers and turning Stop-on-Response on.
+
+**Endpoint 2 is NOT retired with the nudge.** Last Treatment Date, Vitamin D Level and Session Count Total continue to drive segmentation, automatic `sessions_10_complete` tagging, milestone messaging, and commercial facility reporting. The "fires on every session" requirement to Outcode stands permanently, independent of WF-34.
 
 ## Open decisions
 
-- **Nudge cadence.** Three days is short for a four-to-five-a-week protocol, so most users will trip it regularly. Decide whether it repeats, has a cooldown, escalates, or stops after N unanswered.
-- **Volume.** At 600 users averaging 4 to 5 sessions a week, Endpoint 2 fires roughly 3,000 times a week, around 140,000 workflow executions a year and rising with every unit placed. Confirm the GHL plan's execution limits before go-live; the failure mode is silent throttling, not a visible error.
+- **Volume.** At 600 users averaging 4 to 5 sessions a week, Endpoint 2 fires roughly 3,000 times a week, around 140,000 workflow executions a year and rising with every unit placed. Confirm the GHL plan's execution limits before go-live; the failure mode is silent throttling, not a visible error. Note this does not reduce when WF-34 retires, since Endpoint 2 continues.
 - **Facility member data ownership.** A commercial facility's members flowing into Enyrgy's GHL raises the same question as the open OEM/Lumanova data-boundary item in the EA. Worth settling before the first commercial unit is registering members at scale.
 - **Milestone messaging.** With `vitamin_d_level` and `session_count_total` arriving automatically, both a "crossed into optimal range" message and automatic `sessions_10_complete` tagging become possible.
 
