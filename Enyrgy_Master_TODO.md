@@ -110,6 +110,21 @@ Signing up with Truemed so the Enyrgy system is HSA/FSA eligible. Truemed issues
 
 **Note:** the commercial unit is sold off-Shopify so it is absent from the catalog upload. That is correct, not a gap. HSA/FSA is a personal medical expense; a facility buying a unit is a business purchase.
 
+## 4c. Device app to GHL integration (started August 1, 2026)
+
+Outcode is building two webhooks: one on user registration, one on completed session. Full detail in `Enyrgy_Device_Integration_Build_Plan.md` (internal) and `Enyrgy_Device_App_Webhook_Spec_v1.md` (vendor-facing, sent to Outcode Aug 1).
+
+- [x] **Vendor spec sent to Outcode** (Aug 1) with the four webhook URLs in the email body. URLs are deliberately not in the repo; they function as credentials.
+- [x] **Four GHL workflows created and left in Draft**, each with a mapping reference captured from a sample payload: WF-32, WF-32T, WF-33, WF-33T.
+- [ ] **WF-01 GUARD. Do this before Outcode's webhook goes live, not after.** WF-01 New Lead Router triggers on Contact Created and will route every registered device user into a lead funnel. Tags applied by the receiving workflow land AFTER WF-01 has already run, so they cannot guard it. This is the same race condition that forced the WF-31 rebuild, solved there with a 2-minute wait before the condition. **This is the only item on the critical path that does not depend on Outcode's timeline.**
+- [ ] **Build WF-32 New Device User Onboarding.** One workflow, not two: home and commercial users share nearly all content, and branching early would duplicate the whole sequence because GHL condition branches never rejoin. Store `device_type` so it can be split later if the copy diverges.
+- [ ] **Build WF-33 Treatment Sync and WF-34 Inactivity Nudge.** WF-34 is INTERIM, retired when the V2 app ships native nudges. Build it deliberately dumb: one wait, one message, no escalation or cooldown. **Retirement trigger is recorded in the build plan:** when V2 ships, unpublish WF-34 and strip the Remove/Add actions from WF-33, or users get nudged twice, once by push and once by GHL. Nothing errors; the only symptom is users learning to ignore both.
+- [ ] **New custom fields:** Consent Timestamp, Device Type, Facility Name, Device ID, Last Treatment Date, Session Count Total. Registration Date, Skin Type, Gender, Height, Weight and Vitamin D Level already exist in the Health Profile folder.
+- [ ] **Confirm GHL workflow execution limits** before go-live. Per-session firing is roughly 3,000 calls a week at current user count, around 140,000 executions a year. Failure mode is silent throttling, not a visible error. Bounded by the WF-34 lifespan, since Endpoint 2 drops to a periodic sync afterwards.
+- [ ] **AWAITING OUTCODE:** the build, plus answers to the five questions in section 9 of the vendor spec, notably whether the app captures explicit email consent at registration distinct from using email as the login identifier.
+
+**Scope note:** the V2 app absorbs nudges, milestone messaging, `sessions_10_complete` tagging and session-based segmentation, so do NOT build those in GHL. Map the payload to contact fields and stop. GHL keeps two things permanently: CRM context on the contact record, and deep-lapse reactivation, because the app can only reach users who still open the app.
+
 ## 5. Strategic architecture decisions (mostly ratify, not build)
 
 - [ ] **Shopify to GHL purchase sync:** the EA flags this as the top gap, but it predates the Session 11 native integration + WF-27/28/29, which largely built it. Reconcile the EA and ratify rather than rebuild.
