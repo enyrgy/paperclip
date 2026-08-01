@@ -10,6 +10,22 @@ Paste or attach this file at the start of a new chat along with `Enyrgy_GHL_WIP-
 
 ---
 
+## OPERATING MODE: PRODUCTION (as of August 1, 2026)
+
+**Enyrgy exited build mode and entered production mode on August 1, 2026.** Everything before this date was construction against test contacts and unpublished workflows. From here, every workflow, agent, drip, and send touches real customers, real investors, and real partners.
+
+What changes in practice:
+
+- **Nothing is a rehearsal.** A published workflow fires on real people. Before publishing or editing any live workflow, know who is currently enrolled in it.
+- **The live audiences are real and sizeable:** 617 legacy customers, 57 current investors, plus ongoing lead-magnet capture. A mis-tagged import or a workflow edit that changes a trigger now has immediate outbound consequences.
+- **Domain warmup is now a binding constraint, not a theoretical one.** mg.enyrgy.com is Stage 1. Use GHL's native batch mode for any multi-recipient send, keep Track clicks and UTM tracking OFF, and do not bulk-send the 600+ list.
+- **Agent approval gates are now protecting real relationships**, not test records. The CFO/investor commitment gate stays absolute. Anything customer-facing or investor-facing keeps human approval.
+- **Verify agent claims against the live account before acting.** This mattered in build mode; in production, acting on a confabulated agent audit changes real contact records.
+- **KB accuracy is now customer-facing latency.** A stale fact in the KB is a wrong number quoted to a live prospect within hours, not a note in a doc. Sync the live `enyrgy-knowledge-base` skill whenever the repo KB changes, and record the synced commit hash.
+- **Back up on the stated cadence.** See BACKUP PROCEDURE below. Snapshot plus contact CSV after every meaningful change session; there is no undo in production.
+
+---
+
 ## STANDING RULES (always apply, every session)
 
 1. **Both formats every time.** Every deliverable in `.md` AND `.docx`, with download buttons, no exceptions (updated Session 7: the WIP tracker and handoff are now produced in both formats too).
