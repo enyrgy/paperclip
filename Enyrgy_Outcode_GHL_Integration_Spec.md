@@ -53,7 +53,9 @@ Fires on **every completed session**. This is a hard requirement, not a nice-to-
 | `vitamin_d_level` | number | Send when it changes, empty string otherwise |
 | `session_count_total` | integer | Lifetime sessions for this user |
 
-`session_count_total` is worth including. Enyrgy already has a `sessions_10_complete` tag driving review and referral outreach, currently applied by hand. With this field it becomes automatic.
+`session_count_total` is worth including for the contact record even though GHL will not act on it (see Scope below).
+
+**Firing frequency:** per session initially. This will drop to a daily or weekly sync once the V2 app takes over session messaging. Worth knowing now so the endpoint is built with an adjustable schedule rather than hard-wired to session completion.
 
 ## Three requirements that matter
 
@@ -127,11 +129,29 @@ Trigger: added by WF-33 only.
 
 Nothing will error when this happens. The only symptom is users being nudged twice and learning to ignore both. This is the same class of failure as the Session 14 double-send, where GHL drips and Paperclip agents were both messaging the same contacts, resolved by narrowing agent triggers and turning Stop-on-Response on.
 
-**Endpoint 2 is NOT retired with the nudge.** Last Treatment Date, Vitamin D Level and Session Count Total continue to drive segmentation, automatic `sessions_10_complete` tagging, milestone messaging, and commercial facility reporting. The "fires on every session" requirement to Outcode stands permanently, independent of WF-34.
+## SCOPE: what GHL keeps after V2, and what it does not
+
+The V2 device app absorbs essentially all session-driven messaging: nudges, milestone messages, `sessions_10_complete` tagging, and session-based segmentation. **Do not build any of that in GHL.** It is throwaway work.
+
+**Map the fields, skip the automation.** Take the payload (Outcode is building it anyway), write it to contact fields, stop there.
+
+Two things GHL keeps permanently:
+
+**1. CRM context.** A human or agent in a live conversation seeing Last Treatment Date and current Vitamin D Level on the contact record. That is a field on a record, not a workflow.
+
+**2. Deep-lapse reactivation.** This is the real one and it does not migrate to the app. **The app can only reach users who still open the app.** Someone genuinely disengaged at 60 days has stopped opening it, so a push notification reaches nobody. Email and SMS still land. That is existing WF-08 `status_cold` and Reactivation territory, and it stays with GHL because it targets exactly the population the app cannot touch.
+
+Note that commercial facility reporting was never GHL's job either: the commercial unit ships with a facility admin portal showing member analytics and vitamin D tracking.
+
+### Endpoint 2 firing frequency
+
+**Per session while WF-34 exists**, because the nudge works by timer reset and needs a signal on every session.
+
+**After V2, drop to a daily or weekly sync.** Nothing left in GHL needs per-session resolution once the app owns session messaging. This also resolves the volume question below rather than carrying it forever.
 
 ## Open decisions
 
-- **Volume.** At 600 users averaging 4 to 5 sessions a week, Endpoint 2 fires roughly 3,000 times a week, around 140,000 workflow executions a year and rising with every unit placed. Confirm the GHL plan's execution limits before go-live; the failure mode is silent throttling, not a visible error. Note this does not reduce when WF-34 retires, since Endpoint 2 continues.
+- **Volume, interim only.** At 600 users averaging 4 to 5 sessions a week, per-session firing is roughly 3,000 calls a week, around 140,000 workflow executions a year and rising with every unit placed. Confirm the GHL plan's execution limits before go-live; the failure mode is silent throttling, not a visible error. This is bounded by the WF-34 lifespan, since Endpoint 2 drops to a periodic sync afterwards.
 - **Facility member data ownership.** A commercial facility's members flowing into Enyrgy's GHL raises the same question as the open OEM/Lumanova data-boundary item in the EA. Worth settling before the first commercial unit is registering members at scale.
 - **Milestone messaging.** With `vitamin_d_level` and `session_count_total` arriving automatically, both a "crossed into optimal range" message and automatic `sessions_10_complete` tagging become possible.
 
