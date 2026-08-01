@@ -77,11 +77,31 @@ Fires on **every completed session**. This is a hard requirement, not a nice-to-
 
 # PART B: INTERNAL, GHL BUILD
 
-## Prerequisite: WF-01 must be guarded BEFORE the webhook goes live
+## Prerequisite: WF-01 guard, DONE (August 1, 2026)
 
-**WF-01 New Lead Router triggers on Contact Created.** Every device user Outcode creates will hit it and be routed into a lead funnel. These are customers' users, not prospects.
+**WF-01 New Lead Router triggers on Contact Created**, so every device user Outcode creates would have hit it and been routed as a prospect. Worse, its last branch is `Default Consumer`, "when none of the conditions are met", so device users would have fallen through to **Tag As Consumer**, and `type_consumer` is a Consumer Drip trigger tag. Every registered device user would have entered consumer lead nurture.
 
-Tags applied by the receiving workflow land *after* WF-01 has already run, so they cannot guard it. This is the same race condition that forced the WF-31 rebuild, where the fix was a 2-minute wait before the condition. WF-01 needs equivalent treatment or a first-step guard on a field that is written during Create Contact.
+**Built and published Aug 1:**
+
+```
+Contact created (no filters)
+  -> Wait 1 Minute            (already existed)
+  -> Device User Check        (If/Else)
+       |- Tags does NOT include source_device_app  -> Identify Client Type -> five client-type branches
+       |- None                                     -> END
+```
+
+Three things made this cheaper than expected:
+
+**The wait already existed.** WF-01 had a `Wait 1 Minute` between trigger and Identify Client Type, so the field-settling delay was already being paid. The guard added zero latency, and WF-02's 5-minute SMS timing is untouched.
+
+**A tag beats a custom field here.** WF-32 creates the contact then adds tags within seconds, while WF-01 sits in its wait, so `source_device_app` is present at evaluation. Tags also land faster than custom-field writes, which is exactly what made a trigger-level filter unreliable for the FlexOffers refid. And it needed no new custom fields, so the guard could be built before WF-32 exists.
+
+**The condition is inverted from the obvious phrasing** (`does not include` continues, `None` ends) which is equivalent and avoids an empty branch.
+
+**Failure mode worth remembering:** a wrong or truncated tag string fails OPEN, silently. Device users route as consumers and nothing errors. Verify the exact tag value, not the truncated label, and test both paths.
+
+Note **WF-31 FlexOffers First Touch** also triggers on Contact Created. Harmless here (the refid will be empty, the condition fails, it ends) but every device user will enrol and add execution-log noise.
 
 Also note **WF-31 FlexOffers First Touch** triggers on Contact Created. Harmless here (the refid will be empty, the condition fails, it ends) but every device user will enrol and add execution-log noise.
 
