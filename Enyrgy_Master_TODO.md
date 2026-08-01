@@ -102,7 +102,7 @@ The build is essentially done. What remains is finishing the go-live staging, a 
 Signing up with Truemed so the Enyrgy system is HSA/FSA eligible. Truemed issues a Letter of Medical Necessity through their own practitioner network; Enyrgy makes no medical claims and that boundary must hold.
 
 - [x] **Task 1, product catalog:** Shopify product export submitted Aug 1. Business description (700 char limit) submitted, 647 chars, compliance-checked, states explicitly that Enyrgy is a wellness device making no medical claims.
-- [ ] **Task 2, connect bank account** (Stripe Express). Scott only.
+- [x] **Task 2, connect bank account** (Stripe Express): DONE Aug 1. Both Getting Started tasks complete; onboarding now sits with Truemed.
 - [ ] **WAITING ON TRUEMED: per-SKU eligibility determination, in writing.** The Shopify export includes accessories; a wall mount is unlikely to qualify the way the device does. The badge can only appear where eligibility is substantiated.
 - [ ] **Badge and copy placement.** The real compliance work. Truemed supplies copy blocks written for supplement brands comfortable with language Enyrgy prohibits. Every block goes through the prohibited-words check before it lands on a product page, in checkout, or in an email. Enyrgy may say "HSA/FSA eligible through Truemed"; it may NOT drift into condition-and-treatment language to justify the HSA angle.
 - [ ] **KB Section 3 payment options:** currently "paid in full, financed, or rented monthly". HSA/FSA joins that list once live, **and the live `enyrgy-knowledge-base` skill must be re-synced** or Sales Outreach keeps telling prospects there are three ways to pay.
