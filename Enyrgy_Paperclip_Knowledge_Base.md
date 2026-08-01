@@ -44,7 +44,10 @@ Approved trademarked terms: **BioCalibrated Sunshine** (personalized-dosing and 
 - Payment options: the Consumer Unit can be paid in full, financed, or rented monthly, so it can fit a monthly budget instead of a lump sum. Financing and rental are both real, offered options; specific rates and terms are not yet in the KB, so confirm with the KB Manager before quoting any figure.
 - OEM white-label (Lumanova / Luma D Light): same MSRP, wholesale arrangement.
 - Order URL: https://shop.enyrgy.com/products/uvb-light-therapy. Device registration: https://api.enyrgy.com/. Discovery-call booking: https://api.leadconnectorhq.com/widget/booking/C0hV5CFHUhWOIzs4OedC. Customer Testimonial Form: https://api.leadconnectorhq.com/widget/form/OjahkWeVDeozQkfG9dW2?notrack=true. Google review (GBP), live: https://g.page/r/CfN5Rj0CdmrfEAI/review. Trustpilot review: https://www.trustpilot.com/evaluate/enyrgy.com.
-- Commercial model: operators add Enyrgy as a $49-per-month modality add-on per client. Revenue scales with client count: 25 clients is $1,225 per month ($14,700 per year); 50 clients is $2,450 per month ($29,400 per year); 100 clients is $4,900 per month ($58,800 per year). Against the $8,950 unit cost, payback at 50 clients is under 4 months.
+- Commercial model: operators charge clients **$49 to $125 per month** for Enyrgy access. **The rate depends on location and local clientele**, so quote the end of the range that matches the market rather than a single number. Standard markets support $49 to $75. Premium metro markets with affluent clientele support up to $125 (Orange County, California is a $125 market; the Center for New Medicine and Beyond Wellness in Costa Mesa are the reference points). Revenue scales with active client count:
+  - At $49 per month: 25 clients is $1,225 per month ($14,700 per year); 50 clients is $2,450 per month ($29,400 per year); 100 clients is $4,900 per month ($58,800 per year). Against the $8,950 unit cost, payback at 50 clients is under 4 months.
+  - At $125 per month: 25 clients is $3,125 per month ($37,500 per year); 50 clients is $6,250 per month ($75,000 per year); 100 clients is $12,500 per month ($150,000 per year). Payback at 50 clients is about 6 weeks.
+- Commercial delivery model: the market is moving away from per-modality add-on pricing toward **membership models**. Enyrgy fits that shift and operators position it two ways: as a draw to bring in new members, and as an incentive to upgrade existing members into a higher tier. Where a facility runs **credit-based memberships** (members prepay for service credits), do NOT let Enyrgy be priced per session against credits: at 4 to 5 sessions a week the credit draw would consume an entire membership and crowd out the operator's higher-margin services. Price it as a flat monthly add-on that sits outside credits, or include it in a top tier as the upgrade trigger. Enyrgy's advantage in any membership model is that its marginal cost per session is near zero (no consumables, no practitioner, 2 to 4 minutes, app-run), unlike IV, NAD+, or practitioner-delivered services.
 
 ## 4. Clinical and credibility data
 
@@ -109,7 +112,7 @@ Do not paraphrase or embellish an advisor's credentials beyond these approved bi
 **Commercial**
 
 - We already have red light. Ninety percent of our customers use both. They do different biological jobs, so this sits alongside what you already offer instead of replacing it.
-- Would clients pay? Vitamin D runs low in 77 percent of indoor adults, so the demand is already in your book. Operators are charging $49 to $75 a month for it.
+- Would clients pay? Vitamin D runs low in 77 percent of indoor adults, so the demand is already in your book. Operators are charging $49 to $125 a month for it, depending on their market and clientele.
 - Staff training? It is included, and light. The app calculates each client's dose and runs the session itself.
 
 **Investor**
@@ -183,7 +186,7 @@ The prohibited-words scan runs before every email, SMS, and voicemail across all
 | Investor offering | $3.5M at 12 percent / 3yr, $50K minimum |
 | Exit target | $100 to 150M in 5 years |
 | Facility | 5115 N 27th Ave, Bld 66, Phoenix, AZ 85017, Made in USA |
-| Commercial model | $49/month modality add-on per client; payback under 4 months at 50 clients |
+| Commercial model | $49 to $125/month per client, set by location and clientele; payback under 4 months at 50 clients at $49, about 6 weeks at $125 |
 
 ---
 
