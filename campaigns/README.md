@@ -24,12 +24,16 @@ Named `WF-NN-slug.md`, matching the workflow number in GHL.
 
 See `_INDEX.md` for what has been captured and what has not.
 
-## Known fidelity limit: hyperlink URLs
+## Hyperlinks
 
-Plain-text capture from the GHL editor preserves wording but **drops the URL behind any anchor text**. A file showing "Book Call" does not record where that link points. Restoring a workflow from these files alone would rebuild the copy correctly and lose every hyperlink.
+The GHL email editor has **no source view**, so a plain-text copy carries a link's anchor text but not its URL.
 
-Options, best first:
+Resolved from `_LINKS.md` rather than re-copied by hand. Every URL in the funnel is already recorded in the KB, the handoff's Key URLs section and the Implementation Guide, and was verified against GHL in a dedicated session, so the repo is the authority and there is no need to extract links a second time.
 
-1. **Copy the HTML source** if the email action exposes a code or source view. Preserves links, bold and structure in one pass, same effort.
-2. **Note link URLs separately** per touch. Slower, but only affects emails that contain links.
-3. **Accept the limit** and treat these files as a copy backup rather than a full restore artifact. Known live URLs are listed in the KB and the handoff's Key URLs section.
+Each email file preserves the anchor text as the reader sees it and notes the resolved target beneath it:
+
+> `... grab a 15-minute call here: Book Call.`
+>
+> **Links:** `Book Call` -> Consumer Discovery
+
+**The one risk this creates:** if a link is changed in GHL and `_LINKS.md` is not updated, every file citing it drifts silently. Treat a link change in GHL as a two-step job, same as a copy change.

@@ -78,9 +78,7 @@ If you want the science behind it, reply and I will send it. Or grab a 15-minute
 {{custom_values.standard_signature}}
 ```
 
-**Link note:** "Book Call" is anchor text. All links across the funnel were verified correct in a dedicated session, so the URL behind it is sound; it simply does not survive a plain-text copy. Per the KB the discovery-call booking link is `https://api.leadconnectorhq.com/widget/booking/C0hV5CFHUhWOIzs4OedC`.
-
-**Backup fidelity caveat, applies to every email in `campaigns/`:** plain-text capture preserves wording but drops the URL behind any anchor text. Restoring a workflow from these files alone would rebuild the copy correctly and lose the hyperlinks. See the README for the options.
+**Links:** `Book Call` -> **Consumer Discovery** (see `_LINKS.md`). Inline order URL is written out in the body and needs no entry.
 
 ---
 
