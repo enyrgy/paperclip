@@ -256,7 +256,7 @@ Phone: {{contact.phone}}
 View contact in GHL: {{contact.link}}
 ```
 
-**UNVERIFIED SPEC:** the 4x4 feet floor space figure appears nowhere in the KB, the handoff or the Implementation Guide. Space is the first practical objection a facility raises, so if the number is right it belongs in the KB where agents can reach it. Confirm and record.
+**VERIFIED (Aug 2)** by Scott and recorded in KB Section 3, so agents can answer the same question.
 
 ---
 
@@ -328,6 +328,5 @@ Nine corrections applied to the live workflow during capture.
 
 ## Still open
 
-- **4x4 feet space spec** in touch 8, unverified, see the note there.
 - **Touch 6 SMS** still says "pays for itself in under 4 months at 50 clients". True at the bottom of the range, conservative at the top. Left as written since an SMS has no room for the full range, but worth knowing it understates.
 - **Touch 7 subject** says "distribution partner" while the body describes a white-label arrangement. Per KB Section 14 these are two distinct offered arrangements. Minor, but the subject and body disagree.
