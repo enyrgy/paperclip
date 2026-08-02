@@ -2,7 +2,7 @@
 
 | Workflow | Touches | Captured |
 |---|---|---|
-| Consumer Drip | 12 | [ ] |
+| Consumer Drip | 12 | [x] complete |
 | Commercial Drip | 10 | [ ] |
 | Partner Drip | 9 | [ ] |
 | Investor Drip, Cold | 8 | [ ] |

@@ -4,9 +4,7 @@
 **Touches:** 12 over 21 days
 **Gating:** first-step If/Else "Bypass Check". Contacts whose tags do NOT include `drip_bypass` run all 12 touches; contacts carrying it END immediately.
 **Stop on Response:** On
-**Captured:** 2026-08-02 (partial, see status below)
-
-**Capture status:** Touches 2, 3, 4 recorded. Touch 1 and touches 5 to 12 still outstanding.
+**Captured:** 2026-08-02, complete. All 12 touches recorded.
 
 ---
 
@@ -82,6 +80,219 @@ If you want the science behind it, reply and I will send it. Or grab a 15-minute
 
 ---
 
-## Touches 5 to 12
+## Touch 5 | Day 7 | Internal Notification (not customer-facing)
 
-**NOT YET CAPTURED.**
+**Subject:** `ACTION REQUIRED - Personal Call: {{contact.first_name}} {{contact.last_name}}`
+
+**EM DASH IN GHL, NEEDS CORRECTING.** The live subject uses an em dash between `ACTION REQUIRED` and `Personal Call`. Recorded above with a hyphen per the standing rule. Correct it in GHL so the two match.
+
+**Body:**
+
+```
+Consumer drip Day 7 action required.
+
+Call {{contact.first_name}} {{contact.last_name}} and leave this voicemail if no answer:
+
+"Hi {{contact.first_name}}, this is Scott Hansbury from Enyrgy. I noticed you were curious about what we do and I wanted to reach out personally.
+
+We have had 600+ people complete 25,000+ sessions
+
+with zero adverse events. I would love 15 minutes to show you
+
+exactly how the Enyrgy Vitamin D Primal Light Platform works for someone like you.
+
+Book a call at enyrgy.com or call me back at
+
+602-321-0322."
+
+Contact details:
+
+Company: {{contact.company_name}}
+
+Email: {{contact.email}}
+
+Phone: {{contact.phone}}
+
+View contact in GHL: {{contact.link}}
+```
+
+---
+
+## Touch 6 | Day 8 | SMS
+
+**Body:** (line breaks as they exist in GHL)
+
+```
+Hi {{contact.first_name}}, I left you a voicemail. Quick version: in our
+ 12-week study, participants raised their vitamin D an average of
+111 percent, and every one of them reached optimal levels. Want to see
+how it could work for you? Book a free call: https://api.leadconnectorhq.com/widget/booking/C0hV5CFHUhWOIzs4OedC
+Reply STOP to opt out. Msg & data rates may apply.
+```
+
+**COMPLIANCE:** cites the 111 percent and all-reached-optimal figures with no N=5 pilot caveat. See the compliance note at the foot of this file.
+
+---
+
+## Touch 7 | Day 10 | Email
+
+**Subject:** Is it safe?
+
+**Body:**
+
+```
+{{contact.first_name}},
+
+The first question people ask about the Enyrgy Vitamin D Primal Light Platform is almost always the same one: is it safe.
+
+Fair question. Here is the honest version.
+
+Sunlight is about 95 percent UVA, the wavelength that ages skin and carries the risk. The platform flips that. It emits over 90 percent UVB and under 10 percent UVA, the opposite of sunlight, weighted to the wavelength your body actually uses.
+
+The app is the other half. It reads your Fitzpatrick skin type, sets your personal dose (your MED, the point where skin would start to redden), and ends the session there on its own. You are not the one watching a clock or guessing.
+
+The record backs it up. Twenty five thousand sessions, zero burns, zero adverse events.
+
+If you want to see how the dose works for your skin type, reply and I will walk you through it. Or grab a 15-minute call here: Book Call.
+
+{{custom_values.standard_signature}}
+```
+
+**Links:** `Book Call` -> **Consumer Discovery**
+
+---
+
+## Touch 8 | Day 12 | Email
+
+**Subject:** What $2,995 works out to per session
+
+**Body:**
+
+```
+{{contact.first_name}},
+
+$2,995 for the Enyrgy Vitamin D Primal Light Platform reads big. It reads a lot smaller once you run it per use.
+
+Five sessions a week for five years is about 1,300 sessions. That puts it at $2.30 a session. Less than your coffee.
+
+Set that next to what the supplement route already costs. Vitamin D pills run $600 to $1,200 a year, with no promise your body does much with them (in the trials, about one in four people were low responders). Five years of that is real money for one pathway with an open question attached.
+
+The platform opens all three pathways in two to four minutes, at $2.30 a session. If the up-front number is a stretch, financing is there.
+
+If you want to talk it through for your situation, reply, or grab a 15-minute call here: Book a call.
+
+{{custom_values.standard_signature}}
+```
+
+**Links:** `Book a call` -> **Consumer Discovery**
+**Checked:** the $600 to $1,200 supplement figure and the $2.30 per session maths both match KB approved talking points.
+
+---
+
+## Touch 9 | Day 14 | SMS
+
+**Body:** (line breaks as they exist in GHL)
+
+```
+Hi {{contact.first_name}}, one thing I have not mentioned yet.
+About 90% of our customers also use red light. The two do different
+biological jobs, so this sits alongside your red light and fills the
+vitamin D gap it cannot. Worth a 15-minute call? Book here:
+https://api.leadconnectorhq.com/widget/booking/C0hV5CFHUhWOIzs4OedC
+Reply STOP to opt out. Msg & data rates may apply.
+```
+
+---
+
+## Touch 10 | Day 16 | Email
+
+**Subject:** For the person who reads the studies first
+
+**Body:**
+
+```
+{{contact.first_name}},
+
+If you want the data before anything else, here it is.
+
+In a 12-week study on the Enyrgy Vitamin D Primal Light Platform, participants raised their vitamin D an average of 111 percent, from 39.96 to 84.20 ng/mL. 100 percent of them reached optimal levels. Not most. All of them.
+
+The board behind it carries real weight. Dr. Bruce Hollis, who has over 70,000 citations and is widely regarded as the Godfather of Vitamin D research, has reviewed and endorsed the platform. Dr. Samantha Kimball, a leading UV-safety researcher, designed the MED protocol that sets your dose every session. Dr. William Grant is a NASA UVB researcher and phototherapy pioneer.
+
+One thing research-minded people always ask: where does red light fit. About 90 percent of our customers use both. They do different biological jobs, so this sits alongside red light rather than replacing it.
+
+If you have questions about the study or the mechanism, reply and I will answer them myself, or grab a 15-minute call here: Book a call.
+
+{{custom_values.standard_signature}}
+```
+
+**Links:** `Book a call` -> **Consumer Discovery**
+**Checked:** advisor bios match the KB approved wording exactly, including "reviewed and endorsed". See the FTC note at the foot of this file.
+**COMPLIANCE:** cites the 111 percent and 100-percent-optimal figures with no N=5 pilot caveat, and "Not most. All of them." actively invites the inference of a large trial. See the compliance note below.
+
+---
+
+## Touch 11 | Day 19 | SMS
+
+**Body:** (line breaks as they exist in GHL)
+
+```
+Hi {{contact.first_name}}, quick heads up. We build the
+Enyrgy Vitamin D Primal Light Platform in Phoenix, AZ in limited
+ batches, and ship times can run a few weeks. If you are considering it,
+worth starting the conversation now. Happy to answer questions first.
+Book a quick call: https://api.leadconnectorhq.com/widget/booking/C0hV5CFHUhWOIzs4OedC
+Reply STOP to opt out. Msg & data rates may apply.
+```
+
+**UNSUBSTANTIATED:** "limited batches" and "ship times can run a few weeks" appear nowhere in the KB, the handoff or the Implementation Guide. This is a scarcity and urgency claim in live consumer copy. If it is literally true, record the lead time in the KB so it is substantiated. If it is not, it is exactly the pattern the FTC treats as deceptive urgency.
+
+---
+
+## Touch 12 | Day 21 | Email
+
+**Subject:** Closing the loop, door open
+
+**Body:**
+
+```
+{{contact.first_name}},
+
+I have sent a fair bit over the last few weeks, and I would rather not turn into inbox noise. So this is the last one from the sequence.
+
+Here is where things stand. 600 plus people have come to the Enyrgy Vitamin D Primal Light Platform the same way you did, most of them tired of guessing whether their routine was actually doing anything. They are not guessing anymore.
+
+If the timing is not right today, that is genuinely fine. Life moves and priorities shift. Keep this in your back pocket. If you find yourself wondering again why your energy is low or your sleep is off, you know where we are.
+
+If you would rather just find out whether it fits, that is a 15-minute call, free, and the information is yours to keep either way.
+
+Book whenever you are ready: Book a call.
+
+Wishing you good health either way.
+
+{{custom_values.standard_signature}}
+```
+
+**Links:** `Book a call` -> **Consumer Discovery**
+
+---
+
+# Compliance notes on this workflow
+
+## 1. N=5 caveat missing on the pilot figures (touches 6 and 10)
+
+KB Section 4 states the rule plainly: *"When citing the 111 percent or 100-percent-optimal figures, present them as a small uncontrolled pilot, not as a large or controlled trial."* The study is five healthy adults, four to six sessions a week, twelve weeks, no control group.
+
+Neither touch carries that context. Touch 10 goes further than a bare omission: **"100 percent of them reached optimal levels. Not most. All of them."** Five out of five reads very differently once the denominator is known, and the email is explicitly aimed at *"the person who reads the studies first"*, which is the reader most likely to go looking.
+
+This is consumer marketing rather than an investor document, so substantiation sits under FTC advertising standards.
+
+## 2. FTC consent for the Hollis endorsement (touch 10)
+
+The advisor wording matches the KB exactly, so the copy is correct as written. But the KB attaches a condition to it: *"any public claim that an advisor 'reviewed and endorsed' the platform must have the advisor's documented consent on file, per FTC endorsement rules."*
+
+That claim is live in a consumer drip. Worth confirming the documented consent exists.
+
+## 3. Unsubstantiated scarcity (touch 11)
+
+See the note on touch 11 above.
