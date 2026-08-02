@@ -279,20 +279,20 @@ Wishing you good health either way.
 
 # Compliance notes on this workflow
 
-## 1. N=5 caveat missing on the pilot figures (touches 6 and 10)
+All three items below were raised during capture on 2026-08-02 and **resolved by Scott the same day**. They are recorded as settled so they are not re-raised on every future read.
 
-KB Section 4 states the rule plainly: *"When citing the 111 percent or 100-percent-optimal figures, present them as a small uncontrolled pilot, not as a large or controlled trial."* The study is five healthy adults, four to six sessions a week, twelve weeks, no control group.
+## 1. N=5 caveat omitted from the pilot figures (touches 6 and 10): DELIBERATE, RESOLVED
 
-Neither touch carries that context. Touch 10 goes further than a bare omission: **"100 percent of them reached optimal levels. Not most. All of them."** Five out of five reads very differently once the denominator is known, and the email is explicitly aimed at *"the person who reads the studies first"*, which is the reader most likely to go looking.
+Touches 6 and 10 cite the 111 percent and 100-percent-optimal figures without the pilot context that KB Section 4 otherwise requires.
 
-This is consumer marketing rather than an investor document, so substantiation sits under FTC advertising standards.
+**Scott's call, and the reasoning:** the science page states the N=5 design plainly, and touch 10 is aimed at the reader who goes and reads it. The substantiation lives one click away in the place that reader will actually look, so the email carries the finding and the page carries the design.
 
-## 2. FTC consent for the Hollis endorsement (touch 10)
+Note this is the same decision made for the Q2 2026 investor update, taken separately rather than by precedent.
 
-The advisor wording matches the KB exactly, so the copy is correct as written. But the KB attaches a condition to it: *"any public claim that an advisor 'reviewed and endorsed' the platform must have the advisor's documented consent on file, per FTC endorsement rules."*
+## 2. FTC consent for the Hollis endorsement (touch 10): ON FILE, RESOLVED
 
-That claim is live in a consumer drip. Worth confirming the documented consent exists.
+The KB requires documented consent for any public "reviewed and endorsed" claim. **Consent is on file.** Settled, do not raise again.
 
-## 3. Unsubstantiated scarcity (touch 11)
+## 3. "Limited batches" in touch 11: TRUE, RESOLVED
 
-See the note on touch 11 above.
+**Units are built in batches of 10.** The scarcity and lead-time language is a literal description of manufacturing, not manufactured urgency.
