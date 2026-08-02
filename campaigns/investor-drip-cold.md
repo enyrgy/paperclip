@@ -20,7 +20,7 @@
 ```
 Hi {{contact.first_name}},
 
-We have over 600 users and completed 25,000 sessions without spending a dollar on advertising. Every one of those customers found us, in five countries, by word of mouth.
+We have over 600 users and completed 25,000 sessions without spending a dollar on advertising. Every one of them found us, in five countries, by word of mouth.
 
 That is the part I would want to understand if I were looking at this from your side. Not whether the technology works, the treatment record answers that, but why demand keeps arriving on its own.
 
