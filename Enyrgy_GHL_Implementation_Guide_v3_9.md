@@ -619,7 +619,7 @@ Convention: category_value (lowercase, underscores).
   ----------------------------------------------------------------------------------------------------------
   **Campaign**             **Touches**   **Duration**   **Trigger Tag**   **Status**
   ------------------------ ------------- -------------- ----------------- ----------------------------------
-  Investor Drip, Cold      8             30 days        type_investor     Published
+  Investor Drip, Cold      7             30 days        type_investor     Published
 
   Investor Warm Sequence   3             7 days         investor_warm     Published
 

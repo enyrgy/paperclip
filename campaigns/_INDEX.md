@@ -5,7 +5,7 @@
 | Consumer Drip | 12 | [x] complete |
 | Commercial Drip | 10 | [x] complete |
 | Partner Drip | 9 | [x] complete |
-| Investor Drip, Cold | 8 | [ ] |
+| Investor Drip, Cold | 7 | [x] complete |
 | Investor Warm | 3 | [ ] |
 | WF-17 Long-Term Nurture | 7 | [ ] |
 | WF-13 Tired Test Emails | 5 | [ ] |
