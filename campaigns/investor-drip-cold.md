@@ -3,7 +3,7 @@
 **Trigger:** Contact Tag `type_investor`
 **Touches:** 7 over 30 days
 **Gating:** first-step Bypass Check. Contacts carrying `drip_bypass` END immediately.
-**Captured:** 2026-08-02, complete, with five corrections applied the same day (see the change log at the foot of this file)
+**Captured:** 2026-08-02, complete. Eleven corrections applied the same day: five factual and compliance fixes during capture, then six voice and conversion fixes from a CUB pass. See the change log at the foot of this file.
 
 **Touch count corrected during capture.** The Implementation Guide recorded 8 touches; the live workflow has 7. The guide was updated to match.
 
@@ -75,23 +75,15 @@ View contact in GHL: {{contact.link}}
 ```
 Hi {{contact.first_name}},
 
-Before I share any details about our current offering, I want to let the numbers speak.
+The number I keep coming back to is the return rate. Ours is under 1 percent. The industry runs 5 to 10.
 
-600+ users.
-
-25,000+ treatments completed.
-
-Zero adverse events across every single session.
-
-Under 1 percent return rate, versus an industry average of 5 to 10 percent.
-
-Five countries, all inbound, zero paid advertising.
-
-OEM pipeline with one signed white-label partner already launched.
+That gap is the argument. People who buy this keep it, and they tell people, which is why demand in five countries arrived without us buying a single customer. A white-label partner looked at the same record and decided to build a brand on it.
 
 This is what organic, word-of-mouth growth looks like when the product actually works.
 
-If you'd like to see the executive summary, I'm happy to send it over.
+Twenty five thousand sessions in with no adverse events, the product question is settled. What is left is distribution.
+
+Happy to send the executive summary if you want the detail before we talk.
 
 {{custom_values.standard_signature}}
 ```
@@ -112,7 +104,7 @@ Investor drip Day 10 action required.
 Call {{contact.first_name}} {{contact.last_name}} now and leave voicemail if no answer.
 
 Voicemail script:
-"Hi {{contact.first_name}}, Scott Hansbury from Enyrgy. I've been reaching out because we have a small number of investment conversations open with health-tech-focused investors and I wanted to see if there's a fit. Would love 15 minutes whenever it works. I'll send an email right after this."
+"Hi {{contact.first_name}}, Scott Hansbury from Enyrgy. I have sent you a couple of emails and thought a voice was better than a third one. We build a vitamin D device that has 600 users in five countries, none of whom we paid to acquire, and we are raising. Fifteen minutes would tell us both whether it is worth your time. I will send the calendar link right after this."
 
 Then send a follow-up email immediately after the call with the calendar booking link.
 
@@ -134,7 +126,9 @@ View contact in GHL: {{contact.link}}
 ```
 Hi {{contact.first_name}},
 
-Investors invest in people first. Here's who is behind Enyrgy.
+I have a track record of eight startup companies and exited five. David scaled Alair Homes from one location to over a hundred. Neither of us is learning this on your money.
+
+The science is not ours to claim. Dr. Bruce Hollis, who has more citations in vitamin D than almost anyone alive, reviewed and endorsed the platform before we shipped it.
 
 Scott Hansbury, Co-Founder & CEO
 8 startups, 5 exits, $500M+ in value created.
@@ -153,9 +147,9 @@ Dr. Samantha Kimball, designer of our MED protocol. Leading researcher in UV the
 
 Dr. William Grant, NASA UVB researcher. Pioneer in phototherapy science.
 
-This is the team that built 25,000+ treatments with zero adverse events.
+That is the group behind 25,000 sessions with no adverse events.
 
-I'd love to show you what we're building next.
+Fifteen minutes whenever it suits.
 
 CALENDAR LINK
 
@@ -175,11 +169,11 @@ CALENDAR LINK
 ```
 Hi {{contact.first_name}},
 
-Quick clarification on process, because I want to make this easy, not bureaucratic.
+Quick clarification on process, because this part trips people up more than it should.
 
 You do not need to be verified as accredited to review our offering. Accreditation matters at exactly one point, before any funds move. So the only step required before you could actually invest is confirming your accredited status, and it takes about 2 minutes.
 
-You are welcome to complete it now so the runway is clear later, or wait until you have seen everything. No pressure either way.
+You are welcome to complete it now so the runway is clear later, or wait until you have seen everything.
 
 ACCREDITATION FORM LINK
 
@@ -205,21 +199,17 @@ Looking forward to the next step.
 ```
 Hi {{contact.first_name}},
 
-I've shared everything I can at this stage.
+This is the last one from me.
 
-If the timing or fit isn't right for you right now, I completely understand.
+I have not heard back, which usually means the timing is wrong rather than the idea. Most of the good conversations I have had started months after the first email.
 
-I wanted to make sure you'd had a fair shot to evaluate it before I stop reaching out.
+The short version if you ever want it: 600 users across five countries who arrived without us buying a single one, 25,000 sessions with no adverse events, and a return rate under 1 percent against an industry that runs 5 to 10.
 
-Where we stand:
+That is a product people keep. What we are raising for is putting it in front of more of them.
 
-- 600+ users across 5 countries
-- 25,000+ treatments, zero adverse events
-- Organic, word-of-mouth growth with zero paid advertising
+If that becomes interesting later, my calendar stays open.
 
-If you have any remaining questions, or if a future round might be a better fit, I'd love to stay connected.
-
-Wishing you and your team continued success.
+CALENDAR LINK
 
 {{custom_values.standard_signature}}
 ```
@@ -237,6 +227,27 @@ Five corrections applied to the live workflow during capture. The drip was built
 | 3 | 2 | Added a missing subject line; em dash to comma in the connection note; resolved the `health tech / wellness / investing` placeholder |
 | 4 | 4 | Added the missing `View contact in GHL` line |
 | 5 | 5 | Added Brian Cameron, CFO. Corrected the Hollis bio to the KB-approved wording |
+
+## CUB and voice pass, same day
+
+Ran the copy through CUB (Confusing, Unbelievable, Boring) against the Mode 2 Trusted Advisor spec in `Enyrgy_Agent_Voice_Style_Skill.md`. Scored **Severe** overall: 3 severe Boring findings, 1 severe Confusing.
+
+The drip proved the product worked and never argued the investment. Those are different arguments and only the first was present. Six of seven emails landed on a summary rather than a reframe, three used a stat-bullet stack as the body, and one email contained no instance of "you" until its final line.
+
+| # | Touch | Change |
+|---|---|---|
+| 6 | 1 | Rewrote the opening. Stat stack became an argument, entry moved to the investor's question, "creating a new category" removed |
+| 7 | 3 | Rewrote the body. Opens on the return rate, which was fourth in a list and is the strongest investor signal. Buried gold line repositioned to land the argument. Ends on "what is left is distribution" so the email has a point |
+| 8 | 4 | Rewrote the voicemail. Original spent its first six seconds on preamble and never said what the company does |
+| 9 | 5 | Replaced the telegraphing opener and closer. Roster kept, since a list of names and credentials is the tactical exception the voice spec allows |
+| 10 | 6 | Removed a not-X-it's-Y pivot and a generic reassurance line |
+| 11 | 7 | Rewrote the final email. Removed two Never-list phrases and a repeated bullet stack, added the calendar link it was missing entirely |
+
+**Two findings that reached beyond this drip**, both fixed at source in the KB:
+
+The 600+ figure was written three ways across the docs, as customers, users and people. A home unit supports up to six users, so the two are not interchangeable and "600+ customers" overstates unit sales, which is material to an investor working revenue back from the number. KB now states the rule, not just the figure.
+
+The supplement statistic's approved wording was "in these trials", anchored in the KB by the Carlberg citation beside it but reading as Enyrgy's own trials once lifted into an email. Changed to "in research clinical trials", with a note that investor-facing copy may name Carlberg directly.
 
 ## Why change 1 mattered most
 
