@@ -84,7 +84,7 @@ If you want the science behind it, reply and I will send it. Or grab a 15-minute
 
 **Subject:** `ACTION REQUIRED - Personal Call: {{contact.first_name}} {{contact.last_name}}`
 
-**EM DASH IN GHL, NEEDS CORRECTING.** The live subject uses an em dash between `ACTION REQUIRED` and `Personal Call`. Recorded above with a hyphen per the standing rule. Correct it in GHL so the two match.
+**Em dash in the live subject corrected in GHL, Aug 2.** GHL and this file now match.
 
 **Body:**
 
