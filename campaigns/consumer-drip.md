@@ -295,4 +295,6 @@ The KB requires documented consent for any public "reviewed and endorsed" claim.
 
 ## 3. "Limited batches" in touch 11: TRUE, RESOLVED
 
-**Units are built in batches of 10.** The scarcity and lead-time language is a literal description of manufacturing, not manufactured urgency.
+The scarcity and lead-time language is a literal description of manufacturing, not manufactured urgency. Confirmed by Scott at capture, 2026-08-02.
+
+**Deliberately NOT recorded as a KB fact.** Batch size moves with funding and production capacity, so a specific number written into the KB would become a claim agents state confidently after it stopped being true, with no mechanism to notice the drift. The copy says "limited batches", which stays true at any batch size. Do not add a figure here or to the KB.
