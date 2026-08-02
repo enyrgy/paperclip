@@ -37,3 +37,15 @@ Each email file preserves the anchor text as the reader sees it and notes the re
 > **Links:** `Book Call` -> Consumer Discovery
 
 **The one risk this creates:** if a link is changed in GHL and `_LINKS.md` is not updated, every file citing it drifts silently. Treat a link change in GHL as a two-step job, same as a copy change.
+
+## Both formats, every file
+
+Standing Rule 1: every deliverable exists as `.md` **and** `.docx`. That applies to every file in this directory, not just the workflow captures.
+
+After editing any `.md` here, regenerate its `.docx`:
+
+```
+pandoc campaigns/<name>.md -o campaigns/<name>.docx
+```
+
+Any `.docx` containing a table also needs visible gridlines on every cell, per Standing Rule 1b. Pandoc does not add them, so they are injected afterwards.
