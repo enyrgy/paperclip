@@ -10,7 +10,7 @@ No em-dashes anywhere. Peer-to-peer voice. Sunlight. Evolved.
 
 Enyrgy is a health-technology company that developed the Enyrgy Vitamin D Primal Light Platform, an intelligent precision phototherapy platform. Mission: restore the body's natural ability to respond to sunlight with precision, safety, and measurable benefit.
 
-- Customers: 600+ (organic growth, zero paid advertising to date).
+- Users: 600+ (organic growth, zero paid advertising to date). **Say users, not customers.** A home unit supports up to six users, so the two are not interchangeable and "600+ customers" overstates unit sales. Use "600+ users" in all copy.
 - Treatments completed: 25,000+ (zero burns, zero adverse events).
 - Return rate: under 1 percent (industry average 5 to 10 percent).
 - Countries with inbound demand: 5 (USA, UK, Canada, France, New Zealand).
@@ -94,7 +94,7 @@ Do not paraphrase or embellish an advisor's credentials beyond these approved bi
 - The app reads your skin type, sets your dose, and ends the session for you.
 - Under 1 percent of people send it back. The industry lives at 5 to 10 percent.
 - Built in Phoenix, Arizona. Made in USA.
-- 600+ customers, 5 countries, zero paid ads.
+- 600+ users, 5 countries, zero paid ads.
 - Lumanova picked our technology to launch their own light, Luma D Light.
 - $2,995 to own it at home. $8,950 for the commercial unit.
 - That is $2.30 a session at 5 a week over 5 years.
@@ -106,7 +106,7 @@ Do not paraphrase or embellish an advisor's credentials beyond these approved bi
 **Consumer**
 
 - Is this safe? Fair worry. Sunlight is about 95 percent UVA. We flipped it: over 90 percent UVB, under 10 percent UVA. The app reads your skin type, sets your personal dose, and ends the session for you. 25,000+ sessions in, zero burns, zero adverse events.
-- I already take supplements. Supplements are one lane, Vitamin D, and only if your body responds to it. In the trials, about one in four participants were low responders to vitamin D supplementation. Enyrgy opens all three lanes, Vitamin D, nitric oxide, and serotonin, in 2 to 4 minutes.
+- I already take supplements. Supplements are one lane, Vitamin D, and only if your body responds to it. In research clinical trials, about one in four participants were low responders to vitamin D supplementation. Enyrgy opens all three lanes, Vitamin D, nitric oxide, and serotonin, in 2 to 4 minutes.
 - $2,995 is a lot. It reads big until you run it per use. $2.30 a session over 5 years at 5 a week. Supplements cost $600 to $1,200 a year with no promise your body uses them. Financing is there if you want it, and under 1 percent of people return it.
 - I will just go outside. Going outside works if you have 2 to 4 hours of mid-day sun to spare, plus the UVA aging and skin risk that rides along. Enyrgy gets you there in 2 to 4 minutes, about 60x the efficiency, without the downside.
 - What does the FDA say? It is a wellness device, not a medical one, and we make no medical claims. The results sit on peer-reviewed science, and our advisory board includes Dr. Bruce Hollis.
@@ -125,7 +125,7 @@ Do not paraphrase or embellish an advisor's credentials beyond these approved bi
 
 ## 8. Claim precision (corrected)
 
-The "one in four" statistic is about RESPONSE, not absorption. Low responders absorb the pill fine; their cells do less with it. Approved wording only: **"in these trials, about one in four participants were low responders to vitamin D supplementation"** (Carlberg, VitDmet and VitDbol trials, Nutrients 2023, 15(15):3382). Never say "one in four cannot absorb," "supplements fail one in four," or "one in four Americans." This supersedes the older phrasing in Implementation Guide v3.9 Section 22 (Session 8 correction). Every claim must be exactly as verifiable as stated: no superlatives, no inflation, no unverifiable characterizations.
+The "one in four" statistic is about RESPONSE, not absorption. Low responders absorb the pill fine; their cells do less with it. Approved wording only: **"in research clinical trials, about one in four participants were low responders to vitamin D supplementation"**. Do NOT write "in these trials" or "in the trials" in copy: lifted out of this KB the citation stays behind and the phrase reads as though Enyrgy ran them. Investor-facing copy may name them as the Carlberg trials. (Carlberg, VitDmet and VitDbol trials, Nutrients 2023, 15(15):3382). Never say "one in four cannot absorb," "supplements fail one in four," or "one in four Americans." This supersedes the older phrasing in Implementation Guide v3.9 Section 22 (Session 8 correction). Every claim must be exactly as verifiable as stated: no superlatives, no inflation, no unverifiable characterizations.
 
 ## 9. Brand constants (locked)
 

@@ -95,7 +95,7 @@ Call {{contact.first_name}} {{contact.last_name}} and leave this voicemail if no
 
 "Hi {{contact.first_name}}, this is Scott Hansbury from Enyrgy. I noticed you were curious about what we do and I wanted to reach out personally.
 
-We have had 600+ people complete 25,000+ sessions
+We have had 600+ users complete 25,000+ sessions
 
 with zero adverse events. I would love 15 minutes to show you
 

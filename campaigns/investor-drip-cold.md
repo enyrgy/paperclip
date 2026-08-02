@@ -20,13 +20,15 @@
 ```
 Hi {{contact.first_name}},
 
-I'm reaching out because Enyrgy is creating a new category in health technology: precision phototherapy for natural synthesis.
+We have over 600 users and completed 25,000 sessions without spending a dollar on advertising. Every one of those customers found us, in five countries, by word of mouth.
 
-I thought you might appreciate a quick look at what we're building.
+That is the part I would want to understand if I were looking at this from your side. Not whether the technology works, the treatment record answers that, but why demand keeps arriving on its own.
 
-600+ customers. 25,000+ treatments. Zero adverse events. Five countries, all organic, zero paid advertising.
+The short version: vitamin D runs low in most people who work indoors, the fix everyone reaches for is a supplement, and about one in four participants in research clinical trials were low responders to it.
 
-I'd love 15 minutes to walk you through what we've built and where we're headed.
+We built a device that opens the pathway the supplement cannot, in two to four minutes.
+
+Fifteen minutes and I will show you the rest.
 
 CALENDAR LINK
 
@@ -211,7 +213,7 @@ I wanted to make sure you'd had a fair shot to evaluate it before I stop reachin
 
 Where we stand:
 
-- 600+ customers across 5 countries
+- 600+ users across 5 countries
 - 25,000+ treatments, zero adverse events
 - Organic, word-of-mouth growth with zero paid advertising
 

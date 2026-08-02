@@ -204,7 +204,7 @@ We are not asking you to take a risk on an unproven product.
 
 Here is what the data actually shows.
 
-25,000+ treatments completed across 600+ customers in 5
+25,000+ treatments completed across 600+ users in 5
 countries. Zero adverse events. Not one.
 
 Less than 1% return rate. The industry average is 5 to 10%.
@@ -279,7 +279,7 @@ Before I do, here is the short version of what we have built.
 
 The Enyrgy Vitamin D Primal Light Platform is the world's first phototherapy platform with app-calibrated UVB dosing, per-skin-type MED, and an automatic session cutoff. It activates three biological pathways simultaneously in 2 to 4 minutes. Vitamin D synthesis, Nitric Oxide release, and Serotonin production. Nothing else delivers all three in that time with a dose calibrated to the individual and an automatic cutoff.
 
-25,000+ treatments. Zero adverse events. Less than 1% return rate. 600+ customers in 5 countries. All organic. Zero paid advertising.
+25,000+ treatments. Zero adverse events. Less than 1% return rate. 600+ users in 5 countries. All organic. Zero paid advertising.
 
 Lumanova built an entire brand around our technology. We are selectively evaluating one to two more partners.
 
