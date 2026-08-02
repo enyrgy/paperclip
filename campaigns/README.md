@@ -23,3 +23,13 @@ Named `WF-NN-slug.md`, matching the workflow number in GHL.
 ## Status
 
 See `_INDEX.md` for what has been captured and what has not.
+
+## Known fidelity limit: hyperlink URLs
+
+Plain-text capture from the GHL editor preserves wording but **drops the URL behind any anchor text**. A file showing "Book Call" does not record where that link points. Restoring a workflow from these files alone would rebuild the copy correctly and lose every hyperlink.
+
+Options, best first:
+
+1. **Copy the HTML source** if the email action exposes a code or source view. Preserves links, bold and structure in one pass, same effort.
+2. **Note link URLs separately** per touch. Slower, but only affects emails that contain links.
+3. **Accept the limit** and treat these files as a copy backup rather than a full restore artifact. Known live URLs are listed in the KB and the handoff's Key URLs section.
