@@ -4,7 +4,7 @@
 |---|---|---|
 | Consumer Drip | 12 | [x] complete |
 | Commercial Drip | 10 | [x] complete |
-| Partner Drip | 9 | [ ] |
+| Partner Drip | 9 | [x] complete |
 | Investor Drip, Cold | 8 | [ ] |
 | Investor Warm | 3 | [ ] |
 | WF-17 Long-Term Nurture | 7 | [ ] |
