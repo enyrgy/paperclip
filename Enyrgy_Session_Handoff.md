@@ -49,6 +49,11 @@ What changes in practice:
 6. **Nitric oxide framing:** supplements feed the enzymatic route (substrate -> eNOS -> NO); UVA triggers enzyme-independent photorelease of NO from preformed skin stores (nitrite/nitrosothiols). The light pathway is additive - one a capsule cannot open. Never say "no supplement produces nitric oxide."
 7. **Claim precision is non-negotiable.** Every claim must be exactly as verifiable as stated. No superlatives, no inflation, no unverifiable characterizations.
 8. **Answer only what was asked.** Do not volunteer unrequested depth (e.g., Gen4 pricing, subscription mechanics) unless the forum specifically calls for it.
+9. **SAVE THE ARTIFACT, NOT A DESCRIPTION OF IT.** Any customer-facing copy drafted in a session (email, SMS, landing page, script, one-pager) gets written to a repo file **in that same session**, before it is pasted into GHL or anywhere else. Pasting into GHL is the second step, never the only one.
+   - **Why this rule exists.** Every drip and nurture email across WF-11 to WF-29 was drafted in sessions, pasted into GHL, and never written to a file. An entire session went into compliance-auditing that copy. The handoff faithfully recorded that the work happened ("copy handed back for paste into GHL", "all live funnel copy compliance-audited") while the copy itself was recorded nowhere. Sessions carry no memory, only the repo persists, and prior transcripts are not on disk. The result was a three to four hour manual re-extraction from GHL, in August 2026, of copy that had already passed through twice.
+   - **The failure mode is subtle:** documenting the work *about* an artifact feels like documenting the artifact. It is not. If the deliverable is text, the text goes in a file.
+   - Campaign copy lives in `campaigns/`, one file per workflow. See `campaigns/README.md`.
+   - Costs nothing at the time. The copy already exists in the response; it only needs writing down.
 
 ---
 
