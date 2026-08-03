@@ -15,7 +15,7 @@
 | WF-22 VD Assessment Nurture | 3 | [x] complete |
 | WF-21 VD Assessment results email | 1 | [x] complete |
 | WF-29 Abandoned Checkout Recovery | 3 | [ ] |
-| WF-25 Testimonial Request | 2 branches | [ ] |
+| WF-25 Testimonial Request | 1 email, 2 branches | [x] complete |
 | WF-26 Testimonial Received | thank-you + internal notification | [ ] |
 | WF-06 New Customer Onboarding | 4 | [x] complete |
 | WF-07 Review and Referral Activation | 3 | [x] complete |
