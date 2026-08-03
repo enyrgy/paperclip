@@ -213,7 +213,7 @@ Learn about the platform  |  Get yours
 | 3 | 2B | "Yesterday's idea" replaced. Touch 1 is Day 1 and Touch 2 is Day 4 |
 | 4 | 4A, 4B | Link formatting. 4B had an unclosed bracket, 4A had literal square brackets around anchor text |
 
-## Touch 4B carried the flagged phrase verbatim
+## The flagged phrase survived verbatim in 4B
 
 The Session 14 audit described the fault as emails that *"tied the 30-day money-back window to an 8-to-12-week lab retest (**'risk only a lab fee'**)."*
 
