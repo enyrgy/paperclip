@@ -80,7 +80,11 @@ Book a free 15-minute call: Book a call
 
 **The customer is real**, confirmed by Scott, and is not one of the five study participants. Their starting levels were 38.4, 34.0, 37.0, 47.0 and 43.4; nobody began at 28.
 
-**OPEN: consent for this story is unconfirmed.** It is a named individual's health data used in marketing, which is the same standard WF-25 applies to every testimonial. Worth confirming it is on file.
+**CONSENT CONFIRMED, Aug 3, 2026,** by Scott directly with the customer. The story can stay as written.
+
+It was worth checking. He is unnamed in the copy but not anonymous: within Enyrgy's own customer base, "28 to 84 over twelve weeks" identifies exactly one person. That combination, an identified individual, a lab value, and commercial use, is an endorsement under the FTC guides whether or not he is named or paid, and it sits inside the health-data provisions of the Washington, California, Colorado and Connecticut privacy statutes, several of which carry a private right of action.
+
+**The process gap it exposed matters more than the instance.** WF-25 routes every testimonial through a form with a consent capture. This story bypassed that gate because it arrived through a drafting session instead. Consent existed because someone remembered to obtain it, not because anything required it. Recorded in the WF-25 file so the next story arriving outside the form hits the same standard.
 
 ---
 

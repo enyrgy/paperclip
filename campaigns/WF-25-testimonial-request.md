@@ -111,7 +111,11 @@ Recorded in the Session 14 notes and still live:
 
 **Typicality-screen consumer health testimonials.** A testimonial describing an unusual result needs either context or exclusion, since a reader will read it as representative.
 
-Neither is a copy problem here. Both are things that happen after a testimonial arrives, which means they depend on whoever handles WF-26's `gift_card_pending` queue knowing about them.
+**A story that arrives outside this form still needs the same consent capture.** This is the one that actually bit. WF-08 touch 3 features a real customer's lab values, 28 to 84 over twelve weeks, and it went live through a drafting session rather than through this workflow. The consent existed, confirmed Aug 3, 2026, but it existed *because someone remembered to get it*, not because a process required it. A customer's results are a testimonial regardless of which door they came through. Before results go into copy, the written consent goes into the testimonial records.
+
+Neither is a copy problem here. All three are things that happen after a testimonial arrives, which means they depend on whoever handles WF-26's `gift_card_pending` queue knowing about them.
+
+**Verified Aug 3, 2026:** a sweep of all 19 captured workflows found WF-08 touch 3 to be the only place in the funnel where an identified individual's results appear in live copy. Everything else cites the five-participant study in aggregate. That is the intended state; treat a second instance as something that needs consent on file before it ships.
 
 ---
 
