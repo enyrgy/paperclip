@@ -77,11 +77,11 @@ Approved figures with sources:
 
 Scientific Advisory Board, approved bios (use as written; do not embellish beyond these):
 
-- **Dr. Bruce Hollis:** over 70,000 citations, widely regarded as the Godfather of Vitamin D Research. He has reviewed and endorsed the Enyrgy platform.
-- **Dr. Samantha Kimball:** designed the MED protocol that powers every session; a leading researcher in UV therapy safety.
-- **Dr. William Grant:** NASA UVB researcher and pioneer in phototherapy science.
+- **Dr. Bruce Hollis:** over 70,000 citations, widely regarded as the Godfather of Vitamin D Research. **Over forty years on vitamin D research**, much of it on the difference between oral supplementation and UVB-synthesized vitamin D. He has reviewed and endorsed the Enyrgy platform.
+- **Dr. Samantha Kimball:** designed the MED protocol that powers every session; a leading researcher in UV therapy safety. **Over 100 peer-reviewed papers and two decades in the field.**
+- **Dr. William Grant:** NASA UVB researcher and pioneer in phototherapy science. **More than 350 peer-reviewed papers** on vitamin D, sunlight and health outcomes, using NASA UVB satellite data to map how sunlight exposure tracks with health across populations.
 
-Do not paraphrase or embellish an advisor's credentials beyond these approved bios. The short approved phrasing for objection handling remains "advisory board includes Dr. Bruce Hollis." Compliance note: any public claim that an advisor "reviewed and endorsed" the platform must have the advisor's documented consent on file, per FTC endorsement rules.
+Do not paraphrase or embellish an advisor's credentials beyond these approved bios. The publication and tenure figures were confirmed by Scott on 2026-08-02 and added because they were already live in WF-17 Long-Term Nurture touch 6, where the specificity is what makes the email work. Use the shorter form where space is tight; use the fuller form when the job is establishing that real researchers built the protocol. The short approved phrasing for objection handling remains "advisory board includes Dr. Bruce Hollis." Compliance note: any public claim that an advisor "reviewed and endorsed" the platform must have the advisor's documented consent on file, per FTC endorsement rules.
 
 ## 6. Approved talking points (voiced, use as written)
 
