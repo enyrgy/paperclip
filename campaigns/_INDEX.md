@@ -10,7 +10,7 @@
 | WF-17 Long-Term Nurture | 7 | [x] complete |
 | WF-13 Tired Test Emails | 5 | [x] complete |
 | WF-14 Recovery Protocol Emails | 4 + A/B | [ ] |
-| WF-16 Synthesis Gap Emails | A/B series | [ ] |
+| WF-16 Synthesis Gap Emails | 3 x A/B = 6 | [x] complete |
 | WF-20 Winter Protocol Emails | 3 + 3A/3B | [ ] |
 | WF-22 VD Assessment Nurture | 3 | [ ] |
 | WF-21 VD Assessment results email | 1 | [ ] |
