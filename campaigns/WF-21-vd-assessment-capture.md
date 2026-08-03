@@ -42,7 +42,7 @@ Prefer to talk it through first? Reply to this email. A real person reads it.
 
 **CORRECTED Aug 3, twice.** The risk band added, "no pressure" removed. See the change log.
 
-**Checked:** the nitric oxide framing is correct. It grants that a supplement feeds the enzymatic road, then confines the claim to photorelease from preformed skin stores, which is what the KB rule requires. The pilot is disclosed as five people with "small study" stated.
+**Checked:** the nitric oxide framing is correct. It grants that a supplement feeds the enzymatic road, then confines the claim to photorelease from preformed skin stores, which is what the KB rule requires. The study is disclosed as five people with "small study" stated.
 
 **Why `inboundWebhookRequest` rather than `contact`.** The payload reference is readable the instant the workflow fires. A `contact.` reference depends on the field write having completed, which is the race condition that broke FlexOffers refid capture and forced the WF-31 rebuild. In a workflow triggered by the webhook itself, always prefer the payload.
 

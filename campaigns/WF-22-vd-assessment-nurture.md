@@ -106,7 +106,7 @@ Still have questions? Book a quick call: Book a Call
 
 ## The four-week retest was the one that mattered
 
-Every other workflow says eight to twelve weeks. The pilot itself ran twelve. This one said four.
+Every other workflow says eight to twelve weeks. The study itself ran twelve. This one said four.
 
 **Four weeks is too early to show the real change.** Levels take roughly two to three months to settle at a new baseline. A reader testing at four weeks sees partial movement, concludes it barely worked, and returns a unit that was doing exactly what it should.
 

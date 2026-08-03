@@ -137,7 +137,7 @@ Sessions 11 to 30.
 This is the stretch where the pathways are running consistently. Vitamin D synthesis builds with regular exposure. Nitric oxide photorelease supports cardiovascular regulation. Serotonin is the precursor your body converts to melatonin, which is the chemistry behind the sleep cycle.
 
 Sessions 31 to 60.
-In our 12-week pilot, five participants raised their vitamin D by an average of 111 percent. Small study, no control group, and we say so. Your body is doing what it was designed to do when given the right stimulus.
+In our 12-week study, the five participants raised their vitamin D by an average of 111 percent. Small study, no control group, and we say so. Your body is doing what it was designed to do when given the right stimulus.
 
 A few tips to maximize your results.
 
@@ -150,7 +150,7 @@ Keep going. You are exactly on track.
 {{custom_values.standard_signature}}
 ```
 
-**CORRECTED Aug 3, three times.** The pilot description, the outcome assertions, and the subject em dash. See the change log.
+**CORRECTED Aug 3, four times.** The study description, the outcome assertions, and the subject em dash. See the change log.
 
 ---
 
@@ -158,7 +158,7 @@ Keep going. You are exactly on track.
 
 | # | Touch | Change |
 |---|---|---|
-| 1 | 4 | "Clinical data shows" replaced with the honest pilot description |
+| 1 | 4 | "Clinical data shows" replaced with the honest study description |
 | 2 | 4 | Session-milestone blocks reframed from asserted outcomes to biology |
 | 3 | 1A | Two grammar faults, the missing registration URL, and an em dash |
 | 4 | 1A, 2 | Profile name unified. Touch 1A said Biosignature, touch 2 said Biocalibration |
@@ -166,7 +166,7 @@ Keep going. You are exactly on track.
 
 ## "Clinical data shows" was the strongest overstatement in the funnel
 
-Every other email calls the pilot a small study, an observational cohort, or states N=5. Touch 4 called it clinical data with no qualifier.
+Every other email calls the study a small study, an observational cohort, or states N=5. Touch 4 called it clinical data with no qualifier.
 
 **It matters more here because of who receives it.** This goes to someone who has already paid $2,995. Discovering later that the "clinical data" was five people does not produce scepticism about a claim, it produces the feeling of having been handled. That is the customer who returns a working unit and tells people why.
 

@@ -5,7 +5,7 @@
 **Shared by all five magnet series.** Every lead that finishes a magnet nurture lands here, so this workflow carries more traffic than any other nurture in the account.
 **Captured:** 2026-08-02, complete, with two corrections applied and one finding resolved by adding to the KB rather than trimming the copy.
 
-**The best-written workflow in the account.** It teaches before it asks, gives away useful material with no pitch in touches 1 and 3, and touch 2 is the most honest handling of the pilot data anywhere in the funnel.
+**The best-written workflow in the account.** It teaches before it asks, gives away useful material with no pitch in touches 1 and 3, and touch 2 is the most honest handling of the study data anywhere in the funnel.
 
 ---
 

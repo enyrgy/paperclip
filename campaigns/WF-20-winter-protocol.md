@@ -62,14 +62,14 @@ A light box works on your circadian rhythm. It tells your brain it is daytime, w
 
 A D3 capsule raises the vitamin D number in your blood. Also real. But it does nothing for the serotonin pathway that daytime light drives, a separate mechanism from vitamin D entirely.
 
-Summer feels different because sunlight runs all three pathways at once, something no capsule and no lamp fully copies. The Enyrgy Vitamin D Primal Light Platform runs all three, in a two-to-four-minute session dosed to your skin. In a small 12-week cohort, five people using it four to six times a week moved their vitamin D from an average of 39.96 to 84.20 ng/mL, with zero adverse events. A small pilot, and we say so. But it is the mechanism doing what the lamp and the capsule cannot.
+Summer feels different because sunlight runs all three pathways at once, something no capsule and no lamp fully copies. The Enyrgy Vitamin D Primal Light Platform runs all three, in a two-to-four-minute session dosed to your skin. In a small 12-week cohort, five people using it four to six times a week moved their vitamin D from an average of 39.96 to 84.20 ng/mL, with zero adverse events. A small study, and we say so. But it is the mechanism doing what the lamp and the capsule cannot.
 
 See how it works ->
 
 {{custom_values.standard_signature}}
 ```
 
-**Checked:** the 280 to 315 nm figure and the statement that visible-light lamps cannot trigger synthesis both match KB Section 2 exactly. The pilot is disclosed as a small cohort of five with the honest qualifier attached.
+**Checked:** the 280 to 315 nm figure and the statement that visible-light lamps cannot trigger synthesis both match KB Section 2 exactly. The study is disclosed as a small cohort of five with the honest qualifier attached.
 
 **The best competitive email in the funnel.** It grants that both the light box and the capsule work, says what each does, and locates the gap between them. Nothing is dismissed, so nothing needs defending.
 

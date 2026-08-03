@@ -130,7 +130,7 @@ how it could work for you? Book a free call: https://api.leadconnectorhq.com/wid
 Reply STOP to opt out. Msg & data rates may apply.
 ```
 
-**COMPLIANCE:** cites the 111 percent and all-reached-optimal figures with no N=5 pilot caveat. See the compliance note at the foot of this file.
+**COMPLIANCE:** cites the 111 percent and all-reached-optimal figures with no N=5 study caveat. See the compliance note at the foot of this file.
 
 ---
 
@@ -228,7 +228,7 @@ If you have questions about the study or the mechanism, reply and I will answer 
 
 **Links:** `Book a call` -> **Consumer Discovery**
 **Checked:** advisor bios match the KB approved wording exactly, including "reviewed and endorsed". See the FTC note at the foot of this file.
-**COMPLIANCE:** cites the 111 percent and 100-percent-optimal figures with no N=5 pilot caveat, and "Not most. All of them." actively invites the inference of a large trial. See the compliance note below.
+**COMPLIANCE:** cites the 111 percent and 100-percent-optimal figures with no N=5 study caveat, and "Not most. All of them." actively invites the inference of a large trial. See the compliance note below.
 
 ---
 
@@ -284,9 +284,9 @@ Wishing you good health either way.
 
 All three items below were raised during capture on 2026-08-02 and **resolved by Scott the same day**. They are recorded as settled so they are not re-raised on every future read.
 
-## 1. N=5 caveat omitted from the pilot figures (touches 6 and 10): DELIBERATE, RESOLVED
+## 1. N=5 caveat omitted from the study figures (touches 6 and 10): DELIBERATE, RESOLVED
 
-Touches 6 and 10 cite the 111 percent and 100-percent-optimal figures without the pilot context that KB Section 4 otherwise requires.
+Touches 6 and 10 cite the 111 percent and 100-percent-optimal figures without the study context that KB Section 4 otherwise requires.
 
 **Scott's call, and the reasoning:** the science page states the N=5 design plainly, and touch 10 is aimed at the reader who goes and reads it. The substantiation lives one click away in the place that reader will actually look, so the email carries the finding and the page carries the design.
 

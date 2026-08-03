@@ -159,7 +159,7 @@ The question is whether they find it at your facility or somewhere else.
 
 The Enyrgy Vitamin D Primal Light Platform activates three biological pathways in 2 to 4 minutes: vitamin D synthesis, nitric oxide release for cardiovascular regulation, and serotonin production for mood and sleep. No supplement delivers all three, and nothing else on your service menu does either.
 
-In a small 12-week pilot of five participants, 100 percent reached optimal vitamin D levels. Our Scientific Advisory Board includes Dr. Bruce Hollis, widely regarded as the Godfather of Vitamin D Research, with over 70,000 citations to his name.
+In a small 12-week study of five participants, 100 percent reached optimal vitamin D levels. Our Scientific Advisory Board includes Dr. Bruce Hollis, widely regarded as the Godfather of Vitamin D Research, with over 70,000 citations to his name.
 
 Your clients are not just looking for a wellness experience. They are looking for results. Be the facility that delivers them.
 
@@ -174,7 +174,7 @@ Calendar Link
 ```
 
 **Links:** `Calendar Link` -> **Commercial Discovery**
-**Note:** this touch states the N=5 pilot design in the copy itself. The Consumer Drip deliberately does not. Both approaches are intentional and audience-specific.
+**Note:** this touch states the N=5 study design in the copy itself. The Consumer Drip deliberately does not. Both approaches are intentional and audience-specific.
 
 ---
 

@@ -211,7 +211,7 @@ Less than 1% return rate. The industry average is 5 to 10%.
 That means when people receive the Enyrgy Vitamin D Primal
 Light Platform they keep it because it works.
 
-In a small 12-week pilot of five participants, 100 percent reached optimal Vitamin D levels. Average increase of 111 percent.
+In a small 12-week study of five participants, 100 percent reached optimal Vitamin D levels. Average increase of 111 percent.
 
 Five countries with active demand. All inbound. Zero paid
 advertising to date.
@@ -233,7 +233,7 @@ Calendar Link
 ```
 
 **Links:** `Calendar Link` -> **Commercial Discovery**
-**Note:** states the N=5 pilot design in the copy, matching the Commercial Drip. Partners run diligence and will open the study, so the figure and its denominator travel together here.
+**Note:** states the N=5 study design in the copy, matching the Commercial Drip. Partners run diligence and will open the study, so the figure and its denominator travel together here.
 
 ---
 
@@ -310,7 +310,7 @@ Eight corrections applied to the live workflow during capture.
 | 5 | 5 | Removed the unattributable "3.8 billion people globally", replaced with the 77 percent figure used across the other drips |
 | 6 | 7 | Removed "Scaling now with paid channels", which contradicted "Zero paid advertising to date" four lines above it and was not true |
 | 7 | 9 | Same two claims as change 1, in the closing email |
-| 8 | 7 | Added the N=5 pilot design to the 100-percent-optimal and 111-percent figures |
+| 8 | 7 | Added the N=5 study design to the 100-percent-optimal and 111-percent figures |
 
 ## Why the two claim changes mattered here more than elsewhere
 

@@ -59,7 +59,7 @@ Your cart is still here: {{inboundWebhookRequest.recovery_url}}
 
 **CORRECTED Aug 3.** Retest interval changed from four weeks to eight to twelve. See the change log.
 
-**Checked:** the pilot is disclosed as a small study of five with "small study, real numbers" attached. Financing and rental are both described as real options without quoting rates, which matches the KB constraint.
+**Checked:** the study is disclosed as a small study of five with "small study, real numbers" attached. Financing and rental are both described as real options without quoting rates, which matches the KB constraint.
 
 **On the guarantee and the labs:** these do not need decoupling here. The guarantee answers the cost objection in one paragraph and the labs answer the does-it-work objection in the next, so they are separated by topic rather than presented as one timeline. That is why lengthening the retest created no coupling problem.
 
@@ -99,7 +99,7 @@ Either way, I appreciate you looking.
 
 ## The four-week retest, second instance
 
-WF-22 touch 3 carried the same figure and was corrected earlier the same day. Every other workflow says eight to twelve weeks, and the pilot itself ran twelve.
+WF-22 touch 3 carried the same figure and was corrected earlier the same day. Every other workflow says eight to twelve weeks, and the study itself ran twelve.
 
 Four weeks shows partial movement at best. A reader who follows the instruction exactly tests too early, sees a modest number, and concludes it barely worked.
 

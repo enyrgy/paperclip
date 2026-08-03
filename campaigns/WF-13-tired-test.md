@@ -102,7 +102,7 @@ See how the platform works
 {{custom_values.standard_signature}}
 ```
 
-**The model for citing the pilot data, alongside WF-17 touch 2.** N=5 stated, no control group stated, healthy adults stated, larger trials noted, and "what it shows is narrow but real" sets the claim exactly where the evidence supports it. Nothing hidden, and the paragraph is more persuasive for it.
+**The model for citing the study data, alongside WF-17 touch 2.** N=5 stated, no control group stated, healthy adults stated, larger trials noted, and "what it shows is narrow but real" sets the claim exactly where the evidence supports it. Nothing hidden, and the paragraph is more persuasive for it.
 
 ---
 
