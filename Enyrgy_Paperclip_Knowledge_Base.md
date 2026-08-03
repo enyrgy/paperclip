@@ -39,7 +39,7 @@ Approved trademarked terms: **BioCalibrated Sunshine** (personalized-dosing and 
 - Consumer Unit MSRP: $2,995 (gross margin 66 percent). Primary revenue driver, direct to consumer.
 - Commercial Unit MSRP: $8,950 (gross margin 78 percent). B2B wellness, growing.
 - Per-session cost: $2.30 (5 sessions per week over 5 years, roughly 1,300 sessions).
-- Referral: $150 off for the referee, $100 credit for the referrer (used in WF-07). **Operated manually today:** a customer requests it and a custom discount code specific to that user is created by hand. Automation waits on the built-in loyalty program in the next app version, but the offer itself is live and can be quoted.
+- Referral: $150 off for the referee, $100 credit for the referrer (used in WF-07). **Operated manually today:** a customer requests it and a custom Shopify discount code specific to that user is created by hand. Automation waits on the built-in loyalty program in the next app version, but the offer itself is live and can be quoted.
 - Monitored inbound address: **contact@enyrgy.com**, used across the funnel and monitored. Safe to give out.
 - Guarantee: 30-day money-back guarantee on the Consumer Unit. If it is not for you, return it within 30 days (return rate is under 1 percent, see Section 4).
 - Payment options: the Consumer Unit can be paid in full, financed, or rented monthly, so it can fit a monthly budget instead of a lump sum. Financing and rental are both real, offered options; specific rates and terms are not yet in the KB, so confirm with the KB Manager before quoting any figure.
