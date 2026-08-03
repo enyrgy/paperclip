@@ -4,7 +4,7 @@
 **Touches:** 12 over 21 days
 **Gating:** first-step If/Else "Bypass Check". Contacts whose tags do NOT include `drip_bypass` run all 12 touches; contacts carrying it END immediately.
 **Stop on Response:** On
-**Captured:** 2026-08-02, complete. All 12 touches recorded.
+**Captured:** 2026-08-02, complete. All 12 touches recorded, then a CUB spot-check the same day produced three changes: touch 10, touch 12 and a full rewrite of touch 11.
 
 ---
 
@@ -234,18 +234,21 @@ If you have questions about the study or the mechanism, reply and I will answer 
 
 ## Touch 11 | Day 19 | SMS
 
-**Body:** (line breaks as they exist in GHL)
+**Body:**
 
 ```
-Hi {{contact.first_name}}, quick heads up. We build the
-Enyrgy Vitamin D Primal Light Platform in Phoenix, AZ in limited
- batches, and ship times can run a few weeks. If you are considering it,
-worth starting the conversation now. Happy to answer questions first.
-Book a quick call: https://api.leadconnectorhq.com/widget/booking/C0hV5CFHUhWOIzs4OedC
-Reply STOP to opt out. Msg & data rates may apply.
+Hi {{contact.first_name}}, the part most people ask about last: there is a 30 day money back guarantee. Try it, and if it is not for you, send it back. Under 1 percent of people do. Happy to answer anything before you decide. Book here: https://api.leadconnectorhq.com/widget/booking/C0hV5CFHUhWOIzs4OedC Reply STOP to opt out. Msg & data rates may apply.
 ```
 
-**UNSUBSTANTIATED:** "limited batches" and "ship times can run a few weeks" appear nowhere in the KB, the handoff or the Implementation Guide. This is a scarcity and urgency claim in live consumer copy. If it is literally true, record the lead time in the KB so it is substantiated. If it is not, it is exactly the pattern the FTC treats as deceptive urgency.
+**REWRITTEN Aug 2 (CUB spot-check).** The original led with limited batches and a few weeks' ship time. It was the only touch in the sequence that handed the reader pressure rather than something useful, and arriving on Day 19 it undercut the low-pressure Day 21 close two days later.
+
+Replaced with the objection nothing else in the drip answers: what if it does not work for me. The guarantee and the under-1-percent return rate work as one move, risk reversal plus the evidence almost nobody needs it.
+
+The manufacturing fact is true and stays available for a reply to someone actually deciding. It does not need broadcasting to everyone on Day 19.
+
+**Deliberately keeps the guarantee decoupled from lab timing.** The Session 14 audit found several emails tying the 30-day window to an 8-to-12-week lab retest, which is impossible inside 30 days. This is a standalone keep-or-return decision with no mention of labs.
+
+Three segments, the same as the copy it replaces.
 
 ---
 
@@ -293,8 +296,10 @@ Note this is the same decision made for the Q2 2026 investor update, taken separ
 
 The KB requires documented consent for any public "reviewed and endorsed" claim. **Consent is on file.** Settled, do not raise again.
 
-## 3. "Limited batches" in touch 11: TRUE, RESOLVED
+## 3. "Limited batches" in touch 11: TRUE, but the touch was rewritten anyway
 
-The scarcity and lead-time language is a literal description of manufacturing, not manufactured urgency. Confirmed by Scott at capture, 2026-08-02.
+The scarcity and lead-time language was a literal description of manufacturing, not manufactured urgency. Confirmed by Scott at capture, 2026-08-02.
 
-**Deliberately NOT recorded as a KB fact.** Batch size moves with funding and production capacity, so a specific number written into the KB would become a claim agents state confidently after it stopped being true, with no mechanism to notice the drift. The copy says "limited batches", which stays true at any batch size. Do not add a figure here or to the KB.
+It came out of touch 11 for a separate reason found in the CUB spot-check the same day: it was the only touch handing the reader pressure rather than something useful. See touch 11 above.
+
+**Batch size is deliberately NOT a KB fact.** It moves with funding and production capacity, so a number written down becomes a claim agents state confidently after it stopped being true, with nothing to catch the drift. KB Section 3 records the policy instead: never quote a batch size or lead time, escalate to Scott.
