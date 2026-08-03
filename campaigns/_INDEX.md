@@ -17,7 +17,7 @@
 | WF-29 Abandoned Checkout Recovery | 3 | [ ] |
 | WF-25 Testimonial Request | 2 branches | [ ] |
 | WF-26 Testimonial Received | thank-you + internal notification | [ ] |
-| WF-06 New Customer Onboarding | ? | [ ] |
+| WF-06 New Customer Onboarding | 4 | [x] complete |
 | WF-07 Review and Referral Activation | ? | [ ] |
 | WF-02 5-minute SMS | 1 | [ ] |
 | WF-08 Cold reactivation | ? | [ ] |
