@@ -63,7 +63,7 @@ See the full study and the platform
 
 **The model for how to cite this data.** N=5 stated up front, "small and honest", participant-level numbers rather than only the flattering average, and "I am not going to oversell five people. It is a signal, not a verdict." Nothing is hidden and the paragraph is more persuasive for it.
 
-**Bullet glyphs normalised.** The live version uses a non-ASCII `●` with tab spacing, against the ASCII-only rule and inconsistent across email clients. Worth changing in GHL to plain hyphens, in the one email built entirely around a data table.
+**Bullet glyphs corrected in GHL, Aug 2.** The live version used a non-ASCII `●` with tab spacing, against the ASCII-only rule and rendering inconsistently across email clients. Now plain hyphens in both GHL and this file.
 
 ---
 
@@ -221,6 +221,6 @@ WF-17 looks like where the error originally lived. The fix either never landed h
 
 **This is the second time in one session that a Session 14 correction declared "fixed everywhere" turned out to have missed a workflow.** The first was the accreditation gate surviving in the Investor Warm drip. Both were found only by extracting the copy and reading it, which is the argument for finishing this backup rather than sampling it.
 
-## Still open
+## Nothing open
 
-**Touch 2's bullet glyphs.** The live version uses `●` with tab spacing rather than plain hyphens. Non-ASCII against the house rule, and it renders inconsistently across email clients. Worth fixing in GHL in the one email built entirely around a data table.
+All three changes are live in GHL as of 2026-08-02, including the bullet-glyph normalisation in touch 2. GHL and this file match.
