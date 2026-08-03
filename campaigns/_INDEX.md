@@ -7,7 +7,7 @@
 | Partner Drip | 9 | [x] complete |
 | Investor Drip, Cold | 7 | [x] complete |
 | Investor Warm | 3 | [x] complete |
-| WF-17 Long-Term Nurture | 7 | [ ] |
+| WF-17 Long-Term Nurture | 7 | [x] complete |
 | WF-13 Tired Test Emails | 5 | [ ] |
 | WF-14 Recovery Protocol Emails | 4 + A/B | [ ] |
 | WF-16 Synthesis Gap Emails | A/B series | [ ] |
