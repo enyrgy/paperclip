@@ -12,8 +12,8 @@
 | WF-14 Recovery Protocol Emails | 4 x A/B = 8 | [x] complete |
 | WF-16 Synthesis Gap Emails | 3 x A/B = 6 | [x] complete |
 | WF-20 Winter Protocol Emails | 3, with a 3-way seasonal branch | [x] complete |
-| WF-22 VD Assessment Nurture | 3 | [ ] |
-| WF-21 VD Assessment results email | 1 | [ ] |
+| WF-22 VD Assessment Nurture | 3 | [x] complete |
+| WF-21 VD Assessment results email | 1 | [x] complete |
 | WF-29 Abandoned Checkout Recovery | 3 | [ ] |
 | WF-25 Testimonial Request | 2 branches | [ ] |
 | WF-26 Testimonial Received | thank-you + internal notification | [ ] |
