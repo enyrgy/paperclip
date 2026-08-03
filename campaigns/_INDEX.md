@@ -23,3 +23,7 @@
 | WF-08 Cold Reactivation | 4 | [x] complete |
 
 Priority order: the five drips first (highest volume and most compliance-audited), then magnet nurtures, then transactional.
+
+**COMPLETE, Aug 3, 2026.** 19 workflows, 94 touches, 83 corrections applied. Every live email and SMS in the GHL account is captured.
+
+GHL is the source of truth. Change GHL first, then update the file. If a correction is applied in one workflow, grep the rest before calling it done, the accreditation gate and the guarantee coupling each survived being declared fixed.

@@ -170,6 +170,22 @@ New in S3 and worth knowing it exists: **credit-based membership guidance.** Whe
 4. Select all 57 in `Investors - Current`, send once. No batching and no separate AOL/Yahoo handling once the domain is warm
 5. Roughly ten minutes
 
+### CAMPAIGN CAPTURE COMPLETE, Aug 2-3, 2026
+
+**All 19 workflows are now in `campaigns/`, 94 touches, 83 corrections applied.** Every live email and SMS in the GHL account exists as `.md` + `.docx` in the repo, with a per-workflow change log recording what was corrected and why. This closes the gap that produced Standing Rule 9.
+
+**GHL remains the source of truth.** These files are a backup and a review surface, not a deployment source. Change GHL first, then update the file.
+
+**Three systemic findings, worth carrying forward:**
+
+1. **"Fixed everywhere" was never everywhere.** The accreditation gate was attorney-corrected in Sessions 11, 13 and 14 and declared fixed in three places; it survived in the Investor Warm drip, a fourth place nobody had checked. The guarantee/lab-timeline decoupling was found still coupled in six instances across four consecutive workflows after being declared fixed. **A correction is not done until it has been grepped across every workflow, not just the one that surfaced it.**
+
+2. **A/B workflows need both arms checked.** WF-16's touch 3B was corrected and 3A was not. A fix applied to one variant is indistinguishable, from the outside, from a fix applied to the workflow.
+
+3. **Silent failures were the most valuable finds, and none of them errored.** WF-25 steered testimonials toward a reply while WF-26 triggered only on Form Submitted, so a customer following instructions vanished. WF-20's None branch applied the nurture tag *after* a seasonal wait, producing up to four months of silence. WF-21 promised a result and never delivered it while the Risk Band field sat unused. Nothing in GHL reports any of these.
+
+**WF-20 Touch 3C is NOT a duplicate.** It is a held send for contacts outside both seasonal windows. It was misread as a duplicate during capture. Do not delete it.
+
 ---
 
 ## WHAT WAS DONE (Session 15, July 27-28, 2026)
