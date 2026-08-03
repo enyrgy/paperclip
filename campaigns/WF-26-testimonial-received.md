@@ -69,10 +69,7 @@ That lands on the customers who liked the product enough to record a video, whic
 
 ## 1. The email-reply path never fires this workflow
 
-WF-25 explicitly invites a reply instead of a form submission, twice in both branches:
-
-> To send a video, reply with it or drop it here if it is large
-> To send a written note, just hit reply. Whatever is easiest.
+WF-25 originally invited a reply twice in both branches and offered the form only for large files. **Corrected 2026-08-03:** the form now leads for both formats and reply is the stated fallback, so most people take the tracked path.
 
 WF-26 triggers on **Form Submitted**. A testimonial arriving by reply therefore fires nothing: no `testimonial_submitted`, no `gift_card_pending`, no internal notification, no thank-you, and no gift card.
 
@@ -80,7 +77,7 @@ The customer sends a video, hears nothing, and is never paid the thing they were
 
 This is not hypothetical. It is the same gap that made a testimonial impossible to locate on 2026-08-02, before that turned out to be a text message about an intention rather than a submission.
 
-**Anything arriving by reply has to be tagged by hand** to enter the queue. Nothing in the system will prompt it.
+**Anything arriving by reply still has to be tagged by hand** to enter the queue. Nothing in the system will prompt it. The WF-25 reorder reduces how often that happens; it does not remove the path.
 
 ## 2. Consent is captured on the form, not on the reply path
 

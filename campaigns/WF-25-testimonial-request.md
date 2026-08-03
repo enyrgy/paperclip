@@ -32,9 +32,9 @@ A few starters if they help, video or written, pick any:
 - What setup and support with our team was like
 - Whether you would tell another operator to do it
 
-To send a video, reply with it or drop it here if it is large: Upload Here
+Easiest way to send either one is here: Upload Here. Video or typed note, both go to the same place.
 
-To send a written note, just hit reply. Whatever is easiest.
+If you would rather just hit reply, that works too and I will pick it up myself.
 
 Why I am asking: other owners weighing this trust a peer who runs a real business far more than they trust a pitch from me. Your honest take could be the thing that tips someone like you off the fence. If you are okay with me sharing what you send with other operators, just say so, and I will always check with you before using your name or video anywhere public.
 
@@ -47,7 +47,7 @@ P.S. Send yours in, a video or a couple of lines, and I will send a gift card to
 
 **Links:** `Upload Here` -> **Customer Testimonial form**
 
-**CORRECTED Aug 3, twice.** Full product name on first reference, and bullets changed from `*` to hyphens.
+**CORRECTED Aug 3, three times.** Full product name on first reference, bullets changed from `*` to hyphens, and the send options reordered so the form leads. See the change log.
 
 ---
 
@@ -72,9 +72,9 @@ If you want a nudge on what to say, video or written, pick any of these, or say 
 - The support you have gotten from our team
 - Anything you would tell someone who is on the fence
 
-To send a video, reply with it attached, or drop it here if it is large: Upload Video Here
+Easiest way to send either one is here: Upload Video Here. Video or a typed note, both go to the same place.
 
-To send a written note, just hit reply. Whatever is easiest for you.
+If you would rather just hit reply, that works too and I will pick it up myself.
 
 Here is why I am asking. The people who need this most trust someone like them far more than they trust me. Your 60 seconds could be the thing that helps a stranger stop guessing about their vitamin D and finally do something about it. If you are okay with me sharing what you send, just say so, and I will always check with you before using your name or video anywhere public.
 
@@ -87,7 +87,7 @@ P.S. Send yours in, a video or a couple of lines, and I will send a gift card to
 
 **Links:** `Upload Video Here` -> **Customer Testimonial form**
 
-**CORRECTED Aug 3, twice.** Same two changes as the facility branch.
+**CORRECTED Aug 3, three times.** Same three changes as the facility branch.
 
 ---
 
@@ -121,6 +121,25 @@ Neither is a copy problem here. Both are things that happen after a testimonial 
 |---|---|---|
 | 1 | Both | Full product name on first reference, per the KB rule |
 | 2 | Both | Prompt list bullets changed from `*` to hyphens |
+| 3 | Both | Send options reordered so the form leads and reply is the fallback |
+
+## Why the send options were reordered, which is the change that matters
+
+Both branches originally invited a reply twice and offered the form only for large files:
+
+> To send a video, **reply with it** or drop it here if it is large: Upload Here
+>
+> To send a written note, **just hit reply**.
+
+**WF-26 triggers on Form Submitted.** So the path being presented as easiest was the one that fires nothing: no `testimonial_submitted`, no `gift_card_pending`, no internal notification, no thank-you, no gift card.
+
+A customer following the instructions exactly, hitting reply with a video, disappeared from the system. From their side, having made a video because you asked, it is indistinguishable from being ignored.
+
+The form now leads for both formats, so most people take the tracked path automatically. Reply stays available, because telling people not to reply costs testimonials.
+
+**"I will pick it up myself" is deliberate.** It is true, a reply genuinely needs a human, and it sets the expectation that the reply route is the personal one rather than the instant one. That covers the gap if a reply-path thank-you arrives a day later than a form-path one.
+
+**Still unfixed by this change:** a reply records no consent, since consent lives on the form. Publishing a reply-path testimonial still means going back to the message to check what was agreed.
 
 ## On the product name, for the record
 
