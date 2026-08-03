@@ -20,6 +20,6 @@
 | WF-06 New Customer Onboarding | 4 | [x] complete |
 | WF-07 Review and Referral Activation | 3 | [x] complete |
 | WF-02 Five Minute First Response | 1 SMS + 1 notification | [x] complete |
-| WF-08 Cold reactivation | ? | [ ] |
+| WF-08 Cold Reactivation | 4 | [x] complete |
 
 Priority order: the five drips first (highest volume and most compliance-audited), then magnet nurtures, then transactional.
