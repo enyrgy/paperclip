@@ -139,7 +139,7 @@ Outcode is building two webhooks: one on user registration, one on completed ses
 - [x] **Conversation Notifications: Email enabled on all six rows.** They had In-App only, which renders inside GHL and nowhere else, so replies to GHL-sent email were invisible unless already logged in. A reply to the Q2 investor update was nearly missed this way. SMS left off deliberately; email reaches the same phone and watch with no per-segment cost.
 - [ ] **Test what the notification actually contains.** Reply to a GHL-sent email from a controlled address and check whether the alert carries the message text or only says one arrived. That decides the next item.
 - [ ] **Decide on a Customer Replied workflow.** If the built-in notification is terse, build one that sends the message body and contact link to `scott@enyrgy.com`, same pattern as WF-26, so replies can be triaged from the inbox rather than by going into GHL.
-- [ ] **Find the missing testimonial.** A testimonial reply from the same period has not been located. If it arrived by email reply rather than the form, WF-26 never fired: no `testimonial_submitted`, no `gift_card_pending`, no thank-you sent, and someone may be owed a gift card nobody queued.
+- [x] **Missing testimonial: RESOLVED Aug 2, false alarm.** The message was a text saying they intended to send one, not a testimonial itself. Nothing was lost and nobody is owed a gift card. Worth noting the real lesson stands anyway: the reply was still only visible inside GHL, which is what prompted the notification fix above.
 
 **DO NOT repoint Reply-To to bypass GHL.** Stop-on-Response depends on GHL seeing replies. Route them around it and anyone who replies keeps receiving drip emails.
 
