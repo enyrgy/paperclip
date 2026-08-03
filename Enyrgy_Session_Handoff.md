@@ -150,6 +150,18 @@ New in S3 and worth knowing it exists: **credit-based membership guidance.** Whe
 
 **Sync method for future KB changes:** `git log <last-synced-commit>..HEAD -- Enyrgy_Paperclip_Knowledge_Base.md` to see what actually changed, then apply only those hunks as find/replace in Skill Studio. Never select-all-paste. Always reopen after saving and confirm the body has content and the frontmatter appears exactly once.
 
+### Inbound replies were invisible, fixed Aug 2
+
+**The gap.** Every email GHL sends goes out over `mg.enyrgy.com`, and replies come back to that domain so GHL can log them onto the contact record. That part works as designed. What was missing was any notification. Conversation Notifications had **In-App ticked and Email unticked**, and In-App only renders inside GHL, so a reply pinged a bell nobody saw unless already logged in.
+
+**Found the hard way.** A reply to the Q2 investor update landed in Conversations only. It was caught solely because the contact happened to be open during the import work. A testimonial reply from the same period has still not been located.
+
+**Fixed.** Settings, My Staff, the user, Notification Settings. All six Conversation Notification rows now have **Email** ticked. SMS deliberately left off on all six: email reaches the same phone and watch without per-segment toll-free cost, and "all new conversations and messages" would get noisy as lead volume grows.
+
+**DO NOT repoint Reply-To to `scott@enyrgy.com` to solve this.** It is the obvious fix and it breaks something worse. Stop-on-Response is ON across WF-06, WF-08 and the consumer drip (Session 14 Fix #1), and it works by GHL seeing the reply. Route replies around GHL and **a contact who replies keeps receiving drip emails**. The conversation history on the contact and the agents' ability to act on replies both go too.
+
+**Still open.** The notification tells you a reply exists; the reply itself still lives in GHL. If the requirement is reading and answering from the inbox rather than being alerted to go and look, a workflow on the **Customer Replied** trigger sending an internal notification with the message body and contact link is the answer, the same pattern WF-26 uses. Test what GHL's built-in notification actually contains before deciding whether to build it.
+
 ### Quarterly runbook (from Q3 onward)
 
 1. Duplicate `Investor Quarterly Update - MASTER`, swap the numbers, keep the `{{contact.first_name}}` greeting
