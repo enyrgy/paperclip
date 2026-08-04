@@ -3,7 +3,7 @@
 **Trigger:** Customer Replied, **no filters applied**
 **Actions:** If/Else on assigned user, then one internal notification per branch
 **Built:** 2026-08-03, Session 16
-**Status:** LIVE, with two known issues and one unverified setting. See the foot of this file.
+**Status:** LIVE and fully verified Aug 4, 2026. Two known cosmetic issues remain, see the foot of this file.
 
 **Why it exists.** GHL's built-in Conversation Notification is a doorbell, not a message. It says "You have received a new email from {contact}" and nothing else. Proven by test, not assumed: a reply containing the marker `PURPLE-ELEVEN` produced a notification with no trace of that text. This workflow puts the actual reply in the notification.
 
@@ -84,7 +84,7 @@ Replying to this notification does not reach them.
 
 **2. `{{message.body}}` returns the full raw email.** Signature, quoted history and legal disclaimers all come through. Mitigated by ordering, not solved. GHL exposes no stripped version.
 
-**3. UNVERIFIED: Allow Re-Entry.** The second-reply test was not run. If the setting is off, **only a contact's first ever reply notifies anyone** and every reply after it is silent, with the workflow appearing to work correctly. Run this before trusting the workflow: reply twice from the same contact with different markers and confirm two notifications arrive.
+**3. RESOLVED Aug 4: Allow Re-Entry is ON.** Verified by replying twice from the same contact with different markers. Both produced their own enrollment row and their own notification. Had it been off, only a contact's first ever reply would notify anyone, with the workflow appearing to work correctly.
 
 ---
 
@@ -94,6 +94,17 @@ Replying to this notification does not reach them.
 |---|---|---|
 | 6:59 PM | Reply to a GHL-sent email, built-in notification only | No message body. Marker `PURPLE-ELEVEN` absent. Reply-To pointed at `scott@mg.enyrgy.com`. |
 | 8:17 PM | Same test with WF-35 live | `NO OWNER: Reply from ZZ Test` delivered with the message body present. Correct branch, since the test contact had no owner. |
-| pending | Second reply from the same contact | **NOT RUN.** This is what verifies Allow Re-Entry. |
+| Aug 4, 7:01 AM | Reply from the contact's own Gmail | Enrolled 7:13:31, `Notify Scott, No Owner`, Finished. Notification carried `ORANGE-SEVEN`. |
+| Aug 4, ~7:20 AM | Second reply, same contact, same thread | Second enrollment, second notification carrying `BLUE-TWELVE`. **Allow Re-Entry confirmed.** |
 
-**Both notifications now fire on every reply**, the bare built-in one and this one. Leave the duplication in place until WF-35 has been proven across several real replies. The built-in Conversation Notification can be turned off after that.
+**Two false alarms during testing, both worth knowing about because both looked like workflow failures and neither was.**
+
+**The workflow appeared not to fire, and had.** The inbox was checked at 7:12 and the enrollment ran at 7:13:31. GHL's inbound processing carried a **12-minute lag** between the reply being sent and the trigger firing, so the built-in notification arrived first and looked like the only one. The second round had no such lag, both landing at 7:21, so 12 minutes is an outlier rather than a floor. Wait a full fifteen minutes before concluding a reply did not register.
+
+**GHL tagged the inbound reply `FORWARDED EMAIL` and it made no difference.** The enrollment reason still reads "customer Replied". The display classification and the trigger classification are separate; do not chase that tag as a cause.
+
+**A third false alarm came from the test setup, not the system.** A first attempt used a mistyped Gmail address, which hard-bounced, so nothing was ever received and the "reply" was actually a forward from Scott's own mailbox. Always confirm the outbound email physically arrives before treating anything downstream as a result.
+
+**On `{{message.body}}` noise:** the Aug 3 test arrived carrying a full corporate virus-and-confidentiality disclaimer; the Aug 4 tests from a plain Gmail account arrived clean. The field is only as noisy as the sender's signature, and the metadata-above-message ordering is what makes the bad cases readable.
+
+**Both notifications fire on every reply**, the bare built-in one and this one. **Recommended: switch the built-in from Email to In-App rather than disabling it.** WF-35 triggers on Customer Replied, and every test was a genuine reply to an outbound message. A **cold inbound from someone never emailed first is untested** and may not register as a reply. Keeping In-App on costs nothing, ends the inbox duplication, and leaves a bell that would catch anything WF-35 misses.

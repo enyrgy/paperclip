@@ -205,9 +205,11 @@ The domain rule alone would have prevented this and needs no maintenance. `no_ro
 
 **WF-35 Customer Replied Notification** was built and published Aug 3 to fix it. Full capture in `campaigns/WF-35-customer-replied.md`. Three things carried forward from that build:
 
-- **UNVERIFIED: Allow Re-Entry.** The second-reply test was never run. If off, only a contact's first ever reply notifies anyone. Run it before trusting the workflow.
+- **Allow Re-Entry VERIFIED ON, Aug 4.** Two replies from the same contact produced two enrollments and two notifications.
+- **GHL inbound processing lagged 12 minutes once**, then ran clean at under a minute. A reply that seems not to have registered may simply not have been processed yet; wait fifteen minutes before diagnosing.
 - **`{{contact.link}}` fails GHL merge-field validation.** WF-02's Day 1 notification uses the same field, so its "View contact in GHL" line may be rendering blank. Unchecked.
 - **An unsubscribe link is appended to the internal notification.** Clicking it may unsubscribe the recipient and silence reply notifications, presenting as the original problem. Do not click.
+- **A cold inbound from someone never emailed first is untested** against the Customer Replied trigger. This is why the built-in Conversation Notification should be switched to In-App rather than turned off.
 
 ### CAMPAIGN CAPTURE COMPLETE, Aug 2-3, 2026
 
