@@ -193,7 +193,9 @@ The domain rule alone would have prevented this and needs no maintenance. `no_ro
 - A contact with **no email at all** still routes. This was the real risk in the fix: if GHL evaluated `does not contain` as false on an empty field, phone-only leads would have silently stopped being routed, trading a leak for a blackout. A phone-only test contact received `type_consumer` normally, so an empty field satisfies the condition.
 - That same contact carried `drip_bypass` and ended with **no `status_in_drip` tag**, confirming the second layer: the Consumer Drip triggered on `type_consumer`, hit its Bypass Check and exited. The `scott@enyrgy.com` record from Aug 3 carried `status_in_drip` precisely because it had no bypass tag. The two layers are visible in the tags and can be checked that way in future.
 
-**Also do:** filter Contacts on `Email contains @enyrgy.com` and check whether other staff addresses went through the same path. Not yet done.
+**Sweep done Aug 4, incident closed.** Filtering Contacts on `Email contains @enyrgy.com` returned three records, all employees or contractors who are also device users. All three carry `drip_bypass` and `legacy_customer` from the Session 10 617-import and **no `type_` tags**, so none was ever routed as a lead. `scott@enyrgy.com` was the only casualty and it has been deleted.
+
+**They were deliberately not given `no_route`.** WF-01's domain condition already excludes every `@enyrgy.com` address before the tag check runs, and `drip_bypass` covers the drips. A third redundant layer would dilute what the tag means where it actually matters.
 
 **Note for whoever picks this up:** `drip_bypass` does NOT stop WF-01. It is read at the Bypass Check inside each of the five drips, not by the router. WF-01's only guard is `source_device_app`, built Aug 1 for the Outcode work. This distinction caused confusion once already.
 
