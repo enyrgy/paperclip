@@ -35,12 +35,15 @@ Customer Replied (no filters, so every inbound channel)
 Email: {{contact.email}}
 Phone: {{contact.phone}}
 
+Open the conversation to answer: {{contact.link}}
 Replying to this notification does not reach them.
 
 ------- their message -------
 
 {{message.body}}
 ```
+
+**The link sits directly above the warning on purpose.** "Replying does not reach them" is a dead end on its own. With the link above it, the sentence says where to go instead of only what not to do.
 
 ## Branch 2, None | Internal Notification
 
@@ -74,7 +77,9 @@ Replying to this notification does not reach them.
 
 **The reply path on GHL's built-in notification is a trap, not just a dead end.** The notification is sent as though it came from Scott, so hitting reply addresses `scott@mg.enyrgy.com`, which is Scott's own address on the sending subdomain. It does not reach the contact and nothing errors. Someone would type an answer, send it, and watch it disappear while the client showed a normal sent message. This is exactly the mistake a new sender makes in their first week, which is why the warning is in the copy rather than in a runbook.
 
-**GHL validates merge fields on save, and `{{contact.link}}` fails validation.** The editor also auto-converts it to a hyperlink, which may be the cause. **WF-02's Day 1 internal notification carries the same field**, so its "View contact in GHL" line may have been rendering blank or literal in every consumer-lead notification. Unchecked as of this writing.
+**GHL validates merge fields on save, and the editor is what breaks `{{contact.link}}`, not the field.** Resolved Aug 4. The field is valid: WF-02's Day 1 notification uses it and saves clean. What fails is the rich-text editor auto-converting it to a hyperlink when you press space or Enter straight after the closing braces, which wraps the merge field in an `<a>` tag and trips the validator.
+
+**To insert it:** type the line, then click elsewhere in the box rather than pressing space or Enter. Or use the `</>` source view, where nothing is auto-formatted. Black text means it went in clean; blue and underlined means unlink it and try again.
 
 ---
 

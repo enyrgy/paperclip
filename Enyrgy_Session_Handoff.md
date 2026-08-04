@@ -207,7 +207,7 @@ The domain rule alone would have prevented this and needs no maintenance. `no_ro
 
 - **Allow Re-Entry VERIFIED ON, Aug 4.** Two replies from the same contact produced two enrollments and two notifications.
 - **GHL inbound processing lagged 12 minutes once**, then ran clean at under a minute. A reply that seems not to have registered may simply not have been processed yet; wait fifteen minutes before diagnosing.
-- **`{{contact.link}}` fails GHL merge-field validation.** WF-02's Day 1 notification uses the same field, so its "View contact in GHL" line may be rendering blank. Unchecked.
+- **`{{contact.link}}` is valid; the editor is what breaks it.** Resolved Aug 4. WF-02 uses the field and saves clean. The rich-text editor auto-links it when you press space or Enter after the closing braces, wrapping it in an `<a>` tag and tripping the validator. Type the line then click away, or use the `</>` source view. Black text is clean, blue means unlink and retry.
 - **An unsubscribe link is appended to the internal notification.** Clicking it may unsubscribe the recipient and silence reply notifications, presenting as the original problem. Do not click.
 - **A cold inbound from someone never emailed first is untested** against the Customer Replied trigger. This is why the built-in Conversation Notification should be switched to In-App rather than turned off.
 
