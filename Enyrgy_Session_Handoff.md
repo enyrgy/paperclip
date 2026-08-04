@@ -170,6 +170,40 @@ New in S3 and worth knowing it exists: **credit-based membership guidance.** Whe
 4. Select all 57 in `Investors - Current`, send once. No batching and no separate AOL/Yahoo handling once the domain is warm
 5. Roughly ten minutes
 
+### PRIORITY OPEN: inbound email to mg.enyrgy.com creates consumer leads (found Aug 3)
+
+**Do this before anything else on the list. It is live and it sends real email to people who never opted in.**
+
+**What happened.** During the Aug 3 reply-notification testing, a contact was created in GHL for **scott@enyrgy.com**, tagged `type_consumer`, `status_new`, `status_in_drip`, given an Opportunity in the Consumer Product Pipeline, and sent Consumer Drip touch 1. Scott's own address, in the consumer nurture. Most likely cause: a reply sent to the built-in notification's `scott@mg.enyrgy.com` Reply-To arrived as inbound mail from an address GHL did not recognize.
+
+**The general case is the problem.** Any inbound email to `mg.enyrgy.com` from an unrecognized address creates a contact. WF-01 New Lead Router then routes it, and because its last branch is `Default Consumer` "when none of the conditions are met", it lands there and gets tagged `type_consumer`, which is a Consumer Drip trigger. **Auto-replies, out-of-office bounces, vendor mail and spam all become consumer leads receiving live drip email.** Nothing errors at any point.
+
+**The fix, ten minutes.** WF-01's Device User Check condition becomes:
+
+```
+Tags does NOT include source_device_app
+  AND Email does not contain @enyrgy.com
+  AND Tags does NOT include no_route
+```
+
+The domain rule alone would have prevented this and needs no maintenance. `no_route` becomes the permanent off-switch for imports, tests, staff on other domains, and partners, replacing the current practice of unpublishing WF-01 and remembering to republish it. That practice is itself a hazard: a silently unpublished router means new leads stop being routed at all, with nothing erroring.
+
+**Also do:** filter Contacts on `Email contains @enyrgy.com` and check whether other staff addresses went through the same path.
+
+**Note for whoever picks this up:** `drip_bypass` does NOT stop WF-01. It is read at the Bypass Check inside each of the five drips, not by the router. WF-01's only guard is `source_device_app`, built Aug 1 for the Outcode work. This distinction caused confusion once already.
+
+### Reply notifications: built-in is a doorbell, WF-35 built Aug 3
+
+**Tested, not assumed.** GHL's built-in Conversation Notification contains no message text. A reply carrying the marker `PURPLE-ELEVEN` produced a notification with no trace of it.
+
+**Worse, its reply path is a trap.** The notification is sent as though it came from Scott, so hitting reply addresses `scott@mg.enyrgy.com`, Scott's own address on the sending subdomain. It reaches nobody and nothing errors. This is very likely what created the contact described above.
+
+**WF-35 Customer Replied Notification** was built and published Aug 3 to fix it. Full capture in `campaigns/WF-35-customer-replied.md`. Three things carried forward from that build:
+
+- **UNVERIFIED: Allow Re-Entry.** The second-reply test was never run. If off, only a contact's first ever reply notifies anyone. Run it before trusting the workflow.
+- **`{{contact.link}}` fails GHL merge-field validation.** WF-02's Day 1 notification uses the same field, so its "View contact in GHL" line may be rendering blank. Unchecked.
+- **An unsubscribe link is appended to the internal notification.** Clicking it may unsubscribe the recipient and silence reply notifications, presenting as the original problem. Do not click.
+
 ### CAMPAIGN CAPTURE COMPLETE, Aug 2-3, 2026
 
 **All 19 workflows are now in `campaigns/`, 94 touches, 83 corrections applied.** Every live email and SMS in the GHL account exists as `.md` + `.docx` in the repo, with a per-workflow change log recording what was corrected and why. This closes the gap that produced Standing Rule 9.
