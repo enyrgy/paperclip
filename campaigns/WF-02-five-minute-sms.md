@@ -123,6 +123,10 @@ Consumer Tag Applied (type_consumer)
 
 `drip_bypass` comes out of WF-02 entirely. Consent gates the SMS and only the SMS. The alert fires for every consumer lead, on both paths, which is the whole reason it exists.
 
-**Awaiting Scott's decision**, because removing `drip_bypass` means magnet leads start receiving the 5-minute SMS where they have consented. The conservative alternative is to keep the SMS gated on `drip_bypass` and move only the alert.
+**DECISION, Scott, Aug 4, 2026: leave WF-02 as built for now.** Not an oversight, a deliberate deferral. Recorded so a future session does not treat this as an unnoticed bug and change it unprompted.
+
+The reasoning behind the deferral: Scott is BCC'd on all outbound drip email, so no lead is invisible today, and the change would alter who receives a text, which is not a change worth making in passing. The two options remain as written above, removing `drip_bypass` entirely or moving only the alert.
+
+**What would make this worth revisiting.** Magnet volume rising, since the alert gap scales with it. A second person handling leads, since BCC visibility is Scott's alone and does not transfer. Or any change to how leads are triaged that assumes a consolidated new-lead alert exists.
 
 **Not urgent in the way it first appeared.** Scott is BCC'd on all outbound drip email, so these leads were never invisible and are still in their nurture. What is missing is the consolidated alert: source, how_heard_specific, phone, email and a link, in one message at one time. That is a convenience gap, not lost leads.
