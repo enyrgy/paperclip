@@ -170,9 +170,9 @@ New in S3 and worth knowing it exists: **credit-based membership guidance.** Whe
 4. Select all 57 in `Investors - Current`, send once. No batching and no separate AOL/Yahoo handling once the domain is warm
 5. Roughly ten minutes
 
-### PRIORITY OPEN: inbound email to mg.enyrgy.com creates consumer leads (found Aug 3)
+### FIXED Aug 4: inbound email to mg.enyrgy.com was creating consumer leads
 
-**Do this before anything else on the list. It is live and it sends real email to people who never opted in.**
+**Found Aug 3, fixed and verified Aug 4.** Kept in full because the failure mode recurs and the reasoning is the useful part.
 
 **What happened.** During the Aug 3 reply-notification testing, a contact was created in GHL for **scott@enyrgy.com**, tagged `type_consumer`, `status_new`, `status_in_drip`, given an Opportunity in the Consumer Product Pipeline, and sent Consumer Drip touch 1. Scott's own address, in the consumer nurture. Most likely cause: a reply sent to the built-in notification's `scott@mg.enyrgy.com` Reply-To arrived as inbound mail from an address GHL did not recognize.
 
@@ -188,7 +188,12 @@ Tags does NOT include source_device_app
 
 The domain rule alone would have prevented this and needs no maintenance. `no_route` becomes the permanent off-switch for imports, tests, staff on other domains, and partners, replacing the current practice of unpublishing WF-01 and remembering to republish it. That practice is itself a hazard: a silently unpublished router means new leads stop being routed at all, with nothing erroring.
 
-**Also do:** filter Contacts on `Email contains @enyrgy.com` and check whether other staff addresses went through the same path.
+**Applied and verified Aug 4.** Both directions were tested rather than assumed:
+
+- A contact with **no email at all** still routes. This was the real risk in the fix: if GHL evaluated `does not contain` as false on an empty field, phone-only leads would have silently stopped being routed, trading a leak for a blackout. A phone-only test contact received `type_consumer` normally, so an empty field satisfies the condition.
+- That same contact carried `drip_bypass` and ended with **no `status_in_drip` tag**, confirming the second layer: the Consumer Drip triggered on `type_consumer`, hit its Bypass Check and exited. The `scott@enyrgy.com` record from Aug 3 carried `status_in_drip` precisely because it had no bypass tag. The two layers are visible in the tags and can be checked that way in future.
+
+**Also do:** filter Contacts on `Email contains @enyrgy.com` and check whether other staff addresses went through the same path. Not yet done.
 
 **Note for whoever picks this up:** `drip_bypass` does NOT stop WF-01. It is read at the Bypass Check inside each of the five drips, not by the router. WF-01's only guard is `source_device_app`, built Aug 1 for the Outcode work. This distinction caused confusion once already.
 
