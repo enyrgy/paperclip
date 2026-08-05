@@ -6,11 +6,9 @@
 
 AI-Powered Sales, Marketing & Revenue Automation
 
-Powered by Paperclip Autonomous Agents · Version 3.9.4
+Powered by Paperclip Autonomous Agents · Version 3.9.6
 
 **Consumer Unit $2,995 · Commercial Unit $8,950 · 600+ Users · 25,000+ Treatments**
-
-**v3.9.4 (August 4, 2026) changes:** `no_route` added to the tag taxonomy (Section 9); WF-01's guard documented (Section 12); WF-30 to WF-35 added to the workflow register; "600+ Customers" corrected to "600+ Users" here and in Section 1, since a home unit supports up to six users and the two are not interchangeable. **Live campaign copy is no longer documented here.** It lives in `campaigns/`, one file per workflow, captured from GHL and version-controlled.
 
 Product Sales · Investor Capital · OEM/White-Label Partners · Vendor Network
 
@@ -18,9 +16,11 @@ scott@enyrgy.com · 602-321-0322 · enyrgy.com
 
 Author: Scott Hansbury, Co-founder & CEO, Enyrgy Inc
 
-Last Updated: July 28, 2026 · Version 3.9.5
+Last Updated: August 4, 2026 · Version 3.9.6
 
-**v3.9.5 Changes (Session 15):** Paperclip is now operating, not just built. Heartbeats are staged and tuned (Sentinel 24h, Quality Control daily, Dispatcher 8h, Sales Outreach 1h, SDR 2h, KB Manager 30d; remaining agents staged behind a watch-cost gate; executives + Audit and Compliance + PRD Gatherer + Onboarding stay event-driven with timer OFF). Two operating rules added from the ENY-20 incident: (1) **Agents confabulate under credit starvation:** when credit-starved or budget-hard-stopped, the org produces confident, specific, FALSE claims (a QC audit and a COO "live verification" both reported a systemic lifecycle failure that did not exist). Verify every agent audit/verification against the live GHL account before acting; escalations are leads, not facts. (2) **Keep Anthropic credit buffered and Paperclip budgets with headroom:** starvation multiplies cost (dying runs re-wake and replay a growing thread) and is the trigger for confabulation. Open platform bug: a run that dies on a credit/budget error must go to `blocked`, never `done` (it was auto-flipping to `done` with no work, masking the item). Consolidated open items now live in `Enyrgy_Master_TODO.md`.
+**v3.9.6 Changes (Session 16, August 4, 2026):** `no_route` and `source_device_app` added to the tag taxonomy (Section 9); the two bypass switches distinguished in Section 11, since `drip_bypass` stops drips while `no_route` stops WF-01 routing and confusing them has already cost time; WF-01's full guard documented (Section 12); a WF-30 to WF-35 register added. "600+ Customers" corrected to "600+ Users" on the cover and in Section 1, since a home unit supports up to six users and the two are not interchangeable. **Live campaign copy is no longer documented in this guide.** It lives in `campaigns/`, one file per workflow, captured from GHL and version-controlled, so nobody maintains two copies. Also corrected the v3.9.5 phantom-completion claim below.
+
+**v3.9.5 Changes (Session 15):** Paperclip is now operating, not just built. Heartbeats are staged and tuned (Sentinel 24h, Quality Control daily, Dispatcher 8h, Sales Outreach 1h, SDR 2h, KB Manager 30d; remaining agents staged behind a watch-cost gate; executives + Audit and Compliance + PRD Gatherer + Onboarding stay event-driven with timer OFF). Two operating rules added from the ENY-20 incident: (1) **Agents confabulate under credit starvation:** when credit-starved or budget-hard-stopped, the org produces confident, specific, FALSE claims (a QC audit and a COO "live verification" both reported a systemic lifecycle failure that did not exist). Verify every agent audit/verification against the live GHL account before acting; escalations are leads, not facts. (2) **Keep Anthropic credit buffered and Paperclip budgets with headroom:** starvation multiplies cost (dying runs re-wake and replay a growing thread) and is the trigger for confabulation. ~~Open platform bug: a run that dies on a credit/budget error must go to `blocked`, never `done`.~~ **RETRACTED in v3.9.6.** The recovery code was read directly: credit and budget failures route to `blocked` and never to `done`, and the only path to `done` is a legitimate watchdog fold requiring a succeeded run. The "ENY-24 flipped to done" report was itself a COO confabulation, which is to say an instance of rule (1) above rather than evidence for a separate defect. No platform fix is needed or pending. Consolidated open items now live in `Enyrgy_Master_TODO.md`.
 
 **v3.9.4 Changes (Session 14):** Applied the Session 13 accreditation carve-out that was missing here: the subscription agreement and term sheet are PRE-ACCEPTANCE and may be shared before accreditation is confirmed. Accreditation gates ONLY wire instructions and accepting funds. Corrected in Stage 5, the Compliance Gate rules, and the pipeline summary (three locations had wrongly gated the subscription agreement and term sheet behind accreditation). Aligns the Guide with KB Sections 12 and 13.
 
@@ -465,6 +465,8 @@ Every contact must be categorized into one of five funnels.
 ## Phone System
 
 -   Number: +1 888-316-1695 (Toll-Free)
+
+-   **Two numbers exist on purpose, do not "correct" one to the other.** 888-316-1695 is the GHL toll-free line, A2P-verified, and is what sends SMS and places outbound calls. **602-321-0322 is Scott's direct number** and belongs in email signatures and the team reference, where a human contact is what the reader wants. The cover, Section 7 and the signature block all use 602 deliberately.
 
 -   System: LC Phone (LeadConnector)
 

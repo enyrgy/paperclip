@@ -1,7 +1,7 @@
 # ENYRGY GHL - Session Handoff
 **Load this at the start of the next session. It is the orientation layer. The WIP tracker and Implementation Guide v3.9 are the source of truth.**
 
-Date of this handoff: July 28, 2026 (end of Session 15)
+Date of this handoff: **August 4, 2026 (end of Session 16)**
 
 ---
 
@@ -708,7 +708,7 @@ This was confirmed by Enyrgy's securities attorney. CORRECTED Session 13 (July 2
 | Enyrgy_Paperclip_Knowledge_Base | v2, Session 16 | .md + .docx | Shared agent-read KB, 15 sections, voice-passed. **Live `enyrgy-knowledge-base` Company Skill re-synced Aug 3, 2026 and confirmed at repo commit `42090226`.** That sync carried nine targeted edits: S1 users-not-customers (a home unit supports six users, so "600+ customers" overstates unit sales), S1 Brian Cameron CFO as a former securities regulator, S1 referral operated manually via a hand-built Shopify code, S1 contact@enyrgy.com as the monitored inbound address, S4 pilot-to-study plus the two new rules behind it (never call it a pilot, since the study ran months after full production launch; write "the five participants" so the article does not imply a larger cohort in which only five responded), S4 participant-level line aligned, S5 the three advisor bios with publication and tenure figures plus the guidance paragraph, S6/S7 users and "in research clinical trials", and S8 the approved one-in-four wording. **S8 was the one that mattered:** "in these trials" is only unambiguous while it sits beside the citation, and an agent lifting the phrase into an email leaves the citation behind, so the reader parses it as Enyrgy's own trials. Prior sync Aug 2 at `17c553b7`, which carried: S2 sales anchor qualified (the unqualified "no other solution delivers all three" is knockable down by a tanning bed, which does trigger all three pathways badly and with no dosing control; the calibration-and-cutoff qualifier is what nothing else clears), S3 commercial unit footprint 4ft by 4ft, and S3 manufacturing lead-time policy with no figures recorded since batch size moves with funding. Earlier syncs: Aug 2 at `2f4fb933`, Aug 1 at `95f41a40`. Six targeted edits applied (NOT a select-all paste): founder track record (S1), commercial pricing $49-$125 range + membership/credit-model guidance (S3), objection line $49-$125 (S11), PPM placeholder guardrail lifted (S12), distribution alongside white-label (S14), quick-lookup table row (S15). Earlier Session 14 additions (UVB waveband, sunlight five-outputs, payment options, participant-level pilot data, one-session-a-day) synced at `0062ce4e`. Upload to project. |
 | Enyrgy_ICP_Dartboard | current | .md + .docx | Em-dashes and icons removed; brand .docx built. Upload to project. |
 | Enyrgy_B2B_ICP_Dartboard | current | .md + .docx | Em-dashes and icons removed; brand .docx built. Upload to project. |
-| Enyrgy_Session_Handoff | Session 14 | .md + .docx | This document. Upload to project, replace prior handoff. |
+| Enyrgy_Session_Handoff | Session 16, Aug 4 | .md + .docx | This document. Upload to project, replace prior handoff. |
 
 **Action for Scott:** upload the cleaned `.md` files (VD Assessment Deployment Runbook, VD Assessment Nurture and Segmentation, lead-magnets, Brand Style Guide v2, Phase 2 Setup Guide, v3.9 Implementation Guide, WIP-3, both ICP Dartboards, and this handoff) plus the lead-magnet `.html` into the project to replace the prior versions. Project files are read-only in Claude, so uploads are required for the next session to have current context.
 

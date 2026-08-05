@@ -1,7 +1,7 @@
 # ENYRGY GHL - Work In Progress (WIP) Tracker
 **Review this at the start of every session**
 
-Last Updated: July 28, 2026 (Session 15). See `Enyrgy_Master_TODO.md` for the consolidated open-items punch list.
+Last Updated: **August 4, 2026 (Session 16)**. See `Enyrgy_Master_TODO.md` for the consolidated open-items punch list.
 
 ---
 
@@ -104,13 +104,19 @@ Last Updated: July 28, 2026 (Session 15). See `Enyrgy_Master_TODO.md` for the co
 | Import Process | Proven (Session 16) | GHL's 4-step wizard (Start/Upload/Map/Verify). Phone is a valid update-match key with no email-only override, so blank duplicate phones before importing. Verify-step preferences (Add to workflow / Add tags / Create a Smartlist) all OFF. **Verify by smart-list count, not the wizard - a failed row raises no error.** |
 | Existing customer import | COMPLETE (Session 10) | 617 imported, tagged drip_bypass + legacy_customer (24 also seg_facility). Safe method: WF-01 unpublished during import, zero type_/status_/unit_ tags imported. Shared-email households split by blanking the child's email. Landed in "Initial Customer Load 7-7-26" Smartlist. |
 
-**Import Instructions:**
+**Import Instructions (investor imports). CORRECTED Session 16, step 6 was dangerous as written.**
+
 1. Complete the Excel spreadsheet using the template
-2. Go to GHL -> Contacts -> Import
-3. Upload CSV (convert Excel to CSV first)
-4. Map columns to GHL fields
-5. Assign to Investor Pipeline
-6. Apply type_investor tag to trigger drip enrollment
+2. **Check for Contact Created triggers first and unpublish them.** WF-01 New Lead Router and WF-31 FlexOffers First Touch both fire on Contact Created. Do not trust the Session 10 audit, which predates WF-31. Alternatively import the `no_route` tag, which WF-01 now honours.
+3. Go to GHL -> Contacts -> Import
+4. Upload CSV (convert Excel to CSV first). Save as plain "CSV (Comma delimited)", **never "CSV UTF-8"**, which adds a byte-order mark that breaks the first column's auto-map
+5. Map columns to GHL fields. Phone is a valid update-match key with no email-only override, so blank duplicate phones first
+6. Verify-step preferences (Add to workflow / Add tags / Create a Smartlist) all OFF
+7. Assign to the Investor Pipeline
+8. **Tag by which kind of investor this is. Getting this wrong is the expensive mistake:**
+   - **CURRENT investors, people who have already funded:** `seg_investor_current` + `drip_bypass` + `source_investor_import`. **NEVER `type_investor`.** That tag triggers the cold 8-touch Investor Drip, which would pitch an investment to someone who has already invested.
+   - **PROSPECTIVE investors:** `type_investor` is correct here, and is what enrols them in the cold drip deliberately.
+9. **Verify by smart-list count, not by the wizard.** A failed row raises no error anywhere; one row failed silently during the Session 16 import and had to be added by hand.
 
 ---
 
@@ -187,7 +193,7 @@ These placeholders exist in workflows and need real URLs:
 | WF-07 Review SMS | RESOLVED | Google review link live in the Day-14 SMS: https://g.page/r/CfN5Rj0CdmrfEAI/review (Trustpilot offered as secondary) |
 | WF-07 Referral Email | DEFERRED (Jul 28) | Referral link intentionally held. No third-party referral app; the next Enyrgy version ships a built-in loyalty/referral program that will supply it. |
 | WF-07 Testimonial Email | RESOLVED | Testimonial form link now live in the email: https://api.leadconnectorhq.com/widget/form/OjahkWeVDeozQkfG9dW2?notrack=true |
-| All workflows | Order URL | https://www.enyrgy.com/products/uvb-light-therapy |
+| All workflows | RESOLVED (Session 16) | Live order URL confirmed during the campaign capture: **https://shop.enyrgy.com/products/uvb-light-therapy**. The old `www.enyrgy.com` form is not the canonical link. Every canonical booking, form and order URL is listed in `campaigns/_LINKS.md`. |
 | Investor Touch 7 | PPM download | Attorney-approved |
 
 ---
