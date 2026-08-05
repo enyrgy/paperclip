@@ -154,7 +154,10 @@ Each type below gives: what she writes, where it lands in GHL, and the per-type 
 
 - **[BUILT]** One long-form post per week, the anchor piece the rest of the set is derived from.
 - **[RECOMMENDED]** Output: title, slug, meta description, body (GHL blog HTML/rich text), suggested category/tags, hero-image prompt or brief for a human/designer.
-- **Destination:** GHL **Blogs**. Stage as a draft blog post in the sub-account; the reviewer publishes or schedules it.
+- **Destination:** GHL **Blogs**. **AUTO-PUBLISH ON APPROVAL (Scott, August 4).** The agent stages the post as a draft; when a human flips the dashboard item to `approved`, the post publishes to the GHL blog site without further action. Blog is the only content type with this behaviour.
+- **What that changes.** Blog moves from human-publish to **gated agent-publish**, option 2 in Section 4. The approval click is now a publish click. Two consequences follow and both are load-bearing:
+  1. **The approval action must be unmistakable in the dashboard.** A reviewer who thinks they are filing a draft and is in fact publishing to a public indexed page is a design fault, not a user error. Label the control for what it does.
+  2. **The compliance pass must be genuinely blocking, not advisory.** A blog post is Enyrgy's highest-reach, most permanent, most indexable surface, and it is the natural place for a wellness claim to drift into a medical one. Staged copy that fails or cannot complete the compliance check must not be approvable at all, rather than approvable with a warning.
 - **Rules:** ties to an approved talking point or the current seasonal angle from the KB. Wellness-compliant language only (Section 5). One clear call to action pointing at the correct funnel entry (consumer guide, discovery call, etc.), pulled from the links registry, never a hand-typed URL.
 
 ### 3.2 Email posts
@@ -201,12 +204,20 @@ The management actions a human takes:
 - **Approve / reject** each item. Rejecting with a note sends it back to Maria to redraft on the same run issue.
 - **Schedule / publish**: on approval, the item is scheduled or published in GHL.
 
-**The approval gate is mandatory and matches Enyrgy's existing governance.** Maria never publishes unreviewed. **[RECOMMENDED]** two ways to enforce it, pick one:
+**The approval gate is mandatory. The agent never publishes unreviewed.** Settled by Scott on August 4, and it is **split by content type** rather than one model for everything:
 
-1. **Human-publish (simplest, safest):** Maria only ever stages GHL drafts. A human clicks publish/schedule in GHL. Nothing agent-driven can go live.
-2. **Gated agent-publish:** Maria may publish, but only after the item's status flips to `approved` by a board operator, implemented as a Paperclip **approval** on the run issue. Ads stay human-publish regardless.
+| Type | On approval | Who ships it |
+|------|-------------|--------------|
+| **Blog** | **Auto-publishes to GHL Blogs.** Gated agent-publish. | Nobody. The approval click is the publish. |
+| **Social** | Nothing automatic. Approved copy is handed off. | **Thea Cartier**, posting to each channel by hand. No channel is connected to GHL and none will be. |
+| **Email** | **[CONFIRM]** stage as a GHL draft, or hand off like social. | Undecided. |
+| **Ads** | Nothing automatic, ever. | Human, after explicit spend sign-off. |
 
-Start with option 1. It is the same "stage, human ships" posture Enyrgy uses elsewhere and it removes an entire class of go-live risk during domain warmup.
+**Why the split is sound.** Blog is a single destination Enyrgy controls, so automating the last step removes a copy-paste without removing a decision. Social is many destinations with per-platform formatting and timing judgment, which is the job Thea was hired for; automating it would replace a person's judgment rather than a person's clerical step.
+
+**The one thing to hold onto:** approval is still the only gate, and it is now doing more work than it was. Everything above depends on nothing reaching `approved` without a human having actually read it.
+
+**[CONFIRM] who approves.** Scott said "for my review", and Thea posts what is approved. The natural split is Scott approves and Thea may edit, but it could equally be Thea approving her own channels with Scott approving blog. Set the `Owner` column per item type rather than leaving it implicit.
 
 ---
 
@@ -284,10 +295,15 @@ Ordered, smallest-risk-first:
 
 **Still open:**
 
-- **Thea Cartier owns organic social and is a real hire named to investors.** Does this agent draft for her to edit and ship, cover what she does not, or is the review gate solely Scott? His "for my review and posting" answers the gate but not her remit.
-- Whether **blog and email** stage as GHL drafts or come out as review packages like social.
-- Whether GHL Blogs is enabled on the sub-account, if blog is staying in GHL.
+- **[CONFIRM] who holds the approval click per content type.** Scott approves and Thea edits, or Thea approves her own channels and Scott approves blog. This matters more than it did, because on blog the approval click publishes.
+- **[CONFIRM] email:** GHL draft, or handed off like social.
+- **VERIFY, technical:** that the agent's GHL tool can actually create and publish a blog post. Blog auto-publish is now a requirement rather than a nice-to-have, and nothing in the repo confirms the API surface exists or that the tool exposes it. **If it does not, blog falls back to staged-draft plus a human publish click**, which is a small loss, but it should be discovered before the routine is built rather than during a dry run.
 - Exact Monday hour.
+
+**Settled by Scott, August 4 (second pass):**
+
+- ~~Thea's remit~~ **She is the social poster.** The agent drafts, the dashboard presents copy for review and edit, and Thea takes approved copy to each channel by hand.
+- ~~Blog destination~~ **GHL Blogs, which Scott is enabling, with auto-publish on approval.**
 - Email posts: broadcast to a segment vs. queued touches, and which segment.
 - Which social channels are connected in the Social Planner.
 - Ad platforms in scope and who owns spend sign-off.
