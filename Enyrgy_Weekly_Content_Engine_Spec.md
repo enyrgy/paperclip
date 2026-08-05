@@ -3,7 +3,7 @@
 **For:** Enyrgy engineering / Paperclip board
 **From:** [source company] outbound marketing build
 **Purpose:** Describe the weekly content agent we run (internally nicknamed "Maria") in enough detail that Enyrgy can build the same feature on its existing Paperclip / Railway / GHL stack.
-**Status:** Enyrgy does not have this feature yet. This document is the handoff.
+**Status:** Enyrgy does not have this feature yet. This document is the handoff, **verified against the live Enyrgy corpus on August 4, 2026.** See Section 0.5 for what checked out and what did not.
 
 ---
 
@@ -17,6 +17,41 @@ Two kinds of content are mixed here, and they are labelled so nobody guesses:
 Anything marked **[CONFIRM]** is a decision Enyrgy has to make locally (channel, cadence detail, approval owner) that our setup will not answer for you.
 
 No em-dashes anywhere in this doc, per the standing house rule, so the copy stays paste-safe into GHL.
+
+---
+
+## 0.5 Verification pass, Enyrgy, August 4 2026
+
+This document was written outside Enyrgy and describes Enyrgy from the outside. Every factual claim it makes about Enyrgy was checked against the repo before any of it was built on. **Three did not survive.** They are corrected in place below; this section records what changed so the corrections are not silently reverted by someone reading the original.
+
+### Confirmed accurate
+
+- **The Social Media Manager slot exists and is empty.** Thea Cartier appears in the Implementation Guide team table (Section 7) with blank contact fields, in the Enterprise Architecture personnel table, and in the Q2 2026 investor update as a team addition. **She is a real person, not an agent slot.** An agent here supports her or duplicates her; that is a staffing decision, not a technical one. See Section 10.
+- **Brand constants.** Sunrise Orange **#E64C38** and Montserrat are correct, and are Standing Rule 1 in the session handoff.
+- **The stack mapping.** Paperclip, Railway and the GHL sub-account are as described.
+- **The no-em-dash rule** is real and absolute (Standing Rule 1a).
+
+### CORRECTED: the compliance reference does not exist
+
+The original text routed every string through **"the 2026 January FDA Guidelines for Wellness Products."** **No such document exists anywhere in the Enyrgy corpus.** It is not in the KB, not in the Implementation Guide, and not in any session record. It appears to be carried over from the source company.
+
+**Why this one mattered more than a wrong citation.** An agent instructed to check content against a document it cannot find does not stop and say so. It either treats the check as passed, or it reconstructs what it imagines the guideline says. Either way you get a confident compliance claim resting on nothing, which is the exact failure mode already documented on this account under agent confabulation.
+
+**The real gate, which does exist:** KB **Section 11** prohibited words, KB **Section 8** claim precision, Implementation Guide **Section 14** content rules, and a second pass through the existing **Audit and Compliance** agent.
+
+### CORRECTED: the social channel claim
+
+The original said "the KB lists Instagram, Facebook, LinkedIn as active sources." It does not. `source_instagram`, `source_facebook` and `source_linkedin` are **lead-source tags** in the Implementation Guide Section 9 taxonomy, which record where a contact came from. They say nothing about which accounts Enyrgy posts to.
+
+**What is actually documented:** the Brand Style Guide names **Instagram @enyrgy.light** as the primary and active account. Nothing confirms a Facebook or LinkedIn presence, and **nothing confirms any channel is connected to the GHL Social Planner.** That connection is a prerequisite, not an assumption. See Section 10.
+
+### FLAG: the ads content type conflicts with a live approved claim
+
+**"Zero paid advertising to date" is an approved KB talking point** (Sections 1 and 6), and "600+ users, 5 countries, zero paid ads" is used as a growth proof point in live drip copy and in the Q2 2026 investor update, which describes Thea's role as "extending the zero-paid-ads engine."
+
+The moment Enyrgy runs a paid ad, that claim leaves the copy. That is a legitimate business decision and might well be the right one, but **it is a positioning change, not a content-calendar change**, and it invalidates a line that is currently live in several places and has been sent to investors.
+
+**Recommendation:** launch this engine with blog, email and social. Hold ads until Enyrgy has decided to start paying for traffic, and treat that decision as a KB change with a copy sweep attached.
 
 ---
 
@@ -121,7 +156,7 @@ Each type below gives: what she writes, where it lands in GHL, and the per-type 
 
 - **[BUILT]** A set of organic social posts for the week.
 - **[RECOMMENDED]** Output per post: platform, caption/body, hashtags, image or video brief, proposed date/time. Derive several posts from the one blog angle so the week reads as one campaign, not four unrelated fragments.
-- **Destination:** GHL **Social Planner**. Stage each as a draft scheduled post per connected channel. **[CONFIRM]** which channels are connected (the KB lists Instagram, Facebook, LinkedIn as active sources).
+- **Destination:** GHL **Social Planner**. Stage each as a draft scheduled post per connected channel. **[CONFIRM]** which channels are connected. **Do not assume any are.** The only documented active account is **Instagram @enyrgy.light** (Brand Style Guide). `source_instagram` and friends are lead-source tags, not publishing channels, see Section 0.5.
 - **Rules:** brand voice is peer-to-peer, Sunrise Orange, Montserrat feel, no em-dashes. Narrative / story-style posts should lean on the StorySelling approach (origin stories, testimonials, community proof) rather than hard selling.
 
 ### 3.4 Ads
@@ -167,7 +202,7 @@ Start with option 1. It is the same "stage, human ships" posture Enyrgy uses els
 
 Maria plugs into the guardrails Enyrgy already has. Nothing new to invent here.
 
-- **Prohibited-words / FDA-wellness scan.** Every client-facing string (blog, email, ad, social) is checked against the prohibited-words list (GHL Implementation Guide Section 14) and the 2026 January FDA Guidelines for Wellness Products before it is staged. This is the same gate the Audit and Compliance agent enforces on outbound messages. **[RECOMMENDED]** have Maria self-scan, and for ads and blog (the highest-reach items) route through the existing Audit and Compliance agent as a second pass.
+- **Prohibited-words and claim-precision scan.** Every client-facing string (blog, email, ad, social) is checked against **KB Section 11** (prohibited words), **KB Section 8** (claim precision) and **Implementation Guide Section 14** (content rules) before it is staged. **There is no FDA wellness guideline document in this corpus; do not cite one.** The original version of this spec referenced a "2026 January FDA Guidelines for Wellness Products" that does not exist, see Section 0.5. This is the same gate the Audit and Compliance agent enforces on outbound messages. **[RECOMMENDED]** have Maria self-scan, and for ads and blog (the highest-reach items) route through the existing Audit and Compliance agent as a second pass.
 - **Approved claims only.** Use only approved talking points and approved product terms (for example BioCalibrated Sunshine, Triple-Pathway Advantage). Never state a number, price, study result, or date not in the KB.
 - **Brand voice.** Peer-to-peer, Sunrise Orange, Montserrat, no em-dashes.
 - **Links.** Every URL comes from the links registry, never hand-typed, so a funnel URL change does not silently rot the content (same rule as `campaigns/_LINKS.md`).
@@ -225,6 +260,9 @@ Ordered, smallest-risk-first:
 
 ## 10. Open decisions for Enyrgy [CONFIRM]
 
+- **Does Enyrgy want this at all right now, given Thea Cartier is a real hire who owns organic social?** The honest options are: the agent drafts and Thea edits and ships (recommended), the agent covers channels Thea does not, or hold the build until her remit is settled. This is the first decision, not a detail.
+- **Ads: in or out of v1?** Recommend out, see Section 0.5. Including them ends the "zero paid ads" claim.
+- Whether any channel is connected to the GHL Social Planner today, and whether GHL Blogs is enabled on the sub-account. Both are prerequisites and neither is confirmed.
 - Exact Monday hour and reviewer.
 - Email posts: broadcast to a segment vs. queued touches, and which segment.
 - Which social channels are connected in the Social Planner.
@@ -279,8 +317,8 @@ registry; never hand-type a funnel URL.
 
 ## Compliance gate (must pass before you stage anything)
 
-Scan every client-facing string against the prohibited-words list (Implementation
-Guide Section 14) and the 2026 January FDA Guidelines for Wellness Products. Never
+Scan every client-facing string against KB Section 11 (prohibited words), KB
+Section 8 (claim precision) and Implementation Guide Section 14. Never
 use: treat, cure, diagnose, disease, prescription, FDA-approved, medical
 treatment, heal, fix, medication, illness, clinical diagnosis, therapeutic
 treatment. For blog and ad output, route a second compliance pass through the
