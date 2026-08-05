@@ -5,7 +5,7 @@ Sourced from the Enterprise Architecture, WIP tracker, Implementation Guide v3.9
 
 The build is essentially done. What remains is finishing the go-live staging, a few external verifications and WF-07 wiring, investor-readiness prep, a batch of strategic architecture decisions, and documentation updates.
 
-**MOST URGENT, August 4:** deactivate FlexOffers old program **#247334** and disable old creative **#6673701**. Publisher migration is complete and a publisher has already tried to grab the old creative, which carries no S2S tracking, so they would earn nothing. YourTango begins promoting **Wednesday August 5**, so this wants doing before real traffic starts. Full sequence in section 3.
+**MOST URGENT, August 4:** the FlexOffers old program **#247334** has to die, but **not yet.** Publishers are still being merged onto 250377 and deactivating early breaks the links of anyone not yet moved. Meanwhile a publisher has already tried to grab old creative **#6673701**, which carries no S2S tracking, so they would drive real traffic and earn nothing. YourTango begins promoting **Wednesday August 5**. Sequence and the one action that may be safe to take early are in section 3.
 
 ---
 
@@ -83,8 +83,12 @@ The build is essentially done. What remains is finishing the go-live staging, a 
 - [ ] ~~Decide what to do with the 3 brand creatives on the OLD program~~ (#6671366/67/68, the UVB and red-light product copy). They are not magnet creatives, so check where their campaign points. **If a creative sends traffic anywhere other than one of the five magnet pages, no refid is captured and the publisher earns nothing.** Either repoint them at magnets, or add the capture snippet to whatever other landing pages you want affiliates using.
 - [ ] **FlexOffers remaining (waiting on the FlexOffers rep, emailed July 29)**
   - [ ] Get a **test tracking link** for 250377, click it, confirm it lands on the quiz with `?refid=24.` and the click id, complete the quiz, verify the contact's FlexOffers Refid populates. Free verification of the click-to-capture path.
-  - [x] **PUBLISHER MIGRATION COMPLETE (confirmed Aug 4).** Brittany moved all publishers from 247334 onto 250377 and handled the communication out to them.
-  - [ ] **URGENT, DO THIS FIRST: kill the old program.** Migration is done and **a publisher has already tried to grab the old creative.** Creative #6673701 has no S2S tracking, so a publisher promoting it drives real traffic, captures no refid, earns nothing, and concludes the program does not pay. That is worse than no publisher. Program 247334 is **Public**, which is how it gathered 124 publishers on its own, and it keeps being discoverable until it is off. Sequence:
+  - [~] **PUBLISHER MIGRATION UNDERWAY, not finished (as of Aug 4).** Brittany is moving publishers from 247334 onto 250377 and handling the communication out to them. **The old program cannot be deactivated until every publisher is across**, since anyone not yet moved loses their links the moment it goes off. Brittany owns the completion signal; do not infer it from the publisher count.
+  - [ ] **BLOCKED ON MIGRATION: kill the old program.** **A publisher has already tried to grab old creative #6673701**, which has no S2S tracking, so a publisher promoting it drives real traffic, captures no refid, earns nothing, and concludes the program does not pay. That is worse than no publisher at all. Program 247334 is **Public**, which is how it gathered 124 publishers on its own, and it stays discoverable until it is off.
+
+    **The creative and the program are separable, and that matters here.** Disabling #6673701 stops the untracked traffic immediately; deactivating 247334 is what has to wait for migration. **Ask Brittany whether the creative can go now**, ahead of full migration. She owns publisher comms and knows who is still on the old program, so this is her call rather than a unilateral one, but the case for early removal is that anyone promoting it is already earning nothing.
+
+    Sequence, once migration is confirmed complete:
     1. **Disable creative #6673701** (Tired Test on the old program). This is the one that was grabbed.
     2. **Check creative #6671366 before assuming it is handled.** The July 30 notes record #6671367 and #6671368 as disabled and the red-light angle as **recreated** under the new program's Synthesis Gap campaign. Recreated is not disabled. #6671366 may still be live on 247334, same failure mode.
     3. **Scan 247334 for any other active creative or campaign** so nothing is left pointing at an untracked destination.

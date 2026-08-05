@@ -24,7 +24,7 @@ Last Updated: July 28, 2026 (Session 15). See `Enyrgy_Master_TODO.md` for the co
 | Paperclip Agent Org (17 agents) | GO-LIVE IN PROGRESS (Session 15): heartbeats staged and tuned. ON: Sentinel 24h, Quality Control daily, Dispatcher 8h, Sales Outreach 1h, SDR 2h, Reactivation 6h, KB Manager 30d. Held (volume-gated, enable when volume ramps; daily is plenty): Referral and Reviews (block trimmed - review/testimonial live, referral paused), Sales Scout, CSM. Execs + Audit/PRD/Onboarding stay event-driven (timer OFF). |
 | Toll-Free A2P Verification (888) | APPROVED (July 28, 2026) - validated for SMS. SMS can now send from 888-316-1695. |
 | Paperclip Agent Setup | Phase 2 build COMPLETE (Sessions 12-13). Now operating: approval-card UX + ask-first policy + toggle-bug fixed (Session 15). Standing rule: keep Anthropic credit buffered and budgets with headroom - starvation multiplies cost and causes agent confabulation. |
-| FlexOffers Affiliate | Publisher migration COMPLETE (Aug 4). **URGENT: disable creative #6673701 and deactivate old program #247334** before YourTango begins promoting Wed Aug 5. A publisher already tried to grab the old creative, which has no S2S tracking. |
+| FlexOffers Affiliate | Publisher migration UNDERWAY, not finished (Aug 4). **Old program #247334 cannot be deactivated until every publisher is across**, or anyone not yet moved loses their links. Separately, a publisher has already tried to grab old creative **#6673701**, which has no S2S tracking and so pays nothing; ask Brittany whether that creative can be disabled early. YourTango begins promoting Wed Aug 5. |
 | External Tasks | Multiple Pending - see Enyrgy_Master_TODO.md |
 
 ---
