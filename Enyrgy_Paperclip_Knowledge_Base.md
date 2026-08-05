@@ -149,7 +149,7 @@ Never use in client-facing content: treat, cure, diagnose, disease, prescription
 
 **GAP, flagged 2026-08-04: the FDA guidelines are required here but their content is not in this KB.** The rule above is binding and correct. What is missing is the operative substance: the specific claim structures the guidance permits and prohibits, in the same usable form as the prohibited-words list above it. **An agent cannot execute a review against a document it does not have.** Faced with that instruction it will either treat the check as passed or reconstruct what it imagines the guidance says, which is how a confident compliance claim ends up resting on nothing.
 
-**Until that content is loaded, any agent instructed to perform this check must report that it could not, and must not report it as passed.** A human reviews the affected copy instead. This blocks the Weekly Content Engine (see `Enyrgy_Weekly_Content_Engine_Spec.md`) and applies to every agent that composes client-facing copy.
+**Until that content is loaded, any agent instructed to perform this check must report that it could not, and must not report it as passed.** A human reviews the affected copy instead. This applies to every agent that composes client-facing copy, and it blocks any future feature that automates publishing.
 
 ## 12. Attorney-confirmed compliance rule (verbatim, non-negotiable)
 
