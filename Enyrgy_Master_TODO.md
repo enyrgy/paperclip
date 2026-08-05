@@ -1,9 +1,11 @@
 # Enyrgy Master TODO
 
-**Consolidated open-items list. Reconciled against the live state as of July 28, 2026 (Session 15).**
+**Consolidated open-items list. Reconciled against the live state as of August 4, 2026 (Session 16).**
 Sourced from the Enterprise Architecture, WIP tracker, Implementation Guide v3.9, and Phase 2 Setup Guide, minus everything already shipped in Sessions 8 to 15. Priority order, top to bottom.
 
 The build is essentially done. What remains is finishing the go-live staging, a few external verifications and WF-07 wiring, investor-readiness prep, a batch of strategic architecture decisions, and documentation updates.
+
+**MOST URGENT, August 4:** deactivate FlexOffers old program **#247334** and disable old creative **#6673701**. Publisher migration is complete and a publisher has already tried to grab the old creative, which carries no S2S tracking, so they would earn nothing. YourTango begins promoting **Wednesday August 5**, so this wants doing before real traffic starts. Full sequence in section 3.
 
 ---
 
@@ -20,7 +22,7 @@ The build is essentially done. What remains is finishing the go-live staging, a 
 ## 2. Platform / fork fixes
 
 - [x] **Phantom-completion "bug": INVESTIGATED, NOT A REAL BUG (July 28).** Read the recovery state machine (`server/src/services/recovery/service.ts`). Credit/budget failures classify as `non_retryable` and route to `blocked`; the only `done` transition is the watchdog-evaluation false-positive fold (which requires a succeeded source run), and "Credit balance is too low" isn't even specially handled (falls through to the generic blocked path). There is NO code path that marks a work issue `done` on a credit failure. The "ENY-24 flipped to done" claim was another COO confabulation from the credit-starvation window (same unreliable source as the ENY-20 false alarm). No code change made; inventing a fix for a non-existent bug is exactly the anti-pattern the confabulation lesson warns against.
-- [x] Approval-card context UX: cards now show issue → what approving does → what declining does (deployed).
+- [x] Approval-card context UX: cards now show issue, then what approving does, then what declining does (deployed).
 - [x] Ask-first policy rebalanced: internal CRM writes auto-run; sends/enroll/CFO stay gated.
 - [x] Tool-policy toggle bug fixed: metadata-only rule updates no longer re-validate untouched config (deployed).
 - [x] QC agent instruction tightened: must cite contact IDs + observed tags, never infer status from stage (repo + live agent updated).
@@ -80,9 +82,14 @@ The build is essentially done. What remains is finishing the go-live staging, a 
 - [x] ~~DECIDE: make program 250377 Public?~~ DECIDED YES (July 30); requested from the network since it is not advertiser-editable. The old program (247334) is **Public**, which is why publishers found and joined it on their own and it has 124 of them. The new program (250377) is **Private**, so nobody can discover it and it will not grow organically even after Brittany adds people manually. Going Public would not cost control, because Publisher Approval is already set to **Manual Review:** publishers could find and apply, but each still needs approval. This is the more consequential open decision.
 - [ ] ~~Decide what to do with the 3 brand creatives on the OLD program~~ (#6671366/67/68, the UVB and red-light product copy). They are not magnet creatives, so check where their campaign points. **If a creative sends traffic anywhere other than one of the five magnet pages, no refid is captured and the publisher earns nothing.** Either repoint them at magnets, or add the capture snippet to whatever other landing pages you want affiliates using.
 - [ ] **FlexOffers remaining (waiting on the FlexOffers rep, emailed July 29)**
-  - [ ] Get a **test tracking link** for 250377, click it, confirm it lands on the quiz with `?refid=24.…`, complete the quiz, verify the contact's FlexOffers Refid populates. Free verification of the click-to-capture path.
-  - [~] **IN PROGRESS (Aug 2), about a week.** Brittany is moving all publishers from 247334 onto 250377 and handling the communication out to them. Ask FlexOffers to **surface program 250377** to the network and migrate the **124 publishers** approved on the old program (#247334). Approvals are per-program, so 250377 has ZERO publishers today and nobody can promote the tracked link.
-  - [ ] **After** publishers migrate, **disable old creative #6673701** (Tired Test on the old program, no S2S tracking, so anyone promoting it earns nothing and sours the relationship).
+  - [ ] Get a **test tracking link** for 250377, click it, confirm it lands on the quiz with `?refid=24.` and the click id, complete the quiz, verify the contact's FlexOffers Refid populates. Free verification of the click-to-capture path.
+  - [x] **PUBLISHER MIGRATION COMPLETE (confirmed Aug 4).** Brittany moved all publishers from 247334 onto 250377 and handled the communication out to them.
+  - [ ] **URGENT, DO THIS FIRST: kill the old program.** Migration is done and **a publisher has already tried to grab the old creative.** Creative #6673701 has no S2S tracking, so a publisher promoting it drives real traffic, captures no refid, earns nothing, and concludes the program does not pay. That is worse than no publisher. Program 247334 is **Public**, which is how it gathered 124 publishers on its own, and it keeps being discoverable until it is off. Sequence:
+    1. **Disable creative #6673701** (Tired Test on the old program). This is the one that was grabbed.
+    2. **Check creative #6671366 before assuming it is handled.** The July 30 notes record #6671367 and #6671368 as disabled and the red-light angle as **recreated** under the new program's Synthesis Gap campaign. Recreated is not disabled. #6671366 may still be live on 247334, same failure mode.
+    3. **Scan 247334 for any other active creative or campaign** so nothing is left pointing at an untracked destination.
+    4. **Deactivate program 247334.**
+    Step 4 alone covers it, but doing the creatives first means the earning-nothing traffic stops even if deactivation turns out to be network-side or slow. **Confirm with Brittany that migration is complete on FlexOffers' side, not merely underway**, since this is the irreversible half and any publisher not yet moved loses their links.
   - [ ] **UNVERIFIED merge fields:** `{{order.number}}` and `{{order.subtotal_price}}` were chosen while the *Shopify order placed* trigger was active; the trigger is now *Order fulfilled* (the only trigger exposing a product filter). Could not test without a real Shopify order (payment fees + 7-10 day refund hold made a test order too costly). On the FIRST real affiliate sale, check **WF-30 > Execution Logs** to confirm both resolved; if blank, fix and have FlexOffers credit that conversion manually.
   - [x] **All FlexOffers test contacts deleted (July 30).** The live pipeline is clean. Note: no test contact was retained, so the WF-30 postback will be exercised for the first time on a real affiliate sale. Check WF-30 > Execution Logs the moment one lands.
 - [x] **Testimonial-form link on enyrgy.com:** DONE (July 28). Link added to the website.
@@ -134,14 +141,26 @@ Outcode is building two webhooks: one on user registration, one on completed ses
 
 **Scope note:** the V2 app absorbs nudges, milestone messaging, `sessions_10_complete` tagging and session-based segmentation, so do NOT build those in GHL. Map the payload to contact fields and stop. GHL keeps two things permanently: CRM context on the contact record, and deep-lapse reactivation, because the app can only reach users who still open the app.
 
-## 4d. Inbound reply visibility (found and part-fixed August 2, 2026)
+## 4d. Inbound reply visibility: RESOLVED August 4, 2026
 
 - [x] **Conversation Notifications: Email enabled on all six rows.** They had In-App only, which renders inside GHL and nowhere else, so replies to GHL-sent email were invisible unless already logged in. A reply to the Q2 investor update was nearly missed this way. SMS left off deliberately; email reaches the same phone and watch with no per-segment cost.
-- [ ] **Test what the notification actually contains.** Reply to a GHL-sent email from a controlled address and check whether the alert carries the message text or only says one arrived. That decides the next item.
-- [ ] **Decide on a Customer Replied workflow.** If the built-in notification is terse, build one that sends the message body and contact link to `scott@enyrgy.com`, same pattern as WF-26, so replies can be triaged from the inbox rather than by going into GHL.
+- [x] **Tested Aug 3 and 4. The built-in notification carries no message text.** A reply containing the marker `PURPLE-ELEVEN` produced a notification with no trace of it. **Worse, its reply path is a trap:** GHL sends the notification as though it came from Scott, so hitting reply addresses `scott@mg.enyrgy.com`, Scott's own address on the sending subdomain. It reaches nobody and nothing errors. That is very likely what created a junk contact for `scott@enyrgy.com`, see section 4e.
+- [x] **WF-35 Customer Replied Notification BUILT, LIVE and fully verified (Aug 3-4).** Unfiltered trigger so every inbound channel is covered, If/Else on assigned user so the alert follows whoever owns the contact rather than a hardcoded name, message body and contact link included. Full capture in `campaigns/WF-35-customer-replied.md`.
+- [x] **Allow Re-Entry verified ON.** Two replies from the same contact produced two enrollments and two notifications. Had it been off, only a contact's first ever reply would have notified anyone while the workflow appeared to work.
+- [x] **Duplicate notifications resolved.** Conversation Notification rows 1 and 3 switched from Email to In-App. In-App deliberately kept rather than off: a cold inbound from someone never emailed first is untested against the Customer Replied trigger, so the bell remains as a safety net.
+- [ ] **Open, low priority:** an unsubscribe link is appended to internal notifications. If clicked it may unsubscribe the recipient and silence reply notifications, presenting as the original problem. Do not click. Whether it can be suppressed at the location email-footer level is unresolved.
 - [x] **Missing testimonial: RESOLVED Aug 2, false alarm.** The message was a text saying they intended to send one, not a testimonial itself. Nothing was lost and nobody is owed a gift card. Worth noting the real lesson stands anyway: the reply was still only visible inside GHL, which is what prompted the notification fix above.
 
 **DO NOT repoint Reply-To to bypass GHL.** Stop-on-Response depends on GHL seeing replies. Route them around it and anyone who replies keeps receiving drip emails.
+
+## 4e. WF-01 was creating consumer leads from inbound email: FIXED August 4, 2026
+
+- [x] **The leak.** Any inbound email to `mg.enyrgy.com` from an address GHL did not recognise created a contact. WF-01 New Lead Router then routed it, and its last branch is `Default Consumer` "when none of the conditions are met", so it landed there and was tagged `type_consumer`, which triggers the Consumer Drip. **Auto-replies, out-of-office bounces, vendor mail and spam all qualified.** Nothing errored. Found when Scott's own address turned up in the drip with an Opportunity in the Consumer Product Pipeline.
+- [x] **Fixed.** WF-01's Device User Check now reads `Tags does NOT include source_device_app AND Email does not contain @enyrgy.com AND Tags does NOT include no_route`.
+- [x] **Verified in both directions.** The real risk in the fix was that an empty email field might evaluate as false on `does not contain`, trading a leak for a blackout on phone-only leads. A phone-only test contact received `type_consumer` normally, so empty passes.
+- [x] **Swept.** `Email contains @enyrgy.com` returned three records, all employees or contractors who are also device users, all carrying `drip_bypass` + `legacy_customer` from the Session 10 import and no `type_` tags. None was ever routed. `scott@enyrgy.com` was the only casualty and is deleted. Incident closed.
+- **`no_route` is the new permanent off-switch** for imports, tests, staff on other domains and partners. It replaces the old practice of unpublishing WF-01 and remembering to republish it, which was itself a hazard: a silently unpublished router stops routing everything.
+- **NOTE for future sessions:** `drip_bypass` does NOT stop WF-01. It is read at the Bypass Check inside each of the five drips, not by the router. This caused confusion once already.
 
 ## 5. Strategic architecture decisions (mostly ratify, not build)
 
@@ -163,9 +182,10 @@ Outcode is building two webhooks: one on user registration, one on completed ses
 - [ ] **Form embeds:** Commercial Inquiry + Partner Application forms onto go.enyrgy.com (developer).
 - [ ] **Upgrade the abandoned-checkout Railway service off trial** (may already be on Hobby; confirm).
 
-## 6b. Content backup gap (identified July 31)
+## 6b. Content backup gap: CLOSED August 3, 2026
 
-- [ ] **Export the drip email copy into the repo.** All the campaign email copy for WF-11 through WF-29 (consumer drip, the five magnet nurtures, Winter, Recovery, Synthesis Gap, Vitamin D Assessment, testimonial, abandoned cart, investor drip) exists **only inside GHL**. It is not version-controlled, not searchable, and not reliably recoverable: Account Snapshots capture workflow structure but not email bodies in a diffable form. Only two content sets are currently backed up: the five agent templates in `Enyrgy_Agent_Email_Templates_v1.md` and the five landing pages in `lead-magnets/`.
+- [x] **DONE. All 19 workflows captured into `campaigns/`, 94 touches, 83 corrections applied.** Every live email and SMS in the GHL account now exists as `.md` + `.docx` with a per-workflow change log recording what was corrected and why. GHL remains the source of truth: change GHL first, then update the file. Three findings worth carrying forward are recorded in the handoff, chiefly that corrections declared fixed were repeatedly not fixed everywhere. Original entry below for context.
+- [x] ~~**Export the drip email copy into the repo.**~~ All the campaign email copy for WF-11 through WF-29 (consumer drip, the five magnet nurtures, Winter, Recovery, Synthesis Gap, Vitamin D Assessment, testimonial, abandoned cart, investor drip) exists **only inside GHL**. It is not version-controlled, not searchable, and not reliably recoverable: Account Snapshots capture workflow structure but not email bodies in a diffable form. Only two content sets are currently backed up: the five agent templates in `Enyrgy_Agent_Email_Templates_v1.md` and the five landing pages in `lead-magnets/`.
   - **Why it matters:** an entire session was spent compliance-auditing this copy (prohibited words, em-dashes, the guarantee-vs-lab-timeline decoupling, the light-does-five framing, FTC testimonial rules). That work lives in one place with no backup. A bad edit or an accidental workflow deletion loses it.
   - **Trigger that surfaced it:** could not answer "which workflow has the email with subject 'One trigger, three outputs'?" because there is nothing to search.
   - **Suggested shape:** one markdown file per workflow under a `campaigns/` directory, each email with its subject, body, and the WF number plus touch order. Roughly a session of work.
@@ -173,11 +193,12 @@ Outcode is building two webhooks: one on user registration, one on completed ses
 
 ## 7. Documentation hygiene
 
-- [x] **Sync the live `enyrgy-knowledge-base` Company Skill to the repo KB:** DONE (Aug 1, 2026), skill now matches commit `95f41a40`. Six targeted find/replace edits, verified after save. **Standing method:** run `git log <last-synced-commit>..HEAD -- Enyrgy_Paperclip_Knowledge_Base.md`, apply only those hunks in Skill Studio, never select-all-paste, then reopen and confirm the body saved and the frontmatter appears exactly once. **Record the synced commit hash in the handoff documents table every time**, otherwise the next session cannot tell what the live skill actually contains.
+- [x] **Sync the live `enyrgy-knowledge-base` Company Skill to the repo KB:** DONE (Aug 4, 2026), skill now matches commit `42090226`. That sync carried nine targeted edits: users-not-customers, Brian Cameron CFO as a former securities regulator, the manual referral mechanism, contact@enyrgy.com, the pilot-to-study rule plus "the five participants", the three advisor bios with publication figures, and the approved one-in-four wording. **The last one mattered most:** "in these trials" is only unambiguous beside the citation, and an agent lifting the phrase into an email leaves the citation behind, so the reader parses it as Enyrgy's own trials. Earlier syncs: Aug 2 `17c553b7`, Aug 2 `2f4fb933`, Aug 1 `95f41a40`. Six targeted find/replace edits, verified after save. **Standing method:** run `git log <last-synced-commit>..HEAD -- Enyrgy_Paperclip_Knowledge_Base.md`, apply only those hunks in Skill Studio, never select-all-paste, then reopen and confirm the body saved and the frontmatter appears exactly once. **Record the synced commit hash in the handoff documents table every time**, otherwise the next session cannot tell what the live skill actually contains.
 
 - [x] **Refresh the EA to v1.1 (July 28):** bumped to Version 1.1 with an authoritative "v1.1 Current-State Update" section that overrides the stale June-29 body (Shopify integration + WF-27/28/29, GBP live + WF-07 wiring, full Paperclip org + tuned heartbeats, toll-free SMS/CNAM/no-10DLC, content assets, addresses/business-category fixes, the reliability findings incl. the debunked phantom-completion, and the open agency-email item). A future pass can fold these line-by-line into each layer.
 - [ ] **IG loose ends:** WF-23/WF-24 numbering gap (confirm not unbuilt), Winter/Tired-Test URLs missing from the Key URLs table, blank team contact fields (Dennis Lan, Dario Pompeii, Millie Carrillo, Thea Cartier).
 - [ ] **WIP:** correct the "24-agent" count to "16-agent core (22 with additions)."
+- [x] **Campaign copy backed up:** see 6b. Standing Rule 9 added to the handoff, save the artifact and not a description of it.
 
 ## 8. Standing operating discipline (adopted Session 15)
 

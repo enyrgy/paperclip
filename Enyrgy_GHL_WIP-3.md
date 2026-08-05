@@ -13,7 +13,10 @@ Last Updated: July 28, 2026 (Session 15). See `Enyrgy_Master_TODO.md` for the co
 | All Drip Campaigns (5) | Published |
 | All Core Workflows (10) | Published |
 | SMS / A2P | Toll-free SMS APPROVED (888-316-1695, July 28) + Voice Integrity + SHAKEN/STIR. NO 10DLC/local number exists on the account. |
-| Contact Import | Complete - 617 existing customers imported (Session 10) |
+| Contact Import | Complete - 617 existing customers (Session 10) + 57 current investors (Session 16) |
+| Campaign Copy Backup | **COMPLETE (Session 16, Aug 3).** All 19 workflows in `campaigns/`, 94 touches, 83 corrections applied. Every live email and SMS is version-controlled as .md + .docx with a per-workflow change log. GHL stays the source of truth: change GHL first, then the file. |
+| Inbound Reply Visibility | **RESOLVED (Session 16, Aug 4).** WF-35 Customer Replied Notification live and fully verified. GHL's built-in notification carries no message text and its reply path reaches nobody. Conversation Notification rows 1 and 3 moved from Email to In-App. |
+| WF-01 Inbound Contact Leak | **FIXED (Session 16, Aug 4).** Inbound mail to mg.enyrgy.com from an unrecognised address created a contact that WF-01 routed to Default Consumer and tagged `type_consumer`, enrolling it in the Consumer Drip. Guard now excludes `@enyrgy.com` and the new `no_route` tag. Swept: only `scott@enyrgy.com` was affected, deleted. |
 | Vitamin D Assessment Lead Magnet | LIVE - WF-21 capture + WF-22 nurture (Session 9) |
 | Testimonial Collection System | LIVE - form video field, WF-25, WF-26 (Session 10) |
 | Shopify / GHL Integration | LIVE (Session 11): native connector + WF-27 + WF-28 fulfillment + WF-29 abandoned-checkout recovery (Railway service). Remaining: upgrade Railway off trial |
@@ -21,6 +24,7 @@ Last Updated: July 28, 2026 (Session 15). See `Enyrgy_Master_TODO.md` for the co
 | Paperclip Agent Org (17 agents) | GO-LIVE IN PROGRESS (Session 15): heartbeats staged and tuned. ON: Sentinel 24h, Quality Control daily, Dispatcher 8h, Sales Outreach 1h, SDR 2h, Reactivation 6h, KB Manager 30d. Held (volume-gated, enable when volume ramps; daily is plenty): Referral and Reviews (block trimmed - review/testimonial live, referral paused), Sales Scout, CSM. Execs + Audit/PRD/Onboarding stay event-driven (timer OFF). |
 | Toll-Free A2P Verification (888) | APPROVED (July 28, 2026) - validated for SMS. SMS can now send from 888-316-1695. |
 | Paperclip Agent Setup | Phase 2 build COMPLETE (Sessions 12-13). Now operating: approval-card UX + ask-first policy + toggle-bug fixed (Session 15). Standing rule: keep Anthropic credit buffered and budgets with headroom - starvation multiplies cost and causes agent confabulation. |
+| FlexOffers Affiliate | Publisher migration COMPLETE (Aug 4). **URGENT: disable creative #6673701 and deactivate old program #247334** before YourTango begins promoting Wed Aug 5. A publisher already tried to grab the old creative, which has no S2S tracking. |
 | External Tasks | Multiple Pending - see Enyrgy_Master_TODO.md |
 
 ---
@@ -167,6 +171,10 @@ Last Updated: July 28, 2026 (Session 15). See `Enyrgy_Master_TODO.md` for the co
 | SMS workflows inactive | Resolved | Toll-Free A2P approved Jul 28 | All SMS touches now active |
 | From Number field missing in SMS actions | Resolved | Toll-Free A2P approved Jul 28 | From Number confirmed active and working |
 | SHAKEN/STIR not configured | Resolved | Approved & Verified | Confirmed working - prevents spam tagging on outbound calls |
+| Inbound email created consumer leads | High | RESOLVED (Aug 4) | Any inbound mail to mg.enyrgy.com from an unrecognised address created a contact; WF-01's `Default Consumer` fallthrough tagged it `type_consumer` and enrolled it in the Consumer Drip. Auto-replies, bounces, vendor mail and spam all qualified, and nothing errored. Guard extended to exclude `@enyrgy.com` and `no_route`. Verified phone-only leads still route. |
+| Built-in reply notification reaches nobody | Medium | MITIGATED (Aug 4) | GHL sends it as though from Scott, so replying addresses `scott@mg.enyrgy.com`, his own sending-subdomain address. Mail disappears with no error. WF-35's notification states this explicitly in its body. Cannot be fixed at source; the warning is the mitigation. |
+| Unsubscribe link on internal notifications | Low | OPEN | GHL appends one to workflow internal notifications, including those going to staff. If clicked, the recipient may be marked unsubscribed and reply notifications stop silently, presenting as the problem WF-35 was built to fix. Do not click. Suppression at the location email-footer level unresolved. |
+| `{{contact.link}}` rejected by the editor | Low | RESOLVED (Aug 4) | The field is valid; WF-02 uses it and saves clean. The rich-text editor auto-links it when you press space or Enter after the closing braces, wrapping it in an `<a>` tag and tripping validation. Type the line then click away, or use the `</>` source view. |
 
 ---
 

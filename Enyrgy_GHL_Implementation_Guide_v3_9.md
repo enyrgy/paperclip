@@ -6,9 +6,11 @@
 
 AI-Powered Sales, Marketing & Revenue Automation
 
-Powered by Paperclip Autonomous Agents · Version 3.9.3
+Powered by Paperclip Autonomous Agents · Version 3.9.4
 
-**Consumer Unit $2,995 · Commercial Unit $8,950 · 600+ Customers · 25,000+ Treatments**
+**Consumer Unit $2,995 · Commercial Unit $8,950 · 600+ Users · 25,000+ Treatments**
+
+**v3.9.4 (August 4, 2026) changes:** `no_route` added to the tag taxonomy (Section 9); WF-01's guard documented (Section 12); WF-30 to WF-35 added to the workflow register; "600+ Customers" corrected to "600+ Users" here and in Section 1, since a home unit supports up to six users and the two are not interchangeable. **Live campaign copy is no longer documented here.** It lives in `campaigns/`, one file per workflow, captured from GHL and version-controlled.
 
 Product Sales · Investor Capital · OEM/White-Label Partners · Vendor Network
 
@@ -594,7 +596,7 @@ Convention: category_value (lowercase, underscores).
 
 -   **ICP (consumer funnel):** icp_stack_optimizer · icp_athlete · icp_energy_sleep · icp_sad
 
--   **Lifecycle & Compliance:** unit_ordered · unit_shipped · unit_activated · sessions_10_complete · review_requested · review_given · referral_given · referral_rewarded · contract_sent · contract_signed · nda_signed · loi_signed · accredited_verified · ppm_sent · investment_committed · investment_funded · do_not_contact · compliance_reviewed · medical_claim_risk · requires_human_review · reactivation_sequence · unsubscribed · vip · ambassador · investor_warm · **drip_bypass**
+-   **Lifecycle & Compliance:** unit_ordered · unit_shipped · unit_activated · sessions_10_complete · review_requested · review_given · referral_given · referral_rewarded · contract_sent · contract_signed · nda_signed · loi_signed · accredited_verified · ppm_sent · investment_committed · investment_funded · do_not_contact · compliance_reviewed · medical_claim_risk · requires_human_review · reactivation_sequence · unsubscribed · vip · ambassador · investor_warm · **drip_bypass** · **no_route** · **source_device_app**
 
 # SECTION 10: PIPELINES
 
@@ -631,6 +633,12 @@ Convention: category_value (lowercase, underscores).
   ----------------------------------------------------------------------------------------------------------
 
 ## Bypass Logic
+
+**Two different switches. Do not confuse them, this has caused confusion once already.**
+
+-   **`drip_bypass` stops DRIPS, not routing.** It is read at the Bypass Check that opens each of the five drips. WF-01 New Lead Router does not check it, so a contact carrying `drip_bypass` is still routed and still receives `type_consumer`.
+
+-   **`no_route` stops WF-01 (added August 4, 2026).** It is the permanent off-switch for imports, tests, staff on other domains, and partners. It replaces the old practice of unpublishing WF-01 during an import and remembering to republish it, which was itself a hazard: a silently unpublished router stops routing everything with nothing erroring.
 
 -   Apply drip_bypass + investor_warm to skip cold drip and enroll in the warm sequence.
 
@@ -703,7 +711,7 @@ ATTORNEY CONFIRMED: Touch 7 PPM fires after intro meeting is marked complete. No
   -----------------------------------------------------------------------------------------------------------------------------------------------------------------
   **Workflow**                           **Trigger**                      **Status**        **v3.7 change**
   -------------------------------------- -------------------------------- ----------------- -----------------------------------------------------------------------
-  WF-01 New Lead Router                  Contact Created                  Published         ---
+  WF-01 New Lead Router                  Contact Created                  Published         **GUARDED (Aug 1 and Aug 4).** After Wait 1 Minute, a Device User Check continues only when `Tags does NOT include source_device_app AND Email does not contain @enyrgy.com AND Tags does NOT include no_route`; otherwise END. The device clause keeps Outcode-created users out of lead nurture. The domain and no_route clauses close the leak where inbound mail to mg.enyrgy.com created contacts that fell through to `Default Consumer` and entered the Consumer Drip.
 
   WF-02 5 Minute First Response          type_consumer tag applied        Published         **Gated: If/Else skips contacts with drip_bypass**
 
@@ -762,6 +770,19 @@ ATTORNEY CONFIRMED: Touch 7 PPM fires after intro meeting is marked complete. No
 | WF-27 Shopify New Customer Tagging | Shopify order placed | Shield new buyers from lead nurture, flag as customer | applies drip_bypass, source_shopify, status_customer. Re-Entry On |
 | WF-28 Shopify Order Fulfilled | Order fulfilled | Apply unit_shipped to trigger WF-06 onboarding | Re-Entry On |
 | WF-29 Abandoned Checkout Recovery | Inbound Webhook (from Railway service) | 3-email reassurance recovery, buyer stop-check | tags abandoned_checkout, drip_bypass, source_shopify. Re-Entry On, Stop on Response On |
+
+## WF-30 through WF-35 (added Sessions 15 and 16)
+
+| Workflow | Trigger | Purpose | Notes |
+|----------|---------|---------|-------|
+| WF-30 FlexOffers Sale Postback | Shopify Order fulfilled (Home System filter) | Fire the S2S postback that pays the affiliate $600 | `{{order.number}}` and `{{order.subtotal_price}}` remain UNVERIFIED. Check Execution Logs on the first real affiliate sale. |
+| WF-31 FlexOffers First Touch | **Contact Created** (unfiltered) | Enforce first-in + new-contacts-only attribution | Wait 2 minutes so custom fields finish writing, then copy `flexoffers_refid_incoming` to `flexoffers_refid` only when the latter is empty. **A second Contact Created trigger, which the Session 10 audit predates. Any import must re-check for Contact Created triggers rather than trusting that audit.** |
+| WF-32 / 33 / 34 Device App Integration | Inbound Webhook (Outcode) | New users on existing devices | **NOT BUILT.** Awaiting Outcode. Spec sent, four webhook URLs delivered. WF-01's `source_device_app` guard is already in place ahead of it. |
+| WF-35 Customer Replied Notification | **Customer Replied** (no filters) | Put the actual reply text in an email to whoever owns the contact | LIVE and fully verified Aug 4. If/Else on `Assigned user Is not empty`; the None branch notifies Scott with a `NO OWNER:` subject prefix. Allow Re-Entry ON, verified. Full capture in `campaigns/WF-35-customer-replied.md`. |
+
+**Why WF-35 exists.** GHL's built-in Conversation Notification carries no message text, proven with a marker string, and its reply path addresses `scott@mg.enyrgy.com`, Scott's own sending-subdomain address, so replying to it reaches nobody without erroring.
+
+**Live campaign copy is not in this guide.** Every email and SMS across all 19 workflows lives in `campaigns/`, one file per workflow, captured from GHL with a per-workflow change log. GHL remains the source of truth: change GHL first, then update the file.
 
 **Testimonial routing tag:** `seg_facility` is a neutral segmentation tag used only by WF-25's If/Else. It is deliberately NOT a drip trigger, so tagging facilities never enrolls them in the Commercial Drip.
 
