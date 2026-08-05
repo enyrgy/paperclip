@@ -166,6 +166,17 @@ Outcode is building two webhooks: one on user registration, one on completed ses
 - **`no_route` is the new permanent off-switch** for imports, tests, staff on other domains and partners. It replaces the old practice of unpublishing WF-01 and remembering to republish it, which was itself a hazard: a silently unpublished router stops routing everything.
 - **NOTE for future sessions:** `drip_bypass` does NOT stop WF-01. It is read at the Bypass Check inside each of the five drips, not by the router. This caused confusion once already.
 
+## 4f. Weekly Content Engine (spec received August 4, 2026)
+
+Scott supplied `Enyrgy_Weekly_Content_Engine_Spec.md`, the outbound marketing agent he built for another company, to be rebuilt on Enyrgy's Paperclip / Railway / GHL stack. Verified against the live corpus; agent block 17 drafted in `Enyrgy_Paperclip_Agent_Instruction_Blocks.md`, **not hired.**
+
+- [ ] **BLOCKING: load the January 2026 FDA Guidelines for Wellness Products into KB Section 11.** The KB has required this review since it was written but has never contained the document. The rule is binding and the substance is absent, so **no agent can actually perform the check**, and an agent asked to will either pass it silently or invent the criteria. This is not specific to the content engine; it applies to every agent that composes client-facing copy, and it has been latent the whole time. **Scott to supply the document or an authoritative summary.** A link is not sufficient for agents that cannot browse; the operative content has to be in the KB the way the prohibited-words list is.
+- [ ] **Retire "zero paid advertising to date" the day the first ad runs.** Ads are deliberately in scope, since the raise is explicitly for advertising. The claim appears in **KB Sections 1 and 6**, in live drip copy, and in the **Q2 2026 investor update**, which describes Thea Cartier's role as "extending the zero-paid-ads engine." It was true and is a real credibility asset while it lasts, but it cannot outlive the first ad. **Retiring it late is the failure mode:** a true differentiator becomes a false claim in copy already in the field. Grep `campaigns/` and the KB before the first campaign goes live.
+- [ ] **Decide how this agent relates to Thea Cartier**, who is a real hire owning organic social and was named to investors. Drafts for her to edit and ship, covers what she does not, or Scott is the sole gate. His "for my review and posting" settles the gate but not her remit.
+- [ ] **Decide whether blog and email stage as GHL drafts** or come out as review packages like social. Social is settled: nothing auto-posts, no channel is connected, and none will be.
+- [ ] Confirm GHL Blogs is enabled on the sub-account, if blog stays in GHL.
+- [ ] Pick the Monday hour, then build: marketing project, hire from block 17, routine with `schedule` + manual `api` triggers, dry run, go live.
+
 ## 5. Strategic architecture decisions (mostly ratify, not build)
 
 - [ ] **Shopify to GHL purchase sync:** the EA flags this as the top gap, but it predates the Session 11 native integration + WF-27/28/29, which largely built it. Reconcile the EA and ratify rather than rebuild.
