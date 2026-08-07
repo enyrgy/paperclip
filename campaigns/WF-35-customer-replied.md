@@ -18,6 +18,8 @@ Customer Replied (no filters, so every inbound channel)
        |- None                                     -> Notify Scott, No Owner
 ```
 
+**Calls and voicemails also fire this workflow, and that is a known live issue (Aug 7).** With no filter, an inbound call triggers it and `{{message.body}}` renders as the literal string `undefined`, since there is no message. Four spam voicemails produced four such notifications. **The fix is NOT to filter the call channel out.** Those same notifications are what surfaced a silenced business line that was swallowing every inbound call, so filtering would restore exactly the silence that had to be found by accident. Branch on an empty message body and send a call-specific notification naming the number. Tracked in `Enyrgy_Master_TODO.md` section 4e-2.
+
 **No trigger filter, deliberately.** Unfiltered the trigger covers email, SMS, and any Facebook, Instagram or GMB channel connected later. Every channel a filter excludes becomes a silent loss path, which is the exact failure this workflow was built to end. The July testimonial that went missing was an SMS, so SMS is a proven loss path and not a hypothetical one.
 
 **`Is not empty` rather than naming a user.** Branch 1 follows whoever owns the contact, so when a second sender is added nothing here needs editing. Naming a user works today and breaks silently the first time someone else sends.

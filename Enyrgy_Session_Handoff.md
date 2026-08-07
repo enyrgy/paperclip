@@ -178,13 +178,16 @@ New in S3 and worth knowing it exists: **credit-based membership guidance.** Whe
 
 **The general case is the problem.** Any inbound email to `mg.enyrgy.com` from an unrecognized address creates a contact. WF-01 New Lead Router then routes it, and because its last branch is `Default Consumer` "when none of the conditions are met", it lands there and gets tagged `type_consumer`, which is a Consumer Drip trigger. **Auto-replies, out-of-office bounces, vendor mail and spam all become consumer leads receiving live drip email.** Nothing errors at any point.
 
-**The fix, ten minutes.** WF-01's Device User Check condition becomes:
+**The fix.** WF-01's Device User Check condition is now, after a third pass on Aug 7:
 
 ```
 Tags does NOT include source_device_app
   AND Email does not contain @enyrgy.com
   AND Tags does NOT include no_route
+  AND Email is not empty
 ```
+
+**The fourth clause was added Aug 7 after inbound spam calls did the same thing email had done.** GHL creates a contact for every inbound call, WF-01 routed them to `Default Consumer`, and four robocalls became four consumer leads with four Opportunities. Routing an email-less contact accomplishes nothing anyway: the Consumer Drip cannot send without an email, and WF-02's SMS gate blocks the text without consent. Verified by the inverse of the Aug 4 test, a phone-only contact that previously came back tagged `type_consumer` now receives no tags at all.
 
 The domain rule alone would have prevented this and needs no maintenance. `no_route` becomes the permanent off-switch for imports, tests, staff on other domains, and partners, replacing the current practice of unpublishing WF-01 and remembering to republish it. That practice is itself a hazard: a silently unpublished router means new leads stop being routed at all, with nothing erroring.
 
