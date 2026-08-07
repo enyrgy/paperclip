@@ -13,12 +13,19 @@
 
 ```
 Customer Replied (no filters, so every inbound channel)
-  -> If/Else "Has Assigned User"
-       |- Has Owner (Assigned user  Is not empty)  -> Notify Assigned User
-       |- None                                     -> Notify Scott, No Owner
+  -> If/Else "Has Assigned User"   (branches evaluated top to bottom, first match wins)
+       |- 1. Call or Voicemail  (Replied message  Is empty)      -> Notify Scott, Inbound Call
+       |- 2. Has Owner          (Assigned user  Is not empty)    -> Notify Assigned User
+       |- 3. None                                                -> Notify Scott, No Owner
 ```
 
-**Calls and voicemails also fire this workflow, and that is a known live issue (Aug 7).** With no filter, an inbound call triggers it and `{{message.body}}` renders as the literal string `undefined`, since there is no message. Four spam voicemails produced four such notifications. **The fix is NOT to filter the call channel out.** Those same notifications are what surfaced a silenced business line that was swallowing every inbound call, so filtering would restore exactly the silence that had to be found by accident. Branch on an empty message body and send a call-specific notification naming the number. Tracked in `Enyrgy_Master_TODO.md` section 4e-2.
+**Branch order is the design, not a detail.** GHL takes the first matching branch. If `Call or Voicemail` sat second, a call from a contact who happens to have an owner would fall into `Has Owner` and produce the `undefined` notification again, just rarely enough to be hard to spot.
+
+**The condition field is `Replied message`, operator `Is empty`.** A call or voicemail carries no message text and matches; an email or SMS reply does not.
+
+**Calls and voicemails fire this workflow too, and are handled on their own branch (built Aug 7).** With no trigger filter an inbound call triggers Customer Replied, and `{{message.body}}` renders as the literal string `undefined` because there is no message. Four spam voicemails produced four such notifications.
+
+**Fixing it by filtering the call channel out would have been the wrong move, and the reason is worth keeping.** Those useless notifications are the only thing that surfaced a silenced business line swallowing every inbound call. Filtering would have restored exactly the silence that had to be found by accident. So calls stay in scope and get a branch of their own instead.
 
 **No trigger filter, deliberately.** Unfiltered the trigger covers email, SMS, and any Facebook, Instagram or GMB channel connected later. Every channel a filter excludes becomes a silent loss path, which is the exact failure this workflow was built to end. The July testimonial that went missing was an SMS, so SMS is a proven loss path and not a hypothetical one.
 
@@ -26,7 +33,7 @@ Customer Replied (no filters, so every inbound channel)
 
 ---
 
-## Branch 1, Has Owner | Internal Notification
+## Branch 2, Has Owner | Internal Notification
 
 **To User Type:** Assigned owners -> Contact owner
 **Subject:** `Reply from {{contact.first_name}} {{contact.last_name}}`
@@ -47,7 +54,30 @@ Replying to this notification does not reach them.
 
 **The link sits directly above the warning on purpose.** "Replying does not reach them" is a dead end on its own. With the link above it, the sentence says where to go instead of only what not to do.
 
-## Branch 2, None | Internal Notification
+## Branch 1, Call or Voicemail | Internal Notification
+
+**Condition:** `Replied message` `Is empty`
+**To User Type:** Particular user -> Scott Hansbury
+**Subject:** `Inbound call: {{contact.phone}}`
+
+```
+An inbound call was logged on the business line.
+
+Phone: {{contact.phone}}
+Name: {{contact.first_name}} {{contact.last_name}}
+Email: {{contact.email}}
+
+If you did not take it, there is likely a voicemail waiting.
+
+Open the conversation: {{contact.link}}
+Replying to this notification does not reach them.
+```
+
+**It says "was logged", not "went to voicemail".** Customer Replied fires on the call event whether or not the call was answered, so asserting voicemail would sometimes be wrong.
+
+**Notifying Scott rather than the assigned owner is deliberate for v1.** The line is named "Scott's number" in GHL and calls to it are his. When a second sender is added this becomes a nested branch.
+
+## Branch 3, None | Internal Notification
 
 **To User Type:** Particular user -> Scott Hansbury
 **Subject:** `NO OWNER: Reply from {{contact.first_name}} {{contact.last_name}}`
@@ -103,6 +133,8 @@ Replying to this notification does not reach them.
 | 8:17 PM | Same test with WF-35 live | `NO OWNER: Reply from ZZ Test` delivered with the message body present. Correct branch, since the test contact had no owner. |
 | Aug 4, 7:01 AM | Reply from the contact's own Gmail | Enrolled 7:13:31, `Notify Scott, No Owner`, Finished. Notification carried `ORANGE-SEVEN`. |
 | Aug 4, ~7:20 AM | Second reply, same contact, same thread | Second enrollment, second notification carrying `BLUE-TWELVE`. **Allow Re-Entry confirmed.** |
+| Aug 7, AM | Four inbound spam voicemails, before the call branch existed | Four notifications reading `NO OWNER: Reply from` with an empty name and `undefined` as the body. Led to the call branch and, indirectly, to the silenced-business-line finding. |
+| Aug 7, PM | Live call to 888-316-1695 from Scott's mobile, allowed to reach voicemail | Phone rang showing 888-316-1695, and the notification arrived as `Inbound call:` with the number populated. **Confirms both the branch order and the caller-ID fix in one test.** |
 
 **Two false alarms during testing, both worth knowing about because both looked like workflow failures and neither was.**
 
