@@ -106,6 +106,8 @@ It is a one-time cost for something you use for years, not a monthly bottle you 
 
 And it supports up to six people in a household on the same unit. If two people in your home use it, the math changes again.
 
+It is also HSA/FSA eligible through Truemed, which may change the real cost to you.
+
 Here is the part that should matter most to someone who reads the research. You do not have to trust my math. Run it against your own labs: baseline before, retest at eight to twelve weeks, decide on data. And separately, there is a 30-day money-back guarantee, so if the platform is not for you, send it back inside 30 days without waiting on any of that.
 
 See the platform and the guarantee

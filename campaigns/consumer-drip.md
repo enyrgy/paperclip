@@ -177,7 +177,7 @@ Five sessions a week for five years is about 1,300 sessions. That puts it at $2.
 
 Set that next to what the supplement route already costs. Vitamin D pills run $600 to $1,200 a year, with no promise your body does much with them (in the trials, about one in four people were low responders). Five years of that is real money for one pathway with an open question attached.
 
-The platform opens all three pathways in two to four minutes, at $2.30 a session. If the up-front number is a stretch, financing is there.
+The platform opens all three pathways in two to four minutes, at $2.30 a session. If the up-front number is a stretch, financing is there, and it is HSA/FSA eligible through Truemed.
 
 If you want to talk it through for your situation, reply, or grab a 15-minute call here: Book a call.
 

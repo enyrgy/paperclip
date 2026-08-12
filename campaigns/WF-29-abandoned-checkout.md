@@ -48,7 +48,7 @@ Hi {{contact.first_name}},
 
 When people pause at this exact step, it is almost always one of two things. Let me take both off the table.
 
-The first is cost. It is a real investment, which is why you do not have to pay for it all at once. You can finance or rent it so it fits a monthly budget instead of a lump sum, and it is backed by a 30-day money-back guarantee. The decision is not permanent.
+The first is cost. It is a real investment, which is why you do not have to pay for it all at once. You can finance or rent it so it fits a monthly budget instead of a lump sum, and it is HSA/FSA eligible through Truemed. It is backed by a 30-day money-back guarantee. The decision is not permanent.
 
 The second is whether it will actually work for you. The honest test is your own labs. Check your vitamin D now, use the platform four to five days a week, and check again at eight to twelve weeks. That is long enough for the number to settle rather than just start moving.
 
@@ -60,6 +60,8 @@ Your cart is still here: {{inboundWebhookRequest.recovery_url}}
 **CORRECTED Aug 3.** Retest interval changed from four weeks to eight to twelve. See the change log.
 
 **Checked:** the study is disclosed as a small study of five with "small study, real numbers" attached. Financing and rental are both described as real options without quoting rates, which matches the KB constraint.
+
+**UPDATED Aug 9.** HSA/FSA eligibility added to the cost paragraph after Truemed approval. Uses the authorized phrasing "HSA/FSA eligible through Truemed" verbatim, with no reference to a Letter of Medical Necessity or any condition-or-treatment justification. Placed here first because this is the highest-intent moment in the funnel and cost is the named objection. Eligibility covers the Consumer Unit only, not the wall mount; the sentence sits in device-price context and does not imply cart-wide eligibility.
 
 **On the guarantee and the labs:** these do not need decoupling here. The guarantee answers the cost objection in one paragraph and the labs answer the does-it-work objection in the next, so they are separated by topic rather than presented as one timeline. That is why lengthening the retest created no coupling problem.
 

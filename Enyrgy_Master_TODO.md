@@ -113,15 +113,25 @@ The build is essentially done. What remains is finishing the go-live staging, a 
   - **Zero unsubscribes**, so all 57 remain eligible for Q3. No one to move to a manual fallback list.
 - [ ] **Q3 2026 investor update:** due by end of October 2026. Runbook is in the Session 16 handoff notes: duplicate MASTER, swap numbers, fill the pre-header (blank by default, does not carry from the test dialog), confirm From name reads **Scott Hansbury** not the raw address, select all 57, send once.
 
-## 4b. Truemed HSA/FSA eligibility (started August 1, 2026)
+## 4b. Truemed HSA/FSA eligibility (started August 1, 2026 — APPROVED August 2026)
 
-Signing up with Truemed so the Enyrgy system is HSA/FSA eligible. Truemed issues a Letter of Medical Necessity through their own practitioner network; Enyrgy makes no medical claims and that boundary must hold.
+**APPROVED.** The Enyrgy Vitamin D Primal Light Platform is HSA/FSA eligible through Truemed. Truemed issues a Letter of Medical Necessity through their own practitioner network; Enyrgy makes no medical claims and that boundary still holds — the LOMN mechanism is never described in Enyrgy copy.
+
+**Authorized phrasing, the only approved wording:** "HSA/FSA eligible through Truemed". Never justify the HSA angle with condition-or-treatment language, and never explain the Letter of Medical Necessity, regardless of what Truemed's own copy blocks say.
+
+**Scope: Consumer Unit only. The wall mount is EXCLUDED.** No copy may imply cart-wide eligibility. The commercial unit remains out of scope — a facility purchase is a business expense, not a personal medical one.
 
 - [x] **Task 1, product catalog:** Shopify product export submitted Aug 1. Business description (700 char limit) submitted, 647 chars, compliance-checked, states explicitly that Enyrgy is a wellness device making no medical claims.
 - [x] **Task 2, connect bank account** (Stripe Express): DONE Aug 1. Both Getting Started tasks complete; onboarding now sits with Truemed.
-- [ ] **WAITING ON TRUEMED: per-SKU eligibility determination, in writing.** The Shopify export includes accessories; a wall mount is unlikely to qualify the way the device does. The badge can only appear where eligibility is substantiated.
-- [ ] **Badge and copy placement.** The real compliance work. Truemed supplies copy blocks written for supplement brands comfortable with language Enyrgy prohibits. Every block goes through the prohibited-words check before it lands on a product page, in checkout, or in an email. Enyrgy may say "HSA/FSA eligible through Truemed"; it may NOT drift into condition-and-treatment language to justify the HSA angle.
-- [ ] **KB Section 3 payment options:** currently "paid in full, financed, or rented monthly". HSA/FSA joins that list once live, **and the live `enyrgy-knowledge-base` skill must be re-synced** or Sales Outreach keeps telling prospects there are three ways to pay.
+- [x] **Per-SKU eligibility determination: RECEIVED.** Consumer Unit eligible; **wall mount excluded**, as anticipated. The badge appears only where eligibility is substantiated.
+- [x] **Badge and copy placement: DONE Aug 9.** Applied live in GHL, then documented in the repo. Four placements, all consumer, all device-price context, all using the authorized phrasing verbatim:
+  - `campaigns/WF-29-abandoned-checkout.md` Touch 2, cost paragraph — highest-intent moment, cost is the named objection
+  - `campaigns/consumer-drip.md` Touch 8 ("What $2,995 works out to per session") — appended to the financing clause
+  - `campaigns/WF-17-long-term-nurture.md` Touch 4 ("Is $2,995 a lot for light?") — own short paragraph after the household-of-six line
+  - `Enyrgy_Paperclip_Knowledge_Base.md` §3 payment options
+  - **Deliberately excluded:** all SMS (speed-to-lead and awareness touches, not cost touches; the Consumer Drip SMS already runs ~254 chars / two segments), commercial and partner drips, and the WF-20 / WF-13 / WF-22 closes, whose closing beats are the guarantee and the mechanism rather than price.
+- [x] **KB Section 3 payment options: DONE Aug 9.** Now reads "paid in full, financed, rented monthly, or purchased with HSA/FSA funds through Truemed", with the authorized-phrasing rule and the wall-mount exclusion recorded inline.
+- [x] **Re-sync the live `enyrgy-knowledge-base` skill: DONE Aug 9.** Sales Outreach now answers with HSA/FSA in the payment options instead of the old three-ways-to-pay KB.
 - [ ] **Commercial-side question:** can a facility member use HSA/FSA against a membership that includes Enyrgy? That is the facility's transaction, not Enyrgy's, but it is directly relevant to the Beyond Wellness conversation. Worth answering before Gino comes back.
 
 **Note:** the commercial unit is sold off-Shopify so it is absent from the catalog upload. That is correct, not a gap. HSA/FSA is a personal medical expense; a facility buying a unit is a business purchase.
