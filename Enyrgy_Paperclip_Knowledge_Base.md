@@ -94,7 +94,7 @@ Do not paraphrase or embellish an advisor's credentials beyond these approved bi
 - 25,000+ sessions with zero adverse events.
 - In our clinical study, 100 percent of participants reached optimal Vitamin D levels.
 - 2.4x more efficient than sunlight for Vitamin D synthesis.
-- The app reads your skin type, sets your dose, and ends the session for you.
+- The app determines your skin type, sets your dose, and ends the session for you.
 - Under 1 percent of people send it back. The industry lives at 5 to 10 percent.
 - Built in Phoenix, Arizona. Made in USA.
 - 600+ users, 5 countries, zero paid ads.
@@ -108,7 +108,7 @@ Do not paraphrase or embellish an advisor's credentials beyond these approved bi
 
 **Consumer**
 
-- Is this safe? Fair worry. Sunlight is about 95 percent UVA. We flipped it: over 90 percent UVB, under 10 percent UVA. The app reads your skin type, sets your personal dose, and ends the session for you. 25,000+ sessions in, zero burns, zero adverse events.
+- Is this safe? Fair worry. Sunlight is about 95 percent UVA. We flipped it: over 90 percent UVB, under 10 percent UVA. The app determines your skin type, sets your personal dose, and ends the session for you. 25,000+ sessions in, zero burns, zero adverse events.
 - I already take supplements. Supplements are one lane, Vitamin D, and only if your body responds to it. In research clinical trials, about one in four participants were low responders to vitamin D supplementation. Enyrgy opens all three lanes, Vitamin D, nitric oxide, and serotonin, in 2 to 4 minutes.
 - $2,995 is a lot. It reads big until you run it per use. $2.30 a session over 5 years at 5 a week. Supplements cost $600 to $1,200 a year with no promise your body uses them. Financing is there if you want it, and under 1 percent of people return it.
 - I will just go outside. Going outside works if you have 2 to 4 hours of mid-day sun to spare, plus the UVA aging and skin risk that rides along. Enyrgy gets you there in 2 to 4 minutes, about 60x the efficiency, without the downside.

@@ -22,7 +22,7 @@ You came by enyrgy.com. So you already suspect the supplement route is not quite
 
 Here is what your body forgot it knew. Given the right light, it makes vitamin D, nitric oxide, and serotonin on its own, all three, in the time it takes to brush your teeth. That light is the Enyrgy Vitamin D Primal Light Platform. Two to four minutes. The same vitamin D from actual sun is two to four hours, plus the burn and the aging you did not sign up for.
 
-What keeps it safe is the app. It reads your skin type, picks your dose, and shuts the session off for you. Nobody stands there guessing. Twenty five thousand sessions, zero burns, zero adverse events.
+What keeps it safe is the app. It determines your skin type, picks your dose, and shuts the session off for you. Nobody stands there guessing. Twenty five thousand sessions, zero burns, zero adverse events.
 
 That is the whole pitch. The unit is here if you want to look: https://shop.enyrgy.com/products/uvb-light-therapy. Reply if you have a question. It lands on my desk, not a queue.
 
@@ -44,7 +44,7 @@ Your Enyrgy Vitamin D Primal Light Platform left here today. It is somewhere bet
 
 Register your users here: https://api.enyrgy.com/   When it lands, plug it in, turn it on and open the app, click the center button and scan the QR code.
 
-That is the whole game. The app reads your skin type, sets your dose, and ends the session for you, so you are never the one watching a clock or guessing how long is too long.
+That is the whole game. The app determines your skin type, sets your dose, and ends the session for you, so you are never the one watching a clock or guessing how long is too long.
 
 Then you stand in it for two to four minutes. That is enough to open all three pathways, vitamin D, nitric oxide, and serotonin.
 
