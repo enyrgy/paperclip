@@ -63,6 +63,8 @@ That lands on the customers who liked the product enough to record a video, whic
 
 **Still worth confirming: is the weekly fulfillment running?** If it has lapsed, there may be people already holding the old promise.
 
+**Answered 2026-08-13:** the `gift_card_pending` queue has always been empty, because WF-26 has never fired and nothing has ever been added to it. The weekly run has nothing to process. That is not reassuring — it means anyone from the Jul 20 batch who replied is owed a gift card that no queue knows about. See "This gap materialised" below.
+
 ---
 
 # Two structural gaps, neither fixable in the copy
@@ -78,6 +80,18 @@ The customer sends a video, hears nothing, and is never paid the thing they were
 This is not hypothetical. It is the same gap that made a testimonial impossible to locate on 2026-08-02, before that turned out to be a text message about an intention rather than a submission.
 
 **Anything arriving by reply still has to be tagged by hand** to enter the queue. Nothing in the system will prompt it. The WF-25 reorder reduces how often that happens; it does not remove the path.
+
+### This gap materialised, found 2026-08-13
+
+**WF-26 has never fired. Not once.** That is not a fault in this workflow — it is the downstream result of the Jul 20 batch.
+
+WF-25 sent to **15 hand-tagged contacts on Jul 20, 2026**, two weeks *before* the Aug 3 reorder. All 15 received the original copy that invited a reply twice and offered the form only for large files. The Customer Testimonial Form shows **one lifetime view** as of Aug 13, 2026.
+
+So the trigger condition for this workflow — Form Submitted — has never been met. Every consequence listed above went unpaid for anyone who replied: no tag, no queue entry, no notification, no thank-you, and no gift card, against an email that promised one.
+
+**The audit trail is the enrollment history, not this workflow.** Nothing here logs a failure, because from WF-26's perspective nothing happened. That is precisely what made the problem invisible for three weeks: a workflow that has correctly never run looks identical to one that is working and simply idle.
+
+Recovery steps are recorded in `WF-25-testimonial-request.md` under "The Jul 20 batch". The short version: triage the inbox for replies before touching any configuration, recover those by hand, then resend to non-repliers only.
 
 ## 2. Consent is captured on the form, not on the reply path
 
