@@ -217,7 +217,7 @@ Charge per modality, $49 to $125 a month per client depending on your market, or
 
 There is also a second revenue line, and it costs you nothing to carry.
 
-Some of your members will want one at home. You do not buy inventory or stock anything. You send them your unique link to our shop page, they purchase directly from us, and you are credited the commission on the sale.
+Some of your members will want one at home. You do not buy inventory or stock anything. You send them your unique link to our shop page, they purchase directly from us, and you are credited $600 on the sale.
 
 Because it is their own purchase rather than yours, the home platform is HSA/FSA eligible through Truemed. For a lot of members that changes what $2,995 actually costs them, which makes it a considerably easier yes.
 
@@ -241,7 +241,11 @@ Calendar Link
 
 **Cannibalization is answered structurally.** An earlier draft had the facility reselling units, which raised the obvious objection that selling a member a home unit costs the operator recurring revenue. As a zero-inventory referral, that objection barely forms.
 
-**Still open: no commission figure.** Every other claim in this drip carries a number ($8,950, $49 to $125, six weeks to four months). "You are credited the commission" is the one unquantified claim in the email, and it is the sentence an operator will actually weigh. Add a rate or per-unit amount once one is set.
+**RESOLVED Aug 14: the commission is $600 per Consumer Unit sale**, now stated in the copy. That was the last unquantified claim in an email where everything else carries a number.
+
+**The "15 referrals covers your unit" line was considered and deliberately left out.** $600 against the $8,950 device is 15 referrals, which is arithmetic from two approved figures and a strong argument. It was excluded because Touch 7 already carries a payback story from client fees (six weeks to four months), and a second payback frame in the same email muddies the first. Do not add it back without deciding which payback story leads.
+
+**Because $600 now ships in this email, every facility on the drip has the figure.** KB §14 accounts for that: an agent may confirm it if a facility quotes it back, but referral arrangements escalate to Scott, who handles them personally. Sales Outreach does not negotiate or extend terms.
 
 ---
 
