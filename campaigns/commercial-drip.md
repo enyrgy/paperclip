@@ -215,6 +215,14 @@ Here is what adding the Enyrgy Vitamin D Primal Light Platform looks like for yo
 
 Charge per modality, $49 to $125 a month per client depending on your market, or use it as the anchor service in your premium membership tier. Either way the device cost of $8,950 is recovered somewhere between six weeks and four months at 50 clients, depending which end of that range your market carries. Everything after that adds to your margin.
 
+There is also a second revenue line, and it costs you nothing to carry.
+
+Some of your members will want one at home. You do not buy inventory or stock anything. You send them your unique link to our shop page, they purchase directly from us, and you are credited the commission on the sale.
+
+Because it is their own purchase rather than yours, the home platform is HSA/FSA eligible through Truemed. For a lot of members that changes what $2,995 actually costs them, which makes it a considerably easier yes.
+
+One distinction worth being precise about: that eligibility belongs to the member, not to the facility. It applies to an individual buying their own unit. It does not apply to what your facility buys, or to membership and session fees.
+
 I would love to show you the full picture in a 20-minute call.
 
 Book here:
@@ -224,6 +232,16 @@ Calendar Link
 ```
 
 **Links:** `Calendar Link` -> **Commercial Discovery**
+
+**UPDATED Aug 14.** Added the referral revenue line after Truemed confirmed the commercial-side determination. Live in GHL.
+
+**The wording is load-bearing. Do not shorten "purchase directly from us" to "buy through you."** Eligibility turns on **who the buyer of record is**, not on whether a facility was involved. A facility buying units for its business is a business expense and is NOT eligible, which is what Truemed ruled out. An individual buying their own Consumer Unit at `shop.enyrgy.com` through the facility's unique referral link IS eligible, because the consumer is the purchaser and the facility is credited as referrer rather than reseller. "Buy through you" describes the excluded arrangement and would make the claim false.
+
+**The fourth paragraph is not padding.** Without it an operator can read the offer as "we can put our own unit on HSA," which is the exact inference to prevent. See KB §3 payment options and Master TODO §4b.
+
+**Cannibalization is answered structurally.** An earlier draft had the facility reselling units, which raised the obvious objection that selling a member a home unit costs the operator recurring revenue. As a zero-inventory referral, that objection barely forms.
+
+**Still open: no commission figure.** Every other claim in this drip carries a number ($8,950, $49 to $125, six weeks to four months). "You are credited the commission" is the one unquantified claim in the email, and it is the sentence an operator will actually weigh. Add a rate or per-unit amount once one is set.
 
 ---
 
