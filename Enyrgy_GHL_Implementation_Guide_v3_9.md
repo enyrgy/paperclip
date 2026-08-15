@@ -1123,7 +1123,7 @@ Podcast appearances (proven #1 channel), organic social (Vitamin D deficiency, s
 
 ## Investor Playbook, Pitch Flow
 
-1.  Company & Problem (5 min): 3.8B deficient worldwide, supplements fail 1 in 4, no scalable UVB solution.
+1.  Company & Problem (5 min): vitamin D runs low in 77 percent of indoor adults, about one in four trial participants were low responders to supplementation, no scalable UVB solution.
 
 2.  Solution & Technology (5 min): triple pathway, app-controlled, patented LED card, Made in Phoenix AZ.
 
