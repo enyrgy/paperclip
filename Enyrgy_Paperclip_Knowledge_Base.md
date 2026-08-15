@@ -176,6 +176,7 @@ The prohibited-words scan runs before every email, SMS, and voicemail across all
 - GHL tags: `type_partner` + `source_oem_lumanova` + `partnership_status active`.
 - Any OEM matter escalates through the CEO to the human founders.
 - Partner arrangements offered: Enyrgy offers both white-label (a partner sells the platform under their own brand, as Lumanova does) and distribution (a partner distributes to other facilities). Both are real, offered arrangements. Specific terms are handled per deal; confirm with the CEO before quoting figures.
+- **Facility referral commission: $600 per Consumer Unit sale.** A facility hands its members a unique referral link to `shop.enyrgy.com`. The member purchases directly from Enyrgy at the $2,995 MSRP and the facility is credited **$600** on that sale. The facility carries no inventory and buys nothing. This is the one partner figure that IS approved for quoting; white-label and distribution terms are still per-deal and go to the CEO. Because the member is the buyer of record, that purchase is HSA/FSA eligible (see §3) — the referral link does not change whose purchase it is.
 
 ## 15. Key reference facts (quick lookup)
 
