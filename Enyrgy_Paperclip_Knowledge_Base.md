@@ -163,6 +163,7 @@ The prohibited-words scan runs before every email, SMS, and voicemail across all
 ## 13. Investor offering details
 
 - Structure: Private Credit, Promissory Note.
+- **Current company valuation: $10M.** This is the company's present valuation. It is **not** the basis for the conversion discount below, which discounts from an independent SEC valuation obtained at the time of conversion. Do not present $10M as a conversion price or imply the two are the same number.
 - Total raise: $3.5M. Minimum: $50,000. Return: 12 percent per annum. Term: 3 years.
 - Interest paid quarterly (postponed the first 3 months).
 - Conversion option: at investor discretion, 20 percent discount from an independent SEC valuation.
