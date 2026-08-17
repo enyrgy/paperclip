@@ -159,7 +159,7 @@ customers to Enyrgy and earn commission on every sale. Best for companies that w
 We can structure this to fit your model. These are starting
 points, not fixed terms.
 
-The market opportunity is real. Vitamin D runs low in 77 percent of indoor adults. We have demand in 5 countries with zero paid advertising. We need distribution. You need differentiated products.
+The market opportunity is real. Vitamin D runs low in 77 percent of adults. We have demand in 5 countries with zero paid advertising. We need distribution. You need differentiated products.
 
 That sounds like a conversation worth having.
 
