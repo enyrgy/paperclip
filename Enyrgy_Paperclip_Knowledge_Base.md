@@ -78,6 +78,7 @@ Approved figures with sources:
 - Recovery: adequate vitamin D supports muscle repair and is associated with lower muscle-damage markers (creatine kinase, LDH, C-reactive protein) and less soreness after intense exercise; deficiency (under 30 ng/mL) is associated with impaired strength and slower recovery (Owens 2018; Caballero-Garcia et al., Nutrients 2021; Rojano-Ortega et al., JHND 2023).
 - Fracture healing: natural vitamin D synthesis supports bone callus formation and mineralization at fracture sites (Fischer et al., ECM 2018).
 - Dosing reference used in the research: roughly 10 to 15 minutes of midday sun, three times per week.
+- **Sunny climates do not prevent it (use this for the sun objection):** low vitamin D status is a problem even in countries with sun exposure all year round (Palacios C, Gonzalez L. "Is vitamin D deficiency a major global public health problem?" *J Steroid Biochem Mol Biol* 2014; PMC4018438, free to read). The paper's own Highlights state it verbatim: **"Low vitamin D status is a problem even in countries with sun exposure all year round."** Quote that line as written. **Three limits.** (1) It reports prevalence by region, age group and threshold and gives no single headline figure, so it CANNOT source the 77 percent. (2) It says nothing about UVB devices or phototherapy, so never present it as support for the platform itself, only for the problem. (3) 2014 data: fine for establishing that the phenomenon exists, not for current prevalence.
 
 ## 5. Advisory board
 
@@ -115,6 +116,7 @@ Do not paraphrase or embellish an advisor's credentials beyond these approved bi
 - I already take supplements. Supplements are one lane, Vitamin D, and only if your body responds to it. In research clinical trials, about one in four participants were low responders to vitamin D supplementation. Enyrgy opens all three lanes, Vitamin D, nitric oxide, and serotonin, in 2 to 4 minutes.
 - $2,995 is a lot. It reads big until you run it per use. $2.30 a session over 5 years at 5 a week. Supplements cost $600 to $1,200 a year with no promise your body uses them. Financing is there if you want it, and under 1 percent of people return it.
 - I will just go outside. Going outside works if you have 2 to 4 hours of mid-day sun to spare, plus the UVA aging and skin risk that rides along. Enyrgy gets you there in 2 to 4 minutes, about 60x the efficiency, without the downside.
+- We get plenty of sun here. Fair assumption, and testing settles it faster than arguing. Indoor work, sunscreen and window glass all block UVB at any latitude. A 2014 global review in the Journal of Steroid Biochemistry and Molecular Biology concluded that low vitamin D status is a problem even in countries with sun exposure all year round.
 - What does the FDA say? It is a wellness device, not a medical one, and we make no medical claims. The results sit on peer-reviewed science, and our advisory board includes Dr. Bruce Hollis.
 
 **Commercial**
