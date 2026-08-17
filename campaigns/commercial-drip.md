@@ -26,7 +26,7 @@ Massage. Sauna. Red light. Cryo. The list is the same down the street as it is a
 
 Here is what most facility owners do not know yet.
 
-There is a service category that none of your competitors offer. And the demand is already in your book: vitamin D runs low in 77 percent of adults.
+There is a service category that none of your competitors offer. And the demand is already in your book: about three-quarters of people have vitamin D below 30 ng/mL.
 
 Precision phototherapy.
 
@@ -96,7 +96,7 @@ Your clients are not just buying a service. They are buying a story. They want t
 
 That is exactly where the Enyrgy Vitamin D Primal Light Platform comes in.
 
-Vitamin D runs low in 77 percent of adults. They are buying supplements that may not be working. They are searching for a solution.
+About three-quarters of people have vitamin D below 30 ng/mL. They are buying supplements that may not be working. They are searching for a solution.
 
 Be the facility that has it.
 
@@ -151,7 +151,7 @@ Hi {{contact.first_name}},
 
 Here is something worth knowing about your client base.
 
-Vitamin D runs low in 77 percent of adults. That means the majority of the people walking through your doors right now are running low. Many of them already know it. They have had their levels tested. Their doctor told them to take supplements. The supplements are not working well enough.
+About three-quarters of people have vitamin D below 30 ng/mL. That means the majority of the people walking through your doors right now are running low. Many of them already know it. They have had their levels tested. Their doctor told them to take supplements. The supplements are not working well enough.
 
 They are searching for something better.
 

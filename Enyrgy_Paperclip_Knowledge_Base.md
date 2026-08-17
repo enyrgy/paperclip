@@ -123,7 +123,7 @@ Do not paraphrase or embellish an advisor's credentials beyond these approved bi
 **Commercial**
 
 - We already have red light. Ninety percent of our customers use both. They do different biological jobs, so this sits alongside what you already offer instead of replacing it.
-- Would clients pay? Vitamin D runs low in 77 percent of adults, so the demand is already in your book. Operators are charging $49 to $125 a month for it, depending on their market and clientele.
+- Would clients pay? About three-quarters of people have vitamin d below 30 ng/ml, so the demand is already in your book. Operators are charging $49 to $125 a month for it, depending on their market and clientele.
 - Staff training? It is included, and light. The app calculates each client's dose and runs the session itself.
 
 **Investor**

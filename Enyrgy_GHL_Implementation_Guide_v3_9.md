@@ -1117,13 +1117,13 @@ Podcast appearances (proven #1 channel), organic social (Vitamin D deficiency, s
 
 -   **We already have red light:** 90% of Enyrgy customers use both, different biological purposes. Upsell, not replacement.
 
--   **Would clients pay?:** Vitamin D deficiency affects 77% of adults. Operators charge $40-$75/session.
+-   **Would clients pay?:** About three-quarters of people have vitamin D below 30 ng/mL. Operators charge $40-$75/session.
 
 -   **Staff training?:** Included; the app calculates each client's MED and controls the session.
 
 ## Investor Playbook, Pitch Flow
 
-1.  Company & Problem (5 min): vitamin D runs low in 77 percent of adults, about one in four trial participants were low responders to supplementation, no scalable UVB solution.
+1.  Company & Problem (5 min): about three-quarters of people have vitamin D below 30 ng/mL, about one in four trial participants were low responders to supplementation, no scalable UVB solution.
 
 2.  Solution & Technology (5 min): triple pathway, app-controlled, patented LED card, Made in Phoenix AZ.
 
