@@ -95,6 +95,8 @@ P.S. Send yours in, a video or a couple of lines, and I will send a gift card to
 
 # The Jul 20 batch, found 2026-08-13
 
+> **CLOSED 2026-08-18.** Scott resent the testimonial request to this batch using the corrected, form-first copy. The record below is kept because it explains why WF-26 never fired and why Allow Re-Entry matters. One obligation outlives the close: if a reply from the original Jul 20 send ever surfaces, that person is still owed the gift card, and the gift card remains a material connection that must be disclosed at publication.
+
 **The reply-path gap described in WF-26 is not hypothetical. It happened, to 15 named people.**
 
 ## What the enrollment history shows
@@ -117,7 +119,7 @@ WF-26 triggers on Form Submitted, so it has correctly never fired: no `testimoni
 
 **Allow Re-Entry is Off**, so all 15 are permanently burned. Re-applying `request_testimonial` to any of them does nothing, silently. Re-sending the corrected copy to the original batch is impossible without changing that setting first.
 
-## Remediation
+## Remediation, as recorded before the close
 
 1. **Triage first.** Search the inbox for replies from those 15, Jul 20 onward. This matters more than any workflow fix: someone who recorded a video on request and got three weeks of silence is the worst possible outcome for the group most willing to advocate.
 2. **Recover each reply by hand.** Personal reply, apply `testimonial_submitted` and `gift_card_pending`, send the gift card. Read the reply for consent. The form carries the consent capture, replies do not, so each one must be checked individually before anything is published.

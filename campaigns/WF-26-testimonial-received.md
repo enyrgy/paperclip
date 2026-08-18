@@ -91,7 +91,7 @@ So the trigger condition for this workflow, Form Submitted, has never been met. 
 
 **The audit trail is the enrollment history, not this workflow.** Nothing here logs a failure, because from WF-26's perspective nothing happened. That is precisely what made the problem invisible for three weeks: a workflow that has correctly never run looks identical to one that is working and simply idle.
 
-Recovery steps are recorded in `WF-25-testimonial-request.md` under "The Jul 20 batch". The short version: triage the inbox for replies before touching any configuration, recover those by hand, then resend to non-repliers only.
+**Closed 2026-08-18.** The batch was resent with the corrected, form-first copy, so testimonials now arrive on the tracked path and this workflow can fire normally. The history is recorded in `WF-25-testimonial-request.md` under "The Jul 20 batch". Standing exception: a reply from the original Jul 20 send would still be owed a gift card, and would not appear in the `gift_card_pending` queue.
 
 ## 2. Consent is captured on the form, not on the reply path
 
