@@ -132,6 +132,26 @@ Learn about the platform  |  Get yours
 
 ---
 
+# Change log, 2026-08-18
+
+| # | Touch | Change |
+|---|---|---|
+| 1 | 4 | "Not a tanning bed, not a light box, not a red light panel" replaced with "Light boxes and red light panels each do something different" |
+
+**Live in GHL as of 2026-08-18.**
+
+## Naming the comparison plants it
+
+Scott's rule, and it is now in the brand style guide under Brand Positioning: never put the tanning-bed comparison in a prospect's mind, in any form, including a denial. A reader who was not thinking about tanning beds is thinking about them the moment the sentence names one, and the association survives the "not".
+
+This instance was the worse of the two found. It led with the comparison rather than mentioning it in passing, and it stacked three denials in a row, which reads as defensive about a charge nobody made.
+
+The two contrasts worth keeping are light boxes and red light panels. Customers genuinely conflate those with the platform, the distinction is real, and neither carries an association worth avoiding. Dropping only the first item leaves the sentence doing the same work with none of the cost.
+
+Answering the comparison is still correct when a prospect raises it first. The knowledge base objection script and the OSV staff talk track both handle it. The rule is about who introduces it.
+
+---
+
 # Change log, 2026-08-02
 
 | # | Touch | Change |

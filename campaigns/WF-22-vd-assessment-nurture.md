@@ -62,7 +62,7 @@ Or see the platform: Enyrgy Vitamin D Platform
 
 **CORRECTED Aug 3.** A stray `}` on the line after the signature was deleted. It rendered as a literal closing brace at the bottom of every send.
 
-**CORRECTED Aug 18.** "not a tanning bed" removed. Outbound copy must never raise the tanning-bed comparison, even to deny it, because naming it plants it. Answering the comparison is fine when a prospect raises it first; introducing it is not.
+**CORRECTED Aug 18.** "not a tanning bed" removed. See the change log. Outbound copy must never raise the tanning-bed comparison, even to deny it, because naming it plants it. Answering the comparison is fine when a prospect raises it first; introducing it is not.
 
 **Checked:** N=5 disclosed, the 25,000+ session figure and the one-session-a-day limit both match the KB.
 
@@ -95,6 +95,24 @@ Still have questions? Book a quick call: Book a Call
 **CORRECTED Aug 3.** Retest interval changed from four weeks to eight to twelve. See the change log.
 
 **GUARANTEE LANGUAGE ALREADY CORRECT.** "Deciding whether to keep the unit is separate and simpler" decouples cleanly without needing the standard phrasing. Second workflow running to need no correction here.
+
+---
+
+# Change log, 2026-08-18
+
+| # | Touch | Change |
+|---|---|---|
+| 1 | 2 | "This is precision phototherapy, not a tanning bed" narrowed to "This is precision phototherapy" |
+
+**Live in GHL as of 2026-08-18.**
+
+## The denial was carrying the association
+
+Outbound copy must never raise the tanning-bed comparison, even to deny it. Naming it plants it. The rule is now in the brand style guide under Brand Positioning, and the same sentence pattern was removed from WF-13 touch 4 on the same day.
+
+Deleting the clause costs nothing here, which is what made it an easy call. The safety answer never rested on the contrast: MED dosing to the reader's own skin type, the cutoff that ends the session, 25,000+ sessions with zero adverse events, and the one-a-day limit all survive untouched. The paragraph now answers the question on Enyrgy's own terms instead of by reference to something else.
+
+If a prospect raises the comparison, answer it. The knowledge base carries the script.
 
 ---
 
