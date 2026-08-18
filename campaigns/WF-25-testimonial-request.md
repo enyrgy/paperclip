@@ -99,7 +99,7 @@ P.S. Send yours in, a video or a couple of lines, and I will send a gift card to
 
 ## What the enrollment history shows
 
-15 contacts enrolled on **Jul 20, 2026, between 4:38 and 4:42 pm MST** — a hand-tagged batch. Enrollment reason `Request Testimonial`, current action `Email Consumer`, status `Finished` for all of them. The workflow did exactly what it was built to do. Six visible in the audit screenshot: yasushi takayama, victor allison, tom waite, robert allen, brendan witt, randy stoltz.
+15 contacts enrolled on **Jul 20, 2026, between 4:38 and 4:42 pm MST**, a hand-tagged batch. Enrollment reason `Request Testimonial`, current action `Email Consumer`, status `Finished` for all of them. The workflow did exactly what it was built to do. Six visible in the audit screenshot: yasushi takayama, victor allison, tom waite, robert allen, brendan witt, randy stoltz.
 
 **The problem is the date.** The Aug 3 correction that made the form lead postdates this send by two weeks, so all 15 received the *original* copy:
 
@@ -111,7 +111,7 @@ P.S. Send yours in, a video or a couple of lines, and I will send a gift card to
 
 The Customer Testimonial Form has **one lifetime view** as of Aug 13, 2026. Fifteen people were asked for a testimonial and effectively none were pointed at the tracked path.
 
-WF-26 triggers on Form Submitted, so it has correctly never fired: no `testimonial_submitted`, no `gift_card_pending`, no internal notification, no thank-you, **no gift card** — for anyone who did what the email asked and replied. That email promised a gift card explicitly. Nothing in the system recorded the promise or the response.
+WF-26 triggers on Form Submitted, so it has correctly never fired: no `testimonial_submitted`, no `gift_card_pending`, no internal notification, no thank-you, **no gift card**, for anyone who did what the email asked and replied. That email promised a gift card explicitly. Nothing in the system recorded the promise or the response.
 
 ## Why it then looked like the workflow was broken
 
@@ -120,7 +120,7 @@ WF-26 triggers on Form Submitted, so it has correctly never fired: no `testimoni
 ## Remediation
 
 1. **Triage first.** Search the inbox for replies from those 15, Jul 20 onward. This matters more than any workflow fix: someone who recorded a video on request and got three weeks of silence is the worst possible outcome for the group most willing to advocate.
-2. **Recover each reply by hand.** Personal reply, apply `testimonial_submitted` and `gift_card_pending`, send the gift card. Read the reply for consent — the form carries the consent capture, replies do not, so each one must be checked individually before anything is published.
+2. **Recover each reply by hand.** Personal reply, apply `testimonial_submitted` and `gift_card_pending`, send the gift card. Read the reply for consent. The form carries the consent capture, replies do not, so each one must be checked individually before anything is published.
 3. **Then resend to non-repliers only.** Turn Allow Re-Entry on, re-tag the non-repliers, and turn it back off once the resend clears. Excluding repliers is the point: asking someone a second time for something they already sent compounds the original silence.
 4. **At publication**, the gift card is a material connection and must be disclosed. Unchanged by any of the above.
 
