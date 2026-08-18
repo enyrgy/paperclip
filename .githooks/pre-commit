@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+#
+# Enyrgy style gate.
+#
+# Blocks a commit that introduces British spellings or em-dashes into Enyrgy
+# brand documents, per Enyrgy_Brand_Style_Guide_v2.md section 05 Mechanics.
+#
+# Scope is deliberately narrow: root-level Enyrgy_*.md and campaigns/*.md.
+# The Paperclip product docs under doc/, packages/ and skills/ are outside the
+# brand style guide's authority and carry hundreds of em-dashes of their own,
+# so gating them here would block unrelated engineering work.
+#
+# Two escapes:
+#   - wrap a legitimate quotation in style-check ignore/resume comments
+#   - git commit --no-verify
+#
+# Install once per clone:  git config core.hooksPath .githooks
+
+set -uo pipefail
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+cd "$REPO_ROOT" || exit 0
+
+# Staged, still-present files (added, copied, modified, renamed).
+STAGED="$(git diff --cached --name-only --diff-filter=ACMR)"
+[ -z "$STAGED" ] && exit 0
+
+IN_SCOPE=()
+while IFS= read -r f; do
+  case "$f" in
+    Enyrgy_*.md|campaigns/*.md) [ -f "$f" ] && IN_SCOPE+=("$f") ;;
+  esac
+done <<< "$STAGED"
+
+[ ${#IN_SCOPE[@]} -eq 0 ] && exit 0
+
+PY="$(command -v python3 || true)"
+if [ -z "$PY" ]; then
+  echo "  style gate skipped: python3 not found" >&2
+  exit 0
+fi
+
+echo "  style gate: checking ${#IN_SCOPE[@]} Enyrgy document(s)"
+if ! "$PY" scripts/md2docx.py --check-only --strict "${IN_SCOPE[@]}"; then
+  echo ""
+  echo "  Commit blocked. Fix the findings above, or use one of the escapes named there."
+  exit 1
+fi
+exit 0

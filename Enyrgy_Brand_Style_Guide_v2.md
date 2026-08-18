@@ -197,7 +197,9 @@ Quoted material keeps its source spelling. A study title published with British 
 
 **No em-dashes anywhere.** Stated in the header and repeated here because it is a mechanics rule, not a stylistic preference. Use a period, a comma, a colon, or parentheses. En-dashes inside numeric ranges (8 to 12 weeks, 60-100 ng/mL) are correct and stay.
 
-Both rules are checked automatically by `scripts/md2docx.py` whenever a `.docx` is regenerated, or on demand with `python3 scripts/md2docx.py --check-only <file.md>`. The check warns, it does not block.
+Both rules are checked automatically by `scripts/md2docx.py` whenever a `.docx` is regenerated, or on demand with `python3 scripts/md2docx.py --check-only <file.md>`. Regenerating warns and never blocks.
+
+A pre-commit hook enforces the same two rules on staged `Enyrgy_*.md` and `campaigns/*.md`, and **does** block. Enable it once per clone with `git config core.hooksPath .githooks`. Paperclip product docs are out of scope.
 
 To exempt a passage, such as a study title published with British spelling, wrap it:
 

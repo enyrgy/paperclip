@@ -14,6 +14,7 @@ and this script exists to regenerate documents, not to referee them.
 
 Usage:  python3 scripts/md2docx.py campaigns/WF-22-vd-assessment-nurture.md [...]
         python3 scripts/md2docx.py --check-only <file.md> [...]
+        python3 scripts/md2docx.py --check-only --strict <file.md>   # exit 1 on findings
 """
 import os
 import re
@@ -150,7 +151,8 @@ def build(md):
 
 def main(argv):
     check_only = "--check-only" in argv
-    files = [a for a in argv if a != "--check-only"]
+    strict = "--strict" in argv
+    files = [a for a in argv if not a.startswith("--")]
     if not files:
         sys.exit(__doc__)
     if not check_only and not shutil.which("pandoc"):
@@ -163,8 +165,12 @@ def main(argv):
         warnings += check_style(md)
 
     if warnings:
-        print(f"\n  {warnings} style warning(s). See Enyrgy_Brand_Style_Guide_v2.md, "
+        print(f"\n  {warnings} style finding(s). See Enyrgy_Brand_Style_Guide_v2.md, "
               f"section 05 Mechanics.")
+        if strict:
+            print("  Wrap a legitimate quotation in style-check ignore/resume comments,")
+            print("  or bypass this once with: git commit --no-verify")
+            return 1
         print("  Quoted source material may legitimately trip this. Nothing was blocked.")
     return 0
 
