@@ -91,7 +91,7 @@ Count up what the tiredness has actually cost you lately. The workouts you skipp
 
 You now know the shape of the cause. The light your skin uses runs vitamin D, nitric oxide, and serotonin. Indoor life starves all three. Supplements cover one, partway. So the real question is what you do about it without moving to the equator or quitting your job to garden.
 
-We built a platform for exactly this. The Enyrgy Vitamin D Primal Light Platform delivers precise UVB and UVA through BioCalibrated Sunshine(TM), dosed to your skin type, in a two to four minute session. It triggers the same cascade real sunlight does. Not a tanning bed, not a light box, not a red light panel. Those each do something different. This runs the synthesis your body has been missing.
+We built a platform for exactly this. The Enyrgy Vitamin D Primal Light Platform delivers precise UVB and UVA through BioCalibrated Sunshine(TM), dosed to your skin type, in a two to four minute session. It triggers the same cascade real sunlight does. Light boxes and red light panels each do something different. This runs the synthesis your body has been missing.
 
 In a twelve week cohort, five people used it four to six times a week. Average vitamin D went from 39.96 to 84.20 ng/mL, insufficient to optimal, zero adverse events. Small study, no control group, all healthy adults, and we say so plainly. Larger trials are in development. What it shows is narrow but real: the mechanism moves actual labs.
 

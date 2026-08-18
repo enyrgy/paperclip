@@ -50,7 +50,7 @@ Two questions people ask right after the assessment. Here are straight answers.
 
 Does it work? In a small 12-week study, five people used the platform four to six times a week. Average vitamin D went from 39.96 to 84.20 ng/mL, and every one of them reached optimal. Small study, real labs, zero adverse events.
 
-Is it safe? This is precision phototherapy, not a tanning bed. It doses to your skin type using your MED, the Minimal Erythema Dose, the point where skin would just start to redden. The app keeps your dose safely under that line, triggers synthesis, and ends the session for you. Across 25,000+ sessions the platform has produced zero adverse events, and it allows only one session a day, so you cannot overdo it.
+Is it safe? This is precision phototherapy. It doses to your skin type using your MED, the Minimal Erythema Dose, the point where skin would just start to redden. The app keeps your dose safely under that line, triggers synthesis, and ends the session for you. Across 25,000+ sessions the platform has produced zero adverse events, and it allows only one session a day, so you cannot overdo it.
 
 Want to talk it through before you decide? Grab a quick call:
 Book a Call
@@ -61,6 +61,8 @@ Or see the platform: Enyrgy Vitamin D Platform
 ```
 
 **CORRECTED Aug 3.** A stray `}` on the line after the signature was deleted. It rendered as a literal closing brace at the bottom of every send.
+
+**CORRECTED Aug 18.** "not a tanning bed" removed. Outbound copy must never raise the tanning-bed comparison, even to deny it, because naming it plants it. Answering the comparison is fine when a prospect raises it first; introducing it is not.
 
 **Checked:** N=5 disclosed, the 25,000+ session figure and the one-session-a-day limit both match the KB.
 
