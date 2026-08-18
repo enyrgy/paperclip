@@ -169,6 +169,44 @@ The Enyrgy buyer is a self-directed, analytically minded adult. They research be
 
 **Strong:** "600+ users. 24,000+ sessions. 0% return rate. Average vitamin D increase: 111%. That is what the data shows."
 
+### Mechanics
+
+**US English throughout.** Enyrgy is a US company selling to US customers. Use American spelling in every document, client-facing and internal. The forms that slip in most often:
+
+<!-- style-check: ignore -->
+| Do not use | Use |
+|---|---|
+| programme | program |
+| centre, metre, nanometre, litre, fibre | center, meter, nanometer, liter, fiber |
+| colour, behaviour, favour, honour | color, behavior, favor, honor |
+| licence, defence, offence | license, defense, offense |
+| organise, recognise, realise, prioritise | organize, recognize, realize, prioritize |
+| standardise, utilise, minimise, maximise | standardize, utilize, minimize, maximize |
+| emphasise, summarise, specialise, apologise | emphasize, summarize, specialize, apologize |
+| analyse, catalyse, paralyse | analyze, catalyze, paralyze |
+| randomised, randomisation | randomized, randomization |
+| ageing | aging |
+| judgement | judgment |
+| travelling, cancelled, labelling, modelling | traveling, canceled, labeling, modeling |
+| whilst, amongst | while, among |
+| grey, catalogue, storey | gray, catalog, story |
+
+<!-- style-check: resume -->
+
+Quoted material keeps its source spelling. A study title published with British spelling is reproduced exactly as published.
+
+**No em-dashes anywhere.** Stated in the header and repeated here because it is a mechanics rule, not a stylistic preference. Use a period, a comma, a colon, or parentheses. En-dashes inside numeric ranges (8 to 12 weeks, 60-100 ng/mL) are correct and stay.
+
+Both rules are checked automatically by `scripts/md2docx.py` whenever a `.docx` is regenerated, or on demand with `python3 scripts/md2docx.py --check-only <file.md>`. The check warns, it does not block.
+
+To exempt a passage, such as a study title published with British spelling, wrap it:
+
+```
+<!-- style-check: ignore -->
+...the quoted passage...
+<!-- style-check: resume -->
+```
+
 ---
 
 ## 06 Imagery Direction

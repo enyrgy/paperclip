@@ -48,4 +48,4 @@ After editing any `.md` here, regenerate its `.docx`:
 python3 scripts/md2docx.py campaigns/<name>.md
 ```
 
-That runs pandoc and then injects table gridlines, which Standing Rule 1b requires on every cell and pandoc does not add. It accepts several files at once, and works on the root-level docs too. Use it rather than calling pandoc directly, or the gridlines get missed. Forgetting to regenerate at all is the more common failure: the `.md` moves and the `.docx` silently keeps the old copy, which is what someone then pastes into GHL.
+That runs pandoc and then injects table gridlines, which Standing Rule 1b requires on every cell and pandoc does not add. It accepts several files at once, and works on the root-level docs too. It also checks the source `.md` for British spellings and em-dashes and prints warnings without blocking; `--check-only` runs that check on its own. Use it rather than calling pandoc directly, or the gridlines get missed. Forgetting to regenerate at all is the more common failure: the `.md` moves and the `.docx` silently keeps the old copy, which is what someone then pastes into GHL.
