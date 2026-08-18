@@ -45,7 +45,7 @@ Standing Rule 1: every deliverable exists as `.md` **and** `.docx`. That applies
 After editing any `.md` here, regenerate its `.docx`:
 
 ```
-pandoc campaigns/<name>.md -o campaigns/<name>.docx
+python3 scripts/md2docx.py campaigns/<name>.md
 ```
 
-Any `.docx` containing a table also needs visible gridlines on every cell, per Standing Rule 1b. Pandoc does not add them, so they are injected afterwards.
+That runs pandoc and then injects table gridlines, which Standing Rule 1b requires on every cell and pandoc does not add. It accepts several files at once, and works on the root-level docs too. Use it rather than calling pandoc directly, or the gridlines get missed. Forgetting to regenerate at all is the more common failure: the `.md` moves and the `.docx` silently keeps the old copy, which is what someone then pastes into GHL.

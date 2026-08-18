@@ -30,7 +30,7 @@ Primary sub-tagline, used under the logo and in brand headline contexts. Always 
 
 ### Brand Positioning
 
-Enyrgy is precision wellness technology, not a supplement, not a tanning device, not a spa treatment. Every brand decision should reinforce that this is a clinically grounded, engineered product for serious buyers. The positioning is peer-to-peer: operator speaking directly to a self-optimizing adult who tracks their labs, manages their biology intentionally, and does not need to be sold to. They need to be informed.
+Enyrgy is precision wellness technology: a clinically grounded, engineered product for serious buyers. State that positively. Do not define Enyrgy by what it is not, and never name a tanning device or tanning bed in customer-facing copy, even to deny the comparison. Naming it plants it. If a prospect raises the comparison themselves, answer it plainly using the objection script in the knowledge base. Every brand decision should reinforce that this is an engineered product for people who manage their biology on purpose. The positioning is peer-to-peer: operator speaking directly to a self-optimizing adult who tracks their labs, manages their biology intentionally, and does not need to be sold to. They need to be informed.
 
 ### Brand Essence in One Line
 
