@@ -237,6 +237,6 @@ Bogh (2012) and Morita (2020) both match KB Section 4 exactly. The fracture line
 
 ## Left in deliberately
 
-Touch 1B: "the fix is not more D3. It is the synthesis process a capsule was never able to run." That is negative parallelism, on the voice spec's Never list, but it is carrying the central distinction of the whole protocol. Same judgement as the WF-16 gut line.
+Touch 1B: "the fix is not more D3. It is the synthesis process a capsule was never able to run." That is negative parallelism, on the voice spec's Never list, but it is carrying the central distinction of the whole protocol. Same judgment as the WF-16 gut line.
 
 Touch 3A: the subject line ends in a full stop, unlike every other subject in this workflow family. Cosmetic.

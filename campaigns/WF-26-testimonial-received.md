@@ -63,7 +63,7 @@ That lands on the customers who liked the product enough to record a video, whic
 
 **Still worth confirming: is the weekly fulfillment running?** If it has lapsed, there may be people already holding the old promise.
 
-**Answered 2026-08-13:** the `gift_card_pending` queue has always been empty, because WF-26 has never fired and nothing has ever been added to it. The weekly run has nothing to process. That is not reassuring. It means anyone from the Jul 20 batch who replied is owed a gift card that no queue knows about. See "This gap materialised" below.
+**Answered 2026-08-13:** the `gift_card_pending` queue has always been empty, because WF-26 has never fired and nothing has ever been added to it. The weekly run has nothing to process. That is not reassuring. It means anyone from the Jul 20 batch who replied is owed a gift card that no queue knows about. See "This gap materialized" below.
 
 ---
 
@@ -81,7 +81,7 @@ This is not hypothetical. It is the same gap that made a testimonial impossible 
 
 **Anything arriving by reply still has to be tagged by hand** to enter the queue. Nothing in the system will prompt it. The WF-25 reorder reduces how often that happens; it does not remove the path.
 
-### This gap materialised, found 2026-08-13
+### This gap materialized, found 2026-08-13
 
 **WF-26 has never fired. Not once.** That is not a fault in this workflow. It is the downstream result of the Jul 20 batch.
 

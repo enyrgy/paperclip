@@ -17,7 +17,7 @@ This spec covers two webhooks that close it.
 
 Please send **two separate webhooks to two separate URLs** rather than a single endpoint with an event-type field.
 
-The registration event and the session event drive completely different behaviour on our side. A single endpoint means every session ping runs through the same logic that sends the welcome sequence, and that logic then needs branching to suppress the welcome on all but the first call. Two endpoints means each side does one job.
+The registration event and the session event drive completely different behavior on our side. A single endpoint means every session ping runs through the same logic that sends the welcome sequence, and that logic then needs branching to suppress the welcome on all but the first call. Two endpoints means each side does one job.
 
 Both endpoints: `POST`, `Content-Type: application/json`.
 
@@ -90,7 +90,7 @@ Suppressing at the source is more reliable than filtering downstream.
 
 If a field has no value, send `"vitamin_d_level": ""`. Do not drop the key.
 
-The CRM's field mapper binds to a fixed payload shape. A missing key can silently fail to map rather than mapping as blank, which produces no error and a quietly incomplete contact record. This is known behaviour on our side, not a hypothetical.
+The CRM's field mapper binds to a fixed payload shape. A missing key can silently fail to map rather than mapping as blank, which produces no error and a quietly incomplete contact record. This is known behavior on our side, not a hypothetical.
 
 ### 5.3 Keep field names stable after go-live
 

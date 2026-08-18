@@ -113,21 +113,21 @@ The build is essentially done. What remains is finishing the go-live staging, a 
   - **Zero unsubscribes**, so all 57 remain eligible for Q3. No one to move to a manual fallback list.
 - [ ] **Q3 2026 investor update:** due by end of October 2026. Runbook is in the Session 16 handoff notes: duplicate MASTER, swap numbers, fill the pre-header (blank by default, does not carry from the test dialog), confirm From name reads **Scott Hansbury** not the raw address, select all 57, send once.
 
-## 4b. Truemed HSA/FSA eligibility (started August 1, 2026 — APPROVED August 2026)
+## 4b. Truemed HSA/FSA eligibility (started August 1, 2026. APPROVED August 2026)
 
-**APPROVED.** The Enyrgy Vitamin D Primal Light Platform is HSA/FSA eligible through Truemed. Truemed issues a Letter of Medical Necessity through their own practitioner network; Enyrgy makes no medical claims and that boundary still holds — the LOMN mechanism is never described in Enyrgy copy.
+**APPROVED.** The Enyrgy Vitamin D Primal Light Platform is HSA/FSA eligible through Truemed. Truemed issues a Letter of Medical Necessity through their own practitioner network; Enyrgy makes no medical claims and that boundary still holds. The LOMN mechanism is never described in Enyrgy copy.
 
 **Authorized phrasing, the only approved wording:** "HSA/FSA eligible through Truemed". Never justify the HSA angle with condition-or-treatment language, and never explain the Letter of Medical Necessity, regardless of what Truemed's own copy blocks say.
 
-**Scope: Consumer Unit only. The wall mount is EXCLUDED.** No copy may imply cart-wide eligibility. The commercial unit remains out of scope — a facility purchase is a business expense, not a personal medical one.
+**Scope: Consumer Unit only. The wall mount is EXCLUDED.** No copy may imply cart-wide eligibility. The commercial unit remains out of scope. A facility purchase is a business expense, not a personal medical one.
 
 - [x] **Task 1, product catalog:** Shopify product export submitted Aug 1. Business description (700 char limit) submitted, 647 chars, compliance-checked, states explicitly that Enyrgy is a wellness device making no medical claims.
 - [x] **Task 2, connect bank account** (Stripe Express): DONE Aug 1. Both Getting Started tasks complete; onboarding now sits with Truemed.
 - [x] **Per-SKU eligibility determination: RECEIVED.** Consumer Unit eligible; **wall mount excluded**, as anticipated. The badge appears only where eligibility is substantiated.
 - [x] **Badge and copy placement: DONE Aug 9.** Applied live in GHL, then documented in the repo. Four placements, all consumer, all device-price context, all using the authorized phrasing verbatim:
-  - `campaigns/WF-29-abandoned-checkout.md` Touch 2, cost paragraph — highest-intent moment, cost is the named objection
-  - `campaigns/consumer-drip.md` Touch 8 ("What $2,995 works out to per session") — appended to the financing clause
-  - `campaigns/WF-17-long-term-nurture.md` Touch 4 ("Is $2,995 a lot for light?") — own short paragraph after the household-of-six line
+  - `campaigns/WF-29-abandoned-checkout.md` Touch 2, cost paragraph. Highest-intent moment, cost is the named objection
+  - `campaigns/consumer-drip.md` Touch 8 ("What $2,995 works out to per session"). Appended to the financing clause
+  - `campaigns/WF-17-long-term-nurture.md` Touch 4 ("Is $2,995 a lot for light?"). Own short paragraph after the household-of-six line
   - `Enyrgy_Paperclip_Knowledge_Base.md` §3 payment options
   - **Deliberately excluded:** all SMS (speed-to-lead and awareness touches, not cost touches; the Consumer Drip SMS already runs ~254 chars / two segments), commercial and partner drips, and the WF-20 / WF-13 / WF-22 closes, whose closing beats are the guarantee and the mechanism rather than price.
 - [x] **KB Section 3 payment options: DONE Aug 9.** Now reads "paid in full, financed, rented monthly, or purchased with HSA/FSA funds through Truemed", with the authorized-phrasing rule and the wall-mount exclusion recorded inline.
@@ -173,7 +173,7 @@ Outcode is building two webhooks: one on user registration, one on completed ses
 
 ## 4e. WF-01 was creating consumer leads from inbound email: FIXED August 4, 2026
 
-- [x] **The leak.** Any inbound email to `mg.enyrgy.com` from an address GHL did not recognise created a contact. WF-01 New Lead Router then routed it, and its last branch is `Default Consumer` "when none of the conditions are met", so it landed there and was tagged `type_consumer`, which triggers the Consumer Drip. **Auto-replies, out-of-office bounces, vendor mail and spam all qualified.** Nothing errored. Found when Scott's own address turned up in the drip with an Opportunity in the Consumer Product Pipeline.
+- [x] **The leak.** Any inbound email to `mg.enyrgy.com` from an address GHL did not recognize created a contact. WF-01 New Lead Router then routed it, and its last branch is `Default Consumer` "when none of the conditions are met", so it landed there and was tagged `type_consumer`, which triggers the Consumer Drip. **Auto-replies, out-of-office bounces, vendor mail and spam all qualified.** Nothing errored. Found when Scott's own address turned up in the drip with an Opportunity in the Consumer Product Pipeline.
 - [x] **Fixed.** WF-01's Device User Check now reads `Tags does NOT include source_device_app AND Email does not contain @enyrgy.com AND Tags does NOT include no_route`.
 - [x] **Verified in both directions.** The real risk in the fix was that an empty email field might evaluate as false on `does not contain`, trading a leak for a blackout on phone-only leads. A phone-only test contact received `type_consumer` normally, so empty passes.
 - [x] **Swept.** `Email contains @enyrgy.com` returned three records, all employees or contractors who are also device users, all carrying `drip_bypass` + `legacy_customer` from the Session 10 import and no `type_` tags. None was ever routed. `scott@enyrgy.com` was the only casualty and is deleted. Incident closed.

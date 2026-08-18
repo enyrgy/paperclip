@@ -69,7 +69,7 @@ Fires on **every completed session**. This is a hard requirement, not a nice-to-
 
 **1. Suppress the webhook for account owners.** The owner registers in the app like everyone else. Their contact record already arrives from Shopify with its own onboarding sequence, so an owner registration firing Endpoint 1 would send them a second, wrong welcome. Either omit owner registrations entirely, or set `is_owner: true` so it can be filtered downstream. Omitting is preferred: filtering at the source is more reliable than working around it later.
 
-**2. Send empty strings, never omit keys.** If a field has no value, send `"field": ""`. Do not drop the key from the JSON. GHL's field mapper binds to a fixed payload shape, and a missing key can silently fail to map rather than mapping as blank. This is a known behaviour, not a theory.
+**2. Send empty strings, never omit keys.** If a field has no value, send `"field": ""`. Do not drop the key from the JSON. GHL's field mapper binds to a fixed payload shape, and a missing key can silently fail to map rather than mapping as blank. This is a known behavior, not a theory.
 
 **3. Keep field names stable once live.** Each name is bound individually inside GHL workflows. Renaming a field after go-live silently breaks that mapping with no error raised.
 
