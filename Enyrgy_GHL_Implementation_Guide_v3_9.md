@@ -605,16 +605,28 @@ Convention: category_value (lowercase, underscores).
   ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   **Pipeline**                        **Stages**
   ----------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  1 Consumer ($2,995)                New Lead -> Website Visit -> Drip Active -> Discovery Call -> Demo Education -> Order Financing -> Ordered -> Unit Shipped -> User Activated -> Active Customer
+  1 Consumer ($2,995)                 New Lead -> Website Visit -> Drip Active -> Discovery Call -> Demo Education -> Order Financing -> Ordered -> Unit Shipped -> User Activated -> Active Customer
 
-  2 Commercial ($8,950/unit)         Prospect -> Drip Active -> Discovery -> Demo -> Proposal -> Negotiation -> Contract Signed -> Unit Shipped -> User Activated -> Installation -> Training Scheduled -> Training Complete -> Active Customer
+  2 Commercial B2B Pipeline           Registration Submitted -> Conflict Check -> Prospect -> Drip Active -> Discovery -> Proposal -> Negotiation -> Contract Signed -> Unit Shipped -> User Activated -> Installation -> Training
+                                      Scheduled -> Training Complete -> Active Customer
 
-  3 Investor ($3.5M Raise)           Identified -> Drip Active -> Intro Meeting -> Accreditation -> Due Diligence -> Commitment -> Legal and Close -> Active Investor
+  3 Investor ($3.5M Raise)            Identified -> Drip Active -> Intro Meeting -> Accreditation -> Due Diligence -> Commitment -> Legal and Close -> Active Investor
 
   4 Partner                           Identified -> Drip Active -> Exploratory -> NDA Discovery -> LOI Stage -> Vetting -> Contract -> Active Partner
 
   5 Vendor                            Prospect -> Vetting -> Contract Sent -> Contract Signed -> Active -> Preferred -> Inactive
   ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+**Stage probability is set deliberately, not by the default ladder.** GoHighLevel assigns probability by stage position when a pipeline is built, which spreads stages evenly from 0 to 100 and produces nonsense at both ends. Both revenue pipelines were corrected on 2026-08-18.
+
+The rule: probability is the chance of *winning*, so it climbs through the sales stages and hits 100 at the point money is committed. Everything after that point is fulfillment, not forecast, and stays at 100.
+
+- **Commercial B2B:** Registration Submitted 0, Conflict Check 0, Prospect 5, Drip Active 10, Discovery 25, Proposal 50, Negotiation 75, then **Contract Signed 100** and every stage after it 100.
+- **Consumer:** New Lead 5, Website Visit 10, Drip Active 15, Discovery Call 30, Demo Education 45, Order Financing 70, then **Ordered 100** and every stage after it 100.
+
+Registration Submitted and Conflict Check are also excluded from the funnel and pie charts. A dealer submission that has not cleared the conflict check is not a deal, and counting it distorts every conversion rate downstream.
+
+Stage and status are separate fields. A deal at Contract Signed still sits in the forecast until its **Status** flips to Won, so the close workflow sets both.
 
 # SECTION 11: DRIP CAMPAIGNS
 
