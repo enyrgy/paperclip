@@ -4,7 +4,7 @@
 
 No em-dashes anywhere. Peer-to-peer voice. Sunlight. Evolved.
 
----
+**If a person names a health condition, an injury, or a medication, stop and read section 16 before replying.** Never clear anyone for use, and never treat absence from the contraindication list as clearance.
 
 ## 1. Company snapshot
 
@@ -63,7 +63,7 @@ Approved trademarked terms: **BioCalibrated Sunshine** (personalized-dosing and 
 - **Write "the five participants," not "five participants."** Without the article the sentence reads as though a larger cohort was studied and only five of them responded.
 - Participant-level results (12-week study, about 5 sessions per week, skin types II to IV): P1 (Skin Type II) 38.4 to 86.0; P2 (III) 34.0 to 88.4; P3 (III) 37.0 to 78.0; P4 (IV) 47.0 to 88.7; P5 (III) 43.4 to 79.9 ng/mL. These reconcile to the reported averages (start 39.96, end 84.20). All started insufficient or borderline, all reached optimal, zero dropouts. Present with the same N = 5 caveat as the averages.
 - Efficiency: 2.4x more efficient than sunlight for Vitamin D synthesis; 2 to 4 minutes equals 2 to 4 hours of mid-day sun (about 60x).
-- Safety: 25,000+ sessions with zero burns and zero adverse events. The device emits over 90 percent UVB and under 10 percent UVA, the opposite of sunlight (about 95 percent UVA). The app calculates each user's personal MED by skin type and shuts off automatically. Each session runs 2 to 4 minutes set by skin type, and the app allows a maximum of one session per day (it prevents more than one), so "2 to 4 minutes a day" is accurate.
+- Safety: **the contraindication list and the rules for inbound health questions are in section 16, and they govern any conversation where a person names a condition, an injury, or a medication.** 25,000+ sessions with zero burns and zero adverse events. The device emits over 90 percent UVB and under 10 percent UVA, the opposite of sunlight (about 95 percent UVA). The app calculates each user's personal MED by skin type and shuts off automatically. Each session runs 2 to 4 minutes set by skin type, and the app allows a maximum of one session per day (it prevents more than one), so "2 to 4 minutes a day" is accurate.
 - Return rate under 1 percent, roughly 5 to 10x better than the industry average.
 
 ### Athlete and bone-health research (supports the Recovery Protocol and the Athlete ICP)
@@ -153,6 +153,8 @@ Supplements feed the enzymatic route (substrate to eNOS to NO). UVA triggers enz
 
 Never use in client-facing content: treat, cure, diagnose, disease, prescription, FDA-approved, medical treatment, heal, fix, medication, illness, clinical diagnosis, therapeutic treatment. **Enyrgy is a wellness device, not medical, and makes no medical claims.**
 
+**One exemption: the contraindication list in section 16.** It is a safety disclosure and must go out verbatim, "diagnosed" and all. Scrubbing it to pass this scan breaks it.
+
 ## 12. Attorney-confirmed compliance rule (verbatim, non-negotiable)
 
 > The PPM may be sent to any interested investor after the intro meeting. Accreditation is NOT required before sending the PPM. Confirmed compliant per Enyrgy's securities attorney.
@@ -202,6 +204,87 @@ The prohibited-words scan runs before every email, SMS, and voicemail across all
 | Facility | 5115 N 27th Ave, Bld 66, Phoenix, AZ 85017, Made in USA |
 | Commercial model | $49 to $125/month per client, set by location and clientele; payback under 4 months at 50 clients at $49, about 6 weeks at $125 |
 
----
+## 16. Contraindications and inbound health questions (safety, non-negotiable)
+
+**Source: the Enyrgy User Guide that ships with every unit.** This is a safety disclosure, not marketing copy. Reproduce it as written. No agent may shorten it, soften it, restate it in its own words, add to it, or reason from it to a condition it does not name.
+
+### 16.1 The list, verbatim
+
+> **Contraindicated**
+>
+> We recommend consulting your doctor to evaluate whether Enyrgy Light Therapy is right for you.
+>
+> - Do not use if Pregnant
+> - Do not use if diagnosed with UV Light Sensitivity
+> - Do not use if on photosensitizing medication
+> - Do not use if diagnosed with HIV-AIDS
+> - Do not use if diagnosed with Active Skin Cancer
+> - Do not use if diagnosed with UV light sensitivities: Protoporphyria (EPP), UV-sensitive syndrome, Photodermatitis, Xeroderma pigmentosum (XP), Lupus erythematosus, or Actinic dermatitis
+> - Do not use if diagnosed with UV light allergies: Actinic prurigo (hereditary PMLE), Polymorphous light eruption (PMLE), or Solar urticaria
+
+The age minimum of 18 (section 9) applies on top of this list.
+
+### 16.2 This list is exempt from the prohibited-words scan
+
+The scan in section 11 blocks "diagnose" and "disease" in client-facing content. The contraindication list contains "diagnosed" five times by necessity, because naming the condition is the entire function of a safety disclosure. **An agent that scrubs those words to satisfy the scan breaks the disclosure.** Send it as written or do not send it. This is the only standing exemption to section 11.
+
+### 16.3 Photosensitizing medication is the item that carries real physical risk
+
+The other entries describe conditions a person already knows they have. This one is different in two ways, and both matter.
+
+**It is invisible to the device.** The app calculates each user's dose from Fitzpatrick skin type and ends the session automatically (section 4). It has no knowledge of what the user takes. Photosensitizing drugs lower the dose at which skin burns, which is the documented reason this line sits on the list at all, so a dose set correctly for a skin type can exceed what that particular person's skin tolerates. The automatic cutoff does not protect against this, because the variable it doses on is not the variable that changed.
+
+**The safety record does not speak to this, in either direction.** We do not screen for photosensitizing drugs and do not record them, so nobody knows how many of the 25,000+ sessions involved someone taking one. The figure shows the dosing protocol has been safe across the people who have used it. It is not evidence that the protocol is safe for a photosensitized user, and it is not evidence of harm either. It is silent, because the variable was never measured. **Do not cite the safety record in answer to a photosensitivity question.** Citing it there presents an unmeasured variable as a tested one.
+
+**People often do not know they are on one.** The category is wide and includes drugs nobody associates with sunlight: several antibiotic classes, some diuretics, some cardiac and antiarrhythmic drugs, some anti-inflammatories, some antifungals, some retinoids, and St John's wort. Never list examples to a customer and never rule a specific drug in or out. The category is a physician's question, and asking it is the whole point of the line above the list.
+
+Photosensitivity can also outlast the last dose, so "I stopped taking it" is not the same as clear. That timing question also belongs to their physician, not to us.
+
+### 16.4 How an agent handles an inbound health question
+
+Someone describing a condition, an injury, a medication, or an ongoing course of care is not a normal inquiry. Handle it this way, every time.
+
+- **Never clear anyone.** Do not say a person is fine, is probably fine, sounds fine, or that their situation is not on the list. **Absence from the list is not clearance**, and an agent has no standing to grant it.
+- **Never reason outward from the list.** It names what it names. Do not infer that a related condition is safe because it is unnamed, or unsafe because it resembles one that is.
+- **Never suggest a schedule, a session length, or a dose for a health situation.** The app sets dose. We do not.
+- **Never send the platform's benefit story as the answer to a health question.** A person describing a condition is asking whether this helps or harms them. Reciting pathways answers a different question and reads as an answer to theirs.
+- **Do not solicit or record health details.** If they arrive unprompted, do not enter them in GHL custom fields, tags, or notes. Escalate the conversation instead.
+- **Give the list, name the physician conversation, stop there.**
+- **Escalate to Scott** whenever the person names a specific condition, a medication, ongoing care, or asks for an arrangement outside the standard purchase. Do not run that conversation.
+
+The honest position, and the one to hold: we do not know whether it helps or harms in a specific medical situation, the questions that would settle it are answerable by their physician in a few minutes, and pointing them there is a better answer than yes.
+
+### 16.5 Vitamin D non-response is not a contraindication
+
+The User Guide records, alongside the list: those who have polymorphisms in genes related to vitamin D metabolism (for example GC, CYP2R1, DHCR7) do not respond well to UVB, sometimes described as UVB non-responsiveness or vitamin D photoconversion resistance.
+
+**This is a non-response caveat, not a safety exclusion.** Never phrase it as "do not use if." It carries two implications worth stating plainly.
+
+- It is the honest limit on the clinical result. The five participants all reached optimal (section 4). A person with these polymorphisms may not, through no failure of the platform. Testing before and after is what settles it for any individual, which is what we recommend anyway.
+- The biology overlaps with the one-in-four low-responder figure for supplements (section 8) without being identical to it. GC and CYP2R1 act on vitamin D once it is in circulation, whichever route it arrived by, so they bear on both. DHCR7 governs the substrate available in skin, so it is specific to the light pathway. The practical rule that follows: **never present low response as a supplement problem the platform escapes.** The platform opens three pathways instead of one and is far more efficient at the vitamin D pathway, and that is the accurate comparison. It does not make vitamin D genetics irrelevant.
+
+### 16.6 Use on intact skin only
+
+**Approved wording, use as written in every document and every reply:**
+
+> **Use on intact skin only.** Sessions are taken on the torso, on skin that is unbroken and healthy. Do not direct exposure at a wound, a sore that has not closed, a rash, a burn, or any other area of broken skin. Keep any such area covered during your session, and speak with your doctor before continuing.
+
+**Why this exists.** It was missing from every Enyrgy document until August 2026, and the gap is not academic. Our own approved research points say adequate vitamin D supports wound repair (section 4). A person who reads that and then owns a UVB platform can reasonably conclude the light should go on the wound. Nothing we published told them otherwise.
+
+**Agents must never build on that inference.** Do not suggest that a session supports a specific injury, do not answer a wound question with the bone and recovery research, and do not describe where to position anything. The line above, then the physician, then stop.
+
+### 16.7 Why the pacemaker line was removed
+
+**No dermatological source supports the exclusion.** The 2019 joint AAD and NPF phototherapy guidelines (Elmets et al., *J Am Acad Dermatol* 2019;81(3):775-804) treat narrowband UVB as having very few absolute contraindications: xeroderma pigmentosum and other photosensitive disorders. The relative contraindications they list are skin cancer history, photosensitivity disorders, autoimmune conditions such as lupus, pregnancy, immunosuppressive therapy, cataracts, and similar. Implanted cardiac devices appear in neither list.
+
+**The origin appears to be equipment, not light.** Warnings of this shape are standard on tanning and cabinet-style UV equipment, where the concern is electromagnetic interference from the cabinet's own electrical systems, its ballasts, fans and motors, rather than from the ultraviolet output. The therapeutic laser literature describes the same exclusion as a common misconception, on the grounds that implanted devices are metal-encased and unaffected by photons. Sunlight itself carries no such warning. Enyrgy's platform is a wall-mounted unit the user stands against, not a powered cabinet they lie inside.
+
+**What this does not mean, and the distinction agents must hold.**
+
+- **Removal from the list is not clearance.** The rule in 16.4 governs unchanged: absence from the list never means a person is fine, and no agent may tell someone with a pacemaker that Enyrgy is safe for them. That is still their physician's call.
+- **Never volunteer that the line was removed**, and never present the removal as a safety finding. It is a correction to a list that carried an item without a basis.
+- **Units already in the field still show it.** Anyone who bought before this change has a manual listing Heart/Pacemaker. If they raise it, do not tell them their manual is wrong or that the concern was baseless. Confirm the current list, point them to their doctor, escalate to Scott.
+
+**Still outstanding:** the previous printing is with customers, and the decision has not been reviewed by counsel or the manufacturer.
 
 *CONFIDENTIAL - Enyrgy Inc - 5115 N 27th Ave, Bld 66, Phoenix, AZ 85017 - enyrgy.com - Sunlight. Evolved.*

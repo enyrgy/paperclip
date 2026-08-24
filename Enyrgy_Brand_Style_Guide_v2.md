@@ -265,7 +265,33 @@ All consumer-facing materials must include the following. Exact placement and fo
 
 **Medical Device / FDA Status.** Enyrgy is not a medical device. Enyrgy does not diagnose, treat, cure, or prevent any disease. Statements have not been evaluated by the FDA.
 
-**Contraindication Notice.** Do not use if you have photosensitivity disorders, a personal or family history of melanoma or skin cancer, are taking photosensitizing medications, are pregnant or breastfeeding, or are under 18. Consult your physician before use if you have any medical condition or take any medications.
+**Contraindication Notice.** This is the list that ships in the Enyrgy User Guide. **It is a safety disclosure, not copy.** Reproduce it as written. Do not shorten it, reword it, reorder it, set it smaller than the surrounding body text, or drop entries to fit a layout. If it will not fit, the layout changes.
+
+> **Contraindicated**
+>
+> We recommend consulting your doctor to evaluate whether Enyrgy Light Therapy is right for you.
+>
+> - Do not use if Pregnant
+> - Do not use if diagnosed with UV Light Sensitivity
+> - Do not use if on photosensitizing medication
+> - Do not use if diagnosed with HIV-AIDS
+> - Do not use if diagnosed with Active Skin Cancer
+> - Do not use if diagnosed with UV light sensitivities: Protoporphyria (EPP), UV-sensitive syndrome, Photodermatitis, Xeroderma pigmentosum (XP), Lupus erythematosus, or Actinic dermatitis
+> - Do not use if diagnosed with UV light allergies: Actinic prurigo (hereditary PMLE), Polymorphous light eruption (PMLE), or Solar urticaria
+
+The age requirement above applies on top of this list.
+
+**This notice is exempt from the prohibited-words scan.** It contains "diagnosed" five times because naming the condition is the entire function of a safety disclosure. Scrubbing those words to pass the scan breaks the notice. Send it as written or do not send it.
+
+**Two changes to the list on 2026-08-24, both by Scott's decision.** Protoporphyria is now abbreviated EPP rather than EEP, and **the Heart/Pacemaker line was removed** because no dermatological source supported it (knowledge base 16.7 carries the basis). **Units already in the field carry the previous printing.** Never write copy that draws attention to the removal or presents it as a safety finding, and never tell a customer their printed manual is wrong.
+
+**Aligned to the User Guide on 2026-08-24, and two items narrowed in the process.** The version this replaced excluded anyone with a **family history** of melanoma or skin cancer, where the User Guide excludes only **active** skin cancer, and it excluded **breastfeeding**, which the User Guide does not mention. Both were dropped to make the two documents agree. **Open question for the author of the User Guide: is the narrower scope intended?** Until that is answered, do not reintroduce either item to consumer copy on your own initiative, and do not treat their absence as a considered decision.
+
+**Intact Skin Notice.** Carry this alongside the contraindication list wherever usage is described.
+
+> **Use on intact skin only.** Sessions are taken on the torso, on skin that is unbroken and healthy. Do not direct exposure at a wound, a sore that has not closed, a rash, a burn, or any other area of broken skin. Keep any such area covered during your session, and speak with your doctor before continuing.
+
+Added 2026-08-24. It matters because our own approved research points say adequate vitamin D supports wound repair, and a reader who owns a UVB platform can reasonably conclude the light should go on the wound. **Never pair the wound-repair research with usage instructions in the same passage**, and never imply a session is aimed at an injury.
 
 **Annual Skin Exam Recommendation.** Annual dermatological skin examinations are recommended for all users.
 
