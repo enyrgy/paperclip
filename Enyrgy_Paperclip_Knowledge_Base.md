@@ -285,6 +285,4 @@ The User Guide records, alongside the list: those who have polymorphisms in gene
 - **Never volunteer that the line was removed**, and never present the removal as a safety finding. It is a correction to a list that carried an item without a basis.
 - **Units already in the field still show it.** Anyone who bought before this change has a manual listing Heart/Pacemaker. If they raise it, do not tell them their manual is wrong or that the concern was baseless. Confirm the current list, point them to their doctor, escalate to Scott.
 
-**Still outstanding:** the previous printing is with customers, and the decision has not been reviewed by counsel or the manufacturer.
-
 *CONFIDENTIAL - Enyrgy Inc - 5115 N 27th Ave, Bld 66, Phoenix, AZ 85017 - enyrgy.com - Sunlight. Evolved.*
