@@ -73,6 +73,7 @@ A note on figures: the canonical company metrics used throughout this document a
 - 2.1 Systems Overview
 - 2.2 What Each System Owns
 - 2.3 How The Systems Connect (Conceptual)
+- 2.4 Hosting And Deployment (Railway)
 
 **3. Data Architecture**
 - 3.1 Systems Of Record
@@ -224,6 +225,42 @@ Enyrgy's production stack is a set of best-of-breed SaaS systems plus one propri
 At a conceptual level, the stack has three hubs and a set of spokes. **GoHighLevel is the relationship hub**, nearly every lead, contact, and nurture interaction flows through it. **Shopify is the commerce hub**, every purchase originates there. **The Device App is the product hub**, every session and dosing event lives there. The supporting systems (email, phone, reviews, payments) are spokes bound to one of the hubs.
 
 The critical architectural observation is that the three hubs are only loosely connected today. Lead and nurture data is rich and well-integrated inside GHL. Purchase data lives in Shopify. Usage data lives in the Device App. The connective tissue between them, particularly a reliable Shopify-to-GHL purchase sync and any Device-App-to-GHL usage sync, is the principal architectural gap, addressed in Sections 4 and 7.
+
+## 2.4 Hosting And Deployment (Railway)
+
+Paperclip and its supporting services run on **Railway**, in a single project named `enyrgy-paperclip-server`. Audited and documented 2026-08-24.
+
+| Service | Status | Notes |
+|---|---|---|
+| `enyrgy-paperclip` | Online | The Paperclip application. Has `enyrgy-paperclip-volume`. This is the service a working directory should be linked to. |
+| `enyrgy-ghl-mcp` | Online | The GHL-to-MCP bridge, `enyrgy-ghl-mcp-production.up.railway.app`. Holds the GHL Private Integration token in its environment variables, not in Paperclip. |
+| `Postgres` | Online | Database, `postgres-volume`. |
+| `paperclip` | **Failed, permanently** | An orphan. See below. |
+
+**There is one environment, `production`. There is no staging.** Every `railway run`, `railway variables set`, `railway redeploy` and `railway restart` acts on live infrastructure. Treat the absence of a safety net as the main operational risk in this stack.
+
+### The orphan `paperclip` service
+
+A duplicate service created early in the build. It has never run and cannot run.
+
+**Why it is harmless.** It has no volume, so there is no data attached. It has no `DATABASE_URL`, no `ANTHROPIC_API_KEY` and no `PAPERCLIP_PUBLIC_URL`, so it has nothing to connect to and no way to serve. Its only two non-Railway variables, `BETTER_AUTH_SECRET` and `PAPERCLIP_TOOL_ACTION_SIGNING_SECRET`, are duplicates of the values already held by `enyrgy-paperclip`.
+
+**Why it shows as Failed.** Every deployment attempt failed because the service was never configured. Auto-deploy was disabled to stop the false "Deploy failed" emails, which is why it now sits Failed and silent rather than retrying.
+
+**Why you cannot find it in the dashboard.** It does not render on the project canvas at any zoom level. It is reachable only through the CLI, which is why it is easy to conclude it does not exist.
+
+**The cost of keeping it.** One item: a permanent red "Failed" in `railway status`. The risk is not the orphan, it is that a permanent red status trains everyone to stop reading status output. That is the reason this entry exists.
+
+**If it is ever removed**, the command is:
+
+```
+railway service delete -s paperclip
+```
+
+The `-s` flag is not optional. Without it, `railway service delete` targets the **linked** service, which in a normal working directory is `enyrgy-paperclip`, the live application with the volume attached. The same defaulting applies to most `railway` service commands. Always name the service explicitly when the target is not the one you are linked to.
+
+---
+
 
 ---
 
