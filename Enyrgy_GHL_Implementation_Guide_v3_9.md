@@ -18,6 +18,8 @@ Author: Scott Hansbury, Co-founder & CEO, Enyrgy Inc
 
 Last Updated: August 4, 2026 · Version 3.9.6
 
+**v3.9.7 Changes (Session 17, August 25, 2026):** Three weeks of drift closed. **The dealer deal registration system (WF-40 to WF-43, built August 19) was missing entirely**, along with the Opportunity custom fields it runs on and the per-dealer form model; both are now in Section 12. Content rules in Section 14 gained the US English requirement and its enforcement gate, the tanning-bed rule, the corrected prevalence figure, the HSA/FSA phrasing lock, and a pointer to the new KB Section 16 on contraindications. Section 17 records the $10M current valuation. Section 18 gains an addendum table for everything sourced since v3.9.6. Section 19 documents the facility referral arrangement and its escalation rule. Section 1 finally applies the users-not-customers correction that v3.9.6 claimed. **Where a fact could not be sourced from the repository it is marked CONFIRM rather than guessed.**
+
 **v3.9.6 Changes (Session 16, August 4, 2026):** `no_route` and `source_device_app` added to the tag taxonomy (Section 9); the two bypass switches distinguished in Section 11, since `drip_bypass` stops drips while `no_route` stops WF-01 routing and confusing them has already cost time; WF-01's full guard documented (Section 12); a WF-30 to WF-35 register added. "600+ Customers" corrected to "600+ Users" on the cover and in Section 1, since a home unit supports up to six users and the two are not interchangeable. **Live campaign copy is no longer documented in this guide.** It lives in `campaigns/`, one file per workflow, captured from GHL and version-controlled, so nobody maintains two copies. Also corrected the v3.9.5 phantom-completion claim below.
 
 **v3.9.5 Changes (Session 15):** Paperclip is now operating, not just built. Heartbeats are staged and tuned (Sentinel 24h, Quality Control daily, Dispatcher 8h, Sales Outreach 1h, SDR 2h, KB Manager 30d; remaining agents staged behind a watch-cost gate; executives + Audit and Compliance + PRD Gatherer + Onboarding stay event-driven with timer OFF). Two operating rules added from the ENY-20 incident: (1) **Agents confabulate under credit starvation:** when credit-starved or budget-hard-stopped, the org produces confident, specific, FALSE claims (a QC audit and a COO "live verification" both reported a systemic lifecycle failure that did not exist). Verify every agent audit/verification against the live GHL account before acting; escalations are leads, not facts. (2) **Keep Anthropic credit buffered and Paperclip budgets with headroom:** starvation multiplies cost (dying runs re-wake and replay a growing thread) and is the trigger for confabulation. ~~Open platform bug: a run that dies on a credit/budget error must go to `blocked`, never `done`.~~ **RETRACTED in v3.9.6.** The recovery code was read directly: credit and budget failures route to `blocked` and never to `done`, and the only path to `done` is a legitimate watchdog fold requiring a succeeded run. The "ENY-24 flipped to done" report was itself a COO confabulation, which is to say an instance of rule (1) above rather than evidence for a separate defect. No platform fix is needed or pending. Consolidated open items now live in `Enyrgy_Master_TODO.md`.
@@ -227,7 +229,7 @@ Enyrgy is a health-technology company that has developed the world's first intel
   ------------------------------------------------------------------------------------------------------------------------------------------
   **Metric**                 **Value**                                    **Notes**
   -------------------------- -------------------------------------------- ------------------------------------------------------------------
-  Customers                  600+                                         Organic growth, zero paid advertising to date
+  Users                      600+                                         Organic growth, zero paid advertising to date. **Say users, not customers**: a home unit supports up to six users, so the two are not interchangeable and "600+ customers" overstates unit sales.
 
   Treatments completed       25,000+                                      Zero burns, zero adverse events
 
@@ -773,7 +775,7 @@ ATTORNEY CONFIRMED: Touch 7 PPM fires after intro meeting is marked complete. No
                                    (magnet_winter_protocol)
   ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-## WF-21 through WF-26 (added Sessions 9 and 10, all LIVE)
+## WF-21 through WF-29 (added Sessions 9 to 11, all LIVE)
 
 | Workflow | Trigger | Purpose | Tags / Notes |
 |----------|---------|---------|--------------|
@@ -784,6 +786,8 @@ ATTORNEY CONFIRMED: Touch 7 PPM fires after intro meeting is marked complete. No
 | WF-27 Shopify New Customer Tagging | Shopify order placed | Shield new buyers from lead nurture, flag as customer | applies drip_bypass, source_shopify, status_customer. Re-Entry On |
 | WF-28 Shopify Order Fulfilled | Order fulfilled | Apply unit_shipped to trigger WF-06 onboarding | Re-Entry On |
 | WF-29 Abandoned Checkout Recovery | Inbound Webhook (from Railway service) | 3-email reassurance recovery, buyer stop-check | tags abandoned_checkout, drip_bypass, source_shopify. Re-Entry On, Stop on Response On |
+
+**Numbering gaps.** **WF-23 and WF-24 do not appear in this register and are not documented anywhere in the repository.** Either the numbers were skipped when the block was allocated, or two workflows exist in GHL that nobody has written down. **CONFIRM against the live account.** WF-36 to WF-39 are likewise unallocated; the dealer registration block starts at WF-40.
 
 ## WF-30 through WF-35 (added Sessions 15 and 16)
 
@@ -805,6 +809,44 @@ ATTORNEY CONFIRMED: Touch 7 PPM fires after intro meeting is marked complete. No
 **Investor Drip Touch 7 (updated Session 11):** the accreditation gate was removed from PPM delivery. The PPM now sends to all interested investors at Touch 7 (post-intro-meeting) per the attorney rule; the accreditation nudge stays for non-accredited investors. Accreditation remains required before commitment/subscription/wire (pipeline stages, unchanged). Open: confirm the PPM email copy is accreditation-neutral.
 
 **Shopify (connected Session 11):** the GHL LeadConnector native integration is live for store `enyrgy`. Historical orders and products backfilled; contacts merge on email; ongoing Contact/Order/Product sync on with the Order Received trigger enabled. WF-27 tags new buyers `drip_bypass` so they skip lead nurture. Remaining: an Order-fulfilled workflow to apply `unit_shipped` (feeds WF-06 onboarding), and the abandoned-checkout webhook (developer).
+
+## WF-40 through WF-43 (Dealer Deal Registration, built August 19, 2026)
+
+The commercial dealer program. Dealers resell the $8,950 commercial unit and earn 25 to 16 percent on the final sale price. **This is a different program from the facility referral arrangement in Section 19**: different product, different terms, different people.
+
+| Workflow | Trigger | Purpose | Notes |
+|----------|---------|---------|-------|
+| WF-40 Dealer Registration Received | **Form is any of** (one entry per dealer form) | Create the opportunity, tag it, set `Source Type = Dealer`, apply `no_route`, alert Scott | **The trigger list is the single point of failure in the whole system.** A new dealer form that is not added here fails silently: the opportunity lands in `Registration Submitted` with no tag, no Source Type and no alert, and the facility is not protected from consumer drip because `no_route` never lands. See `campaigns/dealer-onboarding.md`. |
+| WF-41 | CONFIRM | CONFIRM | Not sourceable from the repository. Scott to supply. |
+| WF-42 Registration Expiry | Wait 76 days, then Wait 14 days, gated on `Opportunity status is Open` | Warn before a 90 day registration lapses, then close it out | Built on Wait steps rather than date reminders, because **GHL date reminders are contact-only and a registration lives on the opportunity**. |
+| WF-43 | CONFIRM | CONFIRM | Not sourceable from the repository. Scott to supply. |
+
+**Registrations run a 90 day clock.** A dealer holds attribution on a named facility for 90 days from submission.
+
+**Dealer confirmation email uses Send Internal Notification, not Send Email.** GHL's `Send Email` action can only reach the contact on the record, which on a dealer registration is the *facility*, not the dealer. Sending the dealer's confirmation with `Send Email` delivers it to the prospect. The working build is `Send Internal Notification` with `To User Type: Custom email` and `{{opportunity.dealer_email}}` inserted through the tag picker. **Typing the merge field by hand is rejected as invalid; it must be inserted from the picker.**
+
+**Commission ladder, tied to the final sale price:**
+
+| Commission | Maximum discount off MSRP | Resulting price |
+|---|---|---|
+| 25 percent | none, sells at $8,950 MSRP | $8,950 |
+| 20 percent | $1,342.50 | $7,607.50 |
+| 16 percent | $1,790.00 (MAP floor) | $7,160.00 |
+
+Commission is calculated on the **actual sale price, expressed in USD**, regardless of the dealer's local currency. The program is **not US-only**.
+
+## Opportunity custom fields (Dealer Registration folder, Session 17)
+
+Held in `Settings > Custom Fields > Opportunity > Dealer Registration`. These sit on the Opportunity object, not the Contact object, which is why the health-profile fields below are a separate list.
+
+- **`Dealer Name`** (dropdown). Attribution that decides a commission cannot be free text with three spellings of the same company.
+- **`dealer_email`**. Feeds the confirmation notification described above.
+- **`Source Type`**. Set to `Dealer` by WF-40.
+- Remaining fields: **CONFIRM.** Scott to supply the full list from the GHL account.
+
+**There is one registration form per dealer, and this is deliberate.** A dropdown shows every option to whoever opens it, so a single shared form would let every dealer read the full roster and infer territory coverage and network size. GHL has no hidden-field option on this form type and its forms API is `forms.readonly`, so this cannot be automated away inside GHL. The master form is a template: never send it to anyone and never add a real dealer name to it. Full onboarding sequence in `campaigns/dealer-onboarding.md`.
+
+**`Unassigned` is not a dealer.** It marks a registration that lost its attribution and must never be selectable on a live dealer form. An opportunity with `Source Type = Dealer` and `Dealer Name = Unassigned` is a deal nobody can be paid for, and is a fault to investigate rather than a record to leave.
 
 ## Contact custom fields and base (Session 10)
 
@@ -885,6 +927,37 @@ The v3.6 Gmail-SMTP model is retired. GHL allows only one Gmail connection per s
 
 -   Order URL: https://shop.enyrgy.com/products/uvb-light-therapy · Device Registration: https://api.enyrgy.com/
 
+## Mechanics (NEW in v3.9.7, enforced by a gate)
+
+-   **US English throughout.** No British spellings. Added to `Enyrgy_Brand_Style_Guide_v2.md` section 05 after they appeared twice in client-facing drafts.
+
+-   **Enforcement is automatic.** `scripts/md2docx.py` checks every brand document for British spellings and em-dashes. `.githooks/pre-commit` blocks any commit introducing either into root-level `Enyrgy_*.md` or `campaigns/*.md`. Install once per clone with `git config core.hooksPath .githooks`. Escapes: wrap a legitimate quotation in `<!-- style-check: ignore -->` and `<!-- style-check: resume -->`, or `git commit --no-verify`.
+
+## Positioning Rules (NEW in v3.9.7)
+
+-   **Never raise the tanning-bed comparison in outbound copy, even to deny it.** Naming it plants it. Applied August 18 to WF-22 Touch 2 and WF-13. Answering the comparison when a prospect raises it first is permitted; introducing it is not.
+
+-   **The app determines your skin type, it does not read it.** Corrected August 13 across the Consumer Drip and the KB.
+
+-   **Prevalence, the citable figure.** In a 2023 pooled analysis of 308 population-based studies across 81 countries and 7.9 million participants aged 1 and over, **76.6 percent had serum 25(OH)D below 30 ng/mL** (Cui et al., *Frontiers in Nutrition* 2023, PMC10064807). **This supersedes the previously unsourced 77 percent figure.** Three rules: below 30 is insufficiency or low status, never "deficiency"; the population is global and aged 1 and over, so say "people" and never "adults", "Americans" or "indoor"; and do not present it as a precise national rate. Approved short forms: "about three-quarters of people have vitamin D below 30 ng/mL" or "76.6 percent of people worldwide are below 30 ng/mL".
+
+-   **The sunny-climate objection has its own source.** Palacios and Gonzalez, *J Steroid Biochem Mol Biol* 2014 (PMC4018438), whose Highlights state verbatim: "Low vitamin D status is a problem even in countries with sun exposure all year round." It reports no single headline figure, so it cannot source the prevalence number, and it says nothing about devices, so never present it as support for the platform itself.
+
+-   **HSA/FSA: the only authorized phrasing is "HSA/FSA eligible through Truemed".** Never explain eligibility in condition-or-treatment terms and never describe the Letter of Medical Necessity, regardless of what Truemed's own copy blocks say. **Eligibility covers the Consumer Unit only; the wall mount is excluded.** The test is who the buyer of record is: an individual buying their own Consumer Unit at `shop.enyrgy.com` is eligible **even when they arrive through a facility's referral link**, because the transaction is still consumer to Enyrgy. A facility buying units for its business is not, and neither is any membership or session fee that includes Enyrgy access. Never suggest routing a facility purchase through an individual to obtain eligibility.
+
+## Health Questions and Contraindications (NEW in v3.9.7)
+
+**KB Section 16 governs any conversation where a person names a health condition, an injury or a medication.** It carries the contraindication list from the shipping User Manual plus the handling rules, and it is binding on every agent and every human writing outbound copy.
+
+The rules that matter operationally:
+
+-   **Never clear anyone for use**, and never treat absence from the contraindication list as clearance.
+-   **Never send the platform's benefit story as the answer to a health question.**
+-   **Do not solicit or record health details** in GHL custom fields, tags or notes. Escalate instead.
+-   **Escalate to Scott** whenever a person names a specific condition, a medication, ongoing care, or asks for an arrangement outside a standard purchase.
+-   **The contraindication list is the only standing exemption to the prohibited-words scan.** It needs the word "diagnosed" five times, and an agent scrubbing it to pass the scan breaks the disclosure.
+-   **Use on intact skin only.** Sessions are taken on the torso, on unbroken healthy skin. Never pair the wound-repair research with usage instructions in the same passage.
+
 ## Brand Standards (NEW in v3.7, locked)
 
 -   Accent: Sunrise Orange #E64C38 only (NO violet/purple/amber).
@@ -963,6 +1036,8 @@ Device anchors premium tier. Revenue from clients upgrading tiers.
 
 PPM shared after intro meeting. The subscription agreement and term sheet are pre-acceptance and may be shared before accreditation. Wire instructions and acceptance of any investment shared only after accredited_verified = Yes is confirmed.
 
+**Current company valuation: $10M** (recorded August 16, 2026). This is the company's present valuation. It is **not** the basis for the conversion discount below, which discounts from an independent SEC valuation obtained at the time of conversion. Do not present $10M as a conversion price or imply the two are the same number.
+
   ---------------------------------------------------------------------------------------------------------
   **Item**                            **Detail**
   ----------------------------------- ---------------------------------------------------------------------
@@ -1019,6 +1094,19 @@ PPM shared after intro meeting. The subscription agreement and term sheet are pr
   Referral discount          $150 off referee / $100 credit referrer                    WF-07
   --------------------------------------------------------------------------------------------------------------------------
 
+## Added since v3.9.6
+
+| Data Point | Value | Use In |
+|---|---|---|
+| Current company valuation | $10M (Aug 16, 2026) | Investor conversations. Never as the conversion price. |
+| Prevalence, low vitamin D | 76.6 percent of people below 30 ng/mL (Cui 2023) | All funnels. Supersedes the unsourced 77 percent. |
+| Facility referral commission | $600 per Consumer Unit sale | Commercial Drip Touch 7. Escalate terms to Scott. |
+| Dealer commission ladder | 25 / 20 / 16 percent on final sale price | Dealer program only, see Section 12 |
+| Commercial unit footprint | approximately 4 ft by 4 ft | First practical objection a facility raises |
+| Commercial client pricing | $49 to $125 per month per client, set by market | Commercial funnel |
+| Founder track record | Five exits from eight previous startups, $500M+; plus eleven M&A transactions led, $249M | Investor conversations. **State the two figures separately, never combine.** |
+| HSA/FSA | "HSA/FSA eligible through Truemed", Consumer Unit only | Consumer funnel, see Section 14 |
+
 # SECTION 19: OEM / WHITE-LABEL PARTNER PROGRAM
 
 ## Current Partner, Lumanova / Luma D Light
@@ -1040,6 +1128,18 @@ PPM shared after intro meeting. The subscription agreement and term sheet are pr
 
   GHL Tags                            type_partner + source_oem_lumanova + partnership_status active
   ------------------------------------------------------------------------------------------------------------
+
+## Facility Referral Arrangement (ESCALATE TO SCOTT)
+
+**Agents must not run this conversation.** Scott handles referral arrangements personally (decision, August 14, 2026).
+
+A facility hands its members a unique referral link to `shop.enyrgy.com`. The member purchases directly from Enyrgy at the $2,995 MSRP and the facility is credited a commission. The facility carries no inventory and buys nothing.
+
+**The commission is $600 per Consumer Unit sale.** This figure appears in Commercial Drip Touch 7, so a facility that received that email already has it. An agent may confirm the figure if a facility quotes it back, but **must not negotiate, extend, or discuss terms.** Hand off to Scott, the same as white-label and distribution.
+
+Because the member is the buyer of record, that purchase is HSA/FSA eligible. The referral link does not change whose purchase it is. See the HSA/FSA rules in Section 14.
+
+**This is not the dealer program.** Dealers resell the $8,950 commercial unit and earn 25 to 16 percent under the deal registration system in Section 12. The two are separate and should never be described in the same breath to a prospect.
 
 ## Ideal Next OEM / Distribution Partner Profile
 
