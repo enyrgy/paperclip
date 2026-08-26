@@ -185,6 +185,28 @@ The prohibited-words scan runs before every email, SMS, and voicemail across all
 - **Facility referral arrangement: ESCALATE TO SCOTT. Do not run this conversation.** A facility hands its members a unique referral link to `shop.enyrgy.com`; the member purchases directly from Enyrgy at the $2,995 MSRP and the facility is credited a commission. The facility carries no inventory and buys nothing. Because the member is the buyer of record, that purchase is HSA/FSA eligible (see §3). The referral link does not change whose purchase it is.
   - **The commission is $600 per Consumer Unit sale, and this figure appears in Commercial Drip Touch 7**, so a facility that received that email already has it. An agent may therefore confirm the figure if a facility quotes it back, but **must not negotiate, extend, or discuss terms**. Hand off to Scott, same as white-label and distribution. Scott handles referral arrangements personally (decision, Aug 14 2026).
 
+## 14b. Commercial dealer program (ESCALATE TO SCOTT)
+
+**Agents must not run a dealer conversation.** Terms, territory and registration are Scott's, the same as white-label, distribution and the facility referral arrangement above. An agent may explain that the program exists and hand off. Nothing below is a negotiating position.
+
+**What it is.** Dealers resell the **$8,950 commercial unit** and earn a commission on the final sale price. This is **not** the facility referral arrangement in section 14, which pays $600 on a $2,995 consumer unit that the member buys directly from Enyrgy. Different product, different terms, different people. Never describe the two in the same breath to a prospect.
+
+**Not US-only.** Commission is calculated on the actual sale price expressed in **USD**, whatever the dealer's local currency.
+
+**The commission ladder, tied to the final sale price:**
+
+| Commission | Maximum discount off MSRP | Resulting price |
+|---|---|---|
+| 25 percent | none, sells at MSRP | $8,950 |
+| 20 percent | $1,342.50 | $7,607.50 |
+| 16 percent | $1,790.00 | $7,160.00 |
+
+**$7,160 is the MAP floor.** A deal below it is flagged and pays no commission at all. The dealer discounts against their own commission, which is the point of the structure: they can compete on price, but only with their own margin.
+
+**Deal registration.** A dealer registers a named facility and holds attribution on it for **90 days**. Registration runs through a form unique to that dealer, tracked as an Opportunity in the Commercial B2B pipeline. Build detail lives in the Implementation Guide section 12 and `campaigns/dealer-onboarding.md`; agents need only know that registration exists, that it expires, and that the roster of other dealers is confidential.
+
+**Never disclose the dealer roster.** Who else sells for Enyrgy, and by inference which territories are covered and how large the network is, is competitive intelligence. Each dealer sees only their own name on their own form, deliberately.
+
 ## 15. Key reference facts (quick lookup)
 
 | Data point | Value |
@@ -193,7 +215,7 @@ The prohibited-words scan runs before every email, SMS, and voicemail across all
 | Commercial Unit MSRP | $8,950 (78 percent margin) |
 | Per-session cost | $2.30 (5x per week, 5 years) |
 | Treatments completed | 25,000+ (zero adverse events) |
-| Customers | 600+ across 5 countries |
+| Users | 600+ across 5 countries (**say users, not customers**) |
 | Return rate | under 1 percent |
 | Clinical result | +111 percent Vitamin D; 100 percent reached optimal |
 | Efficiency vs sunlight | 2.4x; 2 to 4 min equals 2 to 4 hours (about 60x) |
@@ -202,6 +224,8 @@ The prohibited-words scan runs before every email, SMS, and voicemail across all
 | Investor offering | $3.5M at 12 percent / 3yr, $50K minimum |
 | Exit target | $100 to 150M in 5 years |
 | Facility | 5115 N 27th Ave, Bld 66, Phoenix, AZ 85017, Made in USA |
+| Dealer commission | 25 / 20 / 16 percent on final sale price, MAP floor $7,160 (section 14b) |
+| Facility referral | $600 per Consumer Unit sale (section 14, escalate to Scott) |
 | Commercial model | $49 to $125/month per client, set by location and clientele; payback under 4 months at 50 clients at $49, about 6 weeks at $125 |
 
 ## 16. Contraindications and inbound health questions (safety, non-negotiable)
