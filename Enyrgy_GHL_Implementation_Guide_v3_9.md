@@ -817,11 +817,15 @@ The commercial dealer program. Dealers resell the $8,950 commercial unit and ear
 | Workflow | Trigger | Purpose | Notes |
 |----------|---------|---------|-------|
 | WF-40 Dealer Registration Received | **Form is any of** (one entry per dealer form) | Create the opportunity, tag it, set `Source Type = Dealer`, apply `no_route`, alert Scott | **The trigger list is the single point of failure in the whole system.** A new dealer form that is not added here fails silently: the opportunity lands in `Registration Submitted` with no tag, no Source Type and no alert, and the facility is not protected from consumer drip because `no_route` never lands. See `campaigns/dealer-onboarding.md`. |
-| WF-41 Dealer Deal Approved | **CONFIRM** | Clear the registration after the conflict check and start the 90 day clock | Trigger and actions still to be confirmed against the live account. |
+| WF-41 Dealer Registration Approved | **Pipeline Stage Changed**, Commercial B2B Pipeline, stage `Prospect` (plus one further condition) | Confirm the registration to the dealer, but only if the clock was actually started | If/Else `Has the expiry date been set?` on `Exclusivity Expires`. **Date is set** branch sends `Confirm registration to dealer`. **None** branch sends an internal notification instead. **This is a deliberate guard:** a registration confirmed to a dealer without an expiry date is a claim with no clock, so the workflow refuses to confirm it and tells a human. |
 | WF-42 Registration Expiry | Wait 76 days, then Wait 14 days, gated on `Opportunity status is Open` | Warn before a 90 day registration lapses, then close it out | Built on Wait steps rather than date reminders, because **GHL date reminders are contact-only and a registration lives on the opportunity**. |
-| WF-43 Dealer Commission Payout | **CONFIRM** | Handle commission once the deal is won, against the ladder below | Trigger and actions still to be confirmed against the live account. |
+| WF-43 Dealer Commission at Close | **Pipeline Stage Changed**, Commercial B2B Pipeline, reached `Contract Signed` (plus one further condition) | Mark the deal Won, set the commission tier from the agreed price, alert Scott | **Mark as Won runs first**, which is what closes the stage-versus-status gap described in Section 10. Then If/Else `Which commission tier?` branches on `Agreed Sale Price` into 25, 20 and 16 percent, each setting the tier and alerting Scott that commission is payable. **The None branch is the safety net:** a price below the MAP floor is flagged as below MAP, no commission is set, and Scott is alerted separately. |
 
-**The four workflows follow the Commercial pipeline stages in Section 10.** A registration arrives at `Registration Submitted` (WF-40), clears or fails at `Conflict Check` (WF-41), holds attribution for 90 days while the deal works through `Prospect` to `Negotiation` (WF-42 guards the clock), and pays out after `Contract Signed` flips the status to Won (WF-43). `Registration Submitted` and `Conflict Check` both sit at probability 0 and are excluded from the funnel and pie charts, because a submission that has not cleared conflict is not a deal.
+**The four workflows hang off Commercial B2B pipeline stage changes.** A registration arrives at `Registration Submitted` (WF-40). Someone works the `Conflict Check` stage by hand. Moving the opportunity to `Prospect` is what signals the registration is approved, and that stage change fires WF-41. The 90 day clock then runs while the deal works through `Discovery` to `Negotiation`, guarded by WF-42. Reaching `Contract Signed` fires WF-43, which marks the deal Won and sets the commission.
+
+`Registration Submitted` and `Conflict Check` both sit at probability 0 and are excluded from the funnel and pie charts, because a submission that has not cleared conflict is not a deal.
+
+**Both triggers carry a second condition that is not visible in the builder summary. CONFIRM against the live account.**
 
 **Registrations run a 90 day clock.** A dealer holds attribution on a named facility for 90 days from submission.
 
@@ -844,7 +848,10 @@ Held in `Settings > Custom Fields > Opportunity > Dealer Registration`. These si
 - **`Dealer Name`** (dropdown). Attribution that decides a commission cannot be free text with three spellings of the same company.
 - **`dealer_email`**. Feeds the confirmation notification described above.
 - **`Source Type`**. Set to `Dealer` by WF-40.
-- Remaining fields: **CONFIRM.** Scott to supply the full list from the GHL account.
+- **`Exclusivity Expires`** (Date). The end of the 90 day registration. WF-41 refuses to confirm a registration to a dealer while this is empty.
+- **`Agreed Sale Price`**. WF-43 branches on this to pick the commission tier.
+- A **commission tier** field, set to 25, 20 or 16 percent by WF-43, plus a **below MAP** flag on the None branch. Exact field names: **CONFIRM.**
+- Any remaining fields: **CONFIRM** against `Settings > Custom Fields > Opportunity > Dealer Registration`.
 
 **There is one registration form per dealer, and this is deliberate.** A dropdown shows every option to whoever opens it, so a single shared form would let every dealer read the full roster and infer territory coverage and network size. GHL has no hidden-field option on this form type and its forms API is `forms.readonly`, so this cannot be automated away inside GHL. The master form is a template: never send it to anyone and never add a real dealer name to it. Full onboarding sequence in `campaigns/dealer-onboarding.md`.
 
