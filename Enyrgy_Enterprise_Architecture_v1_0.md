@@ -2,16 +2,36 @@
 ## Sunlight. Evolved.
 ### Enterprise Architecture
 **The System of Record for How Enyrgy Runs, Connects, and Scales**
-Version 1.1
+Version 1.2
 
 Consumer Unit $2,995 · Commercial Unit $8,950 · OEM/White-Label · Investor Capital
-600+ Customers · 25,000+ Treatments · 5 Countries · Zero Adverse Events
+600+ Users · 25,000+ Treatments · 5 Countries · Zero Adverse Events
 scott@enyrgy.com · 602-321-0322 · enyrgy.com
 
 Author: Scott Hansbury, Co-founder & CEO, Enyrgy Inc
-Last Updated: July 28, 2026 · Version 1.1 (v1.0 body baseline dated June 29, 2026; the v1.1 Current-State Update section below is the authoritative override where the body is stale)
+Last Updated: August 25, 2026 · Version 1.2 (v1.0 body baseline dated June 29, 2026; the Current-State Update sections below are the authoritative override where the body is stale, most recent first)
 
 CONFIDENTIAL
+
+---
+
+## v1.2 Current-State Update (August 25, 2026)
+
+**Read this before the v1.1 section below it.** Four things in the body were describing a world that no longer exists.
+
+**The Shopify-to-GHL purchase sync is BUILT. Sections 4.3 and 7.2 are obsolete and are marked so in place.** The GHL LeadConnector native integration went live for store `enyrgy` in Session 11, and three workflows close the loop: WF-27 tags new buyers `drip_bypass` so they stop receiving prospecting, WF-28 applies `unit_shipped` on fulfillment which fires WF-06 onboarding, and WF-29 recovers abandoned checkouts. The scenario the body calls the highest-priority risk, a customer receiving "why haven't you bought yet" messages after buying, no longer occurs.
+
+**Paperclip is operating, not pending.** Section 7.6 described the agent connection as a Phase 2 task with workflows running on GHL-native automation in the meantime. Agents are live with tuned heartbeats. Two operating rules came out of the ENY-20 incident and belong in any architectural reading: agents confabulate under credit starvation, producing confident and specific false claims, so every agent audit must be verified against the live account before anyone acts on it; and starvation multiplies cost because dying runs re-wake and replay a growing thread.
+
+**The FDA guidelines sentence in Section 5.3 was retired on August 4 and is removed here.** It instructed a review no agent could perform, against guidance whose own scope test appears to exclude UV-emitting devices. The prohibited-words list and the wellness-device position remain in force. Scott's decision.
+
+**Contraindications now have a governing document.** KB Section 16, added August 24, carries the contraindication list from the shipping User Manual plus binding handling rules for any conversation where a person names a condition, an injury or a medication. This is a compliance-architecture element, summarized in Section 5.3.
+
+**The dealer deal registration system exists** (WF-40 to WF-43, built August 19), running on Opportunity custom fields rather than Contact fields. It sits in the CRM layer, so the Implementation Guide Section 12 owns it; noted here because the Opportunity object was not previously carrying business logic.
+
+**Hosting is documented.** Section 2.4, added August 24, covers Railway and the orphan service.
+
+**Version references corrected.** The body cited the Implementation Guide as v3.8.4 in two places and v3.7 in a third. It is at **v3.9.7**.
 
 ---
 
@@ -40,7 +60,7 @@ The layered body below is the June 29, 2026 v1.0 baseline. Several systems have 
 
 ## How To Read This Document
 
-This is the Enterprise Architecture (EA) for Enyrgy Inc. It sits one layer above the GoHighLevel CRM Implementation Guide (v3.8.4), which documents the marketing and revenue-automation layer in depth. Where this document describes the CRM, it summarizes and points to that guide rather than duplicating it.
+This is the Enterprise Architecture (EA) for Enyrgy Inc. It sits one layer above the GoHighLevel CRM Implementation Guide (v3.9.7), which documents the marketing and revenue-automation layer in depth. Where this document describes the CRM, it summarizes and points to that guide rather than duplicating it.
 
 Below the EA sit two consumer-layer reference documents that this EA points to rather than duplicates: the **Consumer Funnel Architecture** (the ICP-Dartboard top-of-funnel system: how leads enter, how they are segmented, the suppression logic, and the on-site CTA integration) and the **Consumer TOFU Map and 90-Day Plan** (the traffic strategy that fills the funnel: which content attracts each ICP on which channel, and the phased rollout). When this EA references consumer routing or the dartboard, those two documents hold the detail.
 
@@ -330,7 +350,10 @@ Two consumer capture webhooks are live and tested end to end:
 
 Each capture workflow applies its tags (type_consumer, magnet_lead, drip_bypass, and the relevant icp_ tag) in a single add-tags action so the tags land together, which the suppression logic depends on.
 
-## 4.3 The Missing Shopify-To-GHL Sync
+## 4.3 The Shopify-To-GHL Sync (RESOLVED, Session 11)
+
+**This section described the highest-priority gap in the architecture. It has been built and the description below is retained only as the design rationale.** The GHL LeadConnector native integration is live for store `enyrgy`, with WF-27 (tag new buyers `drip_bypass`), WF-28 (apply `unit_shipped` on fulfillment, firing WF-06 onboarding) and WF-29 (abandoned checkout recovery). Contacts merge on email. The three decisions the original text called open were all made.
+
 
 This is the highest-priority integration gap in the architecture. Without it, a purchase made in Shopify does not automatically advance the buyer's GHL pipeline stage, does not fire post-purchase onboarding, and does not stop prospecting nurture. The practical consequence is that a customer can continue to receive "why haven't you bought yet" messages after they have bought, a brand and trust risk, not merely an inconvenience.
 
@@ -360,7 +383,9 @@ Outbound SMS is governed by carrier and federal messaging rules. The architectur
 
 ## 5.3 FDA Wellness Guardrails
 
-The platform is a wellness device, not a medical device, and makes no medical claims. This boundary is enforced in content rather than in code: a prohibited-words list (treat, cure, diagnose, disease, prescription, FDA-approved, and similar) is scanned before content ships, and a compliance workflow (WF-09) flags any contact or content carrying medical-claim risk. All client-facing content is reviewed against the January 2026 FDA guidelines for wellness products before use. The architectural point is that the wellness-versus-medical line is a compliance control with real legal weight, and the prohibited-words scan is its enforcement point.
+The platform is a wellness device, not a medical device, and makes no medical claims. This boundary is enforced in content rather than in code: a prohibited-words list (treat, cure, diagnose, disease, prescription, FDA-approved, and similar) is scanned before content ships, and a compliance workflow (WF-09) flags any contact or content carrying medical-claim risk.
+
+**Contraindications are governed by KB Section 16** (added August 24, 2026), which carries the contraindication list from the shipping User Manual and binding handling rules: never clear anyone for use, never treat absence from the list as clearance, never answer a health question with the benefit story, do not record health details in GHL, and escalate to Scott. **The contraindication list is the only standing exemption to the prohibited-words scan**, because it needs the word "diagnosed" and scrubbing it would break the disclosure. An earlier requirement to review content against the January 2026 FDA wellness guidelines was retired on August 4, 2026: it instructed a check no agent could perform, against guidance whose own scope test appears to exclude UV-emitting devices. The architectural point is that the wellness-versus-medical line is a compliance control with real legal weight, and the prohibited-words scan is its enforcement point.
 
 ## 5.4 Data Security And Privacy
 
@@ -404,9 +429,11 @@ This section consolidates every unresolved design question so none hides inside 
 
 **Decision needed:** a definitive, documented system-of-record map, ratified rather than inferred, including the rule for resolving a person who is both a Shopify customer and a GHL contact. **Why it matters:** every integration depends on knowing which system wins when two disagree. **Referenced in:** Sections 2.3, 3.1, 3.4.
 
-## 7.2 Shopify-To-GHL Purchase Sync (HIGH)
+## 7.2 Shopify-To-GHL Purchase Sync (RESOLVED, Session 11)
 
-**Decision needed:** the trigger (order-created vs. order-paid), the identity-match key, and the GHL action set. **Why it matters:** without it, buyers receive prospecting nurture after purchase, and pipeline state is wrong; it is the highest-leverage missing integration. **Referenced in:** Sections 2.3, 3.2, 4.1, 4.3.
+**Closed. Built as the native LeadConnector integration plus WF-27, WF-28 and WF-29. See Section 4.3.** Original entry retained below for the record.
+
+**Decision was:** the trigger (order-created vs. order-paid), the identity-match key, and the GHL action set. **Why it matters:** without it, buyers receive prospecting nurture after purchase, and pipeline state is wrong; it is the highest-leverage missing integration. **Referenced in:** Sections 2.3, 3.2, 4.1, 4.3.
 
 ## 7.3 Device-App Data Flow (MEDIUM)
 
@@ -418,11 +445,11 @@ This section consolidates every unresolved design question so none hides inside 
 
 ## 7.5 Metric Governance (MEDIUM)
 
-**Decision needed:** designate which document or system owns canonical company metrics going forward, so they stay consistent as they change. **Resolved (this version):** the canonical figures are a $3.5M capital raise, 25,000-plus treatments completed, and a return rate under 1%. These supersede the earlier variances in source materials (raise previously stated as $2.5M; treatments as 24,000-plus; return rate as 0%). **Why it matters:** these numbers appear in investor, marketing, and partner contexts where inconsistency erodes credibility. **Referenced in:** Section 3.4 and the front matter. For the GHL/CRM layer, the Implementation Guide (now at v3.8.4) reflects these figures; the remaining open item is assigning a single owner above that layer.
+**Decision needed:** designate which document or system owns canonical company metrics going forward, so they stay consistent as they change. **Resolved (this version):** the canonical figures are a $3.5M capital raise, 25,000-plus treatments completed, and a return rate under 1%. These supersede the earlier variances in source materials (raise previously stated as $2.5M; treatments as 24,000-plus; return rate as 0%). **Why it matters:** these numbers appear in investor, marketing, and partner contexts where inconsistency erodes credibility. **Referenced in:** Section 3.4 and the front matter. For the GHL/CRM layer, the Implementation Guide (now at v3.9.7) reflects these figures; the remaining open item is assigning a single owner above that layer.
 
 ## 7.6 Paperclip Activation (operational, not architectural)
 
-The agent layer is designed and its workflows are built and published, but the Paperclip connection itself is a pending Phase 2 task. Until it is live, the workflows run on GHL-native automation and human operation. This is tracked as a roadmap item; the architecture already accommodates it.
+**Resolved. Paperclip is operating.** Agents are live with staged and tuned heartbeats. Two operating rules from the ENY-20 incident carry architectural weight: **agents confabulate under credit starvation**, producing confident, specific and false claims, so every agent audit or verification must be checked against the live account before anyone acts on it, and escalations are leads rather than facts; and **credit starvation multiplies cost**, because dying runs re-wake and replay a growing thread. Keep Anthropic credit buffered and Paperclip budgets with headroom.
 
 ---
 
@@ -453,7 +480,7 @@ The agent layer is designed and its workflows are built and published, but the P
 
 **Facility:** 5115 N 27th Ave, Bld 66, Phoenix, AZ 85017 (Made in USA)
 
-**Companion document:** Enyrgy GHL CRM Implementation Guide v3.7, the authoritative reference for the CRM/marketing-automation layer (fields, tags, pipelines, drips, workflows WF-01 through WF-18, ICP-Dartboard).
+**Companion document:** Enyrgy GHL CRM Implementation Guide v3.9.7, the authoritative reference for the CRM/marketing-automation layer (fields, tags, pipelines, drips, workflows WF-01 through WF-43, ICP-Dartboard, dealer deal registration).
 
 ---
 
