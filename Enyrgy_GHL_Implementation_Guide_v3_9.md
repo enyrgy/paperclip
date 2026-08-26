@@ -787,7 +787,7 @@ ATTORNEY CONFIRMED: Touch 7 PPM fires after intro meeting is marked complete. No
 | WF-28 Shopify Order Fulfilled | Order fulfilled | Apply unit_shipped to trigger WF-06 onboarding | Re-Entry On |
 | WF-29 Abandoned Checkout Recovery | Inbound Webhook (from Railway service) | 3-email reassurance recovery, buyer stop-check | tags abandoned_checkout, drip_bypass, source_shopify. Re-Entry On, Stop on Response On |
 
-**Numbering gaps.** **WF-23 and WF-24 do not appear in this register and are not documented anywhere in the repository.** Either the numbers were skipped when the block was allocated, or two workflows exist in GHL that nobody has written down. **CONFIRM against the live account.** WF-36 to WF-39 are likewise unallocated; the dealer registration block starts at WF-40.
+**Numbering gaps, resolved.** **WF-23, WF-24 and WF-36 to WF-39 do not exist.** The numbers were skipped when the blocks were allocated (confirmed by Scott, 2026-08-25). Nothing is missing from this register, and nobody should go looking for them in the live account. The dealer registration block starts at WF-40.
 
 ## WF-30 through WF-35 (added Sessions 15 and 16)
 
