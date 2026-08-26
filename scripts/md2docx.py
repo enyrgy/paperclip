@@ -141,12 +141,98 @@ def check_style(md):
     return warned
 
 
+# -------------------------------------------------------------- brand style
+# Every Enyrgy .docx is built against the brand reference document: Montserrat
+# throughout, headings in Sunrise Orange #E64C38, Deep Charcoal body text, and
+# the ENYRGY header / Sunlight. Evolved. footer. Without it pandoc emits Aptos
+# and no header, which is not the approved standard.
+REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+REFERENCE = os.path.join(REPO, "assets", "enyrgy-reference.docx")
+
+# The reference document's header carries its own title and version, so both
+# are rewritten per document at build time.
+TITLES = {
+    "Enyrgy_GHL_Implementation_Guide_v3_9": "Implementation Guide",
+    "Enyrgy_Enterprise_Architecture_v1_0": "Enterprise Architecture",
+    "Enyrgy_Paperclip_Knowledge_Base": "Knowledge Base",
+    "Enyrgy_Brand_Style_Guide_v2": "Brand Style Guide",
+    "Enyrgy_Agent_Email_Templates_v1": "Agent Email Templates",
+    "Enyrgy_Funnel_Ownership_Map": "Funnel Ownership Map",
+    "Enyrgy_Master_TODO": "Master TODO",
+    "Enyrgy_Session_Handoff": "Session Handoff",
+}
+# Versions are explicit, not sniffed. Auto-detection read the Knowledge Base's
+# opening reference to "Implementation Guide v3.9" as the KB's own version.
+# UPDATE THESE when a document's version bumps.
+VERSIONS = {
+    "Enyrgy_GHL_Implementation_Guide_v3_9": "v3.9.7",
+    "Enyrgy_Enterprise_Architecture_v1_0": "v1.2",
+    "Enyrgy_Paperclip_Knowledge_Base": "v2",
+    "Enyrgy_Brand_Style_Guide_v2": "v2.0",
+}
+VERSION_RE = re.compile(r"\bv(\d+\.\d+(?:\.\d+)?)\b|\bVersion (\d+\.\d+)\b")
+
+
+def doc_title(md):
+    """Header title: the mapping, else the filename humanized."""
+    stem = os.path.basename(md)[:-3]
+    if stem in TITLES:
+        return TITLES[stem]
+    return stem.replace("Enyrgy_", "").replace("_", " ")
+
+
+def doc_version(md):
+    """The mapped version. Falls back to sniffing only for unmapped files."""
+    stem = os.path.basename(md)[:-3]
+    if stem in VERSIONS:
+        return VERSIONS[stem]
+    with open(md, encoding="utf-8") as fh:
+        head = "".join(fh.readline() for _ in range(60))
+    m = VERSION_RE.search(head)
+    return "v" + (m.group(1) or m.group(2)) if m else ""
+
+
+def brand_header(path, title, version):
+    """Rewrite the reference document's header for this document."""
+    zin = zipfile.ZipFile(path)
+    parts = {n: zin.read(n) for n in zin.namelist()}
+    infos = zin.infolist()
+    zin.close()
+    name = "word/header1.xml"
+    if name not in parts:
+        return False
+    x = parts[name].decode("utf-8")
+    x = re.sub(r'(<w:t[^>]*>)ENYRGY \| [^<]*(</w:t>)',
+               lambda m: f"{m.group(1)}ENYRGY | {title} {m.group(2)}", x, count=1)
+    x = re.sub(r'(<w:t[^>]*>)v[\d.]+\s*(</w:t>)',
+               lambda m: f"{m.group(1)}{version}  {m.group(2)}", x, count=1)
+    parts[name] = x.encode("utf-8")
+    tmp = path + ".tmp"
+    with zipfile.ZipFile(tmp, "w", zipfile.ZIP_DEFLATED) as zout:
+        for it in infos:
+            zi = zipfile.ZipInfo(it.filename, date_time=it.date_time)
+            zi.compress_type = it.compress_type
+            zi.external_attr = it.external_attr
+            zout.writestr(zi, parts[it.filename])
+    os.replace(tmp, path)
+    return True
+
+
 # ------------------------------------------------------------------ driver
 def build(md):
     docx = md[:-3] + ".docx"
-    subprocess.run(["pandoc", md, "-o", docx], check=True)
+    cmd = ["pandoc", md, "-o", docx]
+    if os.path.exists(REFERENCE):
+        cmd[1:1] = ["--reference-doc=" + REFERENCE]
+    else:
+        print(f"    WARNING: {REFERENCE} missing, building unbranded")
+    subprocess.run(cmd, check=True)
     n = gridlines(docx)
-    print(f"  {os.path.basename(docx):42} tables gridlined: {n}")
+    title, version = doc_title(md), doc_version(md)
+    hdr = brand_header(docx, title, version)
+    print(f"  {os.path.basename(docx):42} tables gridlined: {n}"
+          f"  header: {title} {version}" if hdr else
+          f"  {os.path.basename(docx):42} tables gridlined: {n}")
 
 
 def main(argv):
