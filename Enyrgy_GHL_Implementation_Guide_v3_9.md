@@ -817,9 +817,11 @@ The commercial dealer program. Dealers resell the $8,950 commercial unit and ear
 | Workflow | Trigger | Purpose | Notes |
 |----------|---------|---------|-------|
 | WF-40 Dealer Registration Received | **Form is any of** (one entry per dealer form) | Create the opportunity, tag it, set `Source Type = Dealer`, apply `no_route`, alert Scott | **The trigger list is the single point of failure in the whole system.** A new dealer form that is not added here fails silently: the opportunity lands in `Registration Submitted` with no tag, no Source Type and no alert, and the facility is not protected from consumer drip because `no_route` never lands. See `campaigns/dealer-onboarding.md`. |
-| WF-41 | CONFIRM | CONFIRM | Not sourceable from the repository. Scott to supply. |
+| WF-41 Dealer Deal Approved | **CONFIRM** | Clear the registration after the conflict check and start the 90 day clock | Trigger and actions still to be confirmed against the live account. |
 | WF-42 Registration Expiry | Wait 76 days, then Wait 14 days, gated on `Opportunity status is Open` | Warn before a 90 day registration lapses, then close it out | Built on Wait steps rather than date reminders, because **GHL date reminders are contact-only and a registration lives on the opportunity**. |
-| WF-43 | CONFIRM | CONFIRM | Not sourceable from the repository. Scott to supply. |
+| WF-43 Dealer Commission Payout | **CONFIRM** | Handle commission once the deal is won, against the ladder below | Trigger and actions still to be confirmed against the live account. |
+
+**The four workflows follow the Commercial pipeline stages in Section 10.** A registration arrives at `Registration Submitted` (WF-40), clears or fails at `Conflict Check` (WF-41), holds attribution for 90 days while the deal works through `Prospect` to `Negotiation` (WF-42 guards the clock), and pays out after `Contract Signed` flips the status to Won (WF-43). `Registration Submitted` and `Conflict Check` both sit at probability 0 and are excluded from the funnel and pie charts, because a submission that has not cleared conflict is not a deal.
 
 **Registrations run a 90 day clock.** A dealer holds attribution on a named facility for 90 days from submission.
 
