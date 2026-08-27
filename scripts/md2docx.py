@@ -160,6 +160,7 @@ TITLES = {
     "Enyrgy_Funnel_Ownership_Map": "Funnel Ownership Map",
     "Enyrgy_Master_TODO": "Master TODO",
     "Enyrgy_Session_Handoff": "Session Handoff",
+    "Enyrgy_Facility_Overview": "Facility Overview",
 }
 # Versions are explicit, not sniffed. Auto-detection read the Knowledge Base's
 # opening reference to "Implementation Guide v3.9" as the KB's own version.
@@ -169,6 +170,7 @@ VERSIONS = {
     "Enyrgy_Enterprise_Architecture_v1_0": "v1.2",
     "Enyrgy_Paperclip_Knowledge_Base": "v2",
     "Enyrgy_Brand_Style_Guide_v2": "v2.0",
+    "Enyrgy_Facility_Overview": "v1.1",
 }
 VERSION_RE = re.compile(r"\bv(\d+\.\d+(?:\.\d+)?)\b|\bVersion (\d+\.\d+)\b")
 
