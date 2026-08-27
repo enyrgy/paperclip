@@ -65,6 +65,10 @@ A 111 percent average increase. Every participant started insufficient or border
 
 What it shows is narrow and real: in a small group, consistent sessions moved the number, and moved it in all five. What it does not show is a controlled effect size, and we are not going to claim one from five people.
 
+**The honest limit on that result.** Some people do not respond well to UVB because of polymorphisms in genes governing Vitamin D metabolism, GC, CYP2R1 and DHCR7 among them. A patient with these may not reach optimal, through no failure of the platform. This is a non-response caveat and not a safety exclusion, and testing before and after is what settles it for any individual, which is what we recommend regardless.
+
+Worth being precise about the overlap: this is not a supplement problem that light escapes. GC and CYP2R1 act on Vitamin D once it is in circulation, whichever route it arrived by, so they bear on both. DHCR7 governs the substrate available in skin, so it is specific to the light pathway. The platform opens three pathways instead of one and is far more efficient at the Vitamin D pathway. It does not make Vitamin D genetics irrelevant.
+
 The study that will matter to you is the one you run in your own patient population, with your own lab.
 
 ## The people behind the protocol
@@ -72,6 +76,36 @@ The study that will matter to you is the one you run in your own patient populat
 Our scientific advisory board includes **Dr. Bruce Hollis**, who has reviewed and endorsed the platform and is among the most cited Vitamin D researchers in the world; **Dr. Samantha Kimball**, who designed the dosing protocol behind every session; and **Dr. William Grant**, a global Vitamin D and UVB researcher.
 
 600 plus users across five countries. Made in the USA in Phoenix, Arizona.
+
+## Contraindications and screening
+
+This is the list that ships in the User Guide with every unit, reproduced as written. In your setting the screening is yours to run, and this is what you would screen against.
+
+> **Contraindicated**
+>
+> We recommend consulting your doctor to evaluate whether Enyrgy Light Therapy is right for you.
+
+  - Do not use if Pregnant
+  - Do not use if diagnosed with UV Light Sensitivity
+  - Do not use if on photosensitizing medication
+  - Do not use if diagnosed with HIV-AIDS
+  - Do not use if diagnosed with Active Skin Cancer
+  - Do not use if diagnosed with UV light sensitivities: Protoporphyria (EPP), UV-sensitive syndrome, Photodermatitis, Xeroderma pigmentosum (XP), Lupus erythematosus, or Actinic dermatitis
+  - Do not use if diagnosed with UV light allergies: Actinic prurigo (hereditary PMLE), Polymorphous light eruption (PMLE), or Solar urticaria
+
+A minimum age of 18 applies on top of this list.
+
+> **Use on intact skin only.** Sessions are taken on the torso, on skin that is unbroken and healthy. Do not direct exposure at a wound, a sore that has not closed, a rash, a burn, or any other area of broken skin. Keep any such area covered during your session, and speak with your doctor before continuing.
+
+**Photosensitizing medication is the entry that carries real physical risk, and it is the one your setting is built to catch.**
+
+The other entries describe conditions a person already knows they have. This one is different. It is invisible to the device: the app doses on Fitzpatrick skin type and has no knowledge of what anyone takes. Photosensitizing drugs lower the dose at which skin burns, so a dose set correctly for a skin type can exceed what that particular person's skin tolerates. **The automatic cutoff does not protect against this, because the variable it doses on is not the variable that changed.**
+
+Our safety record does not speak to this in either direction. We do not screen for photosensitizing drugs and do not record them, so nobody knows how many of the 25,000 plus sessions involved someone taking one. That figure shows the dosing protocol has been safe across the people who have used it. It is not evidence that the protocol is safe for a photosensitized user, and it is not evidence of harm. It is silent, because the variable was never measured.
+
+The category is wide and includes drugs nobody associates with sunlight, and photosensitivity can outlast the last dose, so having stopped is not the same as clear. For a consumer this is a question they have to take to a physician. **In your center it is already answerable, because you hold the medication list.** That is a genuine advantage of running this in a clinical setting rather than a retail one, and it is the reason we would rather hand you the list than leave it in a manual.
+
+**Absence from this list is not clearance.** It names what it names, and whether a given patient should use the platform is your care team's determination, not ours.
 
 ---
 
@@ -99,7 +133,7 @@ The commercial unit is **$8,950**, with payback in under three months at just 25
 
 ## A note on claims
 
-Enyrgy is a wellness device and makes no medical claims. It raises and documents Vitamin D levels; every clinical conclusion belongs to your care team.
+Enyrgy is a wellness device and makes no medical claims. It raises and documents Vitamin D levels; every clinical conclusion, and every screening decision against the list above, belongs to your care team.
 
 The story above is ours and the research in it is what moved us to build. It is not a claim about what this platform does for any condition, and we do not make one.
 
