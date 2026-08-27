@@ -6,15 +6,23 @@
 
 ---
 
-The body makes its own Vitamin D from a two to four minute session of the right light, the same amount that would take two to four hours in mid day sun, without the burn or the aging. One session opens three pathways at once: Vitamin D, nitric oxide, and serotonin. The app reads each person's skin type, sets the dose, and ends the session on its own, so no one is watching a clock.
+## Why this exists
 
-| | |
-|---|---|
-| **2.4x** | more efficient than sunlight for Vitamin D. Two to four minutes replaces two to four hours of sun. |
-| **25,000+** | sessions completed, zero burns and zero adverse events |
-| **Under 1%** | return rate, against an industry norm of 5 to 10 percent |
-| **76.6%** | of people worldwide have Vitamin D below 30 ng/mL (Cui et al., Frontiers in Nutrition, 2023) |
-| **+111%** | average increase in our own 12 week study of five participants, set out in full below |
+In late 2019 my wife Laura and I sat in a doctor's office, looking at each other quietly, absorbing the words "breast cancer."
+
+A few months later COVID hit. Laura is a front-line healthcare worker, and protecting her immune system became the constant topic in our house.
+
+Around that time my co-founder David Letourneau and I began working with physicians from LSU and Baylor on a clinical study using UVB light to support immune response in critically ill COVID patients. The results were a 60 percent reduction in mortality.
+
+In the course of those discussions the doctors shared another piece of research, and it stopped me cold. Women with Vitamin D levels below 20 ng/mL carry an over 80 percent higher risk of breast cancer. I went back and looked at Laura's blood work from around the time of her diagnosis.
+
+She was at 17.
+
+That number is why Enyrgy exists. Not because a light is interesting, but because the body we loved most was running short of something it needed and nobody had measured it. The technology in this document was built to close that specific gap: to raise a number, and to make it visible.
+
+Laura's levels are optimal now.
+
+---
 
 ## The technology
 
@@ -23,6 +31,14 @@ The body makes its own Vitamin D from a two to four minute session of the right 
 **The dose is calculated, not timed.** The app reads each user's Fitzpatrick skin type, sets that person's dose, and ends the session automatically. Nobody is estimating, and nobody is watching a clock. That is the difference between this and a tanning bed, which delivers the wrong part of the spectrum with no dosing control at all.
 
 **One session, three pathways.** Vitamin D, nitric oxide, and serotonin. A capsule opens one of them.
+
+| | |
+|---|---|
+| **2.4x** | more efficient than sunlight for Vitamin D. Two to four minutes replaces two to four hours of sun. |
+| **25,000+** | sessions completed, zero burns and zero adverse events |
+| **Under 1%** | return rate, against an industry norm of 5 to 10 percent |
+| **76.6%** | of people worldwide have Vitamin D below 30 ng/mL (Cui et al., Frontiers in Nutrition, 2023) |
+| **+111%** | average increase in our own 12 week study of five participants, set out in full below |
 
 ## Why not a capsule
 
@@ -57,9 +73,7 @@ Our scientific advisory board includes **Dr. Bruce Hollis**, who has reviewed an
 
 600 plus users across five countries. Made in the USA in Phoenix, Arizona.
 
-```{=openxml}
-<w:p><w:r><w:br w:type="page"/></w:r></w:p>
-```
+---
 
 ## Where it fits in your service line
 
@@ -87,11 +101,51 @@ The commercial unit is **$8,950**, with payback in under three months at just 25
 
 Enyrgy is a wellness device and makes no medical claims. It raises and documents Vitamin D levels; every clinical conclusion belongs to your care team.
 
-The study above is our own and it is small. We present it with its size attached rather than as a finding. Independent, peer reviewed research on Vitamin D status is in the companion reading list, presented as published and including mixed findings, for your clinicians to weigh on their own terms.
+The story above is ours and the research in it is what moved us to build. It is not a claim about what this platform does for any condition, and we do not make one.
+
+The study in this document is our own and it is small. We present it with its size attached rather than as a finding. The independent literature is in the reading list that follows, presented as published and including mixed findings, for your clinicians to weigh on their own terms.
 
 ## Next step
 
 We bring a unit and two of our people to Irvine, set it up, and let your team try it and see both the patient side and the numbers in person. No slides, just the platform itself.
+
+---
+
+# Appendix: Vitamin D status reading list for the clinical team
+
+**Independent research on Vitamin D status.** For your clinical team's own review. The references below are independent, peer reviewed publications. Enyrgy is a wellness device, makes no medical claims, and does not interpret these findings. Vitamin D status is the subject of this literature; Enyrgy is simply a tool to measurably raise and document it. The list is presented as published, including honest, mixed findings, so your clinicians can weigh the evidence on their own terms.
+
+### Vitamin D and immune function
+
+**Aranow C.** Vitamin D and the Immune System. *Journal of Investigative Medicine.* 2011;59(6):881 to 886.
+Widely cited review of Vitamin D's role in innate and adaptive immunity.
+pubmed.ncbi.nlm.nih.gov/21527855
+
+**Charoenngam N, Holick MF.** Immunologic Effects of Vitamin D on Human Health and Disease. *Nutrients.* 2020;12(7):2097.
+Comprehensive review of Vitamin D's immunologic mechanisms across health and disease states.
+doi.org/10.3390/nu12072097
+
+**Martineau AR, et al.** Vitamin D supplementation to prevent acute respiratory tract infections: systematic review and meta-analysis of individual participant data. *BMJ.* 2017;356:i6583.
+Individual participant data meta-analysis; the protective association was strongest in those who were most deficient at baseline.
+doi.org/10.1136/bmj.i6583
+
+### Individual response to Vitamin D, why measurement matters
+
+**Carlberg C.** Intervention Approaches in Studying the Response to Vitamin D3 Supplementation. *Nutrients.* 2023;15(15):3382.
+Documents that a meaningful share of individuals are low responders to Vitamin D supplementation, which supports measured, individualized approaches over a fixed capsule dose.
+doi.org/10.3390/nu15153382
+
+### Vitamin D and cancer, epidemiology and randomized trials
+
+**Keum N, et al.** Vitamin D supplementation and total cancer incidence and mortality: a meta-analysis of randomized controlled trials. *Annals of Oncology.* 2019;30(5):733 to 743.
+Meta-analysis of randomized trials suggesting a reduction in total cancer mortality, though not in incidence.
+doi.org/10.1093/annonc/mdz059
+
+### Prevalence
+
+**Cui A, et al.** Global and regional prevalence of vitamin D deficiency in population-based studies from 2000 to 2022. *Frontiers in Nutrition.* 2023.
+Pooled analysis of 308 population-based studies across 81 countries and 7.9 million participants aged 1 and over; 76.6 percent had serum 25(OH)D below 30 ng/mL.
+PMC10064807
 
 ---
 
