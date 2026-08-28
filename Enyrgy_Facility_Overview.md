@@ -63,7 +63,7 @@ Twelve weeks. Five healthy adults, skin types II to IV, four to six sessions a w
 
 A 111 percent average increase. Every participant started insufficient or borderline, every one reached optimal, and nobody dropped out.
 
-What it shows is narrow and real: in a small group, consistent sessions moved the number, and moved it in all five. What it does not show is a controlled effect size, and we are not going to claim one from five people.
+What it shows is narrow and real: in a small group, consistent sessions moved the number, and moved it in all five. What it does not show is a controlled effect size, and we are not going to claim one from five people. Since the study, we have over 600 users and over 25,000 sessions completed, with zero burns and zero adverse events.
 
 **The honest limit on that result.** Some people do not respond well to UVB because of polymorphisms in genes governing Vitamin D metabolism, GC, CYP2R1 and DHCR7 among them. A patient with these may not reach optimal, through no failure of the platform. This is a non-response caveat and not a safety exclusion, and testing before and after is what settles it for any individual, which is what we recommend regardless.
 
