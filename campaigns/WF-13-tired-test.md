@@ -132,6 +132,14 @@ Learn about the platform  |  Get yours
 
 ---
 
+# OPEN, noticed Aug 26: WF-12 sends nothing at capture
+
+**WF-12 Tired Test Lead Magnet is Inbound Webhook, Create contact, Add Tag, Add Dynamic Tags, Assign to Millie, END.** There is no email action in it. The first thing a Tired Test lead hears from GHL is **WF-13 touch 1, at Day 1.**
+
+**Why that is worth checking.** WF-02's five-minute SMS tells consumer leads *"Check your email, I am sending you something that might finally explain why."* The note in `campaigns/WF-02-five-minute-sms.md` justifies that line on the grounds that WF-12, 15, 18, 19 and 21 all send their guide or results email at capture. For WF-12 that is not true on the canvas.
+
+Either the Tired Test page delivers the guide itself at submission, in which case the promise is kept and only our note is wrong, or a lead who receives that SMS is pointed at an inbox that stays empty for up to a day, which breaks a promise at the very first touch. **Check the page, not the workflow.** The other four capture workflows deserve the same look.
+
 # Change log, 2026-08-18
 
 | # | Touch | Change |
