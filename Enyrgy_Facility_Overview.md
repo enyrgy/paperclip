@@ -123,13 +123,13 @@ Patients add it at **$25 a session, or $100 a week**. It also fits how your pati
 
 | Patients on the modality | Weekly | Monthly | Annual |
 |---|---|---|---|
+| 15 patients | $1,500 | $6,500 | $78,000 |
 | 25 patients | $2,500 | $10,833 | $130,000 |
 | 50 patients | $5,000 | $21,667 | $260,000 |
-| 100 patients | $10,000 | $43,333 | $520,000 |
 
-Annualized at a full 52 weeks of enrollment. Real books have gaps, so discount it against your own retention rather than ours.
+Annualized at a full 52 weeks of enrollment. Real books have gaps, so discount it against your own retention rather than ours. We have stopped the table at 50 because past that point your numbers are better than our estimates.
 
-The commercial unit is **$8,950**. At 25 patients on the modality that is paid back in **under four weeks**.
+The commercial unit is **$8,950**. At 15 patients on the modality that is paid back in **about six weeks**.
 
 **Footprint.** Roughly four feet by four feet. It does not need a dedicated room; most facilities site it in a hallway or an alcove where a patient can take a session while waiting on another modality.
 
