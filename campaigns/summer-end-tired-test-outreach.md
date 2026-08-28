@@ -2,14 +2,16 @@
 
 **For:** Millie Carrillo
 **Audience:** consumer prospects who entered through the **Tired Test** lead magnet (WF-12 capture, WF-13 nurture). Not the general Consumer Drip leads, who have had a different conversation.
-**Offer:** $500 off the Consumer Unit and free shipping, through **midnight on Monday, August 31**.
+**Offer:** $500 off the Consumer Unit and free shipping. Code **`SUMMEREND500`**, live in Shopify, expires **11:59pm on Monday, August 31**.
 **Created:** 2026-08-26
 
 ---
 
 ## Before the first call, four things
 
-**1. The offer needs a working discount code.** Nothing here can go out until a Shopify code exists and has been tested on a real cart. Placeholder below is `SUMMEREND500`. Replace it everywhere or the first prospect who tries it does your QA for you.
+**1. The code is live.** `SUMMEREND500`, expiring 11:59pm on August 31. Run one test order to the cart step before the first call, so the first person to try it is not the one who finds a problem.
+
+**Time zone, worth thirty seconds of thought.** Shopify expires the code in the store's own zone. Arizona does not observe daylight saving, so through August, **Arizona time and Pacific time are the same moment.** Eastern is three hours ahead of both. A prospect on the East Coast who goes to buy at 11:00pm their time on the 31st will find the code already dead, and they will not read that as a time zone, they will read it as a bait and switch. Either say the zone in the copy, or decide now that you will honor a near miss on September 1 and tell Millie so she can say it on the phone.
 
 **2. Assign these contacts to Millie in GHL first.** WF-35 routes reply notifications to the contact's assigned user. If they stay unassigned, every reply lands as `NO OWNER` in Scott's inbox instead of hers.
 
@@ -45,7 +47,7 @@ Then actually listen. Two follow-ups worth having ready:
 
 ## The offer
 
-> The reason for the timing. We are running a Summer End offer: $500 off and free shipping, through midnight on August 31. That takes it from $2,995 to $2,495. After the 31st it goes back.
+> The reason for the timing. We are running a Summer End offer: $500 off and free shipping, through 11:59pm on August 31. That takes it from $2,995 to $2,495. After the 31st it goes back.
 
 Then stop talking. Let them react.
 
@@ -100,7 +102,7 @@ Enyrgy is a wellness device and makes no medical claims. It raises and documents
 
 ## If nobody picks up
 
-> Hi {{first_name}}, this is Millie from Enyrgy. You took our Tired Test a while back. I'm calling because we're running a Summer End offer that closes August 31, $500 off and free shipping, and I did not want you to miss it if you'd been thinking about it. I'll send you an email with the details. If you'd rather talk it through, my number is here. Thanks.
+> Hi {{first_name}}, this is Millie from Enyrgy. You took our Tired Test a while back. I'm calling because we're running a Summer End offer that closes 11:59pm on August 31, $500 off and free shipping, and I did not want you to miss it if you'd been thinking about it. I'll send you an email with the details. If you'd rather talk it through, my number is here. Thanks.
 
 Then send the email. Voicemail plus email the same hour beats either alone.
 
@@ -119,7 +121,7 @@ Send after the call, or as first contact if the call did not connect.
 
 You took our Tired Test a while back, so you have seen Scott's emails about the light input almost nobody checks.
 
-Quick reason for writing. We are running a Summer End offer through midnight on August 31: $500 off the Enyrgy Vitamin D Primal Light Platform, and free shipping. That takes it to $2,495. After the 31st it goes back to $2,995.
+Quick reason for writing. We are running a Summer End offer through 11:59pm on August 31: $500 off the Enyrgy Vitamin D Primal Light Platform, and free shipping. That takes it to $2,495. After the 31st it goes back to $2,995.
 
 Use code SUMMEREND500 at checkout: https://shop.enyrgy.com/products/uvb-light-therapy
 
@@ -143,7 +145,8 @@ Enyrgy
 
 | # | Where | Note |
 |---|---|---|
-| 1 | Offer | First discount Enyrgy has run. Deadline is what protects the price. |
+| 1 | Offer | First discount Enyrgy has run. Deadline is what protects the price. Code live in Shopify, expires 11:59pm Aug 31. |
+| 5 | Time zone | Arizona equals Pacific through August, and Eastern is three hours ahead of both. Decide whether to state the zone or honor a near miss, before the first call. |
 | 2 | HSA/FSA | Single approved sentence only. The deflection script exists because explaining eligibility is prohibited, not because Millie lacks the detail. |
 | 3 | Health questions | Full handling protocol included in the script rather than referenced, because the failure happens live and nobody stops mid-call to look something up. |
 | 4 | Study | Five participants and no control group stated wherever it comes up. |
