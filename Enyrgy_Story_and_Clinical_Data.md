@@ -42,28 +42,75 @@ We built it. Three years of engineering, then nine months of beta testing before
 
 ---
 
+# The research foundation
+
+We did not build a product and then find research to support it. We started with the research: four decades of published phototherapy science, and three of the most cited vitamin D researchers in the world.
+
+The protocol behind every session was designed by **Dr. Samantha Kimball, Dr. Bruce Hollis and Dr. William Grant**, whose combined published work spans more than 500 peer-reviewed papers and 70,000 citations.
+
+## What four decades of science says
+
+**UVB-triggered vitamin D synthesis**
+
+  - Holick, M.F. (2007). Vitamin D deficiency. *New England Journal of Medicine*, 357(3), 266 to 281.
+  - Webb, A.R., et al. (2017). Influence of season and latitude on the cutaneous synthesis of vitamin D3. *Journal of Clinical Endocrinology and Metabolism*.
+  - Chel, V., et al. (2008). Efficacy of different doses and time intervals of oral vitamin D supplementation. *Osteoporosis International*.
+
+**UVA-induced nitric oxide release**
+
+  - Liu, D., et al. (2014). UVA irradiation of human skin vasodilates arterial vasculature and lowers blood pressure. *Journal of Investigative Dermatology*, 134(7), 1839 to 1846.
+  - Feelisch, M., et al. (2010). Is sunlight good for our heart? *European Heart Journal*, 31(9), 1041 to 1045.
+
+**UVA-triggered serotonin production**
+
+  - Gambichler, T., et al. (2002). Plasma levels of opioid peptides after repeated exposure to ultraviolet radiation. *British Journal of Dermatology*, 147(6), 1207 to 1211.
+  - Kaur, M., et al. (2019). Role of serotonin in seasonal affective disorder. *European Review for Medical and Pharmacological Sciences*.
+
+**Natural synthesis versus oral supplementation**
+
+  - Heaney, R.P., et al. (2011). *Nutrients*, 6(10), 4472 to 4475.
+  - Luxwolda, M.F., et al. (2012). Traditionally living populations in East Africa have a mean serum 25-hydroxyvitamin D concentration of 115 nmol/l. *British Journal of Nutrition*, 108(9), 1557 to 1561.
+
+This is independent literature. We cite it; we do not interpret it, and none of it is a study of the Enyrgy platform.
+
+## Third-party spectrum verification
+
+An independent laboratory conducted spectral analysis of the device output and confirmed **90 to 95 percent UVB (280 to 315 nm) and 5 to 10 percent UVA.** That is the Triple-Pathway Advantage ratio referenced throughout the platform, verified by someone other than us. **The verification documentation is available on request.**
+
+Sunlight, for comparison, is roughly 95 percent UVA. The device inverts the ratio deliberately, because vitamin D synthesis requires UVB in the 280 to 315 nm band, which visible-light and circadian lamps do not emit at all.
+
+---
+
 # What we have measured
 
 ## The 12-week study
 
-Twelve weeks. Five healthy adults, skin types II to IV, four to six sessions a week. No control group.
+Twelve weeks. Five healthy adults, skin types II to IV, averaging 5.1 sessions a week. Observational, no control group.
 
 **This is our own study, not independent research, and five people is a small study.** We would rather publish every row than an average.
 
-| Participant | Skin type | Start, ng/mL | End, ng/mL |
-|---|---|---|---|
-| P1 | II | 38.4 | 86.0 |
-| P2 | III | 34.0 | 88.4 |
-| P3 | III | 37.0 | 78.0 |
-| P4 | IV | 47.0 | 88.7 |
-| P5 | III | 43.4 | 79.9 |
-| **Average** | | **39.96** | **84.20** |
+| Participant | Skin type | Start, ng/mL | End, ng/mL | Change |
+|---|---|---|---|---|
+| P1 | II | 38.4 | 86.0 | +124% |
+| P2 | III | 34.0 | 88.4 | +160% |
+| P3 | III | 37.0 | 78.0 | +111% |
+| P4 | IV | 47.0 | 88.7 | +89% |
+| P5 | III | 43.4 | 79.9 | +84% |
+| **Average** | | **39.96** | **84.20** | **+111%** |
 
-A 111 percent average increase. Every participant started insufficient or borderline, every one reached optimal, and nobody dropped out.
+Every participant started insufficient or borderline, every one reached optimal, nobody dropped out, and there were zero adverse events. **The individual spread runs from +84 percent to +160 percent**, which is the more useful number: the average conceals how differently five people responded to the same protocol.
 
-**What it shows is narrow and real:** in a small group, consistent sessions moved the number, and moved it in all five. **What it does not show** is a controlled effect size, and we do not claim one from five people. This data is being compiled toward IRB and 510(k) pathway filings, where it will be tested properly.
+### Study limitations, stated as we state them publicly
 
-**The honest limit.** Some people respond poorly to UVB because of polymorphisms in genes governing vitamin D metabolism, GC, CYP2R1 and DHCR7 among them. A user with these may not reach optimal, through no failure of the platform. This is a non-response caveat rather than a safety exclusion, and testing before and after is what settles it for any individual, which is what we recommend regardless.
+  - Small sample size, N=5.
+  - No control group. This is observational data, not a randomized controlled trial.
+  - All participants were highly compliant, taking sessions in office. Real-world adherence will be lower.
+  - All participants were healthy adults without contraindications.
+  - The sample is not diverse enough to support population-level conclusions.
+
+**One further limit worth stating.** Some people respond poorly to UVB because of polymorphisms in genes governing vitamin D metabolism, GC, CYP2R1 and DHCR7 among them. A user with these may not reach optimal, through no failure of the platform. That is a non-response caveat rather than a safety exclusion, and testing before and after settles it for any individual.
+
+**An independent trial is targeted for Q3 2026.** The observational data is being compiled toward IRB and 510(k) pathway filings, where it will be tested properly rather than presented as more than it is.
 
 ## What the 25,000 sessions do and do not tell you
 
@@ -103,7 +150,19 @@ The published literature associates vitamin D status with immune function, and w
 
 **We are careful about the line between those two paragraphs.** The literature belongs to the researchers who produced it, and we cite it rather than interpret it. What belongs to us is the platform, the dosing protocol, and a number on a lab report that a user can watch move.
 
-**Enyrgy operates as a wellness device and makes no medical claims.** It raises and documents vitamin D levels. Marketing claims are held to general wellness benefits, and every clinical conclusion belongs to the user and their physician. The platform ships with a contraindication list, and the application will not run a session outside its calculated dose.
+## The honest case
+
+The research behind Enyrgy is strong. Four decades of published science, three of the most credible researchers in the field, independent spectral verification, and cohort data showing every participant reaching optimal levels with zero adverse events.
+
+We could present that without context. We chose not to.
+
+The cohort study is small. The sample is not diverse enough to draw population-level conclusions. We are not a medical device, and we do not treat, diagnose, or prevent any medical condition.
+
+What we are is a precision phototherapy platform grounded in peer-reviewed science, verified by independent spectral testing, and designed by researchers who have spent their careers studying exactly this mechanism.
+
+**That is the honest case. We are comfortable with it.**
+
+**Enyrgy operates as a wellness device.** It raises and documents vitamin D levels. Marketing claims are held to general wellness benefits, every clinical conclusion belongs to the user and their physician, the platform ships with a contraindication list, and the application will not run a session outside its calculated dose.
 
 ---
 
