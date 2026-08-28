@@ -63,7 +63,6 @@ The protocol behind every session was designed by **Dr. Samantha Kimball, Dr. Br
 
 **UVA-triggered serotonin production**
 
-  - Gambichler, T., et al. (2002). Plasma levels of opioid peptides after repeated exposure to ultraviolet radiation. *British Journal of Dermatology*, 147(6), 1207 to 1211.
   - Kaur, M., et al. (2019). Role of serotonin in seasonal affective disorder. *European Review for Medical and Pharmacological Sciences*.
 
 **Natural synthesis versus oral supplementation**
