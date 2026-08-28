@@ -202,6 +202,26 @@ The domain rule alone would have prevented this and needs no maintenance. `no_ro
 
 **Note for whoever picks this up:** `drip_bypass` does NOT stop WF-01. It is read at the Bypass Check inside each of the five drips, not by the router. WF-01's only guard is `source_device_app`, built Aug 1 for the Outcode work. This distinction caused confusion once already.
 
+### Contact assignment is the routing layer, not the notification recipient (Aug 26)
+
+**The question that surfaced it:** with thirty Tired Test prospects going to Millie for the Summer End outreach, should WF-35's `None` branch be repointed at her instead of Scott?
+
+**No, and the reasoning generalises.** The `None` branch is a **backstop, not a routing rule.** It catches replies from any unowned contact, which includes investor, commercial, partner and device-user traffic. Pointing it at one person routes work to someone whose remit does not cover it, and it lands on someone who can reasonably ignore what is not theirs. A backstop should land on whoever is accountable for everything, and it should fire rarely. **A backstop firing constantly means routing is broken; one firing rarely is working.**
+
+**Assignment is the layer to fix**, because everything keys off it: WF-35's owner branch, the Contact Owner field, pipeline ownership, and anything built later. It is a fact about the contact, not a rule about notifications.
+
+**Done Aug 26:** WF-12 Tired Test Lead Magnet now ends with an `Assign User` action setting Millie as owner, placed after `Add Dynamic Tags` in the main trunk. Verified: owner shows Millie, all tags intact. The same one-action pattern applies to any capture workflow whose leads belong to a named person.
+
+**Note for future edits:** WF-12 has no conditions left at all after the Session 15 rebuild, so the old hazard about mid-flow guards swallowing everything below them into a branch no longer applies to this workflow.
+
+### CORRECTION, Aug 26: workflow Internal Notifications ignore Conversation Notification settings
+
+A user's **Conversation Notification** preferences (Settings, My Staff, the user) govern GHL's own built-in conversation alerts. They **do not** govern the Internal Notification action inside a workflow, which emails the selected user directly.
+
+**Proof from this account:** on Aug 7 Scott received four WF-35 notification emails about spam calls, at a point when Email was already unticked on Conversation Notification rows 1 and 3.
+
+This matters because the opposite was briefly asserted in this session: that a new user with Email unticked would be silently cut off from WF-35. They are not. **What those settings do control** is whether the person is told a conversation was assigned to them, which is worth enabling for anyone receiving assigned contacts, or they discover it by noticing their contact list grew.
+
 ### Reply notifications: built-in is a doorbell, WF-35 built Aug 3
 
 **Tested, not assumed.** GHL's built-in Conversation Notification contains no message text. A reply carrying the marker `PURPLE-ELEVEN` produced a notification with no trace of it.

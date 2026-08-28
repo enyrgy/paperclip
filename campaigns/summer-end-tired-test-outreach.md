@@ -13,7 +13,11 @@
 
 **Time zone, worth thirty seconds of thought.** Shopify expires the code in the store's own zone. Arizona does not observe daylight saving, so through August, **Arizona time and Pacific time are the same moment.** Eastern is three hours ahead of both. A prospect on the East Coast who goes to buy at 11:00pm their time on the 31st will find the code already dead, and they will not read that as a time zone, they will read it as a bait and switch. Either say the zone in the copy, or decide now that you will honor a near miss on September 1 and tell Millie so she can say it on the phone.
 
-**2. Assign these contacts to Millie in GHL first.** WF-35 routes reply notifications to the contact's assigned user. If they stay unassigned, every reply lands as `NO OWNER` in Scott's inbox instead of hers.
+**2. Assignment. DONE for future leads, still to do for the existing thirty.**
+
+WF-12 Tired Test Lead Magnet now ends with an `Assign to Millie` action after `Add Dynamic Tags`, so every new Tired Test lead arrives owned and WF-35 routes their replies to her automatically. Verified: owner shows Millie, all tags intact.
+
+**The existing thirty still need a bulk assign.** The workflow change only affects leads arriving from here on. Contacts, filter on the Tired Test tag, select all, Bulk Actions, Assign to User, Millie. Until that is done their replies land in Scott's inbox as `NO OWNER`.
 
 **3. What they already know.** Tired Test leads have had a five-email education sequence: the light-as-input idea, why a supplement does not fix it, the sleep connection, what two to four minutes does, and a nudge to test against their own labs. **They have not been pitched hard.** They are warm and informed, not cold. Do not re-teach the biology. Pick up where the emails left off.
 
