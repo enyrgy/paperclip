@@ -117,19 +117,29 @@ This is not a new category for you. You already run LED laser, infrared beds, an
 
 ## Two revenue lines from one platform
 
-In-clinic, patients add it as a modality at $125 a month in your market. It also fits how your patients move through the center: those who are on-site a week and home for two can do sessions with you and take a unit home from your shop to hold their levels between visits.
+### One, the modality in your center
 
-| In-clinic patients on the modality | Monthly | Annual |
-|---|---|---|
-| 25 patients | $3,125 | $37,500 |
-| 50 patients | $6,250 | $75,000 |
-| 100 patients | $12,500 | $150,000 |
+Patients add it at **$25 a session, or $100 a week**. It also fits how your patients move through the center: those who are on-site a week and home for two can do sessions with you and take a unit home to hold their levels between visits.
 
-The commercial unit is **$8,950**, with payback in under three months at just 25 patients on the modality.
+| Patients on the modality | Weekly | Monthly | Annual |
+|---|---|---|---|
+| 25 patients | $2,500 | $10,833 | $130,000 |
+| 50 patients | $5,000 | $21,667 | $260,000 |
+| 100 patients | $10,000 | $43,333 | $520,000 |
+
+Annualized at a full 52 weeks of enrollment. Real books have gaps, so discount it against your own retention rather than ours.
+
+The commercial unit is **$8,950**. At 25 patients on the modality that is paid back in **under four weeks**.
 
 **Footprint.** Roughly four feet by four feet. It does not need a dedicated room; most facilities site it in a hallway or an alcove where a patient can take a session while waiting on another modality.
 
-**The second line.** Take-home units add about $600 per device to your shop, a margin line on top of the in-clinic recurring revenue.
+### Two, take-home units, at no capital cost to you
+
+Patients who want a unit at home buy it directly from us through your own referral link. **We split that revenue with you 50/50, which is $1,500 per unit.**
+
+**You carry no inventory.** Nothing is bought, stocked, shelved, or written down. There is no capital tied up and no unsold units to discount later. Your team recommends it, the patient buys it from us, and you are paid on the sale.
+
+Worth knowing alongside it: because the patient is the buyer of record, that purchase is **HSA/FSA eligible through Truemed**, and it stays eligible when they arrive through your referral link. A facility's own purchase of the commercial unit is a business expense and is not.
 
 ## A note on claims
 
