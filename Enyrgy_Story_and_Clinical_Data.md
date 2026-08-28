@@ -110,7 +110,7 @@ Every participant started insufficient or borderline, every one reached optimal,
 
 **One further limit worth stating.** Some people respond poorly to UVB because of polymorphisms in genes governing vitamin D metabolism, GC, CYP2R1 and DHCR7 among them. A user with these may not reach optimal, through no failure of the platform. That is a non-response caveat rather than a safety exclusion, and testing before and after settles it for any individual.
 
-**An independent trial is targeted for Q3 2026.** The observational data is being compiled toward IRB and 510(k) pathway filings, where it will be tested properly rather than presented as more than it is.
+**An independent trial is targeted for Q3 2027.** The observational data is being compiled toward IRB and 510(k) pathway filings, where it will be tested properly rather than presented as more than it is.
 
 ## What the 25,000 sessions do and do not tell you
 
