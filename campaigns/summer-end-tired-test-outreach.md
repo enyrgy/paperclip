@@ -2,16 +2,18 @@
 
 **For:** Millie Carrillo
 **Audience:** consumer prospects who entered through the **Tired Test** lead magnet (WF-12 capture, WF-13 nurture). Not the general Consumer Drip leads, who have had a different conversation.
-**Offer:** $500 off the Consumer Unit and free shipping. Code **`SUMMEREND500`**, live in Shopify, expires **11:59pm on Monday, August 31**.
+**Offer:** $500 off the Consumer Unit and free shipping. Code **`SUMMEREND500`**, live in Shopify, expires **11:59pm Pacific on Tuesday, September 15**.
+
+**Extended from August 31**, because Scott, Brian and Millie are on the road at investor and commercial meetings the week of September 1. The Shopify code has already been updated. If anyone was already told August 31, see the note at the foot of this document before you contact them again.
 **Created:** 2026-08-26
 
 ---
 
 ## Before the first call, four things
 
-**1. The code is live.** `SUMMEREND500`, expiring 11:59pm on August 31. Run one test order to the cart step before the first call, so the first person to try it is not the one who finds a problem.
+**1. The code is live.** `SUMMEREND500`, expiring 11:59pm Pacific on September 15. Run one test order to the cart step before the first call, so the first person to try it is not the one who finds a problem.
 
-**Time zone, worth thirty seconds of thought.** Shopify expires the code in the store's own zone. Arizona does not observe daylight saving, so through August, **Arizona time and Pacific time are the same moment.** Eastern is three hours ahead of both. A prospect on the East Coast who goes to buy at 11:00pm their time on the 31st will find the code already dead, and they will not read that as a time zone, they will read it as a bait and switch. Either say the zone in the copy, or decide now that you will honor a near miss on September 1 and tell Millie so she can say it on the phone.
+**Time zone is now settled, and the copy says it.** The deadline is stated as Pacific everywhere, which removes the trap: an East Coast prospect buying at 11pm their time on the 15th is at 8pm Pacific and well inside. Note that September is daylight saving, so Pacific is PDT and Arizona is an hour behind it, unlike August when the two were identical. Saying "Pacific" rather than "PST" is correct in both seasons and is what the copy uses.
 
 **2. Assignment. DONE for future leads, still to do for the existing thirty.**
 
@@ -51,7 +53,7 @@ Then actually listen. Two follow-ups worth having ready:
 
 ## The offer
 
-> The reason for the timing. We are running a Summer End offer: $500 off and free shipping, through 11:59pm on August 31. That takes it from $2,995 to $2,495. After the 31st it goes back.
+> The reason for the timing. We are running a Summer End offer: $500 off and free shipping, through 11:59pm Pacific on September 15. That takes it from $2,995 to $2,495. After that it goes back.
 
 Then stop talking. Let them react.
 
@@ -106,7 +108,7 @@ Enyrgy is a wellness device and makes no medical claims. It raises and documents
 
 ## If nobody picks up
 
-> Hi {{first_name}}, this is Millie from Enyrgy. You took our Tired Test a while back. I'm calling because we're running a Summer End offer that closes 11:59pm on August 31, $500 off and free shipping, and I did not want you to miss it if you'd been thinking about it. I'll send you an email with the details. If you'd rather talk it through, my number is here. Thanks.
+> Hi {{first_name}}, this is Millie from Enyrgy. You took our Tired Test a while back. I'm calling because we're running a Summer End offer that closes September 15, $500 off and free shipping, and I did not want you to miss it if you'd been thinking about it. I'll send you an email with the details. If you'd rather talk it through, my number is here. Thanks.
 
 Then send the email. Voicemail plus email the same hour beats either alone.
 
@@ -116,7 +118,7 @@ Then send the email. Voicemail plus email the same hour beats either alone.
 
 Send after the call, or as first contact if the call did not connect.
 
-**Subject:** `$500 off through August 31`
+**Subject:** `$500 off through September 15`
 
 **Body:**
 
@@ -125,7 +127,7 @@ Send after the call, or as first contact if the call did not connect.
 
 You took our Tired Test a while back, so you have seen Scott's emails about the light input almost nobody checks.
 
-Quick reason for writing. We are running a Summer End offer through 11:59pm on August 31: $500 off the Enyrgy Vitamin D Primal Light Platform, and free shipping. That takes it to $2,495. After the 31st it goes back to $2,995.
+Quick reason for writing. We are running a Summer End offer through 11:59pm Pacific on September 15: $500 off the Enyrgy Vitamin D Primal Light Platform, and free shipping. That takes it to $2,495. After that it goes back to $2,995.
 
 Use code SUMMEREND500 at checkout: https://shop.enyrgy.com/products/uvb-light-therapy
 
@@ -149,8 +151,9 @@ Enyrgy
 
 | # | Where | Note |
 |---|---|---|
-| 1 | Offer | First discount Enyrgy has run. Deadline is what protects the price. Code live in Shopify, expires 11:59pm Aug 31. |
-| 5 | Time zone | Arizona equals Pacific through August, and Eastern is three hours ahead of both. Decide whether to state the zone or honor a near miss, before the first call. |
+| 1 | Offer | First discount Enyrgy has run. Deadline is what protects the price. Code live in Shopify, expires 11:59pm Pacific on Sept 15. |
+| 5 | Time zone | RESOLVED. Copy states Pacific everywhere, which removes the East Coast trap. |
+| 6 | Extension | Moved from Aug 31 to Sept 15 because the team is traveling the week of Sept 1. See the note below on how to tell anyone already contacted. |
 | 2 | HSA/FSA | Single approved sentence only. The deflection script exists because explaining eligibility is prohibited, not because Millie lacks the detail. |
 | 3 | Health questions | Full handling protocol included in the script rather than referenced, because the failure happens live and nobody stops mid-call to look something up. |
 | 4 | Study | Five participants and no control group stated wherever it comes up. |
@@ -162,3 +165,20 @@ A discount opening tells the prospect the product needed a discount. These leads
 ## The one that will actually go wrong
 
 Not the pitch. A prospect will say something like "I have lupus, would this help me?" and the natural human instinct is to be helpful. Lupus erythematosus is on the contraindication list. The scripted answer exists so that instinct has somewhere to go that is not an answer.
+
+---
+
+# If you already told someone August 31
+
+**This is the only part of the extension that can cost you anything.** A prospect who was given a hard date, and then finds the date moved, learns that Enyrgy's deadlines are soft. The next one will not move them, and neither will the price.
+
+**A deadline that moves for a stated reason does not do that damage. A deadline that just moves does.** So give the reason, and give it before they ask.
+
+> Quick note. We had this closing on the 31st, but Scott and I are on the road at investor and partner meetings all next week and I did not want anyone deciding something like this while they could not get hold of me. So it is open until September 15. Same terms, nothing else changed.
+
+Two things that keep this honest rather than clever:
+
+  - **It is true.** They are traveling. Do not use it if the reason ever stops being real.
+  - **Say the new date once, plainly, and do not apologize for it.** Hedging invites them to wait for the next move.
+
+**Do not extend it again.** Twice is a pattern, and a pattern is a price cut everyone can wait out.
