@@ -162,6 +162,7 @@ TITLES = {
     "Enyrgy_Session_Handoff": "Session Handoff",
     "Enyrgy_Facility_Overview": "Facility Overview",
     "Enyrgy_Story_and_Clinical_Data": "Story and Clinical Data",
+    "Enyrgy_Letter_ZENA_Medical": "Letter of Introduction",
 }
 # Versions are explicit, not sniffed. Auto-detection read the Knowledge Base's
 # opening reference to "Implementation Guide v3.9" as the KB's own version.
@@ -173,6 +174,7 @@ VERSIONS = {
     "Enyrgy_Brand_Style_Guide_v2": "v2.0",
     "Enyrgy_Facility_Overview": "v2.3",
     "Enyrgy_Story_and_Clinical_Data": "v1.1",
+    "Enyrgy_Letter_ZENA_Medical": "v1.0",
 }
 VERSION_RE = re.compile(r"\bv(\d+\.\d+(?:\.\d+)?)\b|\bVersion (\d+\.\d+)\b")
 
