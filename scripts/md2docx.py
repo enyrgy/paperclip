@@ -174,7 +174,6 @@ VERSIONS = {
     "Enyrgy_Brand_Style_Guide_v2": "v2.0",
     "Enyrgy_Facility_Overview": "v2.3",
     "Enyrgy_Story_and_Clinical_Data": "v1.1",
-    "Enyrgy_Letter_ZENA_Medical": "v2.0",
 }
 VERSION_RE = re.compile(r"\bv(\d+\.\d+(?:\.\d+)?)\b|\bVersion (\d+\.\d+)\b")
 
