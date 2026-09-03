@@ -15,7 +15,7 @@ That is why I am writing.
 
 ## The paradox in your own patient base
 
-Your patients avoid the sun. The ones who follow your guidance most faithfully avoid it hardest, because for them it is not health advice, it is the entire maintenance plan behind everything else they pay you for.
+Your patients avoid the sun. The ones who follow your guidance most faithfully avoid it hardest, because for them it is not health advice, it is the entire maintenance plan behind everything else they look for services from you.
 
 They are also, as a population, among the most vitamin D depleted people you will see. Not through carelessness. Through compliance with correct advice.
 
@@ -33,7 +33,7 @@ The Enyrgy Vitamin D Primal Light Platform is a UVB-dominant emitter. **Over 90 
 
 **The argument is dose.** A session runs two to four minutes and produces roughly what two to four hours of midday sun would. The application reads the user's Fitzpatrick type, calculates that individual's Minimum Erythemal Dose, holds the exposure below the erythemal threshold, ends the session automatically, and permits one session per day. There is no timer for anyone to misjudge and no way to run it longer.
 
-So the comparison is not ultraviolet against no ultraviolet. For the same vitamin D outcome, it is a small capped mostly-UVB exposure, or hours of unmetered sunlight that is overwhelmingly UVA. Your patients are already choosing between those. Most are choosing neither, and taking a capsule that may not be working.
+So the comparison is not ultraviolet against no ultraviolet. For the same vitamin D outcome, it is a small capped mostly-UVB exposure, versus hours of unmetered sunlight that is overwhelmingly UVA. Your patients are already choosing between those. Most are choosing neither, and taking a capsule that may not be working.
 
 The dosing protocol was designed by Dr. Samantha Kimball, who has published over 100 peer-reviewed papers in UV therapy safety, with Dr. Bruce Hollis and Dr. William Grant.
 
