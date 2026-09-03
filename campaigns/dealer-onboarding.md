@@ -52,6 +52,30 @@ Determine residency first, then request the matching form. Collect it at onboard
 
 Every dealer clears the US $600 reporting threshold on their first sale, several times over, so there is no volume below which this can be skipped.
 
+### 4b. The W-9 request email
+
+Template. Replace the bracketed fields. **Send it before the registration link**, not after: a dealer who has their link and is already working is much harder to chase for paperwork than one who is waiting on it.
+
+**Subject:** `One piece of paperwork before we switch you on`
+
+```
+[First name],
+
+Good to have you on board.
+
+One administrative thing before we can process commissions. I need a completed W-9 from [Dealer Company Name]. It is the standard IRS form for reporting commission payments, and we cannot pay against a sale without one on file.
+
+If you need a blank, the current form is here: https://www.irs.gov/pub/irs-pdf/fw9.pdf
+
+Send it back to me directly at [Scott's address] rather than to a general inbox. It carries your EIN and I would rather it went to one person than sat in a shared mailbox.
+
+As soon as it is in, I will send your registration link and you are live.
+```
+
+**Non-US dealers get a W-8BEN or W-8BEN-E instead.** Same email, swap the form and drop the IRS link, which is US-specific.
+
+**On where it goes.** A W-9 carries a taxpayer identification number. Do not route it to `contact@enyrgy.com` or any address that staff or agents can read. It belongs with whoever holds finance records, and nowhere else.
+
 ### 5. Send them their link
 
 `Integrate` on their copy of the form, then send that URL and nothing else. Do not send the master form link to a dealer under any circumstances.
