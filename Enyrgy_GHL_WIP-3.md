@@ -1,7 +1,7 @@
 # ENYRGY GHL - Work In Progress (WIP) Tracker
 **Review this at the start of every session**
 
-Last Updated: **August 4, 2026 (Session 16)**. See `Enyrgy_Master_TODO.md` for the consolidated open-items punch list.
+Last Updated: **August 30, 2026 (Session 18)**. See `Enyrgy_Master_TODO.md` for the consolidated open-items punch list.
 
 ---
 
@@ -24,6 +24,10 @@ Last Updated: **August 4, 2026 (Session 16)**. See `Enyrgy_Master_TODO.md` for t
 | Paperclip Agent Org (17 agents) | GO-LIVE IN PROGRESS (Session 15): heartbeats staged and tuned. ON: Sentinel 24h, Quality Control daily, Dispatcher 8h, Sales Outreach 1h, SDR 2h, Reactivation 6h, KB Manager 30d. Held (volume-gated, enable when volume ramps; daily is plenty): Referral and Reviews (block trimmed - review/testimonial live, referral paused), Sales Scout, CSM. Execs + Audit/PRD/Onboarding stay event-driven (timer OFF). |
 | Toll-Free A2P Verification (888) | APPROVED (July 28, 2026) - validated for SMS. SMS can now send from 888-316-1695. |
 | Paperclip Agent Setup | Phase 2 build COMPLETE (Sessions 12-13). Now operating: approval-card UX + ask-first policy + toggle-bug fixed (Session 15). Standing rule: keep Anthropic credit buffered and budgets with headroom - starvation multiplies cost and causes agent confabulation. |
+| Commercial Dealer Program | **BUILT Session 17, one BLOCKING defect.** WF-40 to WF-43 deal registration, 25 to 16 percent ladder, $7,160 MAP floor. **The per-dealer form does not isolate the `Dealer Name` dropdown**, so a second dealer would expose the first. Do not onboard dealer #2 until rebuilt. `Exclusivity Expires` is set by hand at Conflict Check; nothing automates it and GHL cannot compute the date. See `campaigns/dealer-onboarding.md`. |
+| AVETTA Global LLC (dealer #1) | Onboarding at steps 1 to 5 of 7 (Aug 30). Form duplicated, dropdown set, added to WF-40's trigger, W-9 requested. Steps 6 and 7, the registration link and the test submission, wait on the W-9 arriving. |
+| Summer End offer | LIVE. $500 off plus free shipping, code `SUMMEREND500`, through **11:59pm Pacific September 15** (extended from Aug 31 for the travel week). Enyrgy's first discount. Millie has the script for the 18 Tired Test prospects. |
+| Live KB Skill sync | **SUBSTANTIALLY DRIFTED.** Last confirmed sync Aug 3 at commit `42090226`; 26 KB commits since, including Sections 16 and 14b in full. Run the diff, do not work from a list. |
 | FlexOffers Affiliate | Publisher migration UNDERWAY, not finished (Aug 4). **Old program #247334 cannot be deactivated until every publisher is across**, or anyone not yet moved loses their links. Separately, a publisher has already tried to grab old creative **#6673701**, which has no S2S tracking and so pays nothing; ask Brittany whether that creative can be disabled early. YourTango begins promoting Wed Aug 5. |
 | External Tasks | Multiple Pending - see Enyrgy_Master_TODO.md |
 
