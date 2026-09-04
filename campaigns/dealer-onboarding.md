@@ -8,13 +8,33 @@
 
 ---
 
+# STOP: do not onboard a second dealer until this is fixed (found 2026-08-30)
+
+**The per-dealer form does not isolate the dropdown, which was the entire point of it.**
+
+`Dealer Name` is a single Opportunity custom field, `opportunity.dealer_name`, with **one shared option list**. Every form bound to it shows the same options. Duplicating the form gives each dealer their own URL. It does not give them their own dropdown.
+
+**Proven, not theorised.** Onboarding AVETTA Global LLC, the option was set on their form copy alone. It appeared on the shared field without anyone adding it there, and the master form simultaneously lost `Unassigned` and gained `AVETTA Global LLC`.
+
+**Consequences, in order of when they bite:**
+
+  - **Dealer #2 exposes dealer #1 and vice versa.** The moment a second name is added, both forms show both. That is the roster leak this structure exists to prevent.
+  - **The master's tripwire is gone.** `Unassigned` is no longer an option anywhere, so an accidental master submission now attributes silently to whichever real dealer is listed, rather than flagging as a fault. Restoring `Unassigned` is not a fix, because it would reappear on live dealer forms where it must never be selectable.
+  - **One dealer is safe.** With AVETTA alone there is nothing to leak, which is why their onboarding proceeded.
+
+**The likely fix, not yet built.** Take `Dealer Name` off the form and capture attribution from the link instead: each dealer's URL carries a parameter, the form reads it, WF-40 writes it to the opportunity. No dropdown means no roster. A dealer can only ever see their own name, because it arrived in their own link. **Confirm what the GHL form builder actually supports before committing to that**, rather than assuming, which is how this one was missed.
+
+---
+
 ## Why there is a form per dealer
 
 `Dealer Name` is a dropdown on the registration form, because attribution that decides a $2,237 commission cannot be free text with three spellings of the same company.
 
 But a dropdown shows every option to whoever opens it. One shared form would let every dealer read the full roster: who else sells for Enyrgy, and by inference which territories are covered and how large the network is. That is competitive intelligence nobody would hand over on purpose.
 
-GoHighLevel has no hidden-field option on this form type, and its API is `forms.readonly`, so this cannot be automated away inside GHL. One form per dealer is the way to keep the roster private.
+GoHighLevel has no hidden-field option on this form type, and its API is `forms.readonly`, so this cannot be automated away inside GHL. One form per dealer was believed to be the way to keep the roster private.
+
+**That belief was wrong, and the reasoning above is why it looked right.** The privacy argument holds. The mechanism does not, because the options live on the shared custom field rather than on the form. See the stop notice at the top of this document.
 
 **The master form is a template. Never send it to anyone, and never add a real dealer name to it.**
 
@@ -34,7 +54,9 @@ Dealer Registration - <Dealer Company Name>
 
 On the copy, open the `Dealer Name` field. Remove `Unassigned`, then add one option: their company name exactly as it should appear in reporting and on commission statements.
 
-Their dropdown now contains one entry. They learn nothing about anyone else.
+**This edit writes through to the shared field and to every other form.** It is safe with one dealer and is not safe with two. Do not perform this step for a second dealer until the model is rebuilt.
+
+**Step 4 below is therefore already done by this step.** GHL propagates the option to `Settings > Custom Fields > Opportunity > Dealer Registration` on its own. Check it rather than adding it, or you will create a duplicate.
 
 ### 3. Add the new form to WF-40's trigger
 
@@ -98,7 +120,21 @@ An opportunity with `Source Type = Dealer` and `Dealer Name = Unassigned` is a d
 
 Worth a saved filter alongside the other dealer views.
 
+**As of 2026-08-30 `Unassigned` no longer exists as an option**, removed by the AVETTA onboarding through the shared-field behavior described at the top. It cannot be restored without putting it back on live dealer forms. Until the model is rebuilt, an accidental master submission attributes to a real dealer instead of flagging, so the protection this section describes is currently absent.
+
 ---
+
+## The 90 day expiry date is set by hand, at Conflict Check
+
+**Decided 2026-08-30 after finding that nothing set it.**
+
+WF-41 refuses to send a dealer their confirmation while `Exclusivity Expires` is empty, and nothing in WF-40 or WF-41 populates it. As built, every registration would have stalled unconfirmed.
+
+**GHL cannot compute it.** The Update Opportunity action's date field offers a current date under `Right now` and no offset of any kind. There is no date arithmetic available in that field.
+
+**The rule, until it is automated.** Whoever works the Conflict Check stage sets `Exclusivity Expires` to submission plus 90 days **before** moving the opportunity to Prospect. WF-41's empty check is the enforcement: forget it and the dealer is simply not confirmed, and the internal notification on WF-41's None branch tells you why.
+
+**The permanent fix, when there is time.** WF-40 posts the opportunity to the existing Railway service, which computes the date and writes it back through the GHL API. The infrastructure and credentials already exist for the abandoned-checkout service. Not urgent: one dealer setting one date by hand is not a system under strain.
 
 ## Offboarding
 
@@ -113,6 +149,22 @@ Their live registrations keep running their 90 day clocks. Decide deliberately w
 | # | Change |
 |---|---|
 | 1 | Created alongside the WF-40 to WF-43 deal registration build |
+
+## Change log, 2026-08-30
+
+| # | Change |
+|---|---|
+| 1 | **Found: the per-dealer form does not isolate the dropdown.** Stop notice added at the top. Do not onboard a second dealer until the model is rebuilt. |
+| 2 | **Found: nothing set `Exclusivity Expires`**, so no dealer would ever have been confirmed. Route 1 adopted, set by hand at Conflict Check, with the Railway route recorded as the permanent fix. |
+| 3 | **WF-40 hardened.** One minute wait added before the opportunity lookup, against the async-write race that cost this account refids on WF-31. Internal notification added to the `Opportunity Not Found` branch, which previously ended in silence while the dealer believed they held a claim. |
+| 4 | W-9 request email added as step 4b, sequenced before the registration link. |
+| 5 | `Unassigned` recorded as no longer existing, and why it cannot simply be restored. |
+
+## AVETTA Global LLC, onboarding state at 2026-08-30
+
+Steps 1 to 5 complete: form duplicated and named, dropdown set, form added to WF-40's trigger, shared field populated by GHL's write-through, W-9 requested.
+
+**Steps 6 and 7 outstanding, waiting on the W-9 to arrive.** Step 6 is sending their Integrate link. Step 7 is the test submission that proves the wiring, including the WF-41 confirmation path with Scott's own address in the dealer email field so no test confirmation reaches AVETTA.
 
 ## Why this document exists
 

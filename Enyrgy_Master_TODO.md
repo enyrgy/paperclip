@@ -208,6 +208,13 @@ Outcode is building two webhooks: one on user registration, one on completed ses
 - **Same discipline already applied to securities.** Investor compliance runs through an attorney and the KB records the verbatim rule. Device claims have no equivalent owner recorded anywhere.
 - **Safely useful regardless of the answer:** the guidance's Category 2 phrasing, "as part of a healthy lifestyle, may help reduce the risk of X", is a well-tested formulation and is the exact shape of Enyrgy's nitric-oxide and cardiovascular framing. Adopting that construction is defensive good practice whether or not the guidance formally governs Enyrgy.
 
+## 4g. Dealer program: two open items from the AVETTA onboarding (August 30, 2026)
+
+- [ ] **BLOCKING for dealer #2: the per-dealer form does not isolate the `Dealer Name` dropdown.** Options live on the shared `opportunity.dealer_name` custom field, so every form shows the same list. Duplicating the form gives each dealer their own URL and not their own dropdown, which was the whole point. Proven during the AVETTA onboarding: setting the option on their form copy alone propagated to the shared field, and the master simultaneously lost `Unassigned`. **One dealer is safe. A second exposes both.** Likely fix is to take the field off the form and capture attribution from a URL parameter, but confirm what the GHL form builder supports before committing. Full detail in `campaigns/dealer-onboarding.md`.
+- [ ] **Automate `Exclusivity Expires`.** Nothing set it, so no dealer would ever have been confirmed by WF-41. Now set by hand at Conflict Check, which works and is enforced by WF-41's empty check. GHL offers a current date under `Right now` and no offset, so the permanent fix is a Railway round trip using the abandoned-checkout service that already exists. Not urgent at one dealer.
+- [x] **WF-40 hardened (Aug 30).** One minute wait before the opportunity lookup, and an internal notification on the `Opportunity Not Found` branch which previously ended in silence.
+- [ ] **AVETTA Global LLC: steps 6 and 7 outstanding**, waiting on their W-9. Send the Integrate link, then run the test submission including the WF-41 confirmation path with Scott's own address in the dealer email field.
+
 ## 5. Strategic architecture decisions (mostly ratify, not build)
 
 - [ ] **Shopify to GHL purchase sync:** the EA flags this as the top gap, but it predates the Session 11 native integration + WF-27/28/29, which largely built it. Reconcile the EA and ratify rather than rebuild.

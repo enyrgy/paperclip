@@ -707,6 +707,12 @@ Both triggers carry a second condition that is not visible in the builder summar
 
 Registrations run a 90 day clock. A dealer holds attribution on a named facility for 90 days from submission.
 
+**`Exclusivity Expires` is set by hand at Conflict Check, and nothing automates it (confirmed 2026-08-30).** WF-41 gates the dealer confirmation on that field being populated and nothing writes it, so as originally built every registration would have stalled unconfirmed. GHL cannot compute it: the Update Opportunity date field offers a current date under `Right now` and no offset. The rule is that whoever clears Conflict Check sets submission plus 90 days before moving the opportunity to Prospect, and WF-41's empty check enforces it. The permanent fix is a Railway round trip, using the service that already runs abandoned checkout.
+
+**The per-dealer form does not isolate the `Dealer Name` dropdown (found 2026-08-30).** The options live on the shared `opportunity.dealer_name` custom field, so every form bound to it shows the same list. One dealer is safe; a second exposes both. See `campaigns/dealer-onboarding.md` before onboarding anyone else.
+
+**WF-40 hardened 2026-08-30.** A one minute wait sits before the opportunity lookup, against the same async-write race that silently dropped FlexOffers refids on WF-31. The `Opportunity Not Found` branch now sends an internal notification instead of ending in silence, because a miss there leaves the dealer believing they hold a claim while nobody knows the registration exists.
+
 Dealer confirmation email uses Send Internal Notification, not Send Email. GHL's Send Email action can only reach the contact on the record, which on a dealer registration is the facility, not the dealer. Sending the dealer's confirmation with Send Email delivers it to the prospect. The working build is Send Internal Notification with To User Type: Custom email and the opportunity dealer_email field inserted through the tag picker. Typing the merge field by hand is rejected as invalid; it must be inserted from the picker.
 
 Commission ladder, tied to the final sale price:
