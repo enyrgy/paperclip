@@ -160,11 +160,52 @@ Their live registrations keep running their 90 day clocks. Decide deliberately w
 | 4 | W-9 request email added as step 4b, sequenced before the registration link. |
 | 5 | `Unassigned` recorded as no longer existing, and why it cannot simply be restored. |
 
-## AVETTA Global LLC, onboarding state at 2026-08-30
+## AVETTA Global LLC, onboarding state at 2026-09-05: COMPLETE
 
-Steps 1 to 5 complete: form duplicated and named, dropdown set, form added to WF-40's trigger, shared field populated by GHL's write-through, W-9 requested.
+All seven steps done. W-9 received, real registration link sent, form carries the unique-contact instruction below, test records deleted. AVETTA is live and can register real facilities.
 
-**Steps 6 and 7 outstanding, waiting on the W-9 to arrive.** Step 6 is sending their Integrate link. Step 7 is the test submission that proves the wiring, including the WF-41 confirmation path with Scott's own address in the dealer email field so no test confirmation reaches AVETTA.
+**Two things were found and fixed during their own test submissions before the link went out.** Both are recorded in full below, because both were platform behaviors that would otherwise have surfaced for the first time on a real dealer's second or third registration rather than in testing.
+
+---
+
+## WF-40 needs Allow Re-Entry ON, same requirement as WF-35
+
+**Found 2026-09-04, testing AVETTA.** A second form submission from a contact who had already been through WF-40 once was silently `Skipped` at the very first action, `Add to workflow`. GHL's own reason, visible in Execution Logs: *"Contact is already part of this workflow and can not be added again."*
+
+This is the identical default-off setting that broke WF-35's reply notifications back in August. GHL's default is one enrollment per contact per workflow, forever, unless Allow Re-Entry is switched on.
+
+**Consequence if missed:** a dealer's first registration works. Every registration after that from the same dealer contact does nothing at all: no tag, no `Source Type`, no move to Conflict Check, no alert. It looks identical to a dealer who simply stopped submitting.
+
+**Fixed:** WF-40, Settings tab, Allow Re-Entry, turned ON. Verified against a third test submission, which then ran the full sequence end to end.
+
+**Check this on WF-41, WF-42 and WF-43 too, next time any of them is open.** Nobody has confirmed their Allow Re-Entry state, and the same default-off trap applies to each of them independently.
+
+---
+
+## A second submission from the same facility contact overwrites the first registration, not just skips it
+
+**Found 2026-09-04, immediately after fixing Allow Re-Entry.** With re-entry on, a second registration ran WF-40 to completion, but the opportunity it found and updated was the **same opportunity** as the first registration, not a new one. The first registration's business name was overwritten, and its `Exclusivity Expires` date carried forward onto a facility that had never had a date set on it.
+
+**Confirmed by a controlled test, not assumed.** A third submission, same facility contact info as the first two, produced the same result: one opportunity total in the whole pipeline, carrying the third submission's facility name and the first submission's date. A fourth submission, **same Dealer Name and Dealer Email, but a genuinely new facility contact** (different name, email, phone), produced a clean second opportunity. The first was untouched.
+
+**This isolates the cause precisely: whatever creates or finds the opportunity keys on the facility contact's identity, not on the dealer.** The exact mechanism was not located; three places were ruled out (the form's own Settings tab, its Conditions logic, and WF-40 itself, which has no Create Opportunity action anywhere in it), but the underlying GHL behavior doing this was not pinned down further, because the empirical test answered the question that actually mattered.
+
+**What this means in practice.** A dealer registering two different facilities, each with its own real on-site contact, will get two clean opportunities. The collision only occurs if the same person is used as the facility contact on more than one registration, and the overwrite happens silently at the moment of the second submission, before anyone reaches Conflict Check. **This cannot be caught by manual review after the fact.** By the time a human looks at Conflict Check, the first registration's data is already gone; there is nothing left to compare against.
+
+**Mitigation applied, 2026-09-05: instructional text on the form itself.** The Contact First Name, Last Name, Email and Phone fields on `Dealer Registration - AVETTA Global LLC` now carry inline guidance that the facility contact must be unique to that facility and not reused from another registration or the dealer's own information. This does not fix the underlying platform behavior; it prevents the input that triggers it.
+
+**Residual risk, accepted rather than eliminated.** A facility contact who genuinely oversees more than one site (a regional manager, for instance) submitting under their own name for two different locations would still collide. Judged acceptable for now given how narrow the case is; revisit if it ever actually happens.
+
+**If this needs a real fix later:** find the actual mechanism (most likely a native GHL form-to-opportunity binding, not a workflow action) and either give it a compound match key, or route each registration through a facility-specific contact record instead of whichever person happens to submit the form.
+
+## Change log, 2026-09-05
+
+| # | Change |
+|---|---|
+| 1 | **Found: WF-40 needed Allow Re-Entry ON.** A second submission from an already-enrolled contact was silently `Skipped`, GHL's own stated reason "Contact is already part of this workflow." Same trap as WF-35 in August. Fixed and verified against a third submission. |
+| 2 | **Found: a second submission from the same facility contact overwrites the first registration's opportunity**, carrying its business name onto the wrong record and inheriting a stale `Exclusivity Expires`. Confirmed by a controlled fourth test isolating the cause to facility-contact identity rather than dealer identity. Root mechanism not located; empirical test was decisive instead. |
+| 3 | **Mitigation applied:** inline instruction text added to the four Contact fields on AVETTA's form, requiring a unique facility contact per registration. Reduces the risk to one narrow residual case, does not eliminate the underlying platform behavior. |
+| 4 | **AVETTA Global LLC onboarding complete.** All seven steps done, real link sent, test records deleted. |
 
 ## Why this document exists
 
